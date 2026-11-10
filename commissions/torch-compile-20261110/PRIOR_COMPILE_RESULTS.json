@@ -1,0 +1,5436 @@
+{
+  "notice": "Quant verified entries and high-speedup attempt summaries. Pilot is NOT formal. Match parameters/body/source/environment before reuse; missing raw means historical evidence, not independently reaccepted here. compile_native is not pure compile.",
+  "quant": [
+    {
+      "op": "FP8QuantFwdOp",
+      "case": "kv-index-4k-float32",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "input_tensor": [
+          [
+            1,
+            4096,
+            1,
+            128
+          ],
+          "float32"
+        ],
+        "scale_tensor": [
+          [
+            1,
+            4096,
+            1
+          ],
+          "float32"
+        ],
+        "output_tensor": [
+          [
+            1,
+            4096,
+            1,
+            128
+          ],
+          "float8_e4m3fn"
+        ]
+      },
+      "latency_us": 7.2308,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 9,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 1.2481167316436768,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "fc9e7ab65df0ecd8c6fdc488d39db0a989cf542c83cec40ac5a3d39ac2a41dcb",
+      "guard_sha256": "4d3e7c23c8882c500d275eb4857b84557b3d0520d5f077202ca065a83a3770d5",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "1f9db279b05213551dc10793fa10a78d184361581734956d41196770bd748bb1",
+      "correctness_sha256": "c712d3200dd63b744f16416c2b0f5669f34413d1255b64e23d7ecd5ef784bdae",
+      "attempt": "formal1"
+    },
+    {
+      "op": "FP8QuantFwdOp",
+      "case": "kv-index-context-chunk-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "input_tensor": [
+          [
+            1,
+            3072,
+            1,
+            128
+          ],
+          "bfloat16"
+        ],
+        "scale_tensor": [
+          [
+            1,
+            3072,
+            1
+          ],
+          "float32"
+        ],
+        "output_tensor": [
+          [
+            1,
+            3072,
+            1,
+            128
+          ],
+          "float8_e4m3fn"
+        ]
+      },
+      "latency_us": 6.8668000000000005,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 9,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 25.64151906967163,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "11f062c26832d7a306e8f4b9f5a220122be891bfb8cf4678420cf78e669c217d",
+      "guard_sha256": "fc06289e3ea9315f3d1b9d2de58582542c4c94ed348465d1e0d879808bb8d42b",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "9d9311ff9d6f23bf24f7d1f23fad3a1baf8ef2ba08f0068d74d1c9478abc545d",
+      "correctness_sha256": "bc46a18a1db224679b4285709d3a6a31584e1ac718472039475e6e5d5726cc7e",
+      "attempt": "formal1"
+    },
+    {
+      "op": "FP8QuantFwdOp",
+      "case": "kv-index-context-chunk-float16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "input_tensor": [
+          [
+            1,
+            3072,
+            1,
+            128
+          ],
+          "float16"
+        ],
+        "scale_tensor": [
+          [
+            1,
+            3072,
+            1
+          ],
+          "float32"
+        ],
+        "output_tensor": [
+          [
+            1,
+            3072,
+            1,
+            128
+          ],
+          "float8_e4m3fn"
+        ]
+      },
+      "latency_us": 6.848666666666667,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 9,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 26.75640559196472,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "08fa431c29bfb7e58b4ae5b73d85c4550f74acd38ec904fce05b958513d9add1",
+      "guard_sha256": "fc06289e3ea9315f3d1b9d2de58582542c4c94ed348465d1e0d879808bb8d42b",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "c203a3701209657d3ed8afbf92dd48630b307202e2b2f4ee96ec47a54b1cc4bc",
+      "correctness_sha256": "2514e7244f245557fdc945b3c5fa33fd478cdb05bfb71dfbe1b98852f3ef8d7c",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerBlockFwdOp",
+      "case": "ragged-k-few-rows-float16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            17,
+            4099
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            17,
+            33
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            17,
+            4099
+          ],
+          "float16"
+        ],
+        "out_dtype": "float16"
+      },
+      "latency_us": 10.421466666666667,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 8,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 2,
+          "pattern_matcher_nodes": 2,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 8
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 1.246683120727539,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "37c506dcfef3be2d6efaec02b71b37f13401324f3000fca9140909eb7f06b4b2",
+      "guard_sha256": "3b49cf6f725ec4f25128aa66784915169a5ceeb1312df108877d681e831fc67f",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "c2daa3ce4f2241a0059a52a5392291517feeb5587fb49b394d8fd3e84d25a492",
+      "correctness_sha256": "2c821b0295dadf83416ca7900ffb061fd41c40c21a9bfa59cecba60ed57e69a1",
+      "attempt": "formal2_guardretry"
+    },
+    {
+      "op": "INT8DequantPerBlockFwdOp",
+      "case": "ragged-k-few-rows-float16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            17,
+            4099
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            17,
+            33
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            17,
+            4099
+          ],
+          "float16"
+        ],
+        "out_dtype": "float16"
+      },
+      "latency_us": 6.900266666666667,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 6,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 3,
+          "pattern_matcher_nodes": 3,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 10
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.9740278720855713,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "5d05208094787bc3d45ddc99152f6e314656b1a5af911f5039b9536938d83d29",
+      "guard_sha256": "3b49cf6f725ec4f25128aa66784915169a5ceeb1312df108877d681e831fc67f",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "c2daa3ce4f2241a0059a52a5392291517feeb5587fb49b394d8fd3e84d25a492",
+      "correctness_sha256": "c9bbe3e63338db82894a655c8b14b9e8c66d96c84ed9b35bd9d704d18f63d80a",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerBlockFwdOp",
+      "case": "ds-v3-decode-bfloat16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            64,
+            7168
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            64,
+            56
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            64,
+            7168
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 3.9677333333333333,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 5,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 3,
+          "pattern_matcher_nodes": 3,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 8
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.9387016296386719,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "f5e3244eaa5bfa5f8e1f233344da522c0a084877bfeee43be6700466ae7305dc",
+      "guard_sha256": "f1348a9cfc7f818b6d8766fec578510b1170eff33c7df093d6d31433c8580ceb",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "2e42c90cef38dd05b34b0895c9d7a6b55f00e0dcba79c79fdbe89d982360da14",
+      "correctness_sha256": "159cacb4fdcbf20caaeb544ce87641446807f2fc826e8578a69506842f0ef080",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerBlockFwdOp",
+      "case": "gpt-oss-prefill-bfloat16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            3000,
+            2880
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            3000,
+            23
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            3000,
+            2880
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 18.433333333333334,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 6,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 3,
+          "pattern_matcher_nodes": 3,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 10
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.9983301162719727,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "c23a1748cb32057fbd378ba6124fa05164dc151d37c6638786c26914acca0212",
+      "guard_sha256": "f1348a9cfc7f818b6d8766fec578510b1170eff33c7df093d6d31433c8580ceb",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "862658936cb1678d865c6b0db241b39607684d6648e97af751823e03a421e1d8",
+      "correctness_sha256": "2ac1fdb860261633ed1f97f266b97d52f1c8b5ef7e8e943d0834330a51417ff3",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerBlockFwdOp",
+      "case": "qwen3-235b-prefill-float16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            4096,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            4096,
+            32
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            4096,
+            4096
+          ],
+          "float16"
+        ],
+        "out_dtype": "float16"
+      },
+      "latency_us": 15.185799999999999,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 5,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 3,
+          "pattern_matcher_nodes": 3,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 8
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.9630029201507568,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "eeaed2a7c3ea543b05aa0896854fe5fb143f1c3950b84aac3323b24c6d5abd38",
+      "guard_sha256": "b4fcb0a0fecf6bf17cd72c91427f3634df1742bd58ab2de1fa2a137af4bd7f14",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "8c1699a40309ef0c609af51de2170ae10f36f7d4c2a597f7cf123d5ff7f06fbe",
+      "correctness_sha256": "f0236ce7117f1ca0035f23f8ebc846168c5327d10f7561991a83177723020dfa",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerBlockFwdOp",
+      "case": "ds-v3-prefill-bfloat16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            4096,
+            7168
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            4096,
+            56
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            4096,
+            7168
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 23.629066666666667,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 5,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 3,
+          "pattern_matcher_nodes": 3,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 8
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.9582738876342773,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "54efb8a388a7b9e60dd9a194512dc69dd159da0f1d73a9146700393c1457b1e0",
+      "guard_sha256": "b4fcb0a0fecf6bf17cd72c91427f3634df1742bd58ab2de1fa2a137af4bd7f14",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "25d4f7bf0d3ad9a8c5d844c281d52fd7c792170c0692daeb4d9f2b23f05df34b",
+      "correctness_sha256": "6c8a117d3c21b52c13c5487c050b9ff8578c1946fbd29b37180b974235326f47",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "ragged-k-few-rows-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            17,
+            4099
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            17
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            17,
+            4099
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 4.6078,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 4,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 1.1470098495483398,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "7cc262e24a053458365d593a987ed2d48249a2198abc8c923db3da42aaec19a5",
+      "guard_sha256": "216833096b29f7b2be71919bfaa8b35e946561f569218c2cf2d2f69ca62c7f9f",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "fdccde03884b66f581c78df740e8f29ca0105680858e59824596e52cf4a3b5b1",
+      "correctness_sha256": "2878295c3751907495cc585e154e3a640d6df96801f53ce011a01cc187ad7785",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "ragged-k-few-rows-bfloat16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            17,
+            4099
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            17
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            17,
+            4099
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 3.619466666666667,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 2,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.9095005989074707,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "a99a488b524948241a5de187f7746ffc6bd325d0c55fc22adb23ca273fd08f5b",
+      "guard_sha256": "216833096b29f7b2be71919bfaa8b35e946561f569218c2cf2d2f69ca62c7f9f",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "fdccde03884b66f581c78df740e8f29ca0105680858e59824596e52cf4a3b5b1",
+      "correctness_sha256": "e30dec7c12531517eaccde7fbfcdac8acac5ac87f85d6b56fd782adb2570d262",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "ragged-k-float16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            3000,
+            4099
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            3000
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            3000,
+            4099
+          ],
+          "float16"
+        ],
+        "out_dtype": "float16"
+      },
+      "latency_us": 25.197533333333336,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 4,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 25.824902057647705,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "a0a1c61864f716df7e2ede5a016055c674cb9d958c3fe077cd4286d081573448",
+      "guard_sha256": "7046e9a643393ec8949bc4b52a6e80bf320efc75b34ddaf63c544e55c1470d00",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "2b95640f21f641bac7ea358b7a20cdb278de4524100d1cdc00662ce091768177",
+      "correctness_sha256": "dadc60d991c0db8957cc4553c9a93f6ecc38821c1971907855023ba584c22560",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "ragged-k-float16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            3000,
+            4099
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            3000
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            3000,
+            4099
+          ],
+          "float16"
+        ],
+        "out_dtype": "float16"
+      },
+      "latency_us": 11.176333333333334,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 2,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.8635506629943848,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "063df0c9b7707a0bcd0fec766218dc2773213a41e8961b3f45cb7df026b1488a",
+      "guard_sha256": "7046e9a643393ec8949bc4b52a6e80bf320efc75b34ddaf63c544e55c1470d00",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "2b95640f21f641bac7ea358b7a20cdb278de4524100d1cdc00662ce091768177",
+      "correctness_sha256": "4e7d31b83e9c986a081f7cc2af39636b50e7d531525ce25b3020229cbb2d0dab",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "gpt-oss-20b-mlp-up-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            5760,
+            2880
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            5760
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            5760,
+            2880
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 31.368733333333335,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 4,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 25.993191719055176,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "602fdc0aad29925e63fab3edf5ce75e890a90e5dfaf8301e1a1fdb7cf88cc7ef",
+      "guard_sha256": "e3fe87828e781233867e0a382bef8cbdc68a702a0d7002363ea837441a18ff67",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "1ff974f7276c13bff180eb658585e7f090e6ca7ee572c39a218323e3881625ad",
+      "correctness_sha256": "6d80c53afdd4ab814569bbb2f9a1599ef43d7ff1f63d24d8f8b930fb834e0621",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "gpt-oss-20b-mlp-up-bfloat16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            5760,
+            2880
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            5760
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            5760,
+            2880
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 13.863133333333334,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 2,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.8787097930908203,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "f054e221381e5bdb76a6e52732b7d487a637b2a3f9d306ef50cdca49cea08196",
+      "guard_sha256": "e3fe87828e781233867e0a382bef8cbdc68a702a0d7002363ea837441a18ff67",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "1ff974f7276c13bff180eb658585e7f090e6ca7ee572c39a218323e3881625ad",
+      "correctness_sha256": "678b12aa10acb0953c0fa284a2a37112b8f3a5b00278fff965e60f7ce5e7ff3e",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "llama-8b-mlp-down-float32",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            4096,
+            14336
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            4096
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            4096,
+            14336
+          ],
+          "float32"
+        ],
+        "out_dtype": "float32"
+      },
+      "latency_us": 215.46506666666667,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 4,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 25.996376991271973,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "ce8b1fca6bc5caff683f2b2a09f883f7b519d9b0083dbe231d0862ee5fcf4898",
+      "guard_sha256": "ed7ea40e41afdc05588efaba0b02db30d7116dbe007229823c53c8b250e4442e",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "23c652d342d63c12491672f123d8875d93ed58cf54ff64625bd9cabbefb03035",
+      "correctness_sha256": "634d6b3addae05eb0ae1c6e580930c4c44d1a5ade5f9899334898b0d28f15fe0",
+      "attempt": "formal1"
+    },
+    {
+      "op": "FP8QuantFwdOp",
+      "case": "kv-index-8k-float16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "input_tensor": [
+          [
+            1,
+            8192,
+            1,
+            64
+          ],
+          "float16"
+        ],
+        "scale_tensor": [
+          [
+            1,
+            8192,
+            1
+          ],
+          "float32"
+        ],
+        "output_tensor": [
+          [
+            1,
+            8192,
+            1,
+            64
+          ],
+          "float8_e4m3fn"
+        ]
+      },
+      "latency_us": 6.985333333333333,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 9,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 31.16490077972412,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "409d03ab7698797cc00125428dbf30624c2f24ffb8fbdde337909a891ea314da",
+      "guard_sha256": "e9e408dec6b9c75f60f2f0f27dcb9dfa098d8cc3bafebd6b4f717e2df6702377",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "82eacdfd340336d9e6d77d61e122f6f08a43938edf9b54a30c28aa3454bf41b2",
+      "correctness_sha256": "7afec63d7bf4e3330795483f1d56a34be82f8247694f0cd8d4aae8772edaed26",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "llama-8b-mlp-up-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            14336,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            14336
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            14336,
+            4096
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 202.66233333333332,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 4,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 26.234405994415283,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "174224f9b1869270ab5334b5fecbdbba5838b463bc50a8cdcbcebcf89898d933",
+      "guard_sha256": "ed7ea40e41afdc05588efaba0b02db30d7116dbe007229823c53c8b250e4442e",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "ac05fd239a393e9b07b66eb6d32ffcb9933e3011b47e35004993bbece5b26be5",
+      "correctness_sha256": "2da0a0889aa555be57c00bdfe03a69c056e6e0700b2eca3692f5a380fc8f3289",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "llama-8b-mlp-up-bfloat16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            14336,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            14336
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            14336,
+            4096
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 39.4334,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 2,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.894813060760498,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "f08780392c9680f9fa9390a614e31111d1d1ebb1eca38da4177ed21e99af3695",
+      "guard_sha256": "f6ca56b2c7bf758154dfa0b0e2b9481c6ee9228b2a5346ef3a9ae0b1509ec75f",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "ac05fd239a393e9b07b66eb6d32ffcb9933e3011b47e35004993bbece5b26be5",
+      "correctness_sha256": "2f3d7cd76e4e88fbd096493aa22fb26bf79c28503836cda820fae1f6ca53597f",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "llama-8b-mlp-up-float16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            14336,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            14336
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            14336,
+            4096
+          ],
+          "float16"
+        ],
+        "out_dtype": "float16"
+      },
+      "latency_us": 203.09806666666668,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 4,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 26.446013927459717,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "692354c3d2eba79ff7afe11bdd7a96726c036fd285f428d9e11d241b859de3af",
+      "guard_sha256": "f6ca56b2c7bf758154dfa0b0e2b9481c6ee9228b2a5346ef3a9ae0b1509ec75f",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "a8e589faaf0f68ae294bec6121dd951d3ae4c7afb204b1a24ac6cd5fe5ebc670",
+      "correctness_sha256": "a69a78c433a0fbc776e1189117b0020b5ae5c7643d9a8562452e838bb1fd22e1",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "llama-8b-mlp-up-float16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            14336,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            14336
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            14336,
+            4096
+          ],
+          "float16"
+        ],
+        "out_dtype": "float16"
+      },
+      "latency_us": 39.37393333333333,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 2,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.8295462131500244,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "4af9dfa5d39cc50693b0420194e563c555dc0151db5045639db1ecaa59d022d4",
+      "guard_sha256": "e2b10869627feac07644dc18a34828d0f7e13d4b599da756fbe99cd01de0372c",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "a8e589faaf0f68ae294bec6121dd951d3ae4c7afb204b1a24ac6cd5fe5ebc670",
+      "correctness_sha256": "d92a464c2ed9c848bd350b1ef0dc311c847ac00bee66100423cc1be3f352221b",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "llama-70b-mlp-down-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            8192,
+            28672
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            8192
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            8192,
+            28672
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 883.4305333333333,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 4,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 26.583393335342407,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "01feb954d0546b3efcd4ecbe742c6555cba8db90a09d7d5945267b80436ad41c",
+      "guard_sha256": "e2b10869627feac07644dc18a34828d0f7e13d4b599da756fbe99cd01de0372c",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "9e9b7483761642c1039dbe114212a5e9101953e991dadd7b7cc38e3572486d66",
+      "correctness_sha256": "f53520c129798aa357d17769259ba5e218aa2db78efd5671425f3d20ff500b3b",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "case": "llama-70b-mlp-down-bfloat16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            8192,
+            28672
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            8192
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            8192,
+            28672
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 235.57326666666668,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 2,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.892031192779541,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "e636c15ca1507b18a98b6104f892c35c61b2bf36695529f87a651c54069cd0c3",
+      "guard_sha256": "ff33752cb9c8b05b972fd69fe26388e3b8ac3fad4654e503e80739540ec3d6c0",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "9e9b7483761642c1039dbe114212a5e9101953e991dadd7b7cc38e3572486d66",
+      "correctness_sha256": "54a9647051998657accb5df0ea75711916dbade285bfdb8eca4f5f23f91c2c97",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "case": "ragged-k-few-rows-float16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            17,
+            4099
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            17,
+            4099
+          ],
+          "float16"
+        ],
+        "out_dtype": "float16"
+      },
+      "latency_us": 4.898733333333333,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 3,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 1.0748322010040283,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "b77c616aba7281d6135faba01280c9e25c30478d2d0fcee4dd7b3dc920d2aee6",
+      "guard_sha256": "ff33752cb9c8b05b972fd69fe26388e3b8ac3fad4654e503e80739540ec3d6c0",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "571f1000e6da8792a61b74c30124efb7d92c411c21174ccc122c69a1c799848a",
+      "correctness_sha256": "94ead536b89d0c9961e0902e0f1c08979e5281c88b51400a6a6bb1ae206648dc",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "case": "ragged-k-few-rows-float16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            17,
+            4099
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            17,
+            4099
+          ],
+          "float16"
+        ],
+        "out_dtype": "float16"
+      },
+      "latency_us": 3.3509333333333338,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 1,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 1.0106875896453857,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "d7de8ffd67142d397b1e5a6b1f9dffba7901797dfef88f4ece0b8cfffb784609",
+      "guard_sha256": "d9a47d0eba71b089cfb18299aad23d42259dd960e34908bd58311476684ccf43",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "571f1000e6da8792a61b74c30124efb7d92c411c21174ccc122c69a1c799848a",
+      "correctness_sha256": "ab3c041f089c42584b18eb423761fa7c159ac891f60d5ce9bab5f67c2015050c",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            32,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            32,
+            4096
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 5.140533333333334,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 3,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 27.46423578262329,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "97c28bc1305762f2db736b01617bc11f15b181097021d997e831e25d632744db",
+      "guard_sha256": "d9a47d0eba71b089cfb18299aad23d42259dd960e34908bd58311476684ccf43",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "1b3d487927f8f0b7d9e25592ee5242193a3c239c267bb13211674747e1a2915e",
+      "correctness_sha256": "3708ea53eba9b0f40ffdaeb4a4e47908e9ec239bc59e96db7cde9867f443469e",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            32,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            32,
+            4096
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 3.4383333333333335,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 1,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 1.058396339416504,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "e4f3a081fd37b87076a7c85db9259ae161b8b480ec409dcd6d1922a3e03d677c",
+      "guard_sha256": "aff157cfb1f552efb2f5a069fb5868bece2c038e1b059bdd6ba427af4475e27c",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "1b3d487927f8f0b7d9e25592ee5242193a3c239c267bb13211674747e1a2915e",
+      "correctness_sha256": "e8170aa7231956ed7285d61622737700e051c66edaf9b0688efdadcaa7e3a3a9",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "case": "ragged-k-float32",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            1000,
+            4099
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            1000,
+            4099
+          ],
+          "float32"
+        ],
+        "out_dtype": "float32"
+      },
+      "latency_us": 13.562266666666666,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 3,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 26.0817654132843,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "6a3e867fbdb42ad2a62ade49d9498199d416386333ccd1240232b133d1cd4503",
+      "guard_sha256": "aff157cfb1f552efb2f5a069fb5868bece2c038e1b059bdd6ba427af4475e27c",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "2a3ae3cd8140a4041231fc28c1c30d7517c6602d95667ed439efa8a5d4bb1f4f",
+      "correctness_sha256": "1501c85f7c04925387a23df36aaf1709926baeff62f7d7270492c5a54797486e",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "case": "gpt-oss-prefill-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            3000,
+            2880
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            3000,
+            2880
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 21.13246666666667,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 3,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 28.61955761909485,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "72fd7ddb868b6591d9aaea0f08a02ac2dd208da4222a820a95f634e9c34da68a",
+      "guard_sha256": "7d3316939b703000150d13b576d4e954f4983f0208f33ffd830bdc0fd16680a3",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "b9c0e56342759642877495ab20138f8ebe2a971549d23a66c72473644f4f55b1",
+      "correctness_sha256": "a5a99f34d6aa9d98c9931d78d65b5d3f68881183bdabf73980dc061b55d29dac",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "case": "gpt-oss-prefill-bfloat16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            3000,
+            2880
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            3000,
+            2880
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 8.271,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 1,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.920724630355835,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "2e05e575cbed3142afe6c0c358ceef8a89f20ebc2bec40567cc7e3bd01d08227",
+      "guard_sha256": "7d3316939b703000150d13b576d4e954f4983f0208f33ffd830bdc0fd16680a3",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "b9c0e56342759642877495ab20138f8ebe2a971549d23a66c72473644f4f55b1",
+      "correctness_sha256": "3671198b91b821ca3a16f0611c4340f9053eebab2aa77f42e18df61bf1464a82",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "case": "llama-8b-prefill-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            4096,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            4096,
+            4096
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 34.54013333333334,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 3,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 25.13448405265808,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "65455ad34c08b807247f92920dc82c61c5c6cc923299bae63ca76756cd4c1b76",
+      "guard_sha256": "f559363af1b573dce28a7a9d4b490aaaed7a6ef043ffb212944f02f3c50eed44",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "6b42883109f71f71f2e9c56650e544775f5ddb5b335c379cd04480bfaf65c64e",
+      "correctness_sha256": "677de6aff1fab5aca759ec3f45d0e0e5c779c6286a6f603c51795959103c0d89",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "case": "llama-8b-prefill-bfloat16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            4096,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            4096,
+            4096
+          ],
+          "bfloat16"
+        ],
+        "out_dtype": "bfloat16"
+      },
+      "latency_us": 11.359733333333333,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 1,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 0.9231047630310059,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "a8b8e5b64503434def091da4803efe4ca277ca6df6f0973ba80ef431600e0776",
+      "guard_sha256": "f559363af1b573dce28a7a9d4b490aaaed7a6ef043ffb212944f02f3c50eed44",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "6b42883109f71f71f2e9c56650e544775f5ddb5b335c379cd04480bfaf65c64e",
+      "correctness_sha256": "a00cc8f7ffa68b2a1a15a4cc6c0f45419350797578d139f65666a8058d4d4028",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "case": "qwen3-32b-prefill-float32",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            8192,
+            5120
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            8192,
+            5120
+          ],
+          "float32"
+        ],
+        "out_dtype": "float32"
+      },
+      "latency_us": 136.42013333333333,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 3,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 24.630611658096313,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "ff92fb5396330e8138bde87c3f1c90f8380abc238852271cb94b77a212c84dbe",
+      "guard_sha256": "11e45d74bc88cffe21125891901e9a3bd072ca8e03fb44a2f58edb47696c98fe",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "a519cd26a0ff75b2e11653eee2b4ce72956b874a87a091b4d071510349c1f5e6",
+      "correctness_sha256": "c08b38ef1b8bb1b278c05d13636ba0fdfd5a38c9562a67f799c6ce48135370df",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "case": "qwen3-32b-prefill-float16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "q": [
+          [
+            8192,
+            5120
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            8192,
+            5120
+          ],
+          "float16"
+        ],
+        "out_dtype": "float16"
+      },
+      "latency_us": 141.13600000000002,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 3,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 24.39701509475708,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "0505d118ee7125c01750bec19f778e2669479ecaecd5605be442fbe5a10c45b7",
+      "guard_sha256": "11e45d74bc88cffe21125891901e9a3bd072ca8e03fb44a2f58edb47696c98fe",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "7729d647d3f9c760f1159f4520985bc7e715a5a0bcf74cade536fb8e6b13d151",
+      "correctness_sha256": "2f7e6e2e828ff02ae6035be225c1e81d4eca5d86caa9f463d5ba717d8abcf15e",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "case": "qwen3-32b-prefill-float16",
+      "variant": "torch-compile-inductor-antiquant",
+      "parameters": {
+        "q": [
+          [
+            8192,
+            5120
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ],
+        "x": [
+          [
+            8192,
+            5120
+          ],
+          "float16"
+        ],
+        "out_dtype": "float16"
+      },
+      "latency_us": 22.035333333333334,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 1,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 1.0491220951080322,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc-antiquant"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "0cdbea44fc9da3cc649fd18b526522d959ad16c30e8832e86f5be4a69338ab54",
+      "guard_sha256": "4d3e7c23c8882c500d275eb4857b84557b3d0520d5f077202ca065a83a3770d5",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "7729d647d3f9c760f1159f4520985bc7e715a5a0bcf74cade536fb8e6b13d151",
+      "correctness_sha256": "d037c9b929be5403ea6eef68d0a94866efdf4e27ce0dc3b00ae07999841e759e",
+      "attempt": "formal1"
+    },
+    {
+      "op": "FP8QuantFwdOp",
+      "case": "kv-index-8k-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "input_tensor": [
+          [
+            1,
+            8192,
+            1,
+            64
+          ],
+          "bfloat16"
+        ],
+        "scale_tensor": [
+          [
+            1,
+            8192,
+            1
+          ],
+          "float32"
+        ],
+        "output_tensor": [
+          [
+            1,
+            8192,
+            1,
+            64
+          ],
+          "float8_e4m3fn"
+        ]
+      },
+      "latency_us": 6.837266666666666,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 9,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 2
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 29.019946575164795,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "a1744ea6635c1b0814f386b5d954b4c2a19a6f857f85abbbe2d8d814bf9de91d",
+      "guard_sha256": "e9e408dec6b9c75f60f2f0f27dcb9dfa098d8cc3bafebd6b4f717e2df6702377",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "ef8d22c7a3ee47906c8dd9d917affc6db579e900b95d7b57591232451998c694",
+      "correctness_sha256": "a3525de6518f23c4a0131e1edae635c9f97cfae622162e054d297fb9298bd160",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8QuantPerTensorFwdOp",
+      "case": "gpt-oss-20b-decode-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "x": [
+          [
+            17,
+            2880
+          ],
+          "bfloat16"
+        ],
+        "q": [
+          [
+            17,
+            2880
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ]
+      },
+      "latency_us": 12.164866666666667,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 12,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 1,
+          "pattern_matcher_nodes": 1,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 6
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 1.410714864730835,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "050a83d607a8ab1d9fe3d9c7c6ea4c04dbb97a50aa2e35e1e957ca38b55556b4",
+      "guard_sha256": "f8d547f4d458bdbaf6d0078c6a1d34b9ba908814aa8fde3eed368e791c9264c4",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "06ea7157033be68063cfb2e0f6714dd015362f5eb5544146acc62bafcadc2b50",
+      "correctness_sha256": "b3eb343284be612a27049140d2613fa9d852d7d73bd898e31233ab8848cf6c23",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8QuantPerTensorFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "x": [
+          [
+            32,
+            4096
+          ],
+          "bfloat16"
+        ],
+        "q": [
+          [
+            32,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ]
+      },
+      "latency_us": 13.253333333333334,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 12,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 1,
+          "pattern_matcher_nodes": 1,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 6
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 54.540430545806885,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "a3d19849600ec41bb4b940f884b8a5e1df6cf4fd39707dabdbae0968ee54c23c",
+      "guard_sha256": "f8d547f4d458bdbaf6d0078c6a1d34b9ba908814aa8fde3eed368e791c9264c4",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "905dedd4a8a106bbf1263ae9f44aacd64323e56f6cad75a8f99f933dccef132e",
+      "correctness_sha256": "a103b886e963717c56672ae4aa62e1c5078f0d4d425e490d553e5e85fbc0396a",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8QuantPerTensorFwdOp",
+      "case": "odd-hidden-prefill-float16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "x": [
+          [
+            1000,
+            4099
+          ],
+          "float16"
+        ],
+        "q": [
+          [
+            1000,
+            4099
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ]
+      },
+      "latency_us": 25.395866666666667,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 12,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 1,
+          "pattern_matcher_nodes": 1,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 6
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 56.60567617416382,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "cd4acb05f4ec83dd51e8fe62cc28f598540cb2494055c304cb29df05c62ac57f",
+      "guard_sha256": "dbaaa35d3d940159cc437e2b5b5538074ca0b34416f026f773c89bc035d35875",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "5b6397c988abf8b3cf77187b5c1ef5741d5b3a535244eca0ff320b45b8b5ffbb",
+      "correctness_sha256": "d11ba541b101be4a2b7c40277cab3cc313f06f000bc64e8452f81fadeba19aff",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8QuantPerTensorFwdOp",
+      "case": "gpt-oss-20b-prefill-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "x": [
+          [
+            3000,
+            2880
+          ],
+          "bfloat16"
+        ],
+        "q": [
+          [
+            3000,
+            2880
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ]
+      },
+      "latency_us": 35.00673333333333,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 12,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 1,
+          "pattern_matcher_nodes": 1,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 6
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 55.05191445350647,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "8b77ed7ab6024dd7e63fc6fd88c7a0e892083bb30f2b2bc9068909ade415d53b",
+      "guard_sha256": "dbaaa35d3d940159cc437e2b5b5538074ca0b34416f026f773c89bc035d35875",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "3e78bc95e55dd30da1acba4c74efbf111156b1aad6e1b11fcc33f04140dd4417",
+      "correctness_sha256": "cc1cfdf6b07aa52e756ac8c7ab0571787a91d4f4b53f9dfba93a4a7d418f260b",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8QuantPerTensorFwdOp",
+      "case": "llama-8b-prefill-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "x": [
+          [
+            4096,
+            4096
+          ],
+          "bfloat16"
+        ],
+        "q": [
+          [
+            4096,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ]
+      },
+      "latency_us": 51.45933333333333,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 12,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 1,
+          "pattern_matcher_nodes": 1,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 6
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 54.78694176673889,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "7617757d109f8ef066c2d6ef7ea4ff61bdc6b652c3e166ace4da825856adb484",
+      "guard_sha256": "dd5f89327a72749a6749c62d09921ade04f137f956d314f9ba55c6620b63f9a4",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "df969cacbd4fbc55d8aa1f3ac06ccbf6db864a3914b8c813c8347b8d04b70579",
+      "correctness_sha256": "cb353073546ef49cd19810bceedf1d1c5d549736c1296d7f7d527cd80235a81a",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8QuantPerTensorFwdOp",
+      "case": "llama-8b-prefill-float16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "x": [
+          [
+            4096,
+            4096
+          ],
+          "float16"
+        ],
+        "q": [
+          [
+            4096,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ]
+      },
+      "latency_us": 51.67513333333333,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 12,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 1,
+          "pattern_matcher_nodes": 1,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 6
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 54.31922483444214,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "6a9c4c32e289d5e7197f635cbc143de352db47321ccfdaaa1bc8341307198ca5",
+      "guard_sha256": "dd5f89327a72749a6749c62d09921ade04f137f956d314f9ba55c6620b63f9a4",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "bfa9b83d1d0c62a6170de161481c707423124e975a57b45abc0ce7b4baa6b723",
+      "correctness_sha256": "1bb37ae8b6a5b4b9feb615f4c2c568cf9e6a941f6d0fc0a9040f26b0e7ee473e",
+      "attempt": "formal1"
+    },
+    {
+      "op": "INT8QuantPerTensorFwdOp",
+      "case": "qwen3-32b-prefill-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "x": [
+          [
+            8192,
+            5120
+          ],
+          "bfloat16"
+        ],
+        "q": [
+          [
+            8192,
+            5120
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1
+          ],
+          "float32"
+        ]
+      },
+      "latency_us": 177.93339999999998,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 12,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "pattern_matcher_count": 1,
+          "pattern_matcher_nodes": 1,
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 6
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 54.21442937850952,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "2a82f1740a6c134c34d00455730a405b485856ce98ea83216fcc05b043b2d618",
+      "guard_sha256": "7d03c5b8e1d6975f98bc1be66a92faf35d39bf0ca388fe70b5d9252e7479eafa",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "a4448ba88135b2678f0bf0f394ac13d4e370f4a2b991ad28f029914ca827756a",
+      "correctness_sha256": "792d16ce599a381c896b5fd16f9e10aad4599647a236a42866caaf234019f68b",
+      "attempt": "formal1"
+    },
+    {
+      "op": "SmoothQuantFwdOp",
+      "case": "ragged-k-decode-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "x": [
+          [
+            17,
+            4099
+          ],
+          "bfloat16"
+        ],
+        "smooth": [
+          [
+            4099
+          ],
+          "float32"
+        ],
+        "q": [
+          [
+            17,
+            4099
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            17
+          ],
+          "float32"
+        ]
+      },
+      "latency_us": 13.555,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 14,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 4
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 1.9933016300201416,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "3d31e806b3cfb82c2d1f2b29c7bd936e6dc07aea899030e729d0f30b3cadc96f",
+      "guard_sha256": "f3bf9aad4217e1d2d6725f1edbae6a0befab386ed93fdedc3c5b69e27885103d",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "cf2b23ed1094c749c50012b9b2d67795a10e88f3d943f838509f1e9663c4747a",
+      "correctness_sha256": "aeb4d2996a6aa4a58b99b0c1c495d7daf31fea07d20fbcdf87f77d9559616cc1",
+      "attempt": "formal1"
+    },
+    {
+      "op": "SmoothQuantFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "x": [
+          [
+            32,
+            4096
+          ],
+          "bfloat16"
+        ],
+        "smooth": [
+          [
+            4096
+          ],
+          "float32"
+        ],
+        "q": [
+          [
+            32,
+            4096
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            32
+          ],
+          "float32"
+        ]
+      },
+      "latency_us": 12.891399999999999,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 14,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 4
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 82.63773965835571,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "03be5cd27a47879e0de6e5c2086980fa1198ac8ff9dbd0e9c9d46531cf126bdc",
+      "guard_sha256": "f3bf9aad4217e1d2d6725f1edbae6a0befab386ed93fdedc3c5b69e27885103d",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "4b60a816c75fb79b4b22de18ab7507045ed5be5924067f08db5339de8ec8c6c5",
+      "correctness_sha256": "c30a8b60fd6942db80deddf3a659e98b9fd1e5fe5c62fd537878abd1617e80ef",
+      "attempt": "formal1"
+    },
+    {
+      "op": "SmoothQuantFwdOp",
+      "case": "ragged-k-float16",
+      "variant": "torch-compile-inductor-ascendc",
+      "parameters": {
+        "x": [
+          [
+            1000,
+            4099
+          ],
+          "float16"
+        ],
+        "smooth": [
+          [
+            4099
+          ],
+          "float32"
+        ],
+        "q": [
+          [
+            1000,
+            4099
+          ],
+          "int8"
+        ],
+        "scale": [
+          [
+            1000
+          ],
+          "float32"
+        ]
+      },
+      "latency_us": 27.669133333333335,
+      "measurement": "device kernel task time;15isolated flushed windows;3warmups;1GiBflush;32AIC64AIV",
+      "kernel_task_counts": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "aicpu_task_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "graph_counters": {
+        "stats": {
+          "calls_captured": 14,
+          "unique_graphs": 1
+        },
+        "aot_autograd": {
+          "total": 1,
+          "autograd_cache_bypass": 1,
+          "ok": 1
+        },
+        "inductor": {
+          "fxgraph_cache_bypass": 1,
+          "extern_calls": 4
+        },
+        "graph_break": {}
+      },
+      "cold_first_call_seconds": 84.22841715812683,
+      "runtime_versions": {
+        "torch": "2.13.0+cpu",
+        "torch_npu": "2.13.0.rc1",
+        "cube": 32,
+        "vector": 64,
+        "hostname": "897b29c557a5",
+        "backend": "inductor-ascendc"
+      },
+      "compiler_threads": "1",
+      "result_sha256": "cc5fb23e6c05bee0b2d8ca83d72bb9565d426e354ca552a5beca3af815932e1b",
+      "guard_sha256": "ef0b1ba90a9a020299e5f7de4aca4f97a02ebf61c747774e242f10647079e016",
+      "source_manifest_sha256": "8ad3158fd96352b6546bdb4b22e981aebdb1cd5b330ea129176c5a2bea825aa4",
+      "payload_sha256": "66699ec54fd69b10b1e54ae074e590b3e3e165e9c7a14ba43287df9ad89a2337",
+      "correctness_sha256": "5270c354d77aa418cacb110c36de0f84424bf62ab355e55e464100802aed6d65",
+      "attempt": "formal1"
+    }
+  ],
+  "high_speedup": [
+    {
+      "index": 0,
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "12817e633a9411c051118eb2ce352acf559a4ae58e426bcfaeb9ed99487dc2cb",
+      "us": 5.446000000000001,
+      "windows": 1,
+      "task_counts": [
+        1.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 9.105333333333334,
+      "guard_sha256": "a08fb1f5d2c7095eab2f4f354d9685b3d546f416a05c961f8bef2e2a5e116bb8"
+    },
+    {
+      "index": 1,
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "d0f0c6a2094f2a8fd047756ef741a678713c7d3f05e08faa8413be7a745e00d4",
+      "us": 5.933,
+      "windows": 1,
+      "task_counts": [
+        1.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 9.267133333333334,
+      "guard_sha256": "ddb66baa0f6d281f3355fc562552ef509094d254db831a96354456cb99f16ff5"
+    },
+    {
+      "index": 16,
+      "op": "MoEPrePermuteFwdOp",
+      "case": "decode-t32-bfloat16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "failed",
+      "result_sha256": "5e7204f7e9ef152549e2837bc6a927b2e450c7918b3bfb7f582d0590b7c9a75f",
+      "error": "RuntimeError: aten::_assert_scalar() Expected a value of type 'number' for argument 'self' but instead found type 'GreaterThan'.\nPosition: 0\nValue: u0 >= 4\nDeclaration: aten::_assert_scalar(Scalar self, str assert_msg) -> ()\nCast error details: Cannot cast u0 >= 4 to number\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n",
+      "phase": "correctness"
+    },
+    {
+      "index": 17,
+      "op": "LayerNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "188f0b8c44819865d4d220f956e892d49e806adf8aa3204e358b7b4aa5d810fd",
+      "us": 9.798,
+      "windows": 1,
+      "task_counts": [
+        5.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 9.316933333333333,
+      "guard_sha256": "d82a72488362c279b1cda8fff7cdf56c23a6deb5ee81e214168d26bade44ab1e"
+    },
+    {
+      "index": 18,
+      "op": "FusedAddRMSNormPerTokenQuantFwdOp",
+      "case": "llama-8b-decode-b1-bfloat16-float8_e4m3fn",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "8ef680f4ba202f9f438108d67c285d7b0cafca736df1ad85423e60613e5d3f2c",
+      "us": 14.363000000000001,
+      "windows": 1,
+      "task_counts": [
+        6.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 57.156600000000005,
+      "guard_sha256": "fd7d679d6116d438780bfc767b83d3c2bec7bcf584cb6d66c51d689c418e1649"
+    },
+    {
+      "index": 20,
+      "op": "AdaLayerNormZeroFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "attempt": "f1",
+      "status": "formal_raw_verified",
+      "result_sha256": "9d859f84efa37cd97c3d09e12414ef9a52208798b18444dce7f8c3aafb2914b9",
+      "us": 6.177066666666667,
+      "windows": 15,
+      "task_counts": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "aicpu_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_web_torch_us": 15.315666666666667,
+      "guard_sha256": "aff4707cb36eb7240417463f74d2ef038446a8dfe8113ec05fb1860595781410"
+    },
+    {
+      "index": 20,
+      "op": "AdaLayerNormZeroFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "attempt": "p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "df56de97c4498a4b7b5189679d845919d5679a005fc1046928decba3cc9e6366",
+      "us": 6.169,
+      "windows": 1,
+      "task_counts": [
+        3.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 15.315666666666667,
+      "guard_sha256": "4d9ecd3b458d1a22a6d5e945a47e1e2fd005b7634fdbc6d5b7cdaf4fd0af84a2"
+    },
+    {
+      "index": 23,
+      "op": "EngramGateConvFwdOp",
+      "case": "train-s32-float16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "failed",
+      "result_sha256": "384d6e5a9a466d6dd8f3645553109b71409f0c44415dd588ee3c6e9652654c8f",
+      "error": "Tensor-likes are not close!\n\nMismatched elements: 4 / 8192 (0.0%)\nGreatest absolute difference: 0.1463623046875 at index (0, 23, 243) (up to 0.1 allowed)\nGreatest relative difference: 0.59130859375 at index (0, 23, 156) (up to 0.1 allowed)",
+      "phase": "correctness"
+    },
+    {
+      "index": 230,
+      "op": "RMSNormFwdOp",
+      "case": "qwen3-8b-qk-norm-decode-bfloat16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "ac0b365c484e9d1ffc19d3f0f5eb25ef23b1bb0920a730f88d5c89093bd92c2d",
+      "us": 2.31,
+      "windows": 1,
+      "task_counts": [
+        1.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 20.19366666666667,
+      "guard_sha256": "12abc14a8c4fa4d3384a5105532192603b8a9ccf025e73b1637235fe3a68844f"
+    },
+    {
+      "index": 234,
+      "op": "GeluTanhAndMulFwdOp",
+      "case": "llama-8b-ffn-decode-bfloat16",
+      "variant": "compile",
+      "attempt": "p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "10825d7b6fd1c7b1d7bc2b988aeba7b352a6c81015e927f2c6900e2573375f7f",
+      "us": 7.407,
+      "windows": 1,
+      "task_counts": [
+        3.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 9.745733333333334,
+      "guard_sha256": "161896e139658dd977cbc6ca0c0ee0e4282e4ae483dcf83af26cbcef9d4b0dde"
+    },
+    {
+      "index": 237,
+      "op": "AllFwdOp",
+      "case": "mask-validation-4k-bool",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "f750405f9a92d1576381476e8a3f49d37dcae135af4b9a725e7e840131dd6aa1",
+      "us": 3.333,
+      "windows": 1,
+      "task_counts": [
+        1.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 3.3726,
+      "guard_sha256": "e932291543b6d1024c1414f759ea936c1c90856399114e80d39ae07743c562fe"
+    },
+    {
+      "index": 24,
+      "op": "GeluAndMulFwdOp",
+      "case": "llama-8b-ffn-decode-bfloat16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "677415dacb6db89bfd21db42c9ae5310a2c8aa3e3dc5f1e0666f9d6c40512de4",
+      "us": 8.028,
+      "windows": 1,
+      "task_counts": [
+        3.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 10.006066666666667,
+      "guard_sha256": "12abc14a8c4fa4d3384a5105532192603b8a9ccf025e73b1637235fe3a68844f"
+    },
+    {
+      "index": 249,
+      "op": "InstanceNormFwdOp",
+      "case": "tail-spatial-float16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "failed",
+      "result_sha256": "48920f56347cf5ac93912639c1575a10c4f967a414ea00eee4c3de9ff47bec09",
+      "error": "Missing named task coverage records",
+      "phase": "measurement"
+    },
+    {
+      "index": 25,
+      "op": "CausalConv1dUpdateFwdOp",
+      "case": "mamba2-2.7b-decode-b1-bfloat16",
+      "variant": "compile",
+      "attempt": "reset_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "e2dda504ff95bdde8baa700a7395bbad080d0b6c41f70febaae2528492106a37",
+      "us": 10.251,
+      "windows": 1,
+      "task_counts": [
+        4.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 31.021266666666666,
+      "guard_sha256": "8fb66106ff84eb5833335e35608acdef39f5678930a30555104c3f9c80114e68"
+    },
+    {
+      "index": 257,
+      "op": "GroupNormFwdOp",
+      "case": "tail-spatial-float16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "5ae9b062f3c3166ee32f47be959c18ba41ac7235f4b6f8fa612f1ddea9a2994d",
+      "us": 13.267,
+      "windows": 1,
+      "task_counts": [
+        3.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 13.584466666666668,
+      "guard_sha256": "21c9370504f602123c900a6f310e3fc3b0ae3982f2ba27e279c97bb0ded329bd"
+    },
+    {
+      "index": 259,
+      "op": "SSDChunkCumsumFwdOp",
+      "case": "mamba2-780m-float16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "ef33e79e3e60393a91a2e91e51c69ab18a25714a33d5aea3e771cf2c7903b70b",
+      "us": 38.266,
+      "windows": 1,
+      "task_counts": [
+        7.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 41.9672,
+      "guard_sha256": "2cfa8133dd5255d43eb90b2d13c45cfd310dfba848141f0510dec6be56d9a3e7"
+    },
+    {
+      "index": 26,
+      "op": "AnyFwdOp",
+      "case": "mask-validation-4k-bool",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "304f5177a9f437ce4ce26fd3d0ad9c31a65fc6c63711a53a35d2af26748bc61a",
+      "us": 3.347,
+      "windows": 1,
+      "task_counts": [
+        1.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 3.4329333333333336,
+      "guard_sha256": "e1186369a75cd1a19a2152535c2e8236fa91b9cd5e2ddfff5dab9f70042f0771"
+    },
+    {
+      "index": 27,
+      "op": "AdaptiveMaxPool2dFwdOp",
+      "case": "global-1x1-unbatched-float16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "3ceca678b6d5111cf33c8a40df20e2f4dfabb0564e728afd259cbf130c8ca5c9",
+      "us": 8.347,
+      "windows": 1,
+      "task_counts": [
+        2.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 6.354933333333333,
+      "guard_sha256": "d6ce3273afa99c0d9bbdabd2f11da395d093d116b8da387c064eba84753cc59f"
+    },
+    {
+      "index": 28,
+      "op": "AdaptiveMaxPool2dIndicesFwdOp",
+      "case": "global-1x1-unbatched-float16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "842943f1ceef2ec3c6c4b94ab6beee92d5e3cf95f9e9dc626659e1735bfc8a43",
+      "us": 6.829,
+      "windows": 1,
+      "task_counts": [
+        2.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 6.436066666666667,
+      "guard_sha256": "b96e47fa272a0418a6927b46620507eb2ad47a424281619e2019d20e73f76e01"
+    },
+    {
+      "index": 31,
+      "op": "RoPEFwdOp",
+      "case": "interleaved-1d-2k-float16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "failed",
+      "result_sha256": "5317fb3a2f286e1f8192fee78dbff8ceb80aa204d55ebf1a276765e4e4d93202",
+      "error": "Tensor-likes are not close!\n\nMismatched elements: 1 / 131072 (0.0%)\nGreatest absolute difference: 0.001190185546875 at index (2044, 12) (up to 0.001 allowed)\nGreatest relative difference: 0.0301361083984375 at index (2044, 12) (up to 0.001 allowed)",
+      "phase": "correctness"
+    },
+    {
+      "index": 33,
+      "op": "RoPENeoxPositionIdsFwdOp",
+      "case": "qwen3-8b-decode-b32-bfloat16-int32",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "1855e45b60f7db5f562cbd46095eba9db2642a263e1843168a9cc30d235e87db",
+      "us": 64.23300000000002,
+      "windows": 1,
+      "task_counts": [
+        9.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 53.959199999999996,
+      "guard_sha256": "3789a613498653c8e2918c187f4c112d1cd0e6e3ceac73712d674423b81bddf0"
+    },
+    {
+      "index": 34,
+      "op": "EngramDecodeFwdOp",
+      "case": "serving-b1-float16",
+      "variant": "compile",
+      "attempt": "contract_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "f06061f4ee14c6b2b55d07148039837d27d536e51ce7285966d2d54d3cdf2772",
+      "us": 16.816000000000003,
+      "windows": 1,
+      "task_counts": [
+        7.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 96.99053333333333,
+      "guard_sha256": "6f8c78775f4d2e1031922385fb0411d1151af0acf15bf09aa830026761b6b657"
+    },
+    {
+      "index": 36,
+      "op": "SSDStatePassingFwdOp",
+      "case": "mamba2-1p3b-bfloat16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "434901ddfe870f4c3c7a0577c4c1441207c41f66a91d03aeeac5b48edb8994bf",
+      "us": 10.454,
+      "windows": 1,
+      "task_counts": [
+        3.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 137.9664666666667,
+      "guard_sha256": "69f697a223f6af77bdbe8daf7a769f22789514eeb529115a31b1585716628af2"
+    },
+    {
+      "index": 41,
+      "op": "SoftmaxFwdOp",
+      "case": "qwen3-8b-lm-head-b1-float32",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "5342e59a3d51fa6d7c476e6edbf32cdcd3333d9896284ed4ddab259d2543107c",
+      "us": 17.625,
+      "windows": 1,
+      "task_counts": [
+        1.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 17.763733333333334,
+      "guard_sha256": "7245c1a4d376eea0d7e5aeb7f707616bf93747e4b6c88ae12125d5da97e98b23"
+    },
+    {
+      "index": 448,
+      "op": "CumsumFwdOp",
+      "case": "hidden-state-f32-bfloat16-float32",
+      "variant": "compile",
+      "attempt": "v010_f1",
+      "status": "formal_raw_verified",
+      "result_sha256": "aa24a4a9ca60d91bdd7f599e91cc2661be28d7173acc7376c882ab08b3de3ce5",
+      "us": 603.7342666666667,
+      "windows": 15,
+      "task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_web_torch_us": 605.1853333333333,
+      "guard_sha256": "c76231fbbd90426f9ad1892472bd64bf937cb46a1024288aaabeaa1a8a9ae3b2"
+    },
+    {
+      "index": 448,
+      "op": "CumsumFwdOp",
+      "case": "hidden-state-f32-bfloat16-float32",
+      "variant": "compile",
+      "attempt": "v010_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "cd77fcacf06718e90958038d244affefa364b68f89bd7a1b529ed4016056a818",
+      "us": 604.09,
+      "windows": 1,
+      "task_counts": [
+        2.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 605.1853333333333,
+      "guard_sha256": "5f29568886452ecae480a5ea4bb76432a4d19a95fc9c4de99d1bc3ba30c452a8"
+    },
+    {
+      "index": 449,
+      "op": "CumprodFwdOp",
+      "case": "hidden-state-f32-bfloat16-float32",
+      "variant": "compile",
+      "attempt": "v010_f1",
+      "status": "formal_raw_verified",
+      "result_sha256": "561a940329f7f1c01c570c35d6ab7ec1a3ba3ded5578330712d41557b23b5c15",
+      "us": 102425.14047723128,
+      "windows": 15,
+      "task_counts": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "aicpu_counts": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "old_web_torch_us": 102528.69699689516,
+      "guard_sha256": "186d14ca286078a49757f3c92dde99fac96baaa3a4d64461b345c148015e477c"
+    },
+    {
+      "index": 449,
+      "op": "CumprodFwdOp",
+      "case": "hidden-state-f32-bfloat16-float32",
+      "variant": "compile",
+      "attempt": "v010_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "b3939294bc78f66f3f59880d343e4fa2523dbed355c6c0333fc3104b896c415b",
+      "us": 102400.35453205634,
+      "windows": 1,
+      "task_counts": [
+        2.0
+      ],
+      "aicpu_counts": [
+        1.0
+      ],
+      "old_web_torch_us": 102528.69699689516,
+      "guard_sha256": "5f29568886452ecae480a5ea4bb76432a4d19a95fc9c4de99d1bc3ba30c452a8"
+    },
+    {
+      "index": 45,
+      "op": "LogSoftmaxFwdOp",
+      "case": "lm-head-bfloat16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "f484d6affedac00037fe4ebccf74df64efd9467335f08ae4a485df90902ff43c",
+      "us": 21.432,
+      "windows": 1,
+      "task_counts": [
+        3.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 24.212533333333333,
+      "guard_sha256": "2a482a4b3bd47aa538cca67905d13b5652bf1888cf0956014a7343c482ac9c76"
+    },
+    {
+      "index": 450,
+      "op": "GELUAndMulFwdOp",
+      "case": "llama-8b-prefill-tanh-float16",
+      "variant": "compile",
+      "attempt": "v010_f1",
+      "status": "formal_raw_verified",
+      "result_sha256": "6c21d431177011dfcd74d683d20f45cda8a3662b6d45443faaeacb9565f559ca",
+      "us": 352.5994666666667,
+      "windows": 15,
+      "task_counts": [
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0
+      ],
+      "aicpu_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_web_torch_us": 500.0207333333333,
+      "guard_sha256": "e0e7cad095d95239b10c24c3848c87b9ec3b79ffed6fb72b965a3e6de04e0814"
+    },
+    {
+      "index": 451,
+      "op": "GELUAndMulFwdOp",
+      "case": "llama-8b-prefill-tanh-bfloat16",
+      "variant": "compile",
+      "attempt": "v010_f1",
+      "status": "formal_raw_verified",
+      "result_sha256": "4d6313347f47d09cf0d0a5bc0eec2cfd111d397d2a4db22ca7d73e5746d4b319",
+      "us": 352.2504666666666,
+      "windows": 15,
+      "task_counts": [
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0
+      ],
+      "aicpu_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_web_torch_us": 500.05886666666663,
+      "guard_sha256": "b15121331edf5070248ec023c1b94865b168ea71c26fe613ccf886a0685fe1b8"
+    },
+    {
+      "index": 452,
+      "op": "GELUAndMulFwdOp",
+      "case": "llama-8b-decode-tanh-bfloat16",
+      "variant": "compile",
+      "attempt": "v010_f1",
+      "status": "formal_raw_verified",
+      "result_sha256": "3d70eaa829d77cc46315eb382db2d1b39e673184b01c8791212bbac05714c7b5",
+      "us": 5.891666666666667,
+      "windows": 15,
+      "task_counts": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "aicpu_counts": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_web_torch_us": 8.394333333333334,
+      "guard_sha256": "5ca4cef6da5923cae01f3249d06676689f23eaf1e313ed7bc487a8d0e721bd40"
+    },
+    {
+      "index": 452,
+      "op": "GELUAndMulFwdOp",
+      "case": "llama-8b-decode-tanh-bfloat16",
+      "variant": "compile",
+      "attempt": "v010_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "59e7c781b33afdaf046e4ac4efaf30fc764d7d5d6c04392c29398fbbaa60bab1",
+      "us": 6.637,
+      "windows": 1,
+      "task_counts": [
+        3.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 8.394333333333334,
+      "guard_sha256": "5f29568886452ecae480a5ea4bb76432a4d19a95fc9c4de99d1bc3ba30c452a8"
+    },
+    {
+      "index": 58,
+      "op": "SSDChunkCouplingFwdOp",
+      "case": "mamba2-780m-float16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "02e9a54672ccefc5b5f5bcb09db359ec7593fc874f0a7d687f1d686204ad13a1",
+      "us": 36.162,
+      "windows": 1,
+      "task_counts": [
+        8.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 40.57933333333334,
+      "guard_sha256": "23e3c332baef496345f4a33bae79ed6f3f893fa1b39401e958bdf3fc175c6bfc"
+    },
+    {
+      "index": 61,
+      "op": "RoPELlama31FwdOp",
+      "case": "1d-8k-bfloat16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "failed",
+      "result_sha256": "fc85e0819d78932cfcbe4d9d0bd34b2efbf8b82ac42dc556b95ecfa992774f81",
+      "error": "py\", line 361, in ref_program\n    cos, sin = tables(x.shape[-1], seq_len, dtype=x.dtype, device=x.device, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/torch-all2208-20261105/source/workloads/rope.py\", line 101, in llama31_frequency_tables\n    if wavelen < high_freq_wavelen:\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nFor C++ stack trace, run with TORCHDYNAMO_EXTENDED_DEBUG_CPP=1\nFor more information about this error, see: https://pytorch.org/docs/main/generated/exportdb/index.html#constrain-as-size-example\n\nfrom user code:\n   File \"/opt/torch-all2208-20261105/source/workloads/rope.py\", line 361, in ref_program\n    cos, sin = tables(x.shape[-1], seq_len, dtype=x.dtype, device=x.device, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/torch-all2208-20261105/source/workloads/rope.py\", line 101, in llama31_frequency_tables\n    if wavelen < high_freq_wavelen:\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n",
+      "phase": "correctness"
+    },
+    {
+      "index": 62,
+      "op": "LongRoPEFwdOp",
+      "case": "1d-8k-bfloat16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "a2b06b6b7cfae587aa5dec0209bf4be8068185ab7b6665f070a13b0784f53cc0",
+      "us": 33.743,
+      "windows": 1,
+      "task_counts": [
+        7.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 56.56973333333333,
+      "guard_sha256": "3c59550d8879f6085219240a63e6a24bfe72962220818fb16fe9c897de086cd2"
+    },
+    {
+      "index": 64,
+      "op": "SumFwdOp",
+      "case": "long-seq-bfloat16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "8bf5afbabbd8311019dad5014e72c35d2cfd0edb51e4de9adccc52a4d9ac238a",
+      "us": 7.731,
+      "windows": 1,
+      "task_counts": [
+        2.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 15.1442,
+      "guard_sha256": "02e12156064ccf97a0178469437f2f77c6ca9f315a5345965b657cd3920846b6"
+    },
+    {
+      "index": 65,
+      "op": "ProdFwdOp",
+      "case": "long-seq-bfloat16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "502fb6f4ebdb5f0b1903a4fde093788550a321a41fb73e29a925efed880faa1f",
+      "us": 13.08,
+      "windows": 1,
+      "task_counts": [
+        3.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 14.664333333333335,
+      "guard_sha256": "eef275a501c837b43347c8de093f41baec5de4962780626d93a6c83ea01dfad8"
+    },
+    {
+      "index": 66,
+      "op": "VectorNormFwdOp",
+      "case": "l2-long-seq-bfloat16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "a410eccba912f1c280f7ce376d6bbebce3665cea8e08c38bb62fa67047ae8427",
+      "us": 13.565000000000001,
+      "windows": 1,
+      "task_counts": [
+        3.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 15.615200000000002,
+      "guard_sha256": "589f70aea6ef05bdc58e6e8f319625d8c1646bbc8e529d7447744fec6a7846ee"
+    },
+    {
+      "index": 74,
+      "op": "MaxPool1dFwdOp",
+      "case": "textcnn-global-float16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "a1d40d724c69cbad8255404a1d7119f4031fc76f2518bba3d93fea58194b0420",
+      "us": 57.425,
+      "windows": 1,
+      "task_counts": [
+        1.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 56.89926666666667,
+      "guard_sha256": "4577552182a4645a764e846db13925c17b4412989eaddb5c1caaef0a967bcd48"
+    },
+    {
+      "index": 85,
+      "op": "LogicalAndFwdOp",
+      "case": "linear-bias-bool",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "failed",
+      "result_sha256": "65b8f644f2735f061ba46156ed31141f16e7c602947cf025b51ed31f91e88674",
+      "error": "edGraph('autofused_logical_and_ad7341bdd1df766278f55048f254c1fc')\ngraph = ascir.ops.AscBackend('graph', graph_hint, autofused_logical_and_ad7341bdd1df766278f55048f254c1fc)\ninput0 = ascir.ops.Data('input0', autofused_logical_and_ad7341bdd1df766278f55048f254c1fc)\ninput0.attr.ir_attr.index = 0\ninput1 = ascir.ops.Data('input1', autofused_logical_and_ad7341bdd1df766278f55048f254c1fc)\ninput1.attr.ir_attr.index = 1\noutput0 = graph.y[0]\ngraph.x = [input0, input1]\ngraph_output0 = ascir.ops.Output('output0', autofused_logical_and_ad7341bdd1df766278f55048f254c1fc)\ngraph_output0.attr.ir_attr.index = 0\ngraph_output0.x = [output0]\n\nfuser = Autofuser(AutofuserOptions(graph_type=1))\nscheduled_autofused_logical_and_ad7341bdd1df766278f55048f254c1fc = fuser.schedule(autofused_logical_and_ad7341bdd1df766278f55048f254c1fc)\ntiling_def, host_impl, device_impl = fuser.codegen(scheduled_autofused_logical_and_ad7341bdd1df766278f55048f254c1fc)\n Check dtype failed for graph_hint/data Data; input_dtypes: [], output_dytpes: [DT_BOOL]\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n",
+      "phase": "correctness"
+    },
+    {
+      "index": 87,
+      "op": "FusedQKNormRoPEFwdOp",
+      "case": "qwen3-8b-t64-bfloat16-bfloat16",
+      "variant": "compile",
+      "attempt": "contract_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "dee99cb8e48803f1eecc455d9bfa14cb9837a2d4ea28f1ee1b36a05d00839b25",
+      "us": 42.016999999999996,
+      "windows": 1,
+      "task_counts": [
+        12.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 125.83953333333334,
+      "guard_sha256": "6f8c78775f4d2e1031922385fb0411d1151af0acf15bf09aa830026761b6b657"
+    },
+    {
+      "index": 91,
+      "op": "MaxPool2dFwdOp",
+      "case": "alexnet-ceil-float16",
+      "variant": "compile",
+      "attempt": "spawn4_p1",
+      "status": "pilot_raw_verified",
+      "result_sha256": "2e77facaba827c423abd5efddec43c2b2beb8f34868759859ab9ac037b66f382",
+      "us": 65.914,
+      "windows": 1,
+      "task_counts": [
+        1.0
+      ],
+      "aicpu_counts": [
+        0.0
+      ],
+      "old_web_torch_us": 65.53540000000001,
+      "guard_sha256": "cd47d3f8d21153dc62287ea68b6b4b5fd652c795dc2d32f2be261089e6540953"
+    },
+    {
+      "index": 93,
+      "op": "DropoutFwdOp",
+      "case": "hidden-4k-float16",
+      "variant": "compile",
+      "attempt": "contract_p1",
+      "status": "failed",
+      "result_sha256": "d1291ae3ecda9cabfaf94d37b55115cdef1eb53fb66de4fe638bebd1082ec04c",
+      "error": "b67de--------------------\nautofused_native_dropout_84ce75d2d1ea0d7cabf36b65a3ab67de = ascir.FusedGraph('autofused_native_dropout_84ce75d2d1ea0d7cabf36b65a3ab67de')\ngraph = ascir.ops.AscBackend('graph', graph_hint, autofused_native_dropout_84ce75d2d1ea0d7cabf36b65a3ab67de)\ninput0 = ascir.ops.Data('input0', autofused_native_dropout_84ce75d2d1ea0d7cabf36b65a3ab67de)\ninput0.attr.ir_attr.index = 0\noutput0 = graph.y[0]\ngraph.x = [input0]\ngraph_output0 = ascir.ops.Output('output0', autofused_native_dropout_84ce75d2d1ea0d7cabf36b65a3ab67de)\ngraph_output0.attr.ir_attr.index = 0\ngraph_output0.x = [output0]\n\nfuser = Autofuser(AutofuserOptions(graph_type=1))\nscheduled_autofused_native_dropout_84ce75d2d1ea0d7cabf36b65a3ab67de = fuser.schedule(autofused_native_dropout_84ce75d2d1ea0d7cabf36b65a3ab67de)\ntiling_def, host_impl, device_impl = fuser.codegen(scheduled_autofused_native_dropout_84ce75d2d1ea0d7cabf36b65a3ab67de)\n Check dtype failed for graph_hint/output Output; input_dtypes: [DT_UINT8], output_dytpes: [DT_BOOL]\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n",
+      "phase": "correctness"
+    }
+  ]
+}

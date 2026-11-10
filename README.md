@@ -19,6 +19,8 @@ not a claim that every included adapter has passed the current contract.
 
 ## Quant/dequant correction (2026-11-10)
 
+See [baseline adjustment methods (中文)](docs/BASELINE_ADJUSTMENT_METHODS.zh.md) for the applied techniques, validated examples, and limits.
+
 The dedicated server2 campaign covers all 71 fixed workloads with same-campaign eager controls. It adds 89 verified non-control variants, including explicitly separated Torch-expression compilation and compiled native antiquant wrappers. Exact cases, callable factories, source pins, and limitations are in [the campaign directory](reports/quant-baseline-fix-server2-20261110/USAGE.json) and [report](reports/quant-baseline-fix-server2-20261110/REPORT.json). Failed and unmeasured candidates remain separate in the catalog. These are device measurements; no raw data or website update is included. The general baseline retest remains paused.
 
 ## Status snapshot
@@ -70,3 +72,7 @@ Upstream licenses remain applicable; TileOPs' license is retained under
 `TileOPs/LICENSE`, and dependency licenses are available in their pinned source
 repositories. This collection does not relicense third-party code. Historical
 source snapshots retain existing notices. See [dependency provenance](dependencies.lock.json).
+
+## External torch.compile commission
+
+- [Ascend 950 torch.compile 补测任务书（无 Docker、环境分层、分批交付）](commissions/torch-compile-20261110/README.zh.md)

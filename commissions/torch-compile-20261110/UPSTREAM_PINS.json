@@ -1,0 +1,7 @@
+{
+  "baseline_parent_commit": "e3bcdb007241189119fd549c8b0c3406bbb45395",
+  "tileops_context_commit": "2362d1e9d7f48407867bd2463b0bbfee3ab2c023",
+  "canonical_case_catalog": "reports/torch-v010-20261106/CURRENT_CASES.json",
+  "canonical_source_snapshot": "reports/torch-v010-20261106/source",
+  "rule": "Snapshot file SHA and exact case contract override moving branch state. TileOPs current compiler profile is not baseline profile."
+}

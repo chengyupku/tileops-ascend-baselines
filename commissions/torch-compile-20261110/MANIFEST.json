@@ -1,0 +1,32 @@
+[
+  {
+    "path": "commissions/torch-compile-20261110/CASE_INVENTORY.json",
+    "sha256": "800df4fb609ac15ec2ad37742fbde9f7aeb9442260552a27940e5fb3d4b5a20f",
+    "bytes": 4148402
+  },
+  {
+    "path": "commissions/torch-compile-20261110/PRIOR_COMPILE_RESULTS.json",
+    "sha256": "429b9064a4c256d0c5882d6c6df75f37d888e4282f2d3acb02921fe0b97ee908",
+    "bytes": 136621
+  },
+  {
+    "path": "commissions/torch-compile-20261110/README.zh.md",
+    "sha256": "f860fefccdd031a57f6befcd4aa4969a4b0d72ccd382e153b936fe7c710e53d2",
+    "bytes": 15381
+  },
+  {
+    "path": "commissions/torch-compile-20261110/UPSTREAM_PINS.json",
+    "sha256": "8a81a36c1af9bc60b2f9325130e8bfc65191084c72a61588061464df88dff1bc",
+    "bytes": 437
+  },
+  {
+    "path": "commissions/torch-compile-20261110/cpu_preflight.py",
+    "sha256": "527cffe124536f2aaa61637068e66d6567552e6d8052d9153973b965a1a70ddb",
+    "bytes": 2987
+  },
+  {
+    "path": "commissions/torch-compile-20261110/flush_source/host_kernel.asc",
+    "sha256": "342a46d0fcd4d7bac2493939fe7b58ea592044890d8d8dcb2720a9267ba14d94",
+    "bytes": 1614
+  }
+]
