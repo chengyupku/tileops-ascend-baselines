@@ -167,7 +167,7 @@
   },
   "alarm": "off per latest user instruction",
   "old_general_campaign": "paused",
-  "measured_compiler_correctness_failures": [
+  "compiler_attempts_failed_during_correctness_stage": [
     {
       "index": 12,
       "op": "INT4QuantPerGroupFwdOp",
@@ -256,5 +256,6 @@
       "attempt": "formal1",
       "error": "quantized codes differ"
     }
-  ]
+  ],
+  "compiler_failure_stage_note": "Correctness stage includes first-call environment/compilation errors and numerical checker failures; listed attempts are not all numerical mismatches."
 }
