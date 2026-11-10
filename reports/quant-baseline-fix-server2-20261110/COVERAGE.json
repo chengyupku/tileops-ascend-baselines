@@ -1,0 +1,3100 @@
+[
+  {
+    "index": 0,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-4k-float32",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "f88880581a05e63fd630ee29cf3396a5df3197f3bfaeb03718bda9bfb08a1177"
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-4k-float32",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "bp3",
+        "status": "pilot_raw_verified",
+        "result_sha256": "89ed289c59c95e527929ee41cbd14f8fe106759bb7bf879956466c1c92a276b6"
+      },
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "fc9e7ab65df0ecd8c6fdc488d39db0a989cf542c83cec40ac5a3d39ac2a41dcb"
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-4k-float32",
+    "variant": "tilelang",
+    "status": "measured_attempt_failed_not_registered",
+    "reason": [
+      {
+        "attempt": "bp5",
+        "phase": "initialize",
+        "error": "Installed tilelang differs from selected source: /opt/tileops-all-pairs/workspace/reports/baseline-retest32-20261030/server2/original_tilelang_build_v42/tilelang/tilelang/autodd.py"
+      },
+      {
+        "attempt": "envrepair2",
+        "phase": "initialize",
+        "error": "module 'tilelang' has no attribute 'set_cache_dir'"
+      },
+      {
+        "attempt": "envrepair3",
+        "phase": "initialize",
+        "error": "\n}\n\nextern \"C\" __global__ __vector__ void per_token_cast_kernel(__gm__ fp8_e4_t* q_groups, __gm__ float* scales, __gm__ float* x_groups) {\n  asc_init();\n  __ubuf__ uint8_t *buf_dyn_shmem = (__ubuf__ uint8_t *)0;\n  asc_copy_gm2ub_align((__ubuf__ uint8_t*)((&(((__ubuf__ float*)buf_dyn_shmem)[0]))), (__gm__ uint8_t*)((&(x_groups[(((int32_t)block_idx) * 8192)]))), 1, 32768, 0, 0, 0, static_cast<asc_load_l2_cache_mode>(0), 32768, 32768);\n  asc_sync_notify(PIPE_MTE2, PIPE_V, static_cast<event_t>(0));\n  asc_sync_wait(PIPE_MTE2, PIPE_V, static_cast<event_t>(0));\n  asc_vf_call<per_token_cast_kernel_simt_vf_0>(cce::dim3(1024), buf_dyn_shmem);\n  asc_sync_notify(PIPE_V, PIPE_MTE3, static_cast<event_t>(0));\n  asc_sync_wait(PIPE_V, PIPE_MTE3, static_cast<event_t>(0));\n  asc_copy_ub2gm_align((__gm__ uint8_t*)((&(scales[(((int32_t)block_idx) * 64)]))), (__ubuf__ uint8_t*)((&(((__ubuf__ float*)buf_dyn_shmem)[20480]))), 1, 256, static_cast<asc_store_l2_cache_mode>(4), 256, 256);\n  asc_copy_ub2gm_align((__gm__ uint8_t*)((&(q_groups[(((int32_t)block_idx) * 8192)]))), (__ubuf__ uint8_t*)((&(((__ubuf__ fp8_e4_t*)buf_dyn_shmem)[65536]))), 1, 8192, static_cast<asc_store_l2_cache_mode>(4), 8192, 8192);\n}\n\n"
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": "bp5",
+        "status": "failed",
+        "result_sha256": "059442cf633c1beb59b433f8e538a5fe67be5be4377affe73279662c3de14940"
+      },
+      {
+        "attempt": "envrepair2",
+        "status": "failed",
+        "result_sha256": "bf14a300a7614b56f20cde35a90d87ca0cde9290a9cd5399ce651a118012600c"
+      },
+      {
+        "attempt": "envrepair3",
+        "status": "failed",
+        "result_sha256": "5a8f211d527e61699b7461211454a060e4bac1827357206b13f5bf0131a2bdd8"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-context-chunk-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "2f61fef34befa4e155cd56dbe665578557329f7feacb6c4b7595e8d8acd35c3e"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-context-chunk-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "11f062c26832d7a306e8f4b9f5a220122be891bfb8cf4678420cf78e669c217d"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-context-chunk-bfloat16",
+    "variant": "tilelang",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 2,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-context-chunk-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "f0b8287b438aacfe9a32a73f0f587d32407c18c365f31006dcc34996e118f5c6"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-context-chunk-float16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "08fa431c29bfb7e58b4ae5b73d85c4550f74acd38ec904fce05b958513d9add1"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-context-chunk-float16",
+    "variant": "tilelang",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 3,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-8k-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "b8e00378e8e3582e5ae742e9783d6e16c97a76dc431f63a66fd5b1f5683d55f9"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-8k-float16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "409d03ab7698797cc00125428dbf30624c2f24ffb8fbdde337909a891ea314da"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-8k-float16",
+    "variant": "tilelang",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 4,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-8k-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "d284e3e8b49ecebb97d6d6ba84755a4a3e69d669a25c575c73c38e12a9f0265b"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-8k-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "a1744ea6635c1b0814f386b5d954b4c2a19a6f857f85abbbe2d8d814bf9de91d"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-8k-bfloat16",
+    "variant": "tilelang",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 5,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "e73c0538dad9828e4523960cf0a4d9cee24fed6d807e822d003a173e60450eda"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "bp1",
+        "status": "pilot_raw_verified",
+        "result_sha256": "85a5d6069070cd02b72d372a81788f2b81c996ffffa0381e64ac8f8352b710a7"
+      },
+      {
+        "attempt": "edge1",
+        "status": "edge_verified",
+        "result_sha256": "17389beb423b0fec16ad87f542b580f22e3d85065ae45cb5c98f9fe037c7386a"
+      },
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "855c52ac4e182b98a8eed3f6612b5922a5a00224a099d9d701ff4640de6df62b"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "compile",
+    "status": "measured_attempt_failed_not_registered",
+    "reason": [
+      {
+        "attempt": "bp2",
+        "phase": "correctness",
+        "error": "quantization bits differ"
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": "bp2",
+        "status": "failed",
+        "result_sha256": "2b9a7aedea92006ad5e92bff33adab7ce71989cc2cb43f1d7f4e175411f321f3"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "gpt-oss-expert-down-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "fef912151f820d7a6787622d2ced4943d6835cf58df29e64c0ee0a0bd46b170b"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "gpt-oss-expert-down-bfloat16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "e2db99a0d60d614bbd90c7c05c589de6dc73906c4b0d72c176f8ca4c7813f197"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "gpt-oss-expert-down-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 7,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ds-v3-expert-gate-up-float32",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "b567600eebe6b3bdc90a6366cc4b6adf8d90e5e26a82a0d88a750cc19038ed12"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ds-v3-expert-gate-up-float32",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "29760b6e857dd172d142970d8a1a03215d69ad03f9de93129e245bb8ad392afa"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ds-v3-expert-gate-up-float32",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 8,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ds-v3-expert-gate-up-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "13606e6fe8be4fa8e3aa5e8d9af4106870bf9af39db678a07fa7ec96426f50ab"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ds-v3-expert-gate-up-bfloat16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "e9bfd040f157b4caa47d81e299d0a123f40cb2fdc54d9c9de6c63d03602f2e41"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ds-v3-expert-gate-up-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 9,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "qwen3-235b-qkv-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "3c4cb062163f35ad566baebf4997def70281d5b7ed4610374a64c9b0875da47c"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "qwen3-235b-qkv-bfloat16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "0fb9c3497b4f1c7614867e65eba853cef00ef3e1633037740fce2fcbb0ea0ba1"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "qwen3-235b-qkv-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 10,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "qwen3-235b-qkv-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "6635e283410efbb9e3b865177fdabdd16138ac109202efa386b27a460af7ff19"
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "qwen3-235b-qkv-float16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "138fde56d93f715552871eb86e2336901919c516a420a0c11f4e524c40aa551a"
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "qwen3-235b-qkv-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 11,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ds-v3-mlp-down-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "7bb5a6da0a468955ccfe100d47d1a6273437cf353c6bdac2a77806e2fb35a852"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ds-v3-mlp-down-bfloat16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "3949558adfaeb402f2c6812bf43496f206212cd565460c59e0fd4784a35aa081"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ds-v3-mlp-down-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 12,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "llama-8b-q-proj-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "d3c4c8b0640241a8bd9d51cd31b3c4eef6b6cd340cf4e795fec5a93147e426c1"
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "llama-8b-q-proj-float16",
+    "variant": "compile",
+    "status": "measured_attempt_failed_not_registered",
+    "reason": [
+      {
+        "attempt": "bp3",
+        "phase": "correctness",
+        "error": "packed INT4 codes differ"
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": "bp3",
+        "status": "failed",
+        "result_sha256": "f918c0562eeb3b0e4369a54655233ead2cfda3256c582311e363d071ed1ca5b3"
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "qwen3-32b-o-proj-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "2b607fa5ba6159961505f78bc756ce133e4a1265a1c5c44088bda80c1f679ae8"
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "qwen3-32b-o-proj-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 14,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "llama-8b-mlp-up-chan-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "f90874d87c965d9e439d2287767d72ff7228c6cf64a4a403e4220891e66f91d1"
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "llama-8b-mlp-up-chan-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 15,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "llama-8b-mlp-up-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "3181529dd497d0a1ccddad0f52c4f645fc2a2d43afabbbfad115a69ecdc0baab"
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "llama-8b-mlp-up-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 16,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "qwen2-7b-mlp-up-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "a359a25d40521ff5d680b92abbf1d73d6d6835d21ae3cb526e510acfc3bed7fc"
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "qwen2-7b-mlp-up-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 17,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "qwen2-7b-mlp-down-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "8a8217c1a70efb17b12d0ff075bc6cc5785ab058055edeb5696845339a500fdc"
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "qwen2-7b-mlp-down-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 18,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "opt-13b-mlp-up-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "68dc0e9a02109276bf9b44d98f75d15e7e529e6ddddcbfbbbf9c7fae55658b0b"
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "opt-13b-mlp-up-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 19,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "llama-70b-mlp-down-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "8e2c3ec7b6766b6de0b2dee1049addbad046d17f3ae1f1b28b475ed60fd5f3dd"
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "llama-70b-mlp-down-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "audit_failed",
+        "result_sha256": "62ce52c919d0b45b3d1b221355fccc29bac05457f1a17c66c964a3f5ebf0f182"
+      },
+      {
+        "attempt": "formal2_guardretry",
+        "status": "formal_raw_verified",
+        "result_sha256": "b942b5e5a81b92f46e25045f08ecaa90e0f837f12683761199a0a9454a75baec"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "edge1",
+        "status": "edge_verified",
+        "result_sha256": "f214a6a0c7951c66c8bd3901146f16765f4475e217eeff348709a180a8c14ca1"
+      },
+      {
+        "attempt": "formal1",
+        "status": "audit_failed",
+        "result_sha256": "7e2cfdd07a39e32c373741ae36ea2e63d00db1095bfc75a98b9a36fbbb3d7fa5"
+      },
+      {
+        "attempt": "formal2_guardretry",
+        "status": "formal_raw_verified",
+        "result_sha256": "9f7aeb7e1b46b489c874f887f9fbce3b70271f51ac91470ea025d8721f2e9cfc"
+      },
+      {
+        "attempt": "p1",
+        "status": "pilot_raw_verified",
+        "result_sha256": "17817199f9d5791351c7b8e119030008c36de50675045a7586b548a5ad103d12"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "bp1",
+        "status": "pilot_raw_verified",
+        "result_sha256": "f62551c2cd7dccc4c6059b9020136ce6c57454d7854082b2439ca2d3bf678761"
+      },
+      {
+        "attempt": "edge1",
+        "status": "edge_verified",
+        "result_sha256": "8802307fadc4322f00ff0d6015a0bc8d671429806617b2e9f44682258c6722e3"
+      },
+      {
+        "attempt": "formal1",
+        "status": "audit_failed",
+        "result_sha256": "05f54e58788ee297aeb688126837bca630ec43d2152bea1a8d781aabad5fdd29"
+      },
+      {
+        "attempt": "formal2_guardretry",
+        "status": "formal_raw_verified",
+        "result_sha256": "684721e169152303fb890db08234afc01145bc1f202504c40322c4a64ceaf173"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "a1",
+        "status": "failed",
+        "result_sha256": "b80476145ee925ec4ce95c9e1f9690a1f36b91d803d2d499d358f582a8f3bdc8"
+      },
+      {
+        "attempt": "envfix1",
+        "status": "pilot_raw_verified",
+        "result_sha256": "a9689851a4f9c5d01786ef0ace1931a3fa745c984add8631c708e095411e431f"
+      },
+      {
+        "attempt": "formal1",
+        "status": "audit_failed",
+        "result_sha256": "948e50d956ad4c5cedf2ba9becaa8f2fc6bfb158632377f130ffd0df25de9f3f"
+      },
+      {
+        "attempt": "formal2_guardretry",
+        "status": "formal_raw_verified",
+        "result_sha256": "37c506dcfef3be2d6efaec02b71b37f13401324f3000fca9140909eb7f06b4b2"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-decode-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "audit_failed",
+        "result_sha256": "527f10199cc52c1700ed5f8340b18d69dd6421b4cdaf4efe041945b46f28539e"
+      },
+      {
+        "attempt": "formal2_guardretry",
+        "status": "formal_raw_verified",
+        "result_sha256": "ddde9e2576a2b230c58670cd40022266dd6a1663580f1d2076163515b8d6dc49"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-decode-bfloat16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "audit_failed",
+        "result_sha256": "608243129765dd5c347efc9c7502608d73cbb1bc7cd1d446c3b9b5cdd002c306"
+      },
+      {
+        "attempt": "formal2_guardretry",
+        "status": "formal_raw_verified",
+        "result_sha256": "fb3e05b97f6cc05e7e333694538ecb3c82718fe333b29a6208265ec1a5d6c16f"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-decode-bfloat16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "audit_failed",
+        "result_sha256": "3f75abf98a2beaf3438732d75731c2a24510f8c0aa4e356f85b061cf90f7a6bb"
+      },
+      {
+        "attempt": "formal2_guardretry",
+        "status": "formal_raw_verified",
+        "result_sha256": "59436afcc26e2be61e4eb811438ccc0e646a61f8d1e4f125cc8f8b9a0af13330"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-decode-bfloat16",
+    "variant": "compile",
+    "status": "measured_timeout_not_registered",
+    "reason": [
+      {
+        "attempt": "synccompile1",
+        "batch": "batch93.progress.json",
+        "seconds": 300.0055422782898
+      },
+      {
+        "attempt": "formal1",
+        "batch": "batch10.progress.json",
+        "seconds": 300.00786232948303
+      }
+    ],
+    "attempts": []
+  },
+  {
+    "index": 22,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-float32",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "a2bf7ce53fb442289fd7728b6dcd9ee500496bfbc165cf847ea9eb60932b7f2b"
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-float32",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "ba04d6c5c182f519b383610af6df6af3c8bb81f4142581e3d3ea9974fd90198e"
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-float32",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "Repeated block broadcast fused kernel init wait, including synchronous compiler; keep native and compiled-native alternatives",
+    "attempts": []
+  },
+  {
+    "index": 23,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "gpt-oss-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "1b07641d213d3b5ef6aaad3126daf60edd09c3985751eb5a21bb404c457fb782"
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "gpt-oss-prefill-bfloat16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "988700d6727ba8da369673f558d4be9e6752b4786e1c8be9d1d87c57103704c0"
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "gpt-oss-prefill-bfloat16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "c5e147f9f6b603654cb0841c2511468acfcc3cf101a50a283daa3db92104f912"
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "gpt-oss-prefill-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "Repeated block broadcast fused kernel init wait, including synchronous compiler; keep native and compiled-native alternatives",
+    "attempts": []
+  },
+  {
+    "index": 24,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "qwen3-235b-prefill-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "a4c5b8f0eeaa48063d26bdb3f736fdad69730b25966336e6306efad9db318c51"
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "qwen3-235b-prefill-float16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "1a24dc45b74a21a32501f36e2da99ca1a0368fa2bed599cf8b73f6189b2c5735"
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "qwen3-235b-prefill-float16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "46e97fb3ed3aa831ae3ef15beb1811ff4ca0e3b1ab38992012d17d24227d4a5e"
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "qwen3-235b-prefill-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "Repeated block broadcast fused kernel init wait, including synchronous compiler; keep native and compiled-native alternatives",
+    "attempts": []
+  },
+  {
+    "index": 25,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "56cede9f36a0fe7a45b7047baff0d5b5e88d227c064a0c94da320e5d6a82a790"
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-prefill-bfloat16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "fba951719f25e35b973fbf153314df31603b8abd498285bead40aec4d0a8db1c"
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-prefill-bfloat16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "cd30acd3890de4d6e1aeba61765cac23dfc44e637646e160abfdcdda38b85540"
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-prefill-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "Repeated block broadcast fused kernel init wait, including synchronous compiler; keep native and compiled-native alternatives",
+    "attempts": []
+  },
+  {
+    "index": 26,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "3086c405170cc23b4010d31d9d91ee3fae20d984dc1a97955fba9c62d0bb592d"
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "bp1",
+        "status": "pilot_raw_verified",
+        "result_sha256": "de265151c2ef56e57e2c34147aa40c1f0a1c6b339519b08bfca867f7455e4055"
+      },
+      {
+        "attempt": "edge1",
+        "status": "edge_verified",
+        "result_sha256": "0e906584e32a2e496c6c5ff2157e91f8e22ec28d5f8e8889d6d4329c89580553"
+      },
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "f2dc509a5dd27fd0faf2dc384609b15e8be6a9c1d315b6bd5ab67aac3615973e"
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "7cc262e24a053458365d593a987ed2d48249a2198abc8c923db3da42aaec19a5"
+      },
+      {
+        "attempt": "synccompile1",
+        "status": "pilot_raw_verified",
+        "result_sha256": "9564fee1c8cb1cfe35a84f24ba351c8afdd154bf96e36a51706ea79373d67743"
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "f5a619e26abe417896df7a385f5157209d576cf908572a65439c382c17f2e326"
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "42858d95c7fb0eed90133a72b73fbb1ca6d81aed6532e46a3adf0b29c8bb8171"
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "a0a1c61864f716df7e2ede5a016055c674cb9d958c3fe077cd4286d081573448"
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "gpt-oss-20b-mlp-up-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "f1cdfbcfae726b55f44e0cf2e7657cc4f5376222518763ee34499baacee2e3af"
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "gpt-oss-20b-mlp-up-bfloat16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "9bab87e17150d08ed08e859ee30fbc1cd2da720eb67fa05459c7ede1feb51139"
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "gpt-oss-20b-mlp-up-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "602fdc0aad29925e63fab3edf5ce75e890a90e5dfaf8301e1a1fdb7cf88cc7ef"
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-8b-mlp-down-float32",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "2814dd1b770f13c4b3d4d4a7c84165567ce0df821d2cb1fd17458a472b3aa99b"
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-8b-mlp-down-float32",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "ce8b1fca6bc5caff683f2b2a09f883f7b519d9b0083dbe231d0862ee5fcf4898"
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-8b-mlp-up-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "ec720ff819b57386314e5a26c8c089bb96849abef41c73347292ae5a6b274147"
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-8b-mlp-up-bfloat16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "ef06e6cc52f64ddd28db7222c666b8867ea22abde3bb5d8098352a19cae9cd69"
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-8b-mlp-up-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "174224f9b1869270ab5334b5fecbdbba5838b463bc50a8cdcbcebcf89898d933"
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-8b-mlp-up-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "65fee5ecbaba4b214d6adcc05a0402b101e65fe4d581dc00b7d6f59cd7257f32"
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-8b-mlp-up-float16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "82fd65fa977a43a347e303728455350204a536f8912a4dcb022dc06339508d79"
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-8b-mlp-up-float16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "692354c3d2eba79ff7afe11bdd7a96726c036fd285f428d9e11d241b859de3af"
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-70b-mlp-down-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "d08b2c29d356495e2a1c05bb64fc8fbac8aadef1e55274d90fe79ff167a9ef6b"
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-70b-mlp-down-bfloat16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "4553c59c4a1a8feaa0eed9ada10040ac8baf2b4cd673dca1c4cc935741fa0b76"
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-70b-mlp-down-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "01feb954d0546b3efcd4ecbe742c6555cba8db90a09d7d5945267b80436ad41c"
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "5f657173674512afa1fc23411273d1c74e5cf9c7d7055dba26a607de78444d75"
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "bp1",
+        "status": "pilot_raw_verified",
+        "result_sha256": "05cabba57cc175978ad9a09a054831d085a93e99fceaae6deb94f2080b5e5a82"
+      },
+      {
+        "attempt": "edge1",
+        "status": "edge_verified",
+        "result_sha256": "58ce044cab561b1d0881a4da3085cffcaa34d6c1bd1ecfbc33e6c61b17c92287"
+      },
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "298851f74fed39cea8b34782df8aa6a142d26c00aaa704f138bd624638e8b59b"
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "bp5",
+        "status": "pilot_raw_verified",
+        "result_sha256": "e8ec5487417a69480538373d27ec51c60490b5baab9829b29c16a143211bff87"
+      },
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "b77c616aba7281d6135faba01280c9e25c30478d2d0fcee4dd7b3dc920d2aee6"
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "llama-8b-decode-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "129e2b7efae884ce004efe16e25896fb82fbb0aa3325f21936bd6fc3749879be"
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "llama-8b-decode-bfloat16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "083c996bc6639e66851c595c9b7d8de609db64558233bfdd798e9fe25064abac"
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "llama-8b-decode-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "97c28bc1305762f2db736b01617bc11f15b181097021d997e831e25d632744db"
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "ragged-k-float32",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "74d3c7d3d539245bbb3ce998b54d7e7320b04e3ce840aecb4105989c33b40b75"
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "ragged-k-float32",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "6a3e867fbdb42ad2a62ade49d9498199d416386333ccd1240232b133d1cd4503"
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "gpt-oss-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "85ddd5b9dc0b3cdfa2b4bf65f2b0587c05ab540fabbdfe1ca8f44297be971075"
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "gpt-oss-prefill-bfloat16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "ba5533cd5d95e43f981abd151945c8c4c5425c7f877f08502b69567c3333cc0a"
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "gpt-oss-prefill-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "72fd7ddb868b6591d9aaea0f08a02ac2dd208da4222a820a95f634e9c34da68a"
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "llama-8b-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "003fd122fe3677cbe0e608f6257455b92506e1a5600d199be180bb4e5a623d2d"
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "llama-8b-prefill-bfloat16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "6581b8e63c8ff177ed2d8dd95419639267ea416fd48bf1809a3d676891c18086"
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "llama-8b-prefill-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "65455ad34c08b807247f92920dc82c61c5c6cc923299bae63ca76756cd4c1b76"
+      }
+    ]
+  },
+  {
+    "index": 38,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "qwen3-32b-prefill-float32",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "7dc63e15831799364fac0d27db7e2d27a06efce892a8168fbdf07fd7ba0a1adb"
+      }
+    ]
+  },
+  {
+    "index": 38,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "qwen3-32b-prefill-float32",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "ff92fb5396330e8138bde87c3f1c90f8380abc238852271cb94b77a212c84dbe"
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "qwen3-32b-prefill-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "d1e1be40309099afb9e5d7b63ee2c55b5068a751fabcf62835cd669bafeb84c4"
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "qwen3-32b-prefill-float16",
+    "variant": "native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "80404249009f2e367bd733dd27da163c9d74195c2b348de504b1871a7d639a43"
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "qwen3-32b-prefill-float16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "0505d118ee7125c01750bec19f778e2669479ecaecd5605be442fbe5a10c45b7"
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-decode-few-tokens-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "6f074c47c5fcee1a697dc23ae8a7b64b5f27e77a6e3c9e4e7ecf934637558fff"
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-decode-few-tokens-bfloat16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "bp1",
+        "status": "pilot_raw_verified",
+        "result_sha256": "7b9e3b3644f1ad248a85f148aa745533c2a85456b304d5c1847c9dca2d01ab88"
+      },
+      {
+        "attempt": "edge1",
+        "status": "edge_verified",
+        "result_sha256": "8b93a6d84dd8231c85d2a98276902e035f257b59148be5c27282807296494cc7"
+      },
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "4abfbd6cb9285e468a084578e1378dc1cfc91305ba742baa2fbe9b25d3b8c3a7"
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-decode-few-tokens-bfloat16",
+    "variant": "compile",
+    "status": "measured_attempt_failed_not_registered",
+    "reason": [
+      {
+        "attempt": "bp2",
+        "phase": "correctness",
+        "error": "quantized codes differ"
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": "bp2",
+        "status": "failed",
+        "result_sha256": "dc4db19ea2f76e2f26624ebd87004cbdd696f0d1512650e3a0d0d135375b4927"
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-decode-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "9c84e5120eb3b010d98ebcbd87ce1707e67a1491b673afec1be8cee3aaa60792"
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-decode-bfloat16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "1d4783633d5ea1fa8cee4549d29cd411bcd0647bafa0ea9bf2ee7c683c21761d"
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-decode-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 42,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "fd763fb54723f6248d9ff8b24888aa4c5373ed8654e781863b7aeb53b392789a"
+      }
+    ]
+  },
+  {
+    "index": 42,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "a4722e016f02f422809a79d13a92647538d11c2f462a1204d3425d8751267c04"
+      }
+    ]
+  },
+  {
+    "index": 42,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 43,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "gpt-oss-20b-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "215f289140ce98868e0e4848107632eaf5f3e1e1e485b9beafbce5af36d517b7"
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "gpt-oss-20b-prefill-bfloat16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "63e13b5b638ecafba87ce3336048923336dbeec1de1bf47c42fc428819625866"
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "gpt-oss-20b-prefill-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 44,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "qwen3-235b-prefill-float32",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "7d8bfcbc09e4a0d48bca5882bede79736fd9e8e0f2c5afc82ce843c0ebcaf84e"
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "qwen3-235b-prefill-float32",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "20162d837c9d86c1daed6625d75e4f5886dc2019cab740ac607b9d2cf4f6148e"
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "qwen3-235b-prefill-float32",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 45,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "qwen3-235b-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "5dcfa23a5f0544f95485c4a2974ce79cbf90cf9ff69fff6ffe07a6e6961a6440"
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "qwen3-235b-prefill-bfloat16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "dc8293b359b4f5b6ac56f5185220d0202c01c1b6544ca86cde5fb932ef306c38"
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "qwen3-235b-prefill-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 46,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-prefill-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "6ffc26973cf544cfcea9b7310d12065c75ddf2ab5b427da6befbee4132f4440d"
+      }
+    ]
+  },
+  {
+    "index": 46,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-prefill-float16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "8e83caea8b4a795a6a9afc425be0a3a4894b289feb2d962d1d05c00b86be46f6"
+      }
+    ]
+  },
+  {
+    "index": 46,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-prefill-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 47,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "9c896bd7796b8a9891b4db5917246907826c595e4504026eb0c027672379b9f2"
+      }
+    ]
+  },
+  {
+    "index": 47,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-prefill-bfloat16",
+    "variant": "fixed",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "051a186a300b37ad0adc7946b8d3261d8d8f892af64957c4c1ed610560ccb078"
+      }
+    ]
+  },
+  {
+    "index": 47,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-prefill-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 48,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "5ba392360192b7b152b1402436f6fa5efb790f1e87558e8e4f77ccf5b10b7a09"
+      }
+    ]
+  },
+  {
+    "index": 48,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "compile",
+    "status": "measured_attempt_failed_not_registered",
+    "reason": [
+      {
+        "attempt": "bp3",
+        "phase": "correctness",
+        "error": "quantized codes differ"
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": "bp3",
+        "status": "failed",
+        "result_sha256": "dbbc536ef3e72a65183d4c9a1285dfaf2c704ae8572099b711e077a81a9a05a0"
+      }
+    ]
+  },
+  {
+    "index": 49,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "941c2acf1c0efbe26bc94ea1b6bbfda31f26b0024b8229645a34f08529eae568"
+      }
+    ]
+  },
+  {
+    "index": 49,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 50,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "gpt-oss-20b-mlp-up-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "1cd41eb9c74849d9708bc5373a1b6bfc46c812ed0a9504a120a02a49918635c1"
+      }
+    ]
+  },
+  {
+    "index": 50,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "gpt-oss-20b-mlp-up-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 51,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "qwen3-32b-o-proj-float32",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "cb3611ee661ad281ece87952e6b2323c7e3f85d934ceaf91109a2fec6a1aef63"
+      }
+    ]
+  },
+  {
+    "index": 51,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "qwen3-32b-o-proj-float32",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 52,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "qwen3-32b-o-proj-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "5b7507f7453d2bc82bf7b3e651b0ac7f15bdcc81796cbc1e692278df269a7bfb"
+      }
+    ]
+  },
+  {
+    "index": 52,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "qwen3-32b-o-proj-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 53,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "llama-8b-mlp-up-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "db0da122c3176f812678aac6806c905b5c0d528b961c82ebbc2ba1bfbd9f2f69"
+      }
+    ]
+  },
+  {
+    "index": 53,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "llama-8b-mlp-up-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 54,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "llama-8b-mlp-up-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "7f951151f4813524738afe009c4aee9abd93bdd6b856410882c7c3dd37d378a5"
+      }
+    ]
+  },
+  {
+    "index": 54,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "llama-8b-mlp-up-float16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 55,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "llama-70b-mlp-down-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "b48e8c676950c949786bbc7fd17f3b6efeec76101faa0470fa0b720312195fca"
+      }
+    ]
+  },
+  {
+    "index": 55,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "llama-70b-mlp-down-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 56,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "gpt-oss-20b-decode-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "5e0a0e7f8f284c5228ec636829c4eb0a049e36c320ace0df203381ba4daea385"
+      }
+    ]
+  },
+  {
+    "index": 56,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "gpt-oss-20b-decode-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "bp3",
+        "status": "pilot_raw_verified",
+        "result_sha256": "1a541d1aee255bc6eb042592da84a960e899adb8d7ebda07026b15a2a38ebacb"
+      },
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "050a83d607a8ab1d9fe3d9c7c6ea4c04dbb97a50aa2e35e1e957ca38b55556b4"
+      }
+    ]
+  },
+  {
+    "index": 57,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "llama-8b-decode-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "c3b303bd28ee9edd32fcdb11d481d53ea2d69d5582e0335ad39f6386732b216f"
+      }
+    ]
+  },
+  {
+    "index": 57,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "llama-8b-decode-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "a3d19849600ec41bb4b940f884b8a5e1df6cf4fd39707dabdbae0968ee54c23c"
+      }
+    ]
+  },
+  {
+    "index": 58,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "odd-hidden-prefill-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "c7d1d3429cb8b1272a227635c205a6a1367d46df17dd4319bdf5be130d4f4fef"
+      }
+    ]
+  },
+  {
+    "index": 58,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "odd-hidden-prefill-float16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "cd4acb05f4ec83dd51e8fe62cc28f598540cb2494055c304cb29df05c62ac57f"
+      }
+    ]
+  },
+  {
+    "index": 59,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "gpt-oss-20b-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "cf58fea962f34252122f52ab3bcc0e02885ee5c61b60d16ac9221d65c46a7001"
+      }
+    ]
+  },
+  {
+    "index": 59,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "gpt-oss-20b-prefill-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "8b77ed7ab6024dd7e63fc6fd88c7a0e892083bb30f2b2bc9068909ade415d53b"
+      }
+    ]
+  },
+  {
+    "index": 60,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "llama-8b-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "9e6b3254f2aaf76c45c3bf13c57c24dd50667c89bbae67a40d1b76c5f1ded0ec"
+      }
+    ]
+  },
+  {
+    "index": 60,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "llama-8b-prefill-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "7617757d109f8ef066c2d6ef7ea4ff61bdc6b652c3e166ace4da825856adb484"
+      }
+    ]
+  },
+  {
+    "index": 61,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "llama-8b-prefill-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "5792dc18bc674433cc29f9ab68347502b5d8bd534c3c65d57372fe3a8ca57945"
+      }
+    ]
+  },
+  {
+    "index": 61,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "llama-8b-prefill-float16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "6a9c4c32e289d5e7197f635cbc143de352db47321ccfdaaa1bc8341307198ca5"
+      }
+    ]
+  },
+  {
+    "index": 62,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "qwen3-32b-prefill-float32",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "c15c8eb1b889df09d44b1a8db56685108ee69aa577078f8006c8201a4bf3ac95"
+      }
+    ]
+  },
+  {
+    "index": 62,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "qwen3-32b-prefill-float32",
+    "variant": "compile",
+    "status": "measured_attempt_failed_not_registered",
+    "reason": [
+      {
+        "attempt": "formal1",
+        "phase": "correctness",
+        "error": "quantized codes differ"
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "failed",
+        "result_sha256": "7a0a630efb6dc28741e8c4011cfe351373e8c48fd49221397d09af0c189d4597"
+      }
+    ]
+  },
+  {
+    "index": 63,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "qwen3-32b-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "7bff04440a1548f4cf2dc9863e9d9acc51e397755c27222f82e502211f8ae3f0"
+      }
+    ]
+  },
+  {
+    "index": 63,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "qwen3-32b-prefill-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "2a82f1740a6c134c34d00455730a405b485856ce98ea83216fcc05b043b2d618"
+      }
+    ]
+  },
+  {
+    "index": 64,
+    "op": "SmoothQuantFwdOp",
+    "case": "ragged-k-decode-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "6ab27a794e7db0b0722a9a46364d70f1bae0d6df417978552d9e0e6ddbe5823c"
+      }
+    ]
+  },
+  {
+    "index": 64,
+    "op": "SmoothQuantFwdOp",
+    "case": "ragged-k-decode-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "bp3",
+        "status": "pilot_raw_verified",
+        "result_sha256": "5caedc451a63e636f394d3a8f28abad80cdee71a4c5b36dc15d12416f0114b24"
+      },
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "3d31e806b3cfb82c2d1f2b29c7bd936e6dc07aea899030e729d0f30b3cadc96f"
+      }
+    ]
+  },
+  {
+    "index": 65,
+    "op": "SmoothQuantFwdOp",
+    "case": "llama-8b-decode-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "0101d4964289777fffbd3e6af49ce70fe009015127ddc7939f6e71f94bfe5dbf"
+      }
+    ]
+  },
+  {
+    "index": 65,
+    "op": "SmoothQuantFwdOp",
+    "case": "llama-8b-decode-bfloat16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "03be5cd27a47879e0de6e5c2086980fa1198ac8ff9dbd0e9c9d46531cf126bdc"
+      }
+    ]
+  },
+  {
+    "index": 66,
+    "op": "SmoothQuantFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "49dbb9dcb2d9831a1e9a8f21ff4d88ae58f07e56c8a0f83707ac9569220edd1a"
+      }
+    ]
+  },
+  {
+    "index": 66,
+    "op": "SmoothQuantFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "compile",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "cc5fb23e6c05bee0b2d8ca83d72bb9565d426e354ca552a5beca3af815932e1b"
+      }
+    ]
+  },
+  {
+    "index": 67,
+    "op": "SmoothQuantFwdOp",
+    "case": "gpt-oss-20b-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "47cc8ebd8e1704cce9aeca415c40122e865016a0896cefd659a3d41b8ac1cd30"
+      }
+    ]
+  },
+  {
+    "index": 67,
+    "op": "SmoothQuantFwdOp",
+    "case": "gpt-oss-20b-prefill-bfloat16",
+    "variant": "compile",
+    "status": "measured_attempt_failed_not_registered",
+    "reason": [
+      {
+        "attempt": "formal1",
+        "phase": "correctness",
+        "error": "quantized codes differ"
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "failed",
+        "result_sha256": "803aaab85d21ea5de5692eac72e3d9478b40d4a6c68ad9762c5866f6866eab50"
+      }
+    ]
+  },
+  {
+    "index": 68,
+    "op": "SmoothQuantFwdOp",
+    "case": "llama-8b-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "f5feab15cc5cbb7e4a982b0c9787ede801ea95928d46b6a0bc0cd3bbfe840b85"
+      }
+    ]
+  },
+  {
+    "index": 68,
+    "op": "SmoothQuantFwdOp",
+    "case": "llama-8b-prefill-bfloat16",
+    "variant": "compile",
+    "status": "measured_attempt_failed_not_registered",
+    "reason": [
+      {
+        "attempt": "formal1",
+        "phase": "correctness",
+        "error": "quantized codes differ"
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "failed",
+        "result_sha256": "27b200b7549c2e489401c86a70ee0a91f788657ba45e3f9a23790e4a95ab3e6a"
+      }
+    ]
+  },
+  {
+    "index": 69,
+    "op": "SmoothQuantFwdOp",
+    "case": "llama-8b-prefill-float16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "614dde30ec6a37d3ce7ed4ce91329509a04199b9628c783dc962822360197122"
+      }
+    ]
+  },
+  {
+    "index": 69,
+    "op": "SmoothQuantFwdOp",
+    "case": "llama-8b-prefill-float16",
+    "variant": "compile",
+    "status": "measured_attempt_failed_not_registered",
+    "reason": [
+      {
+        "attempt": "formal1",
+        "phase": "correctness",
+        "error": "quantized codes differ"
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "failed",
+        "result_sha256": "51487768e5b122463b660360039ab0b64404e5dae0d415dc91ec3b310cbba45d"
+      }
+    ]
+  },
+  {
+    "index": 70,
+    "op": "SmoothQuantFwdOp",
+    "case": "llama-70b-prefill-bfloat16",
+    "variant": "original",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "d86f8e42b99e6de999a374150d5b42fe0a00f6d608fdaf72156bb4f406f1525c"
+      }
+    ]
+  },
+  {
+    "index": 70,
+    "op": "SmoothQuantFwdOp",
+    "case": "llama-70b-prefill-bfloat16",
+    "variant": "compile",
+    "status": "unmeasured_deferred",
+    "reason": "gate absent or family failure limit",
+    "attempts": []
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "5d05208094787bc3d45ddc99152f6e314656b1a5af911f5039b9536938d83d29"
+      },
+      {
+        "attempt": "nativegraph1",
+        "status": "pilot_raw_verified",
+        "result_sha256": "706728842764f3c991761c98419659cbbbb973dc4c9fae9f0860cd17466683a1"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-decode-bfloat16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "f5e3244eaa5bfa5f8e1f233344da522c0a084877bfeee43be6700466ae7305dc"
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "gpt-oss-prefill-bfloat16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "c23a1748cb32057fbd378ba6124fa05164dc151d37c6638786c26914acca0212"
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "qwen3-235b-prefill-float16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "eeaed2a7c3ea543b05aa0896854fe5fb143f1c3950b84aac3323b24c6d5abd38"
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-prefill-bfloat16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "54efb8a388a7b9e60dd9a194512dc69dd159da0f1d73a9146700393c1457b1e0"
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "a99a488b524948241a5de187f7746ffc6bd325d0c55fc22adb23ca273fd08f5b"
+      },
+      {
+        "attempt": "nativegraph1",
+        "status": "pilot_raw_verified",
+        "result_sha256": "052f592e9c2917ff9da123b418d7eac88d0a235c64e17bb90107885036ecb079"
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "063df0c9b7707a0bcd0fec766218dc2773213a41e8961b3f45cb7df026b1488a"
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "gpt-oss-20b-mlp-up-bfloat16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "f054e221381e5bdb76a6e52732b7d487a637b2a3f9d306ef50cdca49cea08196"
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-8b-mlp-up-bfloat16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "f08780392c9680f9fa9390a614e31111d1d1ebb1eca38da4177ed21e99af3695"
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-8b-mlp-up-float16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "4af9dfa5d39cc50693b0420194e563c555dc0151db5045639db1ecaa59d022d4"
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "llama-70b-mlp-down-bfloat16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "e636c15ca1507b18a98b6104f892c35c61b2bf36695529f87a651c54069cd0c3"
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "d7de8ffd67142d397b1e5a6b1f9dffba7901797dfef88f4ece0b8cfffb784609"
+      },
+      {
+        "attempt": "nativegraph1",
+        "status": "pilot_raw_verified",
+        "result_sha256": "062ce72a6fa2b5e932e4a67a912c1342e06152406a890ace611de046788f5151"
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "llama-8b-decode-bfloat16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "e4f3a081fd37b87076a7c85db9259ae161b8b480ec409dcd6d1922a3e03d677c"
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "gpt-oss-prefill-bfloat16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "2e05e575cbed3142afe6c0c358ceef8a89f20ebc2bec40567cc7e3bd01d08227"
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "llama-8b-prefill-bfloat16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "a8b8e5b64503434def091da4803efe4ca277ca6df6f0973ba80ef431600e0776"
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "qwen3-32b-prefill-float16",
+    "variant": "compile_native",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "0cdbea44fc9da3cc649fd18b526522d959ad16c30e8832e86f5be4a69338ab54"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-decode-bfloat16",
+    "variant": "ops_math",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "0977c8f70b7f5b1a0a6ea58274a6c0601a0a52eb5e21370cd9c6f220cead55fe"
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "qwen3-235b-prefill-float16",
+    "variant": "ops_math",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "fb4974d4090a59968d5e92fcfddc4699d75663180654c1ae10b632beda645db4"
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "ops_math",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "d85e780e9d9b0823ba92d1213182cd60f93a0f61ba2a6505713a399bed21be13"
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "ops_math",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "d2506680c495613a4fc113a5998dce4f275d675a762952e1cead74ed970bd23b"
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "ragged-k-float32",
+    "variant": "ops_math",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "43d54e39f8f8ca37992042133cd0245fdca2dde0300f288bc0a696be3eb17540"
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "gpt-oss-prefill-bfloat16",
+    "variant": "ops_math",
+    "status": "formal_verified",
+    "reason": null,
+    "attempts": [
+      {
+        "attempt": "formal1",
+        "status": "formal_raw_verified",
+        "result_sha256": "14a9ad176fbce117c9ea748ae28fbd29d1f611a1c197e6cff2ef79e7ae51ffad"
+      }
+    ]
+  }
+]

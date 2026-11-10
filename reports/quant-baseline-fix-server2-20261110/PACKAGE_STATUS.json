@@ -1,0 +1,32 @@
+{
+  "updated_at": "2026-11-10T10:13:50.653232+00:00",
+  "status": "verified_exact_cases_with_explicit_exclusions",
+  "files": [
+    {
+      "file": "quant_baselines/__init__.py",
+      "sha256": "8895142b1ecde13c652a859b72332038c6ae7551f2a28073a9824d031cc03e4b"
+    },
+    {
+      "file": "quant_baselines/layouts.py",
+      "sha256": "0b26edca698586770fa59613e83b2c5eb976f3954a8cce6dcb39500c46903c90"
+    },
+    {
+      "file": "quant_baselines/native.py",
+      "sha256": "ff24645503ed6df4000aaf0b6fbdf6b41762d625f5362a86360900398c98a859"
+    },
+    {
+      "file": "quant_baselines/ops_math.py",
+      "sha256": "92c25e63785903ff24fadd6e0d4e6c7a534c110e63b01f7bb1f8c70b94a552d6"
+    },
+    {
+      "file": "quant_baselines/registry.py",
+      "sha256": "63fc8d482c7dccc11050ff703f0d0bf3e8c46c702e3cc909d3b08ae88ab8847c"
+    }
+  ],
+  "formal_variant_count": 160,
+  "formal_workloads": 71,
+  "total_scope_workloads": 71,
+  "original_reference_and_checker_unchanged": true,
+  "raw_archives_included": false,
+  "published": false
+}

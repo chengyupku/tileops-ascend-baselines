@@ -154660,5 +154660,755 @@
     "source": "ascend_baselines/ascend950_baselines/00_deepseek/TileKernels/tests/transform/test_rope.py",
     "sha256": "0b6aa150597cd53fbf0525cbdd16a8309778a9398c27b72432ec08b02e142ca0",
     "bytes": 5407
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/ADAPTATION_CONTRACT.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/ADAPTATION_CONTRACT.json",
+    "sha256": "8645daa7d684623f2fa6e3772cbc0c00fe09ad6d5e33a1ffe2b8840de518d3e3",
+    "bytes": 1742
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/COMPILED_NATIVE_CONTRACT.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/COMPILED_NATIVE_CONTRACT.json",
+    "sha256": "c2694629b4738550383c15d2f7bc0fc1eed66d6e34cc2b816b179bc5f2d6c06c",
+    "bytes": 551
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/COVERAGE.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/COVERAGE.json",
+    "sha256": "907943e9387452a8e50e87ca431d3a59751d1dd96b5a228c30785116aa55bc96",
+    "bytes": 82682
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/FORMAL_GATE.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/FORMAL_GATE.json",
+    "sha256": "db627a20f52a10e3c9144b4ce71b5245c1d71137a053bb227a38c3a45d1c3a1d",
+    "bytes": 2161
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/PACKAGE_STATUS.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/PACKAGE_STATUS.json",
+    "sha256": "72a0898f3213b6cd22c19763e71ac046e055f70cf1e13c5d8dfd4113ecbd016d",
+    "bytes": 1031
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/REGISTRY_CPU_CHECKS.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/REGISTRY_CPU_CHECKS.json",
+    "sha256": "3fc9dad6686f685f839952a335303f15dc1dc3ed3f56a826a4d4fc2d74ce998c",
+    "bytes": 181
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/REPORT.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/REPORT.json",
+    "sha256": "2910d0f1b43db9cbb0ff17311c5f1708230f6aa9f5add3812635ed9a96a45e72",
+    "bytes": 11895
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/REPORT.txt",
+    "source": "reports/quant-baseline-fix-server2-20261110/REPORT.txt",
+    "sha256": "8e942928f3f6d7db1f40eb01c2a1d9a72a368b83518651d4ac4b8d8a5741d46c",
+    "bytes": 2905
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/USAGE.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/USAGE.json",
+    "sha256": "24d0c4ba177531e4b55609d6378116f856854bbb078cb349574c50e84c680e7a",
+    "bytes": 3705
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/attempt_outcomes.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/attempt_outcomes.json",
+    "sha256": "d651ae2c64172143250aff642b56adf8c52ac54960f629f80d9ab2a3358e9124",
+    "bytes": 22142
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/comparison.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/comparison.json",
+    "sha256": "d1e09f0776ed96e03346db0d74d9102bcb1e39890aaeac60b98ce5970ab1f3f2",
+    "bytes": 146349
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/compiled_artifact_audit.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/compiled_artifact_audit.json",
+    "sha256": "b1b64cd94eddd4973076a88cd24b2f20ac17b57a5de78bfca7aa508052ff4ef9",
+    "bytes": 561
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/adapters.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/adapters.py",
+    "sha256": "0b26edca698586770fa59613e83b2c5eb976f3954a8cce6dcb39500c46903c90",
+    "bytes": 2300
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/audit_results.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/audit_results.py",
+    "sha256": "d10850aad005308acfbc43c01b939e3cb3e95ba9ee545bb2260ae32a0ffa3d97",
+    "bytes": 4266
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/build_comparison.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/build_comparison.py",
+    "sha256": "cf9f194a4db621e9d40ab217156121ba17a5da8da098b6754a2c0cddea500c02",
+    "bytes": 1748
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/build_coverage.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/build_coverage.py",
+    "sha256": "bb34309178fa9e4740470eae169b41a0441debac46e128a87614c3a97470bd46",
+    "bytes": 2173
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/build_delivery.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/build_delivery.py",
+    "sha256": "af801cc789c66a47402777acab9a69eff6b2dca36888ab6026c8dbe6529e13f0",
+    "bytes": 5321
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/build_report.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/build_report.py",
+    "sha256": "344df7050c9f2cba5acb60174e215e88bcc2631e2156017de5abc75f3cb6cfaa",
+    "bytes": 4642
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/check_registry.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/check_registry.py",
+    "sha256": "fa63b9a9c8f230e0c16fcc4447b6a3adc539b6f1f61d333182c908493a6ccd9c",
+    "bytes": 1020
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/collect_compiled_cache.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/collect_compiled_cache.py",
+    "sha256": "82b20ca60d42387134133b94fd2adf12d6107b24bb6d321e474931239681cb5a",
+    "bytes": 3565
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/cpu_validate.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/cpu_validate.py",
+    "sha256": "71d7514e62b9315dc7ab3c11091d8f80fa7055bf48170b171a9947ed8966bf21",
+    "bytes": 1526
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch.py",
+    "sha256": "21905dcbaf58b00bd27a187a739d2d0ee7ab36f45959690f8a3293e32e89a021",
+    "bytes": 1624
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch_v10.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch_v10.py",
+    "sha256": "365cb4945c14d55e459a6fe67dbc248f405a466029430d4b4c0298e2186fde1e",
+    "bytes": 1625
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch_v11.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch_v11.py",
+    "sha256": "15e9af71b4d9bbb80f11bdb21bd4503c02be3fdfa51eab32be71d09434ddfb3a",
+    "bytes": 1625
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch_v12.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch_v12.py",
+    "sha256": "4b83737427eefb699c40eebd048046d8621e7426bcfb89bf489538648b647458",
+    "bytes": 1625
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch_v13.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch_v13.py",
+    "sha256": "72b22086b1d666dfbb6498dcb242d8c99196ad8d39090e6695e749d5a8218374",
+    "bytes": 1625
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch_v14.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch_v14.py",
+    "sha256": "4e2b254f860a2a9b821e95533725d5d8a4e3e848a7a6f5bd6101af291a71f64f",
+    "bytes": 1625
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch_v15.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch_v15.py",
+    "sha256": "5c1b34f5e4a6b4197328b90f2c83e899e7648afc0840c5e57038a9976e679dc5",
+    "bytes": 1625
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch_v16.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch_v16.py",
+    "sha256": "1b821532d406c7d1ecad031b815da19f8d2b0bdf372bbbce6a4115fafae23d2f",
+    "bytes": 1625
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch_v17.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch_v17.py",
+    "sha256": "4251674c55cc4e7fe3b512b8bf16a41f7721fd1a7686e1806d9b6f546082cde7",
+    "bytes": 1625
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch_v18.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch_v18.py",
+    "sha256": "bbf36df58313eb28e204ace57794d9f8563c338740b8aba9fdadebc6bcdc3406",
+    "bytes": 1625
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch_v7.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch_v7.py",
+    "sha256": "bf5736378e03cfed5920a291543480ccfbcda779cca5a9d0dd95b31198db35a4",
+    "bytes": 1624
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch_v8.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch_v8.py",
+    "sha256": "51bc470a0f2d4fe02412e6645dee91d241ef0620215a068d863ab42ba45e04b9",
+    "bytes": 1624
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/device_batch_v9.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/device_batch_v9.py",
+    "sha256": "626d5ff71d76c7e0fff15ebe6ba961e3004cc50b8cb4715d6afd90dedc5c1869",
+    "bytes": 1624
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/edge_checks.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/edge_checks.py",
+    "sha256": "4334576f5dfe0d37c62d3788bd150822a19c69f87f22378d6f21087562a7abf0",
+    "bytes": 2479
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/edge_checks_v2.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/edge_checks_v2.py",
+    "sha256": "1bcef8e7d8eee4d5ebf98767ab92d322fdce1a49df592b541016e38c12c37f89",
+    "bytes": 3627
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/export_delivery.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/export_delivery.py",
+    "sha256": "6dec389349337d8b4ab14217ceacd6510e277b57b273a2fd4d92d167866785e2",
+    "bytes": 4975
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/final_evidence_manifest.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/final_evidence_manifest.py",
+    "sha256": "c7d05946f2dff9ef16748247928414f7611d1a28cc98b58dbd6e828021c97785",
+    "bytes": 878
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch.sh",
+    "sha256": "3981da7b390b9ca764b770678ad100bdbceb583e74ebc4e0c0e464f5ad2b5f65",
+    "bytes": 1017
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v10.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v10.sh",
+    "sha256": "08f60bebeb58fe31621333003660c062d1bc6011d23a982d06d8f193f09176e1",
+    "bytes": 1539
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v11.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v11.sh",
+    "sha256": "4604ac93e77c49a0821c48a424cd05c04254537ed32962835c3134328fcb8523",
+    "bytes": 1539
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v12.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v12.sh",
+    "sha256": "e2a5a6df13efe9325a690690ea8d2c4cd907830a4b0f655e4a8410ceb5a7dfb9",
+    "bytes": 1539
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v13.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v13.sh",
+    "sha256": "080b6148dcc6efc9786b9a9d6cfa613fcff5f1adcd71b63fd69b7d5a2429fafb",
+    "bytes": 1539
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v14.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v14.sh",
+    "sha256": "e2d9c1bcf01b1b8eef6fde8a9fe67679fc0aca00381ce5c9ae762328b58fd965",
+    "bytes": 1694
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v15.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v15.sh",
+    "sha256": "890fd322e29640d806da2a7ed872daba80997bb0d96284d96d3d0d5a07a1b77c",
+    "bytes": 1694
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v16.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v16.sh",
+    "sha256": "9fa403fd4750be4aab19558f2c48934c2b8dcaaf167f6c47b07291ef23d3a6fc",
+    "bytes": 1733
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v17.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v17.sh",
+    "sha256": "3b544689bf7eeadf9886073250fc91298e391137d4d02ec2a2313bc69061b3fe",
+    "bytes": 1733
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v18.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v18.sh",
+    "sha256": "26ec1afdeaa0a91211fa63a1b836da0ff88b208b4b63f65ef13514894d714ca5",
+    "bytes": 1733
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v2.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v2.sh",
+    "sha256": "ae42ce1a8d41f3353e7f801ebc398212d259716e75f2bc553e7b00f43c35755e",
+    "bytes": 1020
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v3.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v3.sh",
+    "sha256": "0984e1a959f2d6e58ca04c9c97511b034a89ee6cf4af1a703ef4a3329e8c5a6a",
+    "bytes": 1352
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v4.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v4.sh",
+    "sha256": "de6578d896b04ce76758368747809ae1dfea9b16e8b64125b732edd0c27d7085",
+    "bytes": 1352
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v5.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v5.sh",
+    "sha256": "9d114d8eb879f91252c19f5195d058e953f013ce3f0bc693af952a16de254d31",
+    "bytes": 1538
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v6.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v6.sh",
+    "sha256": "235db3016079f243c8b8c42812dd6500d83beecc7c8ab687f7117fc39560d2ac",
+    "bytes": 1538
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v7.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v7.sh",
+    "sha256": "5c3f9824eb12fec46ccaa6ddce37f49d7842f59ec8e25223366a28eeee05a848",
+    "bytes": 1538
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v8.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v8.sh",
+    "sha256": "d78d29898dfcb26c511952a2b57ee4b25a81b82aed3beee8a6e70c3827435deb",
+    "bytes": 1538
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/launch_v9.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/launch_v9.sh",
+    "sha256": "3e3bbad460011e9d4fe03b9c3fab4bc2b33c3a497c119187f95b6b8ba0bae5f1",
+    "bytes": 1538
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/native_adapters.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/native_adapters.py",
+    "sha256": "ff24645503ed6df4000aaf0b6fbdf6b41762d625f5362a86360900398c98a859",
+    "bytes": 797
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/native_quant_adapter.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/native_quant_adapter.py",
+    "sha256": "6daccc3ef8289d64b84db17b10f98e101592ee8bfb6225f5751a3b6a3ca22b89",
+    "bytes": 658
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/native_quantize_adapter.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/native_quantize_adapter.py",
+    "sha256": "837d55f308869c30278594ab0cb0aecbaadd98a7725310bc5837752662a3aded",
+    "bytes": 460
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/ops_math_adapter.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/ops_math_adapter.py",
+    "sha256": "92c25e63785903ff24fadd6e0d4e6c7a534c110e63b01f7bb1f8c70b94a552d6",
+    "bytes": 1088
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/prepare_all.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/prepare_all.py",
+    "sha256": "6cb9fb64a9ce0d3dbb11a52cdb229e41dbafd5c8279228aaef752e86f9e06dea",
+    "bytes": 592
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/prepare_all.sh",
+    "source": "reports/quant-baseline-fix-server2-20261110/prepare_all.sh",
+    "sha256": "798264eed8518e1ce2604dec05fb0ffd21b939d64c7f8b53caa5df1fb7cc07e5",
+    "bytes": 233
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch.py",
+    "sha256": "7f8aabd41bd7b8c18ca4699d6173cfa7d115cfc1388d8b32c0ac8484e7111a07",
+    "bytes": 1874
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch_v10.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch_v10.py",
+    "sha256": "9b418a523ddb2b1954397b6131125893c03b0f8145dce97f3030333a9a238e39",
+    "bytes": 1878
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch_v11.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch_v11.py",
+    "sha256": "4960fad7f3183388474199d7beafe6e8f491aaf08c035283780acdef925cbc43",
+    "bytes": 1878
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch_v12.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch_v12.py",
+    "sha256": "c73e43703d39f45333367b745ab110ee8d7d32f2b05540967fa774e7c268a6cc",
+    "bytes": 1878
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch_v13.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch_v13.py",
+    "sha256": "0a6dfd7654a054bc1d03ef46c500ed5d072cf5e896f6ddc2a54d0401bb7b30e8",
+    "bytes": 1878
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch_v14.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch_v14.py",
+    "sha256": "16ff7ce678f69cc9e06ddbf0593d2fe811f42418cb50b9ae86d73a20ef7d0168",
+    "bytes": 1878
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch_v15.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch_v15.py",
+    "sha256": "7420ea67b9a786bcaf98eab9125bca86a2d4816a7b91dcb92e73dfabba68320e",
+    "bytes": 1878
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch_v16.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch_v16.py",
+    "sha256": "dc1ee8ea4913519e2eeedfc17dff58ca4b73ef53b45fc338ce62b2c8a6e89336",
+    "bytes": 1878
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch_v17.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch_v17.py",
+    "sha256": "8797c95ec048a0876be87ddaf828076ae26c19021a4b6320b3491ee551b5564c",
+    "bytes": 1878
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch_v18.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch_v18.py",
+    "sha256": "98dc510f2f00a5bd9ef594474ae38d600a08cda7cafb74b41051424f1c05c557",
+    "bytes": 1878
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch_v7.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch_v7.py",
+    "sha256": "6253bc553432a393a07b0d94c797cb04fa73e2d8c4db50cbfe744b546d2cafee",
+    "bytes": 1877
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch_v8.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch_v8.py",
+    "sha256": "c1ae33ecb37c1dbe666ba697f19c93856f464350100dc500f2f37c96c63db52a",
+    "bytes": 1877
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_batch_v9.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_batch_v9.py",
+    "sha256": "dbdd35cc86fb9fc317c715ac8455a1e0079e8221f518e0c5dd64e2f5e7bec078",
+    "bytes": 1877
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_formal_campaign.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_formal_campaign.py",
+    "sha256": "abd923f02874f69d74334c0d689e90010f3ba9590dcc85111fc1ba2674a17432",
+    "bytes": 2592
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_formal_separated.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_formal_separated.py",
+    "sha256": "ed6fff0d9e7a82b66bc90647087b1567838d17ea4287f3b11110926e0a49377d",
+    "bytes": 3398
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_formal_separated_v2.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_formal_separated_v2.py",
+    "sha256": "70bd77536b7bca934db7b4a1d71503938ee45174c061796e18c6509f1db89743",
+    "bytes": 3673
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_jobs.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_jobs.py",
+    "sha256": "a93333d143ea8a0fed846d3d9960c529e7a8903ed17d4cb808f12c31188aa7f0",
+    "bytes": 2184
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_jobs_v5.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_jobs_v5.py",
+    "sha256": "0d88243fe3f80294b57efa5bd8abca9b6003f3036c2f6d1ed761893ec0f2c560",
+    "bytes": 2184
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_jobs_v6.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_jobs_v6.py",
+    "sha256": "18a0ec4a7405d3b74ae52dbc4e34d0d550fcd7f6566298a2b8fc34ab39811385",
+    "bytes": 2184
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/run_ops_math_formal.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/run_ops_math_formal.py",
+    "sha256": "e8e9319722aed25561bc4082c7ed9faeda0ccb68e468b9543409188875f41bd2",
+    "bytes": 596
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner.py",
+    "sha256": "fafba2074c27774419a1dcaba54b8f487560538a19982518e12863526572661e",
+    "bytes": 6957
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v10.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v10.py",
+    "sha256": "a6789bc5fbe0d7b2fcf3185140d2c69f61c9b862b9bd9f313735412ae798430b",
+    "bytes": 9647
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v11.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v11.py",
+    "sha256": "734f7089fe22ae004a0d73d5164c4773724af31dad5d8ba991fa7377969e5635",
+    "bytes": 10516
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v12.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v12.py",
+    "sha256": "397d58d7d729a2baf667e248db8c2a0a9d504bd58d41e07a2bfc0c95583a74cc",
+    "bytes": 10867
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v13.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v13.py",
+    "sha256": "03f728ff605acfe7091bb8c1183f3614831cb0cd394872323f2a97bae9d5beb0",
+    "bytes": 11076
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v14.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v14.py",
+    "sha256": "f89b0c2e75eba853348d0c9407ff7ab6de786add43c504df7210ffb3504251fa",
+    "bytes": 11099
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v15.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v15.py",
+    "sha256": "a1d9f8741fa542259193eb57f98978557a65f8d01ee815f88dc8921e53bcadba",
+    "bytes": 11140
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v16.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v16.py",
+    "sha256": "a1d9f8741fa542259193eb57f98978557a65f8d01ee815f88dc8921e53bcadba",
+    "bytes": 11140
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v17.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v17.py",
+    "sha256": "b202376ec6e37c65984c6f5bd3835672ac941c497fc0d0abc4b6452cdba3dc6d",
+    "bytes": 11291
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v18.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v18.py",
+    "sha256": "da5efab4bce0b5860b74fa2f8b796e3295fae516b3df818f4c32fc3492c94cff",
+    "bytes": 11459
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v2.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v2.py",
+    "sha256": "39bfc87df0a0a20b726ac5009dd5218ccfb6768a2ba48935a98f5daec01fa48d",
+    "bytes": 7634
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v3.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v3.py",
+    "sha256": "669afe61a44021acc2af482eb9a8b5efabfa8c14a831d047638b83ecdd07cd3a",
+    "bytes": 7810
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v4.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v4.py",
+    "sha256": "ae2a7afb8d332030c279f15a3204c2669855fc57031b3bf43847eb250e577d4f",
+    "bytes": 8311
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v5.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v5.py",
+    "sha256": "41e1117d82ce47afd35934d5086976caf7ff6e1514b7cd63cc6b24987c17279e",
+    "bytes": 8427
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v6.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v6.py",
+    "sha256": "ee86bc4d8f55b4cda5030cd2923c4c8ec51b7c64f6cac76dd2afc4dc136a0dd7",
+    "bytes": 8605
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v7.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v7.py",
+    "sha256": "42129a078734105c7298605e374c00a78e870f0acbee1c461873c80b0bd5f522",
+    "bytes": 8640
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v8.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v8.py",
+    "sha256": "bb4fa38d3ece9ac9451a98034240a2b095e5121d82491a36d885491ddd9bf1c8",
+    "bytes": 9505
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/runner_v9.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/runner_v9.py",
+    "sha256": "754850fe69301202d5cb9a25839ac18b47a860b542779504c509adb1b33f5312",
+    "bytes": 9508
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/static_environment.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/static_environment.py",
+    "sha256": "f9eaefc9934522d7f42c4e4eed02b47c5777840699c6811e2c11a65b0a97e6ea",
+    "bytes": 1264
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/tilelang_adapter.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/tilelang_adapter.py",
+    "sha256": "8cf9608f2ef386aafa6d4833723af3ccac7f348d6f4e0549b71f32e3b2b0addb",
+    "bytes": 1369
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/measurement_sources/tilelang_adapter_v2.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/tilelang_adapter_v2.py",
+    "sha256": "a4f67a7ebfbd2aad23d9bec240de2e3cf2ab9ccc4181f48821f9ac95fad479eb",
+    "bytes": 1392
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/quant_baselines/__init__.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/quant_baselines/__init__.py",
+    "sha256": "8895142b1ecde13c652a859b72332038c6ae7551f2a28073a9824d031cc03e4b",
+    "bytes": 1996
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/quant_baselines/layouts.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/quant_baselines/layouts.py",
+    "sha256": "0b26edca698586770fa59613e83b2c5eb976f3954a8cce6dcb39500c46903c90",
+    "bytes": 2300
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/quant_baselines/native.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/quant_baselines/native.py",
+    "sha256": "ff24645503ed6df4000aaf0b6fbdf6b41762d625f5362a86360900398c98a859",
+    "bytes": 797
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/quant_baselines/ops_math.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/quant_baselines/ops_math.py",
+    "sha256": "92c25e63785903ff24fadd6e0d4e6c7a534c110e63b01f7bb1f8c70b94a552d6",
+    "bytes": 1088
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/quant_baselines/registry.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/quant_baselines/registry.py",
+    "sha256": "63fc8d482c7dccc11050ff703f0d0bf3e8c46c702e3cc909d3b08ae88ab8847c",
+    "bytes": 1598
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/source/workloads/numerics.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/source/workloads/numerics.py",
+    "sha256": "d55fc7ad327bdc18acae1e032070c91adaef9abf8d9d7d3c398a9ad5aa6d275e",
+    "bytes": 24394
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/source/workloads/quantization/__init__.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/source/workloads/quantization/__init__.py",
+    "sha256": "6b3903acc99c1d7cf87f2b365f7c99a8d14ca572201844588a15a2ca76d4eeec",
+    "bytes": 1346
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/source/workloads/quantization/fp8_quant.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/source/workloads/quantization/fp8_quant.py",
+    "sha256": "00a762611b3bcdb5ec166637efefa603ef3a18ee37b73a6a15e75fdf38168496",
+    "bytes": 1809
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/source/workloads/quantization/int8_dequant.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/source/workloads/quantization/int8_dequant.py",
+    "sha256": "9b3798555141308705fce8cbc4ae468d1a4ae8e5bf762714fc2bcffd67991f73",
+    "bytes": 2625
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/source/workloads/quantization/quantize.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/source/workloads/quantization/quantize.py",
+    "sha256": "d01f0ea331a186f181ee5928097d5af4ddf2d176e259f7f119110e76bb2c20c2",
+    "bytes": 7817
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/tools/__init__.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/tools/__init__.py",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/tools/baseline_protocol.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/tools/baseline_protocol.py",
+    "sha256": "4921791a16097d80c404396ac17a0c266bab708b8df3e69040c84df5b7b56c48",
+    "bytes": 3103
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/tools/kernel_task_profile.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/tools/kernel_task_profile.py",
+    "sha256": "4a57440dc72493eeb1d7cc2e6d404e659e7649377129c37ad467228f2b339991",
+    "bytes": 9277
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/tools/kernel_task_profile_full32.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/tools/kernel_task_profile_full32.py",
+    "sha256": "d745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753",
+    "bytes": 9273
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/tools/measure_baselines.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/tools/measure_baselines.py",
+    "sha256": "39e9973489069562543aed004f7381adbe6418be7313c3d9ce3cff53caa9127a",
+    "bytes": 38814
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/tools/npu_guard.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/tools/npu_guard.py",
+    "sha256": "3d7b6bd53380cbb80de5c1d44a2f5b15fabb0def202de78906cddc1b77eb54b3",
+    "bytes": 52480
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/tools/npu_pipeline.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/tools/npu_pipeline.py",
+    "sha256": "dce6f581d17ad3f6c7b6f9261feb38944a193055ba5695a2ad5f6470e6d3a002",
+    "bytes": 10956
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/tools/npu_pipeline_campaign.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/tools/npu_pipeline_campaign.py",
+    "sha256": "7d09d6cd042501973e1192b46fcbd4ff89179dd0e5d865f4e1217452c544dd51",
+    "bytes": 11407
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/tools/npu_pipeline_disk_v10.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/tools/npu_pipeline_disk_v10.py",
+    "sha256": "24c2f9f3c7b5e1ae06b6bedf3ee3354f7a93fe28c8d3ca8d48b7ad2735bc93a0",
+    "bytes": 12024
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_snapshot/tools/npu_pipeline_ready.py",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_snapshot/tools/npu_pipeline_ready.py",
+    "sha256": "1a65076a0c1551edf313a6c33eb4f92d969fad831df68ef154797c65736af5c6",
+    "bytes": 11816
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/reference_source_hashes.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/reference_source_hashes.json",
+    "sha256": "51f2a54021ef43335dad3611d3479010efd6c8e1eb27d565905d767e857d8b14",
+    "bytes": 1568
+  },
+  {
+    "path": "reports/quant-baseline-fix-server2-20261110/verified_cases.json",
+    "source": "reports/quant-baseline-fix-server2-20261110/delivery/verified_cases.json",
+    "sha256": "5112f071c44633a1993a0973cc696cebc076aece2364f05230fb32c2e7f920ba",
+    "bytes": 301211
   }
 ]

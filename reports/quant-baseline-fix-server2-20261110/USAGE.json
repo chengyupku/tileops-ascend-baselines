@@ -1,0 +1,44 @@
+{
+  "purpose": "Reusable quant/dequant baseline adapters and exact-case performance registry",
+  "usage": [
+    "Import quant_baselines under a frontend host NPU guard that encloses torch_npu import and all device use.",
+    "Set TORCHINDUCTOR_NPU_BACKEND=ascendc and configure the locked CANN9.1 environment before torch_npu import; use task launch_v16.sh as the verified runtime reference.",
+    "Call quant_baselines.make(op,params,original_reference,variant). All data-dependent layout/conversion is inside returned callable.",
+    "Cold compilation is outside steady-state performance measurement. fullgraph=True,dynamic=False,suppress_errors=False.",
+    "Accept only exact cases present in verified_cases.json; do not infer full family support from a factory.",
+    "Use TORCHINDUCTOR_COMPILE_THREADS=1 as in the verified v16 launch. CPU parallel precompilation was not used in these measurements."
+  ],
+  "variant_semantics": {
+    "torch-eager-control": "Original fixed reference; INT4 uses pre-existing verified arithmetic pack instead of AICPU shifts.",
+    "torch-eager-layout-fixed": "Small-scale broadcast; required padding and conversions remain timed.",
+    "torch-npu-antiquant": "Complete torch_npu.npu_anti_quant API, FP16/BF16 output, FP32 scales unchanged.",
+    "torch-compile-inductor-ascendc": "Inductor AscendC graph over Torch expression. May include external device kernels; task counts reported.",
+    "torch-compile-inductor-antiquant": "Inductor graph over complete native antiquant wrapper. Native delegation is explicit, not a claim of pureTorch fusion.",
+    "ops-math-native-broadcast": "Original Ops-Math Mul graph over actual compact scale broadcasts; complete graph API and layout timed."
+  },
+  "selection": "Choose lowest same-campaign verified device latency among measured implementations; retain original if faster. Existing published third-party baselines remain historical candidates, not silently removed.",
+  "measurement": "3warmups,15independent windows,1GiBflush each,32AIC64AIV; device time from all task records. No host latency claims.",
+  "excluded": [
+    "Raw profiles and payloads are not packaged or uploaded.",
+    "Failed correctness variants are not registered; compiler timeouts are not numerical failures.",
+    "Website/benchmark page changes are outside this task."
+  ],
+  "precision": {
+    "ACL_PRECISION_MODE": "must_keep_origin_dtype",
+    "matmul_allow_hf32": false,
+    "conv_allow_hf32": false,
+    "scale_dtype": "float32 unchanged",
+    "checker": "fixed v0.1.0 original CPU oracle and verification rules, including exact quantized codes where required"
+  },
+  "ops_math_requirements": [
+    "Original isolated vendor, source manifests, and ARM64/CANN9.1 runtime must match accepted receipts.",
+    "Adapter uses original graph.make(MulFwdOp) and retains its per-call descriptors and cleanup.",
+    "Its graph factory enables JIT; runner_v15 validates flush buffer on CPU to avoid unrelated aclnnReduceSum initialization failure."
+  ],
+  "registry_interface": [
+    "quant_baselines.registry.available(op,case_id,case.params) lists only exact verified variants and rejects same-name parameter mismatches.",
+    "quant_baselines.registry.implementations(op,case) returns the existing benchmarks.api.Implementation mapping; use it only inside the host guard and locked runtime.",
+    "verify_reference_sources(reference_snapshot_root) checks the included original source snapshot. This partial source snapshot is provenance, not a replacement for the full fixed v0.1.0 workload environment.",
+    "Use retained v3 measurement tools to reproduce catalog latencies; generic benchmark callers may use a different timing protocol."
+  ]
+}

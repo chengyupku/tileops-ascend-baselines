@@ -1,0 +1,7 @@
+{
+  "registered_records_checked": 160,
+  "changed_parameters_rejected": true,
+  "unknown_case_excluded": true,
+  "original_sources_match": true,
+  "no_torch_or_npu_imports": true
+}

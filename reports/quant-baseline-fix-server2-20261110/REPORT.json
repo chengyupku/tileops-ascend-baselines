@@ -1,0 +1,260 @@
+{
+  "scope_workloads": 71,
+  "same_campaign_comparable": 71,
+  "formal_variant_count": 160,
+  "formal_variant_counts": {
+    "compile": 30,
+    "original": 71,
+    "fixed": 21,
+    "compile_native": 16,
+    "native": 16,
+    "ops_math": 6
+  },
+  "formal_windows": 2400,
+  "compiled_unique_workloads": 34,
+  "compiled_variant_count": 46,
+  "aicpu_tasks_in_verified_windows": 0.0,
+  "source_library_verified_variants": 160,
+  "extra_edge_checks_passed": 60,
+  "ops_math_formal_pairs": 6,
+  "by_op": [
+    {
+      "op": "FP8QuantFwdOp",
+      "workloads": 5,
+      "same_campaign_comparable": 5,
+      "selected_variants": {
+        "compile": 5
+      },
+      "eager_to_selected_ratio_min": 3.9071472036289205,
+      "eager_to_selected_ratio_median": 4.576666991141827,
+      "eager_to_selected_ratio_max": 4.917042872882925,
+      "compiled_verified_cases": 5
+    },
+    {
+      "op": "FP8QuantPerBlockFwdOp",
+      "workloads": 7,
+      "same_campaign_comparable": 7,
+      "selected_variants": {
+        "fixed": 7
+      },
+      "eager_to_selected_ratio_min": 1.6342418071505052,
+      "eager_to_selected_ratio_median": 1.9326215431885894,
+      "eager_to_selected_ratio_max": 2.129232825953824,
+      "compiled_verified_cases": 0
+    },
+    {
+      "op": "INT4QuantPerGroupFwdOp",
+      "workloads": 8,
+      "same_campaign_comparable": 8,
+      "selected_variants": {
+        "original": 8
+      },
+      "eager_to_selected_ratio_min": 1.0,
+      "eager_to_selected_ratio_median": 1.0,
+      "eager_to_selected_ratio_max": 1.0,
+      "compiled_verified_cases": 0
+    },
+    {
+      "op": "INT8DequantPerBlockFwdOp",
+      "workloads": 6,
+      "same_campaign_comparable": 6,
+      "selected_variants": {
+        "compile_native": 2,
+        "native": 3,
+        "fixed": 1
+      },
+      "eager_to_selected_ratio_min": 2.086296181790076,
+      "eager_to_selected_ratio_median": 6.382791049356547,
+      "eager_to_selected_ratio_max": 21.545886986649215,
+      "compiled_verified_cases": 5
+    },
+    {
+      "op": "INT8DequantPerChannelFwdOp",
+      "workloads": 7,
+      "same_campaign_comparable": 7,
+      "selected_variants": {
+        "compile_native": 5,
+        "native": 1,
+        "compile": 1
+      },
+      "eager_to_selected_ratio_min": 1.1249504946818911,
+      "eager_to_selected_ratio_median": 4.234530914127157,
+      "eager_to_selected_ratio_max": 9.108281451857321,
+      "compiled_verified_cases": 7
+    },
+    {
+      "op": "INT8DequantPerTensorFwdOp",
+      "workloads": 7,
+      "same_campaign_comparable": 7,
+      "selected_variants": {
+        "compile_native": 2,
+        "native": 3,
+        "ops_math": 1,
+        "compile": 1
+      },
+      "eager_to_selected_ratio_min": 1.0306719246133362,
+      "eager_to_selected_ratio_median": 2.413397262454241,
+      "eager_to_selected_ratio_max": 10.577062798188468,
+      "compiled_verified_cases": 7
+    },
+    {
+      "op": "INT8QuantPerBlockFwdOp",
+      "workloads": 8,
+      "same_campaign_comparable": 8,
+      "selected_variants": {
+        "fixed": 8
+      },
+      "eager_to_selected_ratio_min": 1.1868117009504087,
+      "eager_to_selected_ratio_median": 1.7675362554701017,
+      "eager_to_selected_ratio_max": 2.120513368983957,
+      "compiled_verified_cases": 0
+    },
+    {
+      "op": "INT8QuantPerChannelFwdOp",
+      "workloads": 8,
+      "same_campaign_comparable": 8,
+      "selected_variants": {
+        "original": 8
+      },
+      "eager_to_selected_ratio_min": 1.0,
+      "eager_to_selected_ratio_median": 1.0,
+      "eager_to_selected_ratio_max": 1.0,
+      "compiled_verified_cases": 0
+    },
+    {
+      "op": "INT8QuantPerTensorFwdOp",
+      "workloads": 8,
+      "same_campaign_comparable": 8,
+      "selected_variants": {
+        "compile": 7,
+        "original": 1
+      },
+      "eager_to_selected_ratio_min": 1.0,
+      "eager_to_selected_ratio_median": 3.1800644672051432,
+      "eager_to_selected_ratio_max": 4.058152068299887,
+      "compiled_verified_cases": 7
+    },
+    {
+      "op": "SmoothQuantFwdOp",
+      "workloads": 7,
+      "same_campaign_comparable": 7,
+      "selected_variants": {
+        "compile": 3,
+        "original": 4
+      },
+      "eager_to_selected_ratio_min": 1.0,
+      "eager_to_selected_ratio_median": 1.0,
+      "eager_to_selected_ratio_max": 3.6059267005110387,
+      "compiled_verified_cases": 3
+    }
+  ],
+  "timing_boundary": "device time of complete callable, not host latency; all data-dependent layouts and native calls included",
+  "comparison_limit": "same-campaign baseline-to-baseline; TileOPs kernels were not remeasured, website speedups were not changed",
+  "original_contract_unchanged": true,
+  "compiler_limitations": [
+    "SmoothQuant: three exact-case compiled attempts fail quantized-code checks; one further case is unmeasured and deferred by the family failure gate. Three individually verified compiled cases remain registered.",
+    "INT8 per-tensor FP32 qwen3-32b-prefill compiled output failed exact-code checking; only individually verified cases are registered.",
+    "INT8 block/channel, FP8 block, INT4 pureTorch compiled pilot outputs fail original exact-code checks; no tolerance change.",
+    "One per-channel BF16 pureTorch compile pilot passed with process-local synchronous compilation; block21 still waited in fused kernel dl.init and timed out.",
+    "Compiled-native antiquant is explicitly distinct from pureTorch-expression compilation.",
+    "Legacy TileLang no-identity-pad wrapper not registered: locked CANN9.1 compiler rejects missing FP8 intrinsics in selected original runtime templates.",
+    "Native dynamic quant pilot differs in6/69683 INT8 codes and is not registered. A separate division-mode quantize API with original eager scales also fails exact-code checking and is not registered."
+  ],
+  "publication": {
+    "website_changed": false,
+    "raw_uploaded": false,
+    "github_pushed": false
+  },
+  "alarm": "off per latest user instruction",
+  "old_general_campaign": "paused",
+  "measured_compiler_correctness_failures": [
+    {
+      "index": 12,
+      "op": "INT4QuantPerGroupFwdOp",
+      "case": "llama-8b-q-proj-float16",
+      "variant": "compile",
+      "attempt": "bp3",
+      "error": "packed INT4 codes differ"
+    },
+    {
+      "index": 20,
+      "op": "INT8DequantPerBlockFwdOp",
+      "case": "ragged-k-few-rows-float16",
+      "variant": "compile",
+      "attempt": "a1",
+      "error": "_37bc7c3805c1e7d6638ab623dc32b565 = ascir.FusedGraph('autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565')\ngraph = ascir.ops.AscBackend('graph', graph_hint, autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565)\ninput0 = ascir.ops.Data('input0', autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565)\ninput0.attr.ir_attr.index = 0\ninput1 = ascir.ops.Data('input1', autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565)\ninput1.attr.ir_attr.index = 1\noutput0 = graph.y[0]\ngraph.x = [input0, input1]\ngraph_output0 = ascir.ops.Output('output0', autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565)\ngraph_output0.attr.ir_attr.index = 0\ngraph_output0.x = [output0]\n\nfuser = Autofuser(AutofuserOptions(graph_type=1))\nscheduled_autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565 = fuser.schedule(autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565)\ntiling_def, host_impl, device_impl = fuser.codegen(scheduled_autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565)\n No module named 'autofuse'\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n"
+    },
+    {
+      "index": 20,
+      "op": "INT8DequantPerBlockFwdOp",
+      "case": "ragged-k-few-rows-float16",
+      "variant": "compile_ge",
+      "attempt": "envrepair2",
+      "error": "r adapter [tbe_op_adapter] failed! Ret [4294967295][FUNC:InitializeAdapter][FILE:op_store_adapter_manager.cc][LINE:80]\n        [SubGraphOpt][PreCompileOp][Init] Initialize op store adapter failed, OpsStoreName[tbe-custom].[FUNC:Initialize][FILE:op_store_adapter_manager.cc][LINE:121]\n        [FusionMngr][Init] Op store adapter manager init failed.[FUNC:Initialize][FILE:fusion_manager.cc][LINE:118]\n        PluginManager InvokeAll failed.[FUNC:Initialize][FILE:ops_kernel_manager.cc][LINE:100]\n        OpsManager initialize failed.[FUNC:InnerInitialize][FILE:gelib.cc][LINE:223]\n        GELib::InnerInitialize failed.[FUNC:Initialize][FILE:gelib.cc][LINE:161]\n        GEInitializeV2 failed.[FUNC:GEInitializeV2][FILE:ge_api_v2.cc][LINE:370]\n        GEInitializeV2 initialize failed.[FUNC:GEInitialize][FILE:ge_api.cc][LINE:220]\n\n\n\n[ERROR] 2026-11-10-07:51:06 (PID:3342337, Device:0, RankID:-1) ERR03005 GRAPH internal error\n\n\n[ERROR] 2026-11-10-07:51:06 (PID:3342337, Device:0, RankID:-1) ERR03005 GRAPH internal error\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n"
+    },
+    {
+      "index": 20,
+      "op": "INT8DequantPerBlockFwdOp",
+      "case": "ragged-k-few-rows-float16",
+      "variant": "compile_ge",
+      "attempt": "envrepair3",
+      "error": "eTasks][FILE:tbe_op_store_adapter.cc][LINE:1169]\n        [SubGraphOpt][Compile][ProcFailedCompTask] Thread[281469752635648] failed to recompile single op[StridedSliceV2][FUNC:ProcessAllFailedCompileTasks][FILE:tbe_op_store_adapter.cc][LINE:1169]\n        [SubGraphOpt][Compile][ParalCompOp] Thread[281469752635648] failed when processing the task that had failed to compile.[FUNC:ParallelCompileOp][FILE:tbe_op_store_adapter.cc][LINE:1216]\n        Call OptimizeFusedGraph failed, ret:4294967295, engine_name:AIcoreEngine, graph_name:partition0_rank6_new_sub_graph15[FUNC:OptimizeSubGraph][FILE:graph_optimize.cc][LINE:124]\n        Assert ((DoSubgraphPartitionWithMode(graph_node, compute_graph, session_id, EnginePartitioner::Mode::kAtomicEnginePartitioning, \"AtomicEngine\")) == ge::SUCCESS) failed[FUNC:OptimizeSubgraph][FILE:graph_manager.cc][LINE:4019]\n        [Call][PreRun] Failed, graph_id:0, session_id:0.[FUNC:CompileGraph][FILE:graph_manager.cc][LINE:5115]\n        [Compile][Graph]Compile graph failed, error code:1343225857, session_id:0, graph_id:0[FUNC:CompileGraph][FILE:ge_api.cc][LINE:1122]\n\n\n\n[ERROR] 2026-11-10-07:55:18 (PID:3356853, Device:0, RankID:-1) ERR03005 GRAPH internal error"
+    },
+    {
+      "index": 40,
+      "op": "INT8QuantPerBlockFwdOp",
+      "case": "ds-v3-decode-few-tokens-bfloat16",
+      "variant": "compile",
+      "attempt": "bp2",
+      "error": "quantized codes differ"
+    },
+    {
+      "index": 48,
+      "op": "INT8QuantPerChannelFwdOp",
+      "case": "ragged-k-few-rows-bfloat16",
+      "variant": "compile",
+      "attempt": "bp3",
+      "error": "quantized codes differ"
+    },
+    {
+      "index": 5,
+      "op": "FP8QuantPerBlockFwdOp",
+      "case": "ragged-k-float16",
+      "variant": "compile",
+      "attempt": "bp2",
+      "error": "quantization bits differ"
+    },
+    {
+      "index": 62,
+      "op": "INT8QuantPerTensorFwdOp",
+      "case": "qwen3-32b-prefill-float32",
+      "variant": "compile",
+      "attempt": "formal1",
+      "error": "quantized codes differ"
+    },
+    {
+      "index": 67,
+      "op": "SmoothQuantFwdOp",
+      "case": "gpt-oss-20b-prefill-bfloat16",
+      "variant": "compile",
+      "attempt": "formal1",
+      "error": "quantized codes differ"
+    },
+    {
+      "index": 68,
+      "op": "SmoothQuantFwdOp",
+      "case": "llama-8b-prefill-bfloat16",
+      "variant": "compile",
+      "attempt": "formal1",
+      "error": "quantized codes differ"
+    },
+    {
+      "index": 69,
+      "op": "SmoothQuantFwdOp",
+      "case": "llama-8b-prefill-float16",
+      "variant": "compile",
+      "attempt": "formal1",
+      "error": "quantized codes differ"
+    }
+  ]
+}

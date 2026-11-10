@@ -1,0 +1,10 @@
+{
+  "variant": "compile_native",
+  "public_label": "torch.compile(inductor/ascendc, npu_anti_quant adapter)",
+  "fullgraph": true,
+  "silent_eager_fallback": false,
+  "original_reference_unchanged": true,
+  "difference_from_failed_compiled_reference": "captures verified complete native antiquant API, rather than Cast/Mul/Cast composition",
+  "not_claiming": "not evidence that original pure-torch composition compiles correctly; report actual external native calls",
+  "scope": "16 eligible FP16/BF16 dequant workloads only after exact validation"
+}

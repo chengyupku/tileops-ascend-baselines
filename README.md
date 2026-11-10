@@ -17,6 +17,10 @@ not a claim that every included adapter has passed the current contract.
 - `catalog/campaigns.json`: historical campaign directories included in the source export.
 - `catalog/source-manifest.json`: SHA256 and origin of exported source files.
 
+## Quant/dequant correction (2026-11-10)
+
+The dedicated server2 campaign covers all 71 fixed workloads with same-campaign eager controls. It adds 89 verified non-control variants, including explicitly separated Torch-expression compilation and compiled native antiquant wrappers. Exact cases, callable factories, source pins, and limitations are in [the campaign directory](reports/quant-baseline-fix-server2-20261110/USAGE.json) and [report](reports/quant-baseline-fix-server2-20261110/REPORT.json). Failed and unmeasured candidates remain separate in the catalog. These are device measurements; no raw data or website update is included. The general baseline retest remains paused.
+
 ## Status snapshot
 
 At the explicit pause on 2026-11-09:

@@ -1,0 +1,10 @@
+{
+  "collected_at": "2026-11-10T10:13:43.196061+00:00",
+  "compiled_variants": 46,
+  "exact_loaded_binary_count": 158,
+  "cache_directories": 45,
+  "loaded_binary_hashes_match": true,
+  "host_compile_commands_use_cann91": true,
+  "archive_sha256": "9653b9a114cb08da72576bd73d628ef008ffe2043de2c1a3587ed2e7f6229d20",
+  "scope": "Post-run exact loaded binaries matched to hashes recorded in each measurement process; generated sources and recorded host commands retained. Does not invent historical compiler execution receipts. Cache is private; not exported."
+}

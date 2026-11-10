@@ -1,0 +1,532 @@
+[
+  {
+    "index": 0,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-4k-float32",
+    "variant": "compile",
+    "attempt": "bp3",
+    "status": "pilot_raw_verified",
+    "result_sha256": "89ed289c59c95e527929ee41cbd14f8fe106759bb7bf879956466c1c92a276b6"
+  },
+  {
+    "index": 0,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-4k-float32",
+    "variant": "tilelang",
+    "attempt": "bp5",
+    "status": "failed",
+    "result_sha256": "059442cf633c1beb59b433f8e538a5fe67be5be4377affe73279662c3de14940",
+    "error": "Installed tilelang differs from selected source: /opt/tileops-all-pairs/workspace/reports/baseline-retest32-20261030/server2/original_tilelang_build_v42/tilelang/tilelang/autodd.py",
+    "phase": "initialize"
+  },
+  {
+    "index": 0,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-4k-float32",
+    "variant": "tilelang",
+    "attempt": "envrepair2",
+    "status": "failed",
+    "result_sha256": "bf14a300a7614b56f20cde35a90d87ca0cde9290a9cd5399ce651a118012600c",
+    "error": "module 'tilelang' has no attribute 'set_cache_dir'",
+    "phase": "initialize"
+  },
+  {
+    "index": 0,
+    "op": "FP8QuantFwdOp",
+    "case": "kv-index-4k-float32",
+    "variant": "tilelang",
+    "attempt": "envrepair3",
+    "status": "failed",
+    "result_sha256": "5a8f211d527e61699b7461211454a060e4bac1827357206b13f5bf0131a2bdd8",
+    "error": "\n}\n\nextern \"C\" __global__ __vector__ void per_token_cast_kernel(__gm__ fp8_e4_t* q_groups, __gm__ float* scales, __gm__ float* x_groups) {\n  asc_init();\n  __ubuf__ uint8_t *buf_dyn_shmem = (__ubuf__ uint8_t *)0;\n  asc_copy_gm2ub_align((__ubuf__ uint8_t*)((&(((__ubuf__ float*)buf_dyn_shmem)[0]))), (__gm__ uint8_t*)((&(x_groups[(((int32_t)block_idx) * 8192)]))), 1, 32768, 0, 0, 0, static_cast<asc_load_l2_cache_mode>(0), 32768, 32768);\n  asc_sync_notify(PIPE_MTE2, PIPE_V, static_cast<event_t>(0));\n  asc_sync_wait(PIPE_MTE2, PIPE_V, static_cast<event_t>(0));\n  asc_vf_call<per_token_cast_kernel_simt_vf_0>(cce::dim3(1024), buf_dyn_shmem);\n  asc_sync_notify(PIPE_V, PIPE_MTE3, static_cast<event_t>(0));\n  asc_sync_wait(PIPE_V, PIPE_MTE3, static_cast<event_t>(0));\n  asc_copy_ub2gm_align((__gm__ uint8_t*)((&(scales[(((int32_t)block_idx) * 64)]))), (__ubuf__ uint8_t*)((&(((__ubuf__ float*)buf_dyn_shmem)[20480]))), 1, 256, static_cast<asc_store_l2_cache_mode>(4), 256, 256);\n  asc_copy_ub2gm_align((__gm__ uint8_t*)((&(q_groups[(((int32_t)block_idx) * 8192)]))), (__ubuf__ uint8_t*)((&(((__ubuf__ fp8_e4_t*)buf_dyn_shmem)[65536]))), 1, 8192, static_cast<asc_store_l2_cache_mode>(4), 8192, 8192);\n}\n\n",
+    "phase": "initialize"
+  },
+  {
+    "index": 12,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "llama-8b-q-proj-float16",
+    "variant": "compile",
+    "attempt": "bp3",
+    "status": "failed",
+    "result_sha256": "f918c0562eeb3b0e4369a54655233ead2cfda3256c582311e363d071ed1ca5b3",
+    "error": "packed INT4 codes differ",
+    "phase": "correctness"
+  },
+  {
+    "index": 12,
+    "op": "INT4QuantPerGroupFwdOp",
+    "case": "llama-8b-q-proj-float16",
+    "variant": "fixed",
+    "attempt": "edge1",
+    "status": "edge_verified",
+    "result_sha256": "d77637e66720253e35a1c337e70a15a6fe3235e7ba754e2d12c83a3c883194eb"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile",
+    "attempt": "a1",
+    "status": "failed",
+    "result_sha256": "b80476145ee925ec4ce95c9e1f9690a1f36b91d803d2d499d358f582a8f3bdc8",
+    "error": "_37bc7c3805c1e7d6638ab623dc32b565 = ascir.FusedGraph('autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565')\ngraph = ascir.ops.AscBackend('graph', graph_hint, autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565)\ninput0 = ascir.ops.Data('input0', autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565)\ninput0.attr.ir_attr.index = 0\ninput1 = ascir.ops.Data('input1', autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565)\ninput1.attr.ir_attr.index = 1\noutput0 = graph.y[0]\ngraph.x = [input0, input1]\ngraph_output0 = ascir.ops.Output('output0', autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565)\ngraph_output0.attr.ir_attr.index = 0\ngraph_output0.x = [output0]\n\nfuser = Autofuser(AutofuserOptions(graph_type=1))\nscheduled_autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565 = fuser.schedule(autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565)\ntiling_def, host_impl, device_impl = fuser.codegen(scheduled_autofused_mul_unsqueeze_37bc7c3805c1e7d6638ab623dc32b565)\n No module named 'autofuse'\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n",
+    "phase": "correctness"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile",
+    "attempt": "envfix1",
+    "status": "pilot_raw_verified",
+    "result_sha256": "a9689851a4f9c5d01786ef0ace1931a3fa745c984add8631c708e095411e431f"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile",
+    "attempt": "formal1",
+    "status": "audit_failed",
+    "result_sha256": "948e50d956ad4c5cedf2ba9becaa8f2fc6bfb158632377f130ffd0df25de9f3f",
+    "audit_error": "AssertionError()"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile_ge",
+    "attempt": "envrepair2",
+    "status": "failed",
+    "result_sha256": "27c1145bb542c55923dc10771160ad00a9c63b264cdf8622808b85c912a437bb",
+    "error": "r adapter [tbe_op_adapter] failed! Ret [4294967295][FUNC:InitializeAdapter][FILE:op_store_adapter_manager.cc][LINE:80]\n        [SubGraphOpt][PreCompileOp][Init] Initialize op store adapter failed, OpsStoreName[tbe-custom].[FUNC:Initialize][FILE:op_store_adapter_manager.cc][LINE:121]\n        [FusionMngr][Init] Op store adapter manager init failed.[FUNC:Initialize][FILE:fusion_manager.cc][LINE:118]\n        PluginManager InvokeAll failed.[FUNC:Initialize][FILE:ops_kernel_manager.cc][LINE:100]\n        OpsManager initialize failed.[FUNC:InnerInitialize][FILE:gelib.cc][LINE:223]\n        GELib::InnerInitialize failed.[FUNC:Initialize][FILE:gelib.cc][LINE:161]\n        GEInitializeV2 failed.[FUNC:GEInitializeV2][FILE:ge_api_v2.cc][LINE:370]\n        GEInitializeV2 initialize failed.[FUNC:GEInitialize][FILE:ge_api.cc][LINE:220]\n\n\n\n[ERROR] 2026-11-10-07:51:06 (PID:3342337, Device:0, RankID:-1) ERR03005 GRAPH internal error\n\n\n[ERROR] 2026-11-10-07:51:06 (PID:3342337, Device:0, RankID:-1) ERR03005 GRAPH internal error\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n",
+    "phase": "correctness"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile_ge",
+    "attempt": "envrepair3",
+    "status": "failed",
+    "result_sha256": "9ae6d70a484c0de5d7b6ec6ec035c1738d7376e049b686ece762a5459c9f2e5e",
+    "error": "eTasks][FILE:tbe_op_store_adapter.cc][LINE:1169]\n        [SubGraphOpt][Compile][ProcFailedCompTask] Thread[281469752635648] failed to recompile single op[StridedSliceV2][FUNC:ProcessAllFailedCompileTasks][FILE:tbe_op_store_adapter.cc][LINE:1169]\n        [SubGraphOpt][Compile][ParalCompOp] Thread[281469752635648] failed when processing the task that had failed to compile.[FUNC:ParallelCompileOp][FILE:tbe_op_store_adapter.cc][LINE:1216]\n        Call OptimizeFusedGraph failed, ret:4294967295, engine_name:AIcoreEngine, graph_name:partition0_rank6_new_sub_graph15[FUNC:OptimizeSubGraph][FILE:graph_optimize.cc][LINE:124]\n        Assert ((DoSubgraphPartitionWithMode(graph_node, compute_graph, session_id, EnginePartitioner::Mode::kAtomicEnginePartitioning, \"AtomicEngine\")) == ge::SUCCESS) failed[FUNC:OptimizeSubgraph][FILE:graph_manager.cc][LINE:4019]\n        [Call][PreRun] Failed, graph_id:0, session_id:0.[FUNC:CompileGraph][FILE:graph_manager.cc][LINE:5115]\n        [Compile][Graph]Compile graph failed, error code:1343225857, session_id:0, graph_id:0[FUNC:CompileGraph][FILE:ge_api.cc][LINE:1122]\n\n\n\n[ERROR] 2026-11-10-07:55:18 (PID:3356853, Device:0, RankID:-1) ERR03005 GRAPH internal error",
+    "phase": "correctness"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile_ge",
+    "attempt": "namespace1",
+    "status": "failed",
+    "result_sha256": "0abc7b57fd423fb8549e956d019c27d85b78eb56f711cf64c268f4ffa8972512",
+    "error": "No module named 'decorator'",
+    "phase": "initialize"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile_ge",
+    "attempt": "p1",
+    "status": "failed",
+    "result_sha256": "dbc7bbfa76341d0374b96dcaf1fc3d4b067ee0767270b44dc1132976ebae0517",
+    "error": "No package metadata was found for protobuf\nAn error occurred when import `torchair` and the above is the specific error message. \nThis error message was generated when import torchair, but thrown asynchronously here. \nPlease check the error message above. \n\n[ERROR] 2026-11-10-06:25:20 (PID:2990616, Device:0, RankID:-1) ERR00005 PTA internal error",
+    "phase": "initialize"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile_native",
+    "attempt": "nativegraph1",
+    "status": "pilot_raw_verified",
+    "result_sha256": "706728842764f3c991761c98419659cbbbb973dc4c9fae9f0860cd17466683a1"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "fixed",
+    "attempt": "edge1",
+    "status": "edge_verified",
+    "result_sha256": "f214a6a0c7951c66c8bd3901146f16765f4475e217eeff348709a180a8c14ca1"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "fixed",
+    "attempt": "formal1",
+    "status": "audit_failed",
+    "result_sha256": "7e2cfdd07a39e32c373741ae36ea2e63d00db1095bfc75a98b9a36fbbb3d7fa5",
+    "audit_error": "AssertionError()"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "fixed",
+    "attempt": "p1",
+    "status": "pilot_raw_verified",
+    "result_sha256": "17817199f9d5791351c7b8e119030008c36de50675045a7586b548a5ad103d12"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "native",
+    "attempt": "bp1",
+    "status": "pilot_raw_verified",
+    "result_sha256": "f62551c2cd7dccc4c6059b9020136ce6c57454d7854082b2439ca2d3bf678761"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "native",
+    "attempt": "edge1",
+    "status": "edge_verified",
+    "result_sha256": "8802307fadc4322f00ff0d6015a0bc8d671429806617b2e9f44682258c6722e3"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "native",
+    "attempt": "formal1",
+    "status": "audit_failed",
+    "result_sha256": "05f54e58788ee297aeb688126837bca630ec43d2152bea1a8d781aabad5fdd29",
+    "audit_error": "AssertionError()"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "ops_math",
+    "attempt": "bp1",
+    "status": "failed",
+    "result_sha256": "aa81d45ba39b34d27029fe8728f9b92041c0804881780c1cbcbd81b46bec0fdc",
+    "error": "aclSetCompileopt(JIT) returned 500001",
+    "phase": "initialize"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "ops_math",
+    "attempt": "envrepair2",
+    "status": "failed",
+    "result_sha256": "420195b4d9b43528d7489bb82d6b734304f9b4e75f543dc6759dd733ba0a2d5d",
+    "error": "aclSetCompileopt(JIT) returned 500001",
+    "phase": "initialize"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "ops_math",
+    "attempt": "envrepair3",
+    "status": "failed",
+    "result_sha256": "89d56d4a78d41ee42c1d3475a00a7f0de0f5c915ee802827c15e44d7384eddc1",
+    "error": "The Inner error is reported as above. The process exits for this inner error, and the current working operator name is aclnnReduceSum.\nSince the operator is called asynchronously, the stacktrace may be inaccurate. If you want to get the accurate stacktrace, please set the environment variable ASCEND_LAUNCH_BLOCKING=1.\nNote: ASCEND_LAUNCH_BLOCKING=1 will force ops to run in synchronous mode, resulting in performance degradation. Please unset ASCEND_LAUNCH_BLOCKING in time after debugging.\n[ERROR] 2026-11-10-07:55:48 (PID:3357575, Device:0, RankID:-1) ERR00100 PTA call acl api failed.\n",
+    "phase": "flush_setup"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "ops_math",
+    "attempt": "flush_cpu_verify1",
+    "status": "pilot_raw_verified",
+    "result_sha256": "504e8f76976209afdd86bf3266f30daac454da005f3752d86327bcdffd2e0818"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "ops_math",
+    "attempt": "namespace1",
+    "status": "failed",
+    "result_sha256": "ec42d6c3708e1e9822540fda80a2c66bd34376690309fb1033aaec05d77f26c5",
+    "error": "No module named 'decorator'",
+    "phase": "initialize"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "ops_math",
+    "attempt": "tbeenv1",
+    "status": "failed",
+    "result_sha256": "84768726de291f57239e1d794ed75562e3b8f6cc297dddafb45959e293ae560f",
+    "error": "aclSetCompileopt(JIT) returned 500001",
+    "phase": "initialize"
+  },
+  {
+    "index": 20,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "original",
+    "attempt": "formal1",
+    "status": "audit_failed",
+    "result_sha256": "62ce52c919d0b45b3d1b221355fccc29bac05457f1a17c66c964a3f5ebf0f182",
+    "audit_error": "AssertionError()"
+  },
+  {
+    "index": 21,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-decode-bfloat16",
+    "variant": "fixed",
+    "attempt": "formal1",
+    "status": "audit_failed",
+    "result_sha256": "608243129765dd5c347efc9c7502608d73cbb1bc7cd1d446c3b9b5cdd002c306",
+    "audit_error": "AssertionError()"
+  },
+  {
+    "index": 21,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-decode-bfloat16",
+    "variant": "native",
+    "attempt": "formal1",
+    "status": "audit_failed",
+    "result_sha256": "3f75abf98a2beaf3438732d75731c2a24510f8c0aa4e356f85b061cf90f7a6bb",
+    "audit_error": "AssertionError()"
+  },
+  {
+    "index": 21,
+    "op": "INT8DequantPerBlockFwdOp",
+    "case": "ds-v3-decode-bfloat16",
+    "variant": "original",
+    "attempt": "formal1",
+    "status": "audit_failed",
+    "result_sha256": "527f10199cc52c1700ed5f8340b18d69dd6421b4cdaf4efe041945b46f28539e",
+    "audit_error": "AssertionError()"
+  },
+  {
+    "index": 26,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "compile",
+    "attempt": "synccompile1",
+    "status": "pilot_raw_verified",
+    "result_sha256": "9564fee1c8cb1cfe35a84f24ba351c8afdd154bf96e36a51706ea79373d67743"
+  },
+  {
+    "index": 26,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "compile_native",
+    "attempt": "nativegraph1",
+    "status": "pilot_raw_verified",
+    "result_sha256": "052f592e9c2917ff9da123b418d7eac88d0a235c64e17bb90107885036ecb079"
+  },
+  {
+    "index": 26,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "native",
+    "attempt": "bp1",
+    "status": "pilot_raw_verified",
+    "result_sha256": "de265151c2ef56e57e2c34147aa40c1f0a1c6b339519b08bfca867f7455e4055"
+  },
+  {
+    "index": 26,
+    "op": "INT8DequantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "native",
+    "attempt": "edge1",
+    "status": "edge_verified",
+    "result_sha256": "0e906584e32a2e496c6c5ff2157e91f8e22ec28d5f8e8889d6d4329c89580553"
+  },
+  {
+    "index": 33,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile",
+    "attempt": "bp5",
+    "status": "pilot_raw_verified",
+    "result_sha256": "e8ec5487417a69480538373d27ec51c60490b5baab9829b29c16a143211bff87"
+  },
+  {
+    "index": 33,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "compile_native",
+    "attempt": "nativegraph1",
+    "status": "pilot_raw_verified",
+    "result_sha256": "062ce72a6fa2b5e932e4a67a912c1342e06152406a890ace611de046788f5151"
+  },
+  {
+    "index": 33,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "native",
+    "attempt": "bp1",
+    "status": "pilot_raw_verified",
+    "result_sha256": "05cabba57cc175978ad9a09a054831d085a93e99fceaae6deb94f2080b5e5a82"
+  },
+  {
+    "index": 33,
+    "op": "INT8DequantPerTensorFwdOp",
+    "case": "ragged-k-few-rows-float16",
+    "variant": "native",
+    "attempt": "edge1",
+    "status": "edge_verified",
+    "result_sha256": "58ce044cab561b1d0881a4da3085cffcaa34d6c1bd1ecfbc33e6c61b17c92287"
+  },
+  {
+    "index": 40,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-decode-few-tokens-bfloat16",
+    "variant": "compile",
+    "attempt": "bp2",
+    "status": "failed",
+    "result_sha256": "dc4db19ea2f76e2f26624ebd87004cbdd696f0d1512650e3a0d0d135375b4927",
+    "error": "quantized codes differ",
+    "phase": "correctness"
+  },
+  {
+    "index": 40,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-decode-few-tokens-bfloat16",
+    "variant": "fixed",
+    "attempt": "bp1",
+    "status": "pilot_raw_verified",
+    "result_sha256": "7b9e3b3644f1ad248a85f148aa745533c2a85456b304d5c1847c9dca2d01ab88"
+  },
+  {
+    "index": 40,
+    "op": "INT8QuantPerBlockFwdOp",
+    "case": "ds-v3-decode-few-tokens-bfloat16",
+    "variant": "fixed",
+    "attempt": "edge1",
+    "status": "edge_verified",
+    "result_sha256": "8b93a6d84dd8231c85d2a98276902e035f257b59148be5c27282807296494cc7"
+  },
+  {
+    "index": 48,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "compile",
+    "attempt": "bp3",
+    "status": "failed",
+    "result_sha256": "dbbc536ef3e72a65183d4c9a1285dfaf2c704ae8572099b711e077a81a9a05a0",
+    "error": "quantized codes differ",
+    "phase": "correctness"
+  },
+  {
+    "index": 48,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "native_quant",
+    "attempt": "api1",
+    "status": "failed",
+    "result_sha256": "e569e9338e4f7c82fd133e6dd818bd6b65b7dc0e806885dc5f98192e74856cbf",
+    "error": "quantized codes differ",
+    "phase": "correctness"
+  },
+  {
+    "index": 48,
+    "op": "INT8QuantPerChannelFwdOp",
+    "case": "ragged-k-few-rows-bfloat16",
+    "variant": "native_quantize",
+    "attempt": "divapi1",
+    "status": "failed",
+    "result_sha256": "62156cc6f8e05f2870e9adbbcb1e2901ec871f745e6f945ab6ff639180c2eae8",
+    "error": "quantized codes differ",
+    "phase": "correctness"
+  },
+  {
+    "index": 5,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "compile",
+    "attempt": "bp2",
+    "status": "failed",
+    "result_sha256": "2b9a7aedea92006ad5e92bff33adab7ce71989cc2cb43f1d7f4e175411f321f3",
+    "error": "quantization bits differ",
+    "phase": "correctness"
+  },
+  {
+    "index": 5,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "fixed",
+    "attempt": "bp1",
+    "status": "pilot_raw_verified",
+    "result_sha256": "85a5d6069070cd02b72d372a81788f2b81c996ffffa0381e64ac8f8352b710a7"
+  },
+  {
+    "index": 5,
+    "op": "FP8QuantPerBlockFwdOp",
+    "case": "ragged-k-float16",
+    "variant": "fixed",
+    "attempt": "edge1",
+    "status": "edge_verified",
+    "result_sha256": "17389beb423b0fec16ad87f542b580f22e3d85065ae45cb5c98f9fe037c7386a"
+  },
+  {
+    "index": 56,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "gpt-oss-20b-decode-bfloat16",
+    "variant": "compile",
+    "attempt": "bp3",
+    "status": "pilot_raw_verified",
+    "result_sha256": "1a541d1aee255bc6eb042592da84a960e899adb8d7ebda07026b15a2a38ebacb"
+  },
+  {
+    "index": 62,
+    "op": "INT8QuantPerTensorFwdOp",
+    "case": "qwen3-32b-prefill-float32",
+    "variant": "compile",
+    "attempt": "formal1",
+    "status": "failed",
+    "result_sha256": "7a0a630efb6dc28741e8c4011cfe351373e8c48fd49221397d09af0c189d4597",
+    "error": "quantized codes differ",
+    "phase": "correctness"
+  },
+  {
+    "index": 64,
+    "op": "SmoothQuantFwdOp",
+    "case": "ragged-k-decode-bfloat16",
+    "variant": "compile",
+    "attempt": "bp3",
+    "status": "pilot_raw_verified",
+    "result_sha256": "5caedc451a63e636f394d3a8f28abad80cdee71a4c5b36dc15d12416f0114b24"
+  },
+  {
+    "index": 67,
+    "op": "SmoothQuantFwdOp",
+    "case": "gpt-oss-20b-prefill-bfloat16",
+    "variant": "compile",
+    "attempt": "formal1",
+    "status": "failed",
+    "result_sha256": "803aaab85d21ea5de5692eac72e3d9478b40d4a6c68ad9762c5866f6866eab50",
+    "error": "quantized codes differ",
+    "phase": "correctness"
+  },
+  {
+    "index": 68,
+    "op": "SmoothQuantFwdOp",
+    "case": "llama-8b-prefill-bfloat16",
+    "variant": "compile",
+    "attempt": "formal1",
+    "status": "failed",
+    "result_sha256": "27b200b7549c2e489401c86a70ee0a91f788657ba45e3f9a23790e4a95ab3e6a",
+    "error": "quantized codes differ",
+    "phase": "correctness"
+  },
+  {
+    "index": 69,
+    "op": "SmoothQuantFwdOp",
+    "case": "llama-8b-prefill-float16",
+    "variant": "compile",
+    "attempt": "formal1",
+    "status": "failed",
+    "result_sha256": "51487768e5b122463b660360039ab0b64404e5dae0d415dc91ec3b310cbba45d",
+    "error": "quantized codes differ",
+    "phase": "correctness"
+  }
+]

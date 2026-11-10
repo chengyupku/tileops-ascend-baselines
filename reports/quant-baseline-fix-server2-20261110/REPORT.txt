@@ -1,0 +1,26 @@
+Quant/dequant baseline correction: 71/71 comparable workloads, 160 verified variants, 2400 isolated windows.
+Variants: {'compile': 30, 'original': 71, 'fixed': 21, 'compile_native': 16, 'native': 16, 'ops_math': 6}
+AICPU tasks in accepted windows: 0.0
+
+Per-op same-run eager / selected baseline ratios:
+FP8QuantFwdOp: 5/5; selected={'compile': 5}; min/median/max=3.9071472036289205/4.576666991141827/4.917042872882925; compiled cases=5
+FP8QuantPerBlockFwdOp: 7/7; selected={'fixed': 7}; min/median/max=1.6342418071505052/1.9326215431885894/2.129232825953824; compiled cases=0
+INT4QuantPerGroupFwdOp: 8/8; selected={'original': 8}; min/median/max=1.0/1.0/1.0; compiled cases=0
+INT8DequantPerBlockFwdOp: 6/6; selected={'compile_native': 2, 'native': 3, 'fixed': 1}; min/median/max=2.086296181790076/6.382791049356547/21.545886986649215; compiled cases=5
+INT8DequantPerChannelFwdOp: 7/7; selected={'compile_native': 5, 'native': 1, 'compile': 1}; min/median/max=1.1249504946818911/4.234530914127157/9.108281451857321; compiled cases=7
+INT8DequantPerTensorFwdOp: 7/7; selected={'compile_native': 2, 'native': 3, 'ops_math': 1, 'compile': 1}; min/median/max=1.0306719246133362/2.413397262454241/10.577062798188468; compiled cases=7
+INT8QuantPerBlockFwdOp: 8/8; selected={'fixed': 8}; min/median/max=1.1868117009504087/1.7675362554701017/2.120513368983957; compiled cases=0
+INT8QuantPerChannelFwdOp: 8/8; selected={'original': 8}; min/median/max=1.0/1.0/1.0; compiled cases=0
+INT8QuantPerTensorFwdOp: 8/8; selected={'compile': 7, 'original': 1}; min/median/max=1.0/3.1800644672051432/4.058152068299887; compiled cases=7
+SmoothQuantFwdOp: 7/7; selected={'compile': 3, 'original': 4}; min/median/max=1.0/1.0/3.6059267005110387; compiled cases=3
+
+Limitations:
+SmoothQuant: three exact-case compiled attempts fail quantized-code checks; one further case is unmeasured and deferred by the family failure gate. Three individually verified compiled cases remain registered.
+INT8 per-tensor FP32 qwen3-32b-prefill compiled output failed exact-code checking; only individually verified cases are registered.
+INT8 block/channel, FP8 block, INT4 pureTorch compiled pilot outputs fail original exact-code checks; no tolerance change.
+One per-channel BF16 pureTorch compile pilot passed with process-local synchronous compilation; block21 still waited in fused kernel dl.init and timed out.
+Compiled-native antiquant is explicitly distinct from pureTorch-expression compilation.
+Legacy TileLang no-identity-pad wrapper not registered: locked CANN9.1 compiler rejects missing FP8 intrinsics in selected original runtime templates.
+Native dynamic quant pilot differs in6/69683 INT8 codes and is not registered. A separate division-mode quantize API with original eager scales also fails exact-code checking and is not registered.
+
+No website changes, raw upload, or old campaign restart. All failed/invalid attempts retained.

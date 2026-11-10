@@ -1,0 +1,47 @@
+{
+  "reference": "unchanged fixed v0.1.0 workload functions and original CPU checker",
+  "timed_operations": "all layout, padding, broadcasting, native calls and output conversion inside complete callable",
+  "compile": {
+    "backend": "inductor/ascendc",
+    "fullgraph": true,
+    "dynamic": false,
+    "suppress_errors": false,
+    "aten_extern_calls": "allowed as part of genuinely compiled graph; report actual tasks, do not claim one kernel"
+  },
+  "changes": [
+    {
+      "families": [
+        "INT8QuantPerBlockFwdOp",
+        "FP8QuantPerBlockFwdOp",
+        "INT8DequantPerBlockFwdOp"
+      ],
+      "change": "view blocks and broadcast small scale; do not repeat_interleave to full tensor",
+      "constraint": "preserve FP32 intermediate math and required tail padding"
+    },
+    {
+      "families": [
+        "INT8DequantPerTensorFwdOp",
+        "INT8DequantPerChannelFwdOp",
+        "INT8DequantPerBlockFwdOp"
+      ],
+      "change": "additional full npu_anti_quant API baseline",
+      "constraint": "FP16/BF16 output only; FP32 scale unchanged; actual checker required"
+    },
+    {
+      "families": [
+        "FP8QuantFwdOp"
+      ],
+      "change": "skip identity F.pad in existing TileLang adapter",
+      "constraint": "original simt kernel and schedule unchanged; retain actual required padding"
+    },
+    {
+      "families": [
+        "INT4QuantPerGroupFwdOp"
+      ],
+      "change": "compile existing verified arithmetic packing",
+      "constraint": "do not restore known AICPU bitshift path; arithmetic packing semantics unchanged"
+    }
+  ],
+  "registration": "add separate variants, select measured fastest without removing old evidence",
+  "publication": "not performed; raw archives remain private/local"
+}

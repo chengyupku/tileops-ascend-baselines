@@ -1,0 +1,17 @@
+{
+  "source/workloads/quantization/int8_dequant.py": "9b3798555141308705fce8cbc4ae468d1a4ae8e5bf762714fc2bcffd67991f73",
+  "source/workloads/quantization/__init__.py": "6b3903acc99c1d7cf87f2b365f7c99a8d14ca572201844588a15a2ca76d4eeec",
+  "source/workloads/quantization/quantize.py": "d01f0ea331a186f181ee5928097d5af4ddf2d176e259f7f119110e76bb2c20c2",
+  "source/workloads/quantization/fp8_quant.py": "00a762611b3bcdb5ec166637efefa603ef3a18ee37b73a6a15e75fdf38168496",
+  "tools/npu_pipeline_campaign.py": "7d09d6cd042501973e1192b46fcbd4ff89179dd0e5d865f4e1217452c544dd51",
+  "tools/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "tools/measure_baselines.py": "39e9973489069562543aed004f7381adbe6418be7313c3d9ce3cff53caa9127a",
+  "tools/npu_guard.py": "3d7b6bd53380cbb80de5c1d44a2f5b15fabb0def202de78906cddc1b77eb54b3",
+  "tools/npu_pipeline.py": "dce6f581d17ad3f6c7b6f9261feb38944a193055ba5695a2ad5f6470e6d3a002",
+  "tools/npu_pipeline_ready.py": "1a65076a0c1551edf313a6c33eb4f92d969fad831df68ef154797c65736af5c6",
+  "tools/npu_pipeline_disk_v10.py": "24c2f9f3c7b5e1ae06b6bedf3ee3354f7a93fe28c8d3ca8d48b7ad2735bc93a0",
+  "tools/baseline_protocol.py": "4921791a16097d80c404396ac17a0c266bab708b8df3e69040c84df5b7b56c48",
+  "tools/kernel_task_profile.py": "4a57440dc72493eeb1d7cc2e6d404e659e7649377129c37ad467228f2b339991",
+  "tools/kernel_task_profile_full32.py": "d745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753",
+  "source/workloads/numerics.py": "d55fc7ad327bdc18acae1e032070c91adaef9abf8d9d7d3c398a9ad5aa6d275e"
+}
