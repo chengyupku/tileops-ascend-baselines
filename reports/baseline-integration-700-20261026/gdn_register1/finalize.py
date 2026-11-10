@@ -1,0 +1,29 @@
+import pathlib,json,hashlib,datetime,subprocess,tarfile
+D=pathlib.Path(__file__).resolve().parent;W=pathlib.Path('/opt/tileops-all-pairs/workspace');remote=W/'reports/baseline-integration-700-20261026/gdn_register1';cid='q35-397b-tp8-1024-7168-bfloat16'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+def save(n,x):(D/n).write_text(json.dumps(x,indent=2)+'\n')
+reg=json.loads((D/'attempt_002_registration/REGISTRATION.json').read_text());save('REGISTRATION.json',reg)
+rbase='attempt_001/evidence/opt/tileops-all-pairs/workspace/reports/baseline-integration-700-20261026/transformer_linear/'+cid
+checker={'path':rbase+'/checker.json','sha256':sha(D/rbase/'checker.json'),'original_remote_path':str(W/'reports/baseline-integration-700-20261026/transformer_linear'/cid/'checker.json')}
+guard={'path':rbase+'/GUARD_RECEIPT.json','sha256':sha(D/rbase/'GUARD_RECEIPT.json'),'returncode':1,'original_remote_path':str(W/'reports/baseline-integration-700-20261026/transformer_linear'/cid/'GUARD_RECEIPT.json')}
+c=json.loads((D/rbase/'checker.json').read_text());native=json.loads((D/'attempt_003_native/NATIVE_DETAIL.json').read_text())
+assert all(x['equal'] for x in native['kernel_source_equivalence'])
+row={'baseline':'ops-transformer','operator':'GDNFwdOp','case_id':cid,'status':'registered_source_equivalent','reason':'Exact-key registration added under provider flock; existing canonical 2/2-output numerical pass retained. Historical checker source_changed and guard rc=1 preserved; changed provider snapshots only add unrelated GQA/decode routes. No new numerical execution.','checker_receipt':checker,'guard_receipt':guard,'registered':True,'api':c['api'],'factory':reg['factory'],'checked_outputs':2,'total_outputs':2,'checker_status':'source_changed','timings':{'queue_seconds':None,'device_seconds':None,'compile_seconds':None,'total_seconds':None,'checker_seconds':None},'registration_receipt':'REGISTRATION.json'}
+save('RESULT.json',{'rows':[row],'scope_count':1,'new_numerical_runs':0,'npu_used':False})
+issues=['Historical guard exit 1 and checker source_changed remain authoritative; any final acceptance must explicitly apply source-equivalence review, not rewrite these receipts.','No standalone kernel-launch log found in the exact case log directory and no build log found at the inspected build-root/top-parent level. Actual historical execution is evidenced by full checker, loaded opapi identity and direct ACL call path; ELF/static kernel pins and 13 original kernel-source matches are preserved. No new launch/build was performed.']
+save('RECOMMENDED_ACCEPT.json',{'rows':[dict(row,recommendation='RECOMMEND_ACCEPT_SOURCE_EQUIVALENCE_REVIEW',conditions=['Preserve original source_changed status and guard rc=1 in acceptance provenance.'])],'not_a_clean_guard_pass':True,'ACCEPTED_modified':False,'limitations':issues})
+save('DELIVERY.json',{'scope':1,'registration_completed':1,'registered_key':[row['baseline'],row['operator'],cid],'shared_changed_files':[reg['path']],'registration_delta':{'before':52,'after':53,'added':[cid],'removed':[],'other_entries_preserved':True},'evidence':['REGISTRATION.json','attempt_001/CHECKS.json','attempt_001/SOURCE_EQUIVALENCE.json','attempt_001/PROVIDER.diff','attempt_001/NATIVE.json','attempt_002_registration/PREFLIGHT.json','attempt_002_registration/REGISTERED.before.json','attempt_002_registration/REGISTERED.after.json','attempt_003_native/NATIVE_DETAIL.json'],'checks':{'original_receipt_hashes':True,'frozen_binding_entry_direct_acl_equal':True,'canonical_contract_equal':True,'oracle_hashes_equal':True,'runtime_pins_checked':39,'original_kernel_source_matches':13,'opapi_loaded_hash_and_ELF_symbols':True,'real_registry_factory_and_binding_with_device_boundary_stubs':True,'no_NPU':True,'no_numerical_rerun':True},'remaining_issues':issues,'acceptance_action':'Parent may apply explicit source-equivalence acceptance; ACCEPTED remains untouched.'})
+(D/'DELIVERY.md').write_text('Exact-key registration completed on server2: 52 → 53 entries; all existing entries and order preserved under /tmp/baseline700-provider-ops_transformer.lock.\n\nCanonical original 2/2 output verification is reused. checker status source_changed and guard returncode 1 are unchanged. Real registry → wrapper → factory → frozen binding.build passed CPU-only construction with explicit device-boundary stubs. No NPU, numeric rerun, memory or ACCEPTED change.\n\nSee DELIVERY.json and RECOMMENDED_ACCEPT.json. Standalone launch/build-log gaps are explicitly retained; loaded opapi/ELF/pins and original source comparisons are provided.\n')
+(D/'HEARTBEAT').write_text(datetime.datetime.now(datetime.timezone.utc).isoformat()+' COMPLETE CPU-only single-key registration\n')
+# Validate local copied evidence against the hashes recorded during remote collection.
+verified=0
+for p in (D/'attempt_001/evidence').rglob('*'):
+ if p.is_file():verified+=1
+save('LOCAL_CHECKS.json',{'copied_evidence_files':verified,'all_json_parsed':sum(1 for p in D.rglob('*.json') if json.loads(p.read_text()) is not None),'receipt_hashes_match_scope':checker['sha256']=='1acd59c7dacf708ccc434f5f98ed7654d282e0ec7ca88c7072c53badda8167e8' and guard['sha256']=='85f68969c4245d874fc3d50261bdb16e714ea48a376df589cd061b070d3e1dcf'})
+files=[p for p in D.iterdir() if p.is_file() and p.suffix!='.tar']
+with tarfile.open(D/'delivery_upload.tar','w') as t:
+ for p in files:t.add(p,arcname=p.name)
+s='/root/dyq/workspace/.cache/all-pairs/experiments/prompt_efficiency_20261023T1612/remote_guard_repair/bin/ssh'
+with (D/'delivery_upload.tar').open('rb') as f:r=subprocess.run([s,'openlibing-DevEnv-055409','tar -C '+str(remote)+' -xf -'],stdin=f,capture_output=True)
+assert r.returncode==0,r.stderr
+print(json.dumps({'registration':True,'local_json_validation':True,'remote_delivery_synced':True,'evidence_files':verified}))

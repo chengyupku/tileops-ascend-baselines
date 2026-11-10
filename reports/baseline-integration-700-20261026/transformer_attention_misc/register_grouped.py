@@ -1,0 +1,9 @@
+import pathlib,json,fcntl,hashlib,difflib,shutil
+P=pathlib.Path(__file__).resolve().parent;W=P.parents[2];r=P/'runs/ds-v3-decode-mlp-up-float16';c=json.load(open(r/'checker.json'));g=json.load(open(r/'guard.json'));assert c['status']=='verified' and g['returncode']==0 and c['verification']['checked_outputs']==c['verification']['total_outputs']==1
+provider=W/'TileOPs/benchmarks/ascend_all_pairs/ops_tensor';name='integration700_transformer_attention_misc_grouped.py'
+with open('/tmp/baseline700-provider-ops_tensor.lock','a') as lock:
+ fcntl.flock(lock,fcntl.LOCK_EX);init=provider/'__init__.py';before=init.read_text();h=hashlib.sha256(before.encode()).hexdigest();(P/('ops_tensor-init-before-'+h+'.py')).write_text(before);shutil.copyfile(P/name,provider/name)
+ code='''\n# integration700 transformer_attention_misc: full original grouped host entry.\nfrom .integration700_transformer_attention_misc_grouped import factory as _i700_misc_grouped\ndef _i700_misc_grouped_route(case, previous=PROVIDERS.get('MoEGroupedGemmFwdOp')):\n    if case.id == 'ds-v3-decode-mlp-up-float16':\n        return _i700_misc_grouped(case)\n    if previous is not None:\n        return previous(case)\n    from benchmarks.ascend_baselines import UnsupportedCase\n    raise UnsupportedCase('No registered factory for this exact key')\nPROVIDERS['MoEGroupedGemmFwdOp'] = _i700_misc_grouped_route\n'''
+ after=before+code;compile(after,str(init),'exec');init.write_text(after);(P/'provider_ops_tensor.patch').write_text(''.join(difflib.unified_diff(before.splitlines(True),after.splitlines(True),fromfile=str(init),tofile=str(init))))
+ (P/'REGISTRATION_GROUPED.json').write_text(json.dumps({'keys':[['MoEGroupedGemmFwdOp',c['case_id']]],'before_sha256':h,'after_sha256':hashlib.sha256(after.encode()).hexdigest(),'modules':{name:hashlib.sha256((provider/name).read_bytes()).hexdigest()}},indent=2))
+print('registered grouped original')

@@ -1,0 +1,18 @@
+import json,hashlib,datetime
+from pathlib import Path
+O=Path(__file__).resolve().parent;P=O.parent/'gdn_capacity_chunk16'
+def read(n):return json.loads((O/n).read_text())
+def write(n,d):(O/n).write_text(json.dumps(d,indent=2)+'\n')
+local=read('local_REGISTRATION.json');remote=read('server2_REGISTRATION.json');proof=read('CPU_PROOF.json');assert local['module_sha256']==remote['module_sha256']==proof['module_sha256']
+native=read('NATIVE_SOURCE_METADATA.json');assert any('ADD_TO_LAUNCHER_LIST_AICORE' in l['text'] for s in native['sources'] for l in s['lines'])
+meta=[x for x in native['metadata'] if '/chunk_gated_delta_rule_apt/Chunk' in x['path']];assert len(meta)==2
+pins=read('PIN_SELECTION.json')['runtime']
+for x in meta:assert pins[x['path'][:-5]+'.o']==x['data']['sha256']
+rows=[]
+for x in json.loads((P/'RESULT.json').read_text()):
+ cid=x['exactkey'][2]
+ rows.append({'exactkey':x['exactkey'],'registered':True,'status':'registered_pending_parent_acceptance','accepted_added':0,'evidence':{'original_result':str(P/'RESULT.json'),'original_checker':str(P/cid/'checker.json'),'original_guard':str(P/cid/'GUARD_RECEIPT.json'),'original_loaded_libraries':str(P/cid/'loaded-libraries.json'),'cpu_proof':'CPU_PROOF.json','local_registration':'local_REGISTRATION.json','remote_registration':'server2_REGISTRATION.json','native_source_metadata':'NATIVE_SOURCE_METADATA.json','runtime_pins':'REMOTE_PIN_CHECK.json'},'original_reported_checked_outputs':x['checked_outputs'],'original_reported_total_outputs':x['total_outputs'],'timings':{'original_queue_seconds':x['queue_seconds'],'original_child_seconds':x['child_seconds'],'new_npu_seconds':0},'factory':'integration700_gdn_chunk_registration16.build','module_sha256':local['module_sha256']})
+assert len(rows)==16
+write('RESULT.json',rows)
+write('DELIVERY.json',{'status':'registered16_pending_parent_acceptance','registered':16,'accepted_added':0,'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'module_sha256':local['module_sha256'],'local':local,'server2':remote,'checks':{'cpu_checks_per_host':proof['passed'],'remote_runtime_pins_verified':read('REMOTE_PIN_CHECK.json')['checked'],'file_pins':26,'native_sources_inspected':len(native['sources']),'kernel_metadata_candidates':2,'candidate_binary_metadata_hash_match':True,'NPU_imports':0,'NPU_runs':0,'numerical_reruns':0,'benchmark_runs':0},'shared_changed_files':{'local':[str(Path('/root/dyq/workspace/TileOPs/benchmarks/ascend_all_pairs/ops_transformer')/n) for n in ['__init__.py','integration700_gdn_chunk_registration16.py']],'server2':[str(Path('/opt/tileops-all-pairs/workspace/TileOPs/benchmarks/ascend_all_pairs/ops_transformer')/n) for n in ['__init__.py','integration700_gdn_chunk_registration16.py']]},'evidence':['RESULT.json','CPU_PROOF.json','NATIVE_EVIDENCE.json','NATIVE_SOURCE_METADATA.json','PIN_SELECTION.json','REMOTE_PIN_CHECK.json','local_registration.diff','server2_registration.diff','local_provider.before.py','server2_provider.before.py'],'remaining_issues':['Parent independent checker/pin review and acceptance pending; accepted count untouched.','No original binary-specific runtime launch log. Full ACLNN API ownership, mandatory source AICore route, actual loaded original opapi, and two matching native metadata/binary candidates established; candidate selection per case remains unobserved.','Source-to-binary association uses original API and deployment metadata, not a reproducible rebuild proof.'],'timings':{'local_publication_cpu_seconds':local['seconds'],'server2_pin_and_publication_cpu_seconds':remote['seconds'],'new_device_seconds':0},'original_numeric_evidence':'Read-only reused; not independently rerun.'})
+print('DELIVERY/RESULT ready')

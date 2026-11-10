@@ -1,0 +1,3 @@
+#!/bin/bash
+export ASCEND_HOME_PATH=/opt/tileops-baseline-cache/workspace/reports/baseline-v3-sample20-20261101/server1/sdk920
+/opt/tileops-baseline-cache/workspace/reports/baseline-v3-sample20-20261101/server1/sdk920/tools/bisheng_compiler/bin/bisheng -O2 -fPIC -std=c++20 -mllvm -cce-aicore-dcpreload-args=false --npu-arch=dav-3510 -I/opt/tileops-baseline-cache/workspace/ascend_baselines/tilelang/3rdparty/../src --cce-aicore-only /opt/tileops-baseline-cache/workspace/reports/baseline-v3-sample20-20261101/server1/compiler_probe.asc -o /opt/tileops-baseline-cache/workspace/reports/baseline-v3-sample20-20261101/server1/compiler_probe.o

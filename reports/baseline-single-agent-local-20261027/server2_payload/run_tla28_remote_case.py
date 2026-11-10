@@ -1,0 +1,66 @@
+"""Run the unchanged canonical checker with a private candidate binding."""
+import hashlib
+import json
+import os
+from pathlib import Path
+import runpy
+import sys
+import tempfile
+
+HERE = Path(__file__).resolve().parent
+WORKSPACE = HERE.parents[1]
+BUILD = WORKSPACE / ".cache/all-pairs/remote_tla_compiler"
+VENDOR = WORKSPACE / "ascend_baselines/tilelang-ascend"
+FROZEN = HERE / "frozen/TileOPs"
+attempt_id, op, case_id = sys.argv[1:]
+OUT = HERE / attempt_id
+OWNER = "baseline-single-agent-local-20261027/" + attempt_id
+meta = json.loads(Path("/run/lock/ascend-npu/device-0.lock").read_text())
+assert meta["phase"] == "running" and meta["child"]["pid"] == os.getpgrp()
+assert meta["owner"] == OWNER
+OUT.mkdir(exist_ok=True)
+assert not (OUT / "checker.json").exists()
+(OUT / "GUARD_RUNNING.json").write_text(json.dumps(meta, indent=2))
+os.chdir(OUT)
+os.environ["INTEGRATION700_TLA_ROUTE"] = "legacy"
+os.environ["TL_ROOT"] = str(VENDOR)
+for name in ("TILELANG_CACHE_DIR", "TMPDIR", "XDG_CACHE_HOME", "TLA_CYTHON_CACHE_DIR",
+             "ASCEND_WORK_PATH", "ASCEND_CACHE_PATH", "ASCEND_PROCESS_LOG_PATH",
+             "TRITON_CACHE_DIR", "TORCH_EXTENSIONS_DIR"):
+    path = OUT / name
+    path.mkdir(exist_ok=True)
+    os.environ[name] = str(path)
+tempfile.tempdir = os.environ["TMPDIR"]
+for name in ('ASCEND_NPU_ARCH', 'TVM_HOME', 'TVM_IMPORT_PYTHON_PATH'):
+    os.environ.pop(name, None)
+os.environ.update(TL_PLATFORM='A5', TILELANG_LIBRARY_PATH=str(BUILD/'handoff/lib'), TVM_LIBRARY_PATH=str(BUILD/'handoff/lib'), SETUPTOOLS_USE_DISTUTILS='local', PYTHONDONTWRITEBYTECODE='1')
+os.environ['PATH'] = str(BUILD/'handoff/bin') + ':' + os.environ['PATH']
+sys.path[:0] = [str(HERE), str(FROZEN), str(FROZEN/'src'), str(FROZEN.parent), str(VENDOR), str(VENDOR/'3rdparty/tvm/python'), str(BUILD/'python'), str(WORKSPACE/'.cache/all-pairs/remote_native_tla/python-deps')]
+sys.path.append('/opt/tileops-ci/runtime/lib/python3.12/site-packages')
+identity = json.loads((HERE / "REMOTE_PREFLIGHT.json").read_text())["source_sha256"]
+for name, expected in identity.items():
+    assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == expected, name
+import setuptools
+from benchmarks.ascend_all_pairs.tla import native, deployment
+deployment.install_cache_hook(VENDOR, Path(os.environ["TLA_CYTHON_CACHE_DIR"]))
+import torch
+import tilelang
+assert Path(tilelang.__file__).resolve() == VENDOR / "tilelang/__init__.py"
+native.VENDOR = VENDOR
+native.CACHE = OUT / "jit"
+native.runtime = lambda: tilelang
+(OUT / "import_maps.txt").write_text(Path("/proc/self/maps").read_text())
+from benchmarks.ascend_all_pairs import tla
+import importlib
+adapters = {"MLADecodeWithKVCacheFwdOp": "mla_full_adapter", "GQAPagedFwdOp": "gqa_paged_fullbatch_adapter", "GQADenseFwdOp": "tla28_dense_adapter", "TopKSelectFwdOp": "tla28_simple_adapter", "CausalConv1dFwdOp": "tla28_simple_adapter"}
+factory = importlib.import_module(adapters[op]).factory
+tla.PROVIDERS[op] = lambda case: factory(case, native, tilelang, OUT, identity)
+checker = FROZEN / "scripts/ascend_pair_check.py"
+sys.argv = [str(checker), "--op", op, "--case-id", case_id,
+            "--library", "tilelang-ascend", "--output", str(OUT / "checker.json")]
+try:
+    runpy.run_path(str(checker), run_name="__main__")
+finally:
+    (OUT / "maps.txt").write_text(Path("/proc/self/maps").read_text())
+    if torch.npu.is_initialized():
+        torch.npu.synchronize()

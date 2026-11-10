@@ -1,0 +1,11 @@
+import json,pathlib,subprocess
+R=pathlib.Path(__file__).resolve().parent;rows=json.load(open(R/'SUBMITTED_DECISIONS.json'));sp=json.load(open(R/'audit_specialization/AUDIT.json'))['rows'];att=json.load(open(R/'audit_attention_schedule/AUDIT.json'))['rows']
+jobs=[('audit_attention_final',[x for x in att if x['key'][1]!='GQAPagedFwdOp'],'''前审有具体错误需解决：gqa_fwd_varlen.py:239 l0a=[2,blockM,dim],l0b=[2,dim,blockN],l0c=[2,blockM,blockN]，在PV阶段却把P[blockM,blockN]和V[blockN,dim]复制至这些缓冲，默认blockN128而D64/512并不自动合法。请不要复述D64无需改形状；检查lowering是否真能原样支持不等shape。不得调blockN、stages等内部schedule。可找同baseline完整其他示例（含sink/pre/dynamic）或原完整非因果FA按每query独立可见prefix调用，仅布局/元数据，保持原scale，不能拆K归约或补新数学。D512也不能只凭某一路L0溢出排除所有完整例。查原caseflags/window/sinks，给每项最终有证据二判；不跑NPU/编译。'''),('audit_platform_final',[x for x in sp if x['key'][0]=='ops-transformer' and x['key'][1]=='SharedExpertMLPFwdOp']+[x for x in rows if x['key'][0]=='ops-transformer' and x['key'][1]=='SiluAndMulFwdOp'],'''解决同一SwigluGatedMlp平台边界的冲突：specialization把SharedExpertMLP判要接（只910B/93注册视部署），worker07却因此把SiluAndMul判不要接。请检查原op_def、kernel dispatch、CMake/opbuild能否原样针对950生成/运行此原完整公开API，缺二进制不排除但若必需改源代码AddConfig/内部kernel即不允许。不能把“不明确runtime reject”当证明能接。也不能只凭doc未列950当必然编译不支持。查真实构建注册机制/本地既有不改源码路线。若原FP32路径可在950用，SiluAndMul是否能原完整MLP用单位gate/up/down矩阵特化（数学完整，参数常量）也需同一边界；若无950原路线则两族一致判不要接。报告证据及真实限制，严禁NPU/编译。''')]
+cli=['python3','/root/dyq/workspace/.cache/all-pairs/full_rollout_20261024/codex_worker_manual_quota.py','--native-script','/root/dyq/tools/codex-worker.py']
+for name,rr,task in jobs:
+ p=R/name;p.mkdir(exist_ok=True)
+ if (p/'JOB.json').exists():continue
+ (p/'SCOPE.json').write_text(json.dumps({'rows':rr},ensure_ascii=False,indent=2));(p/'TASK.txt').write_text('medium专项分类复核。先读'+str(R/'WORKER_POLICY.txt')+'。仅CPU文本/JSON，仅读scope相关源码及SDK，禁止NPU/编译/新增数学/改源码/再派遣。只写'+str(p)+'。目标12:22UTC，硬截止12:28UTC。每3分钟heartbeat。输出AUDIT.json rows={key,decision,reason,evidence},unresolved。\n'+task)
+ cp=subprocess.run(cli+['spawn','--cwd','/root/dyq/workspace','--task-file',str(p/'TASK.txt'),'--write',str(p),'--model','gpt-6-astra','--effort','medium','--timeout','1200','--notify','queue','--sandbox','danger-full-access'],capture_output=True,text=True)
+ assert cp.returncode==0,cp.stderr
+ (p/'JOB.json').write_text(cp.stdout);print(name,len(rr),json.loads(cp.stdout)['id'])

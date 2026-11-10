@@ -1,0 +1,67 @@
+[submodule "DeepEP-Ascend"]
+	path = ascend_baselines/DeepEP-Ascend
+	url = https://github.com/deepseek-ai/DeepEP-Ascend.git
+
+[submodule "DeepGEMM-Ascend"]
+	path = ascend_baselines/DeepGEMM-Ascend
+	url = https://github.com/deepseek-ai/DeepGEMM-Ascend.git
+
+[submodule "DeepSelect"]
+	path = ascend_baselines/DeepSelect
+	url = https://github.com/deepseek-ai/DeepSelect.git
+
+[submodule "FlashMLA"]
+	path = ascend_baselines/FlashMLA
+	url = https://github.com/deepseek-ai/FlashMLA.git
+
+[submodule "TileKernels"]
+	path = ascend_baselines/TileKernels
+	url = https://github.com/deepseek-ai/TileKernels.git
+
+[submodule "atvc"]
+	path = ascend_baselines/atvc
+	url = https://gitcode.com/cann/atvc.git
+
+[submodule "catlass"]
+	path = ascend_baselines/catlass
+	url = https://gitcode.com/cann/catlass.git
+
+[submodule "flash-linear-attention-npu"]
+	path = ascend_baselines/flash-linear-attention-npu
+	url = https://github.com/flashserve/flash-linear-attention-npu.git
+
+[submodule "ops-fft"]
+	path = ascend_baselines/ops-fft
+	url = https://gitcode.com/cann/ops-fft.git
+
+[submodule "ops-math"]
+	path = ascend_baselines/ops-math
+	url = https://gitcode.com/cann/ops-math.git
+
+[submodule "ops-nn"]
+	path = ascend_baselines/ops-nn
+	url = https://gitcode.com/cann/ops-nn.git
+
+[submodule "ops-tensor"]
+	path = ascend_baselines/ops-tensor
+	url = https://gitcode.com/cann/ops-tensor.git
+
+[submodule "ops-transformer"]
+	path = ascend_baselines/ops-transformer
+	url = https://gitcode.com/cann/ops-transformer.git
+
+[submodule "sgl-kernel-npu"]
+	path = ascend_baselines/sgl-kernel-npu
+	url = https://github.com/sgl-project/sgl-kernel-npu.git
+
+[submodule "tilelang"]
+	path = ascend_baselines/tilelang
+	url = https://github.com/tile-ai/tilelang.git
+
+[submodule "tilelang-ascend"]
+	path = ascend_baselines/tilelang-ascend
+	url = https://github.com/tile-ai/tilelang-ascend.git
+
+[submodule "vllm-ascend"]
+	path = ascend_baselines/vllm-ascend
+	url = https://github.com/vllm-project/vllm-ascend.git

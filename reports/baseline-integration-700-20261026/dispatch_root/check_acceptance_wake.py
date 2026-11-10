@@ -1,0 +1,11 @@
+import runpy,pathlib,json,tempfile,sqlite3
+P=pathlib.Path(__file__).resolve().parent;m=runpy.run_path(str(P.parent/'refill_fleet.py'));g=m['wake_acceptance_for_new_publish'].__globals__;checks=[]
+with tempfile.TemporaryDirectory(dir=P,prefix='wake_cpu_') as tmp:
+ d=pathlib.Path(tmp);g['D']=d;(d/'acceptance_root').mkdir();q=d/'group';q.mkdir();db=sqlite3.connect(':memory:');db.execute('create table jobs(id text,status text,data text)');db.execute('insert into jobs values(?,?,?)',('fixture_completed','completed','{}'))
+ def write(p,x):p.write_text(json.dumps(x))
+ def queue(**kw):write(d/'ROOT_CONTROL_QUEUE.json',{'tasks':[{'name':'acceptance_root','job_id':'fixture_completed','ready':False,**kw}]})
+ state={'coordinator_groups':['group']};rec={'rejected':[]};rows=[{'key':['fixture','op',c],'ready_to_publish':True,'checker':'receipt_'+c} for c in ['a','b']];write(q/'PUBLISH_QUEUE.json',{'entries':rows});write(d/'ACCEPTED.json',{'rows':[]});queue(enabled=False);m['wake_acceptance_for_new_publish'](state,db,rec);assert not json.loads((d/'ROOT_CONTROL_QUEUE.json').read_text())['tasks'][0]['ready'];checks.append('disabled receiver not restarted')
+ queue();m['wake_acceptance_for_new_publish'](state,db,rec);entry=json.loads((d/'ROOT_CONTROL_QUEUE.json').read_text())['tasks'][0];assert entry['ready'] and len(entry['publish_wake_delivered_signatures'])==2;checks.append('new ready evidence requests existing receiver')
+ entry.update(job_id='fixture_completed',ready=False);write(d/'ROOT_CONTROL_QUEUE.json',{'tasks':[entry]});write(d/'ACCEPTED.json',{'rows':[{'key':['fixture','op','a']}]});m['wake_acceptance_for_new_publish'](state,db,rec);assert not json.loads((d/'ROOT_CONTROL_QUEUE.json').read_text())['tasks'][0]['ready'];checks.append('partially accepted set does not re-audit unchanged remaining evidence')
+ (q/'receipt_b').write_text('new CPU receipt');m['wake_acceptance_for_new_publish'](state,db,rec);assert json.loads((d/'ROOT_CONTROL_QUEUE.json').read_text())['tasks'][0]['ready'];checks.append('new receipt identity wakes receiver once')
+(P/'ACCEPTANCE_WAKE_CHECKS.json').write_text(json.dumps({'passed':len(checks),'checks':checks,'native_launches':0,'npu_access':False},indent=2)+'\n');print('Acceptance wake CPU checks passed:',len(checks))

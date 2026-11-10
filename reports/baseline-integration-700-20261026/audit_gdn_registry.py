@@ -1,0 +1,12 @@
+import pathlib,json,hashlib,datetime
+D=pathlib.Path(__file__).resolve().parent;W=D/'transformer_linear';static=json.load(open(D/'PARENT_GDN_ROUTE_CHECK_1343.json'));rows=json.load(open(W/'RESULT.json'))['rows'];accepted=[];deferred=[]
+for r in rows:
+ if r['status']!='completed' or r['case_id'] not in static['keys']:continue
+ cp=W/r['checker_receipt']['path'];gp=W/r['guard_receipt']['path'];assert hashlib.sha256(cp.read_bytes()).hexdigest()==r['checker_receipt']['sha256'];assert hashlib.sha256(gp.read_bytes()).hexdigest()==r['guard_receipt']['sha256'];c=json.load(open(cp));g=json.load(open(gp))
+ if g['returncode']!=0:deferred.append({'key':r['case_id'],'reason':'guard nonzero','rc':g['returncode']});continue
+ assert c['status']=='verified' and c['verification']['checked_outputs']==c['verification']['total_outputs']==2 and c['inputs_preserved'] and not c['oracle_source_changed'] and not c['provider_source_changed']
+ for path,h in static['hashes'].items():
+  if path.endswith('integration700_transformer_linear_gdn.py'):continue
+  testedpath=path.replace('/frozen_v1/','/');assert c['source_sha256'].get(testedpath,c['source_sha256'].get(path))==h,(r['case_id'],path)
+ accepted.append({'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'key':[r['baseline'],r['operator'],r['case_id']],'accepted':True,'host':'server2','checker':str(cp),'guard':str(gp),'full_outputs':c['verification'],'registry_check':str(D/'PARENT_GDN_ROUTE_CHECK_1343.json'),'source_review':'Previously reviewed whole original GDN binding; byte-identical frozen binding and direct transport match this exact checker; original primary runtime binaries match pins. Complete y/final_state, unchanged inputs/oracle. CPU-only exact router/fallback passes.','runtime_recipe':str(W/'chunk_package/RUNTIME_RECIPE.json')})
+out=D/'ACCEPTED.json';data=json.load(open(out));by={tuple(r['key']):r for r in data['rows']};old=len(by);by.update({tuple(r['key']):r for r in accepted});data['rows']=list(by.values());data['updated_at']=datetime.datetime.now(datetime.timezone.utc).isoformat();tmp=out.with_suffix('.tmp');tmp.write_text(json.dumps(data,ensure_ascii=False,indent=2));tmp.replace(out);(D/'PARENT_GDN_1343_REVIEW.json').write_text(json.dumps({'accepted':accepted,'deferred':deferred,'new':len(by)-old},ensure_ascii=False,indent=2));print('reviewed',len(accepted),'new',len(by)-old,'total',len(by),'deferred',deferred)

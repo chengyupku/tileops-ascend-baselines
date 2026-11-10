@@ -1,0 +1,35 @@
+"""Independent CPU FP64 oracle across storage bit patterns and FP32 exponents."""
+import json,hashlib
+from pathlib import Path
+import torch,torch_npu
+from tileops.kernels.ascend.elementwise import log1p as module
+from tileops.ops.elementwise import Log1pFwdOp
+from tileops.kernels.ascend.elementwise import _logroots
+from workloads.elementwise import ElementwiseWorkload
+from workloads.numerics import compare_outputs
+rows=[];torch.manual_seed(20261030)
+for dtype in [torch.float16,torch.bfloat16,torch.float32]:
+ if dtype!=torch.float32:
+  x=torch.arange(65536,dtype=torch.int32).to(torch.int16).view(dtype)
+ else:
+  bits=torch.randint(0,2**32,(65536,),dtype=torch.int64).to(torch.int32)
+  x=bits.view(torch.float32)
+  x=torch.cat([x,torch.tensor([0.,-0.,1e-45,-1e-45,1e-38,-1e-38,1e10,-1e10,1e20,-1e20,3.4e38,-3.4e38,float('inf'),-float('inf'),float('nan')])])
+ if dtype==torch.float32:
+  edges=torch.tensor([-1.,0.,1/64,-1/64,2**-24,-2**-24,2**-126,-2**-126],dtype=dtype)
+  x=torch.cat([x,edges,torch.nextafter(edges,torch.full_like(edges,float('inf'))),torch.nextafter(edges,torch.full_like(edges,-float('inf')))])
+ # Add a tail to the complete low-precision bit-pattern set.
+ x=torch.cat([x,x[:1]]);a=x.npu();before=a.cpu().view(torch.uint8).clone()
+ y=Log1pFwdOp()(a).cpu();ref=torch.log1p(x.double()).to(dtype)
+ error=None
+ try:
+  compare_outputs(y,ref,ElementwiseWorkload('Log1pFwdOp',(a,)).verification(a))
+  zero=ref==0;assert torch.equal(torch.signbit(y[zero]),torch.signbit(ref[zero]))
+ except AssertionError as e:error=str(e)
+ assert torch.equal(a.cpu().view(torch.uint8),before)
+ diff=(y.float()-ref.float()).abs();indices=torch.argsort(diff.nan_to_num(nan=-1),descending=True)[:8]
+ rows.append({'dtype':str(dtype),'values':len(x),'passed':error is None,'error':error,'worst':[{'input':str(x[i].item()),'actual':str(y[i].item()),'cpu_fp64':str(ref[i].item())} for i in indices]})
+ print(rows[-1],flush=True)
+ Path(__file__).with_name('log1p-numerical-final.json').write_text(json.dumps({'checks':rows,'module_sha256':hashlib.sha256(Path(module.__file__).read_bytes()).hexdigest(),'runtime_limit':torch.npu.get_device_limit(0),'shared_sha256':hashlib.sha256(Path(_logroots.__file__).read_bytes()).hexdigest()},indent=2)+'\n')
+ if error:raise AssertionError(error)
+torch.npu.synchronize()

@@ -1,0 +1,26 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b2bda26..0c6a004 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -15,7 +15,7 @@ if(NOT CMAKE_BUILD_TYPE)
+     set(CMAKE_BUILD_TYPE RELEASE)
+ endif()
+ 
+-add_compile_options(-hno-unused-parameter -lno-unused-function -Wunused-value -Wcast-align)
++add_compile_options(-Wno-unused-parameter -Wno-unused-function -Wunused-value -Wcast-align)
+ add_compile_options(-Wcast-qual -Winvalid-pch -Wwrite-strings -Wsign-compare -Wextra)
+ 
+ if (BUILD_CATLASS_MODULE)
+diff --git a/csrc/CMakeLists.txt b/csrc/CMakeLists.txt
+index f6f9868..137a260 100644
+--- a/csrc/CMakeLists.txt
++++ b/csrc/CMakeLists.txt
+@@ -375,6 +375,8 @@ target_link_directories(${OP_PLUGIN_NAME} PRIVATE
+ 
+ # Enable OpenMP for the pure-host metadata scheduler (parallel per-row cache build).
+ target_compile_options(${OP_PLUGIN_NAME} PRIVATE -fopenmp)
++target_compile_options(${OP_PLUGIN_NAME} PRIVATE
++    "-include${PROJECT_OP_SRC_BASE}/utils/cann_graph_compat.h")
+ target_link_libraries(${OP_PLUGIN_NAME} PRIVATE gomp)
+ 
+ target_include_directories(${OP_PLUGIN_NAME} PRIVATE

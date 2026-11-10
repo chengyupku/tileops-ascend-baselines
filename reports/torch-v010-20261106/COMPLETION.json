@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-06T11:55:13.216142+00:00",
+  "status": "completed",
+  "total_unique": 234,
+  "accepted": 234,
+  "per_host": {
+    "server1": 112,
+    "server2": 122
+  },
+  "pending": 0,
+  "archive_backlog": 0,
+  "exact_plan_ids_unique": true,
+  "all_archive_files_present": true,
+  "strict_acceptance": "correctness, valid guard,32AIC/64AIV,source manifest,fullraw SHA,15window v3 replay",
+  "latest_inspection": "/root/dyq/workspace/reports/torch-v010-20261106/inspections/20261106T115316Z",
+  "shutdown": {
+    "remote_controller_pids_exited": [
+      2971009,
+      2402309
+    ],
+    "local_services": "all inactive; remote STOP caused transient controller units to exit before systemctl stop",
+    "alarm": "Already off on cancel; not rearmed"
+  },
+  "published": false,
+  "native_started": false
+}

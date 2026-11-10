@@ -1,0 +1,25 @@
+from pathlib import Path
+import json,hashlib,datetime,collections,ast
+P=Path(__file__).resolve().parent
+r=json.loads((P/'RESULT.json').read_text());s=json.loads((P/'SCOPE.json').read_text());now=datetime.datetime.now(datetime.timezone.utc)
+key=lambda x:(x['baseline'],x['operator'],x['case_id'])
+assert len(r['rows'])==len(s)==73 and {key(x) for x in r['rows']}=={key(x) for x in s}
+assert all(x['status'] in ['failed','blocked'] and not x['registered'] and x['checked_outputs']==0 for x in r['rows'])
+for x in r['rows']:
+ assert x['guard_receipt'] and (P/x['guard_receipt']).is_file()
+ if x['checker_receipt']:assert (P/x['checker_receipt']).is_file()
+for f in P.glob('*.py'):ast.parse(f.read_text())
+start=datetime.datetime.fromisoformat(json.loads((P/'STARTED.json').read_text())['utc'])
+probes=r['probes'];times={field:sum(x['timings'].get(field) or 0 for x in probes.values()) for field in ['queue_seconds','physical_idle_wait_seconds','held_seconds','device_process_seconds','wall_seconds']}
+r.update(phase='delivered_blocked',counts=dict(collections.Counter(x['status'] for x in r['rows'])))
+(P/'RESULT.json.tmp').write_text(json.dumps(r,indent=2,ensure_ascii=False));(P/'RESULT.json.tmp').replace(P/'RESULT.json')
+files=sorted(str(f.relative_to(P)) for f in P.rglob('*') if f.is_file() and f.name not in ['DELIVERY.json','ARTIFACT_SHA256.json'])
+recipes=[]
+for name,probe in probes.items():
+ g=json.loads((P/'runs'/name/'guard.json').read_text());recipes.append(dict(run=name,argv=g['argv'],environment={'INTEGRATION700_TLA_ROUTE':'legacy'} if probe['key'][2]=='qwen3-30b-1k-float16' else {},guard_receipt='runs/'+name+'/guard.json',note='Archived exact run. launch.py refuses existing receipts; do not repeat unchanged failure. Auto-target and import-failure versions retained as adapter.auto.py / adapter.pto-logging.py. Current adapter is corrected PTO binding.'))
+result=dict(worker='tla_attention',deployment_host='server1 / openlibing-DevEnv-661495',remote_private='/opt/tileops-all-pairs/workspace/reports/baseline-integration-700-20261026/tla_attention',local_private=str(P),started_at=start.isoformat(),finished_at=now.isoformat(),elapsed_seconds=(now-start).total_seconds(),counts=r['counts'],completed=0,registered=0,numerically_verified=0,attempts=len(probes),unique_attempted_keys=len({tuple(x['key']) for x in probes.values()}),repaired_retries=len(probes)-len({tuple(x['key']) for x in probes.values()}),timings=times,timing_note='device_process_seconds is guarded foreground command wall time including import/compile/checker; actual NPU active time and compiler-only time are unknown, not inferred. Queue and physical idle checks are separate.',run_recipes=recipes,formal_entry_mappings=[dict(key=list(key(x)),registered=False,factory=None,api=x['api'],status=x['status']) for x in r['rows']],source_hash='SOURCE_HASHES.json',compiler_source_hash='COMPILER_SOURCE_HASHES.json',deployment_binary_hash='DEPLOYMENT_ARTIFACTS.json',git_commit_availability='GIT_VERSIONS.json: exported remote trees contain no .git; no commit invented',shared_changes=[],registration_patch=None,registration_backup=None,private_changes=files,checks=['All 73 exact scope keys present exactly once','All status values allowed; no complete/verified credit without numerical receipt','All representative guard receipts and existing checker receipts copied locally','Private Python sources parsed without device imports','Four candidate source files matched local/remote SHA256','No vendor/kernel/compiler/checker/shared-provider changes'],remaining_issues=[dict(key=list(key(x)),reason=x['reason'],representative=x['representative_evidence']) for x in r['rows']],limitations=['Sibling cases were stopped at shared full-API route failure, not individually executed or proven mathematically impossible.','No formal provider registration because no representative completed canonical numerical verification.','D512 varlen proposed per-query prefix replication was not expanded into expensive full-case execution after the underlying full-flash route failed.'],repairs=['Public target=pto selects existing unmodified backend supporting original tile DSL; kernel tile/stage/pass configs unchanged.','Bind DataType exactly as original import for AST-loaded full-flash API.'],raw_evidence=['runs/','shared_cache/TILELANG_CACHE_DIR/','CPU_COMPATIBILITY_FINDINGS.json','API_REVIEW.json','PRIOR_SCOPE.json'])
+(P/'DELIVERY.json').write_text(json.dumps(result,indent=2,ensure_ascii=False))
+h=dict(utc=now.isoformat(),phase='delivered_blocked',current_keys=[],last_progress_at=now.isoformat(),blocked_reason='No complete canonical numerical success. Four original API representative routes failed; per-key receipts in RESULT.json.')
+(P/'HEARTBEAT.json').write_text(json.dumps(h,indent=2))
+manifest={str(f.relative_to(P)):hashlib.sha256(f.read_bytes()).hexdigest() for f in P.rglob('*') if f.is_file() and f.name!='ARTIFACT_SHA256.json'}
+(P/'ARTIFACT_SHA256.json').write_text(json.dumps(manifest,indent=2));print(json.dumps({k:result[k] for k in ['counts','elapsed_seconds','attempts','unique_attempted_keys','timings']},indent=2))

@@ -1,0 +1,12 @@
+diff --git a/cmake/symbol.cmake b/cmake/symbol.cmake
+index 85f4f0330..71db3b70c 100644
+--- a/cmake/symbol.cmake
++++ b/cmake/symbol.cmake
+@@ -325,6 +325,7 @@ function(gen_cust_proto_symbol)
+     cust_proto
+     PUBLIC $<BUILD_INTERFACE:intf_pub_cxx17>
+     ge_compiler
++    ascendcl
+     )
+ 
+   if(NOT ENABLE_OP_KERNEL)

@@ -1,0 +1,20 @@
+import json,datetime,hashlib
+from pathlib import Path
+W=Path(__file__).resolve().parent
+rows=json.loads((W/'RESULT.json').read_text());audit=json.loads((W/'DELIVERY_AUDIT.json').read_text());assert len(rows)==len(audit)==16 and all(x['all_checks_passed'] for x in audit)
+g=[json.loads((W/r['exactkey'][2]/'GUARD_RECEIPT.json').read_text()) for r in rows]
+start=min(datetime.datetime.fromisoformat(x['start']) for x in g);end=max(datetime.datetime.fromisoformat(x['end']) for x in g);wall=(end-start).total_seconds()
+capacity=[]
+for r in rows:
+ d=W/r['exactkey'][2]
+ for stage,name in [('before_queue','prequeue_resource_admission.json'),('under_guard','fresh_resource_admission.json')]:
+  c=json.loads((d/name).read_text());capacity.append({'exactkey':r['exactkey'],'stage':stage,'effective_available_host_bytes':c['effective_available_host_bytes'],'minimum_effective_available_host_bytes':c['required_envelope']['minimum_effective_available_host_bytes'],'margin_bytes':c['effective_available_host_bytes']-c['required_envelope']['minimum_effective_available_host_bytes'],'disk_free_bytes':c['disk_free_bytes'],'estimated_device_budget_bytes':c['required_envelope']['estimated_device_budget_bytes']})
+assert all(x['margin_bytes']>=0 for x in capacity)
+(W/'CAPACITY_EVIDENCE.json').write_text(json.dumps(capacity,indent=2))
+changed=[str(p.relative_to(W)) for p in W.rglob('*') if p.is_file() and p.name not in ['SCOPE.json','TASK.txt','SPAWN.json']]
+delivery={'worker':'533743657ff34aa8','utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'16_fullcanonical_verified_pending_parent_review','host':'openlibing-DevEnv-055409','scope_count':16,'verified_count':16,'checked_outputs':32,'total_outputs':32,'accepted_added':0,'registered':False,'npu_guard_returncodes':[x['returncode'] for x in g],'device_released':True,'post_guard_state':'idle','timing':{'first_guard_start':start.isoformat(),'last_guard_end':end.isoformat(),'wall_seconds':wall,'queue_seconds_total':sum(x['queue_seconds'] for x in g),'guard_child_seconds_total':sum(x['child_seconds'] for x in g),'verified_cases_per_hour_observed':16*3600/wall,'parent_acceptance_rate_per_hour':None},'checks':['164 deployment pins matched before and after','All original scoped receipts and child scripts preserved','Frozen binding, entry, direct_acl, resource_gate unchanged from originals','16 exact parameters match original contracts','16 complete canonical receipts: 2/2 outputs, inputs_preserved, deterministic input_seed','16 guard owner/returncode/queue evidence','16 original opapi and resolved nnopbase loaded hashes match pins','16 no provider/oracle source changes or sync/cleanup errors','32 original prequeue/inside-guard host and disk admissions passed'],'remaining_issues':['Parent review and serial shared-provider registration remain; worker has not registered or accepted any case.','Explicit free-HBM/peak-HBM measurement was not added; original conservative device estimates and guard health/idle checks retained.','Observed worker numerical-check throughput is not parent acceptance throughput and does not establish the 100 parent acceptances/hour target.'],'primary_artifacts':['RESULT.json','DELIVERY_AUDIT.json','REGISTRATION_CANDIDATES.json','FROZEN_ADAPTER.json','EXACTKEYS.json','REHOME.diff','SOURCE_LINE_EVIDENCE.json','POST_RUN_INTEGRITY.json','POST_GUARD_STATUS.json','CAPACITY_EVIDENCE.json'],'changed_files':sorted(changed)}
+(W/'DELIVERY.json').write_text(json.dumps(delivery,indent=2))
+(W/'HEARTBEAT.json').write_text(json.dumps({'utc':delivery['utc'],'phase':'complete_pending_parent_review','current_case':None,'verified':16,'accepted_added':0,'registered':False},indent=2))
+manifest={str(p.relative_to(W)):hashlib.sha256(p.read_bytes()).hexdigest() for p in W.rglob('*') if p.is_file() and p.name!='ARTIFACT_SHA256.json'}
+(W/'ARTIFACT_SHA256.json').write_text(json.dumps(manifest,indent=2))
+print(json.dumps({'verified':16,'outputs':32,'wall_minutes':wall/60,'artifact_files':len(manifest),'minimum_host_margin_bytes':min(x['margin_bytes'] for x in capacity)}))

@@ -1,0 +1,110 @@
+[
+  {
+    "name": "DeepEP-Ascend",
+    "url": "https://github.com/deepseek-ai/DeepEP-Ascend.git",
+    "commit": "3b25377d04b24fc6154698ded78a2bcb2c59afff",
+    "path": "ascend_baselines/DeepEP-Ascend"
+  },
+  {
+    "name": "DeepGEMM-Ascend",
+    "url": "https://github.com/deepseek-ai/DeepGEMM-Ascend.git",
+    "commit": "3a35326271b069b8b5bf1a754435acd6cc91575b",
+    "path": "ascend_baselines/DeepGEMM-Ascend"
+  },
+  {
+    "name": "DeepSelect",
+    "url": "https://github.com/deepseek-ai/DeepSelect.git",
+    "commit": "bfa4507d935f17ebfc3d0f00ff7d3c9a4d0e5c18",
+    "path": "ascend_baselines/DeepSelect",
+    "working_tree_patch": "patches/DeepSelect.patch"
+  },
+  {
+    "name": "FlashMLA",
+    "url": "https://github.com/deepseek-ai/FlashMLA.git",
+    "commit": "2e5429fc5653bab6e081f09477126f731882a6a9",
+    "path": "ascend_baselines/FlashMLA"
+  },
+  {
+    "name": "TileKernels",
+    "url": "https://github.com/deepseek-ai/TileKernels.git",
+    "commit": "c1cf914a82e6901c679445f872051ce44ac2cc63",
+    "path": "ascend_baselines/TileKernels"
+  },
+  {
+    "name": "atvc",
+    "url": "https://gitcode.com/cann/atvc.git",
+    "commit": "0711c05c64832fa6d3fe237bcf57c9a3fc006ccd",
+    "path": "ascend_baselines/atvc",
+    "working_tree_patch": "patches/atvc.patch"
+  },
+  {
+    "name": "catlass",
+    "url": "https://gitcode.com/cann/catlass.git",
+    "commit": "31e7120f836bfbebd35715bcab5e906fc38511f8",
+    "path": "ascend_baselines/catlass"
+  },
+  {
+    "name": "flash-linear-attention-npu",
+    "url": "https://github.com/flashserve/flash-linear-attention-npu.git",
+    "commit": "7e39f9668eed285fc91cde0502f46cd48686a681",
+    "path": "ascend_baselines/flash-linear-attention-npu"
+  },
+  {
+    "name": "ops-fft",
+    "url": "https://gitcode.com/cann/ops-fft.git",
+    "commit": "5f477624367821a6f5b189e6d230adcd6683a80d",
+    "path": "ascend_baselines/ops-fft"
+  },
+  {
+    "name": "ops-math",
+    "url": "https://gitcode.com/cann/ops-math.git",
+    "commit": "64322f6487162c0934ec0364af57ed2f51175a03",
+    "path": "ascend_baselines/ops-math"
+  },
+  {
+    "name": "ops-nn",
+    "url": "https://gitcode.com/cann/ops-nn.git",
+    "commit": "84bf2da40119e3b8114a6d2a9e7369190a0470d1",
+    "path": "ascend_baselines/ops-nn",
+    "working_tree_patch": "patches/ops-nn.patch"
+  },
+  {
+    "name": "ops-tensor",
+    "url": "https://gitcode.com/cann/ops-tensor.git",
+    "commit": "c106bba3a7e7bf540c67d100bc98abd8d85c4fea",
+    "path": "ascend_baselines/ops-tensor",
+    "working_tree_patch": "patches/ops-tensor.patch"
+  },
+  {
+    "name": "ops-transformer",
+    "url": "https://gitcode.com/cann/ops-transformer.git",
+    "commit": "7f642b905f1c095051fa3669063ddd708b40cb92",
+    "path": "ascend_baselines/ops-transformer"
+  },
+  {
+    "name": "sgl-kernel-npu",
+    "url": "https://github.com/sgl-project/sgl-kernel-npu.git",
+    "commit": "444c73376e61224d5cfd793719134b54ec3ecce8",
+    "path": "ascend_baselines/sgl-kernel-npu",
+    "working_tree_patch": "patches/sgl-kernel-npu.patch"
+  },
+  {
+    "name": "tilelang",
+    "url": "https://github.com/tile-ai/tilelang.git",
+    "commit": "390ecf34918ce1e4d7d9967df254f507b10557d8",
+    "path": "ascend_baselines/tilelang"
+  },
+  {
+    "name": "tilelang-ascend",
+    "url": "https://github.com/tile-ai/tilelang-ascend.git",
+    "commit": "1d5daf0385156cbe0c499a16c10935c5190642a4",
+    "path": "ascend_baselines/tilelang-ascend"
+  },
+  {
+    "name": "vllm-ascend",
+    "url": "https://github.com/vllm-project/vllm-ascend.git",
+    "commit": "d27f8e3d382d1505be5d78d52514bce52d7bb845",
+    "path": "ascend_baselines/vllm-ascend",
+    "working_tree_patch": "patches/vllm-ascend.patch"
+  }
+]

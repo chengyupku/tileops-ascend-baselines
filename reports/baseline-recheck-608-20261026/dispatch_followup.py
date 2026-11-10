@@ -1,0 +1,14 @@
+import pathlib,json,subprocess
+R=pathlib.Path(__file__).resolve().parent
+rows=json.load(open(R/'SUBMITTED_DECISIONS.json'));scope=json.load(open(R/'SCOPE608.json'));scope=scope.get('rows',[]) if isinstance(scope,dict) else scope
+jobs=[('audit_conv_boundary',[x for x in rows if (x['key'][0]=='sgl-kernel-npu' and x['key'][1] in ['Conv1dFwdOp','Conv2dFwdOp']) or (x['key'][0]=='tilelang' and x['key'][1]=='Conv2dFwdOp' and x['decision']=='要接') or (x['key'][0]=='tilelang-ascend' and x['key'][1] in ['CausalConv1dFwdOp','TanhFwdOp'])],'''独立复核卷积/激活边界。必须找完整原版API，不能新造卷积算法。SGL的1x1无邻域卷积可能只是GEMM布局，但空间kernel>1时外部im2col是否新算法必须明确说明与原合同映射区别，禁止因只含复制就无条件当布局。含bias必须完整原API已有残差。Tilelang generic convolution依赖CUDA T.im2col/T.gemm，不因仓库有Ascend后端就默认原CUDA完整例可Ascend编译；静态查Ascend lowering支持，严禁编译。TLA causalconv原dim_num=CORE_NUM24不得改成1，禁止内部tile/schedule修改；可研究保留原24且纯输入padding/输出裁剪/历史状态打包的完整API路径，不可输出新实现。Tanh需查是否存在比naive(exp(x)-exp(-x))/sum更完整稳定原入口，不能只凭原例名字。逐case核查后给AUDIT.json。'''),('audit_attention_schedule',[x for x in json.load(open(R/'audit_attention/AUDIT.json'))['rows'] if x['key'][0]=='tilelang-ascend' and x['key'][1] in ['GQAVarlenFwdOp','MHADecodePagedWithKVCacheFwdOp','GQAPagedFwdOp']],'''二审内部schedule边界。前审结论用了block_N=D,block_M16或64,num_stages2，但用户明确禁止修改baseline内部schedule；顶层暴露tile/stages仍属内部schedule，不等于case shape/layout参数。必须保留原版默认/原有示例配置，核查完整API在原配置下输入输出/L0缓冲维度。可纯shape padding包括head维零填但必须保留原softmax scale（若原参数支持）。选择其他本baseline原版完整示例可以，不允许修kernel。请对scope逐case输出AUDIT.json并说明真正合法原入口、原配置或硬矛盾。禁止NPU和编译。'''),('audit_isnan_final',[x for x in scope if x['key'][0]=='tilelang-ascend' and x['key'][1]=='IsnanFwdOp'],'''仅核查Isnan1项。先读audit_nan/AUDIT.json的unresolved，避免重复此前失败搜索。完整compare(M,N,...,mode=NE,dtype=float)原例可覆盖shape，疑点是950 FP32 vcmp_ne遇NaN真值。已知SDK IsNan使用EQ+self再select，不等于NE证明。请在本机SDK本地官方文档/Compare实现/NotEqual完整DAG及其测试找明确NE unordered语义证据；如果发现等价完整原API可接受，不能新增compare+not数学组合。旧PTO错误为只覆盖半输出，不能据此否定AscendC完整例。仅CPU文本，严禁网络/NPU/测试。输出AUDIT.json明确二元结论及证据；若确实欠关键信息如实列unresolved，不能默认任何一边。''')]
+cli=['python3','/root/dyq/workspace/.cache/all-pairs/full_rollout_20261024/codex_worker_manual_quota.py','--native-script','/root/dyq/tools/codex-worker.py']
+for name,rr,task in jobs:
+ p=R/name;p.mkdir(exist_ok=True)
+ if (p/'JOB.json').exists():continue
+ (p/'SCOPE.json').write_text(json.dumps({'rows':rr},ensure_ascii=False,indent=2))
+ (p/'TASK.txt').write_text('medium独立专项分类复核。先读'+str(R/'WORKER_POLICY.txt')+'。仅可写'+str(p)+'，不可改其他worker/源码/记忆/再派遣。scope='+str(p/'SCOPE.json')+'。目标12:20UTC前完成，硬12:28UTC。每3分钟heartbeat，完成AUDIT.json rows含key/decision/reason/evidence，unresolved另列中间证据缺口。\n'+task)
+ cp=subprocess.run(cli+['spawn','--cwd','/root/dyq/workspace','--task-file',str(p/'TASK.txt'),'--write',str(p),'--model','gpt-6-astra','--effort','medium','--timeout','1400','--notify','queue','--sandbox','danger-full-access'],text=True,capture_output=True)
+ print(name,len(rr),cp.returncode,cp.stdout,cp.stderr,flush=True)
+ if cp.returncode:break
+ (p/'JOB.json').write_text(cp.stdout)

@@ -1,0 +1,42 @@
+"""CPU-only packaging of the single completed diagnostic invocation."""
+from pathlib import Path
+import json, hashlib, datetime, shutil
+P=Path(__file__).resolve().parent; W=Path('/root/dyq/workspace')
+def read(n): return json.loads((P/n).read_text())
+def write(n,x): (P/n).write_text(json.dumps(x,indent=2,ensure_ascii=False)+'\n')
+def digest(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+checker=read('checker.json');guard=read('GUARD_RESULT.json');child=read('CHILD_RESULT.json');payload=read('PAYLOADS.json');after=read('STATUS_AFTER.json')
+assert guard['returncode']==child['returncode']==0 and checker['status']=='verified'
+assert checker['verification']['checked_outputs']==checker['verification']['total_outputs']==1
+assert checker['inputs_preserved'] and not checker['provider_source_changed'] and not checker['oracle_source_changed']
+assert not after['reservation']['locked'] and after['state']=='idle'
+for name,h in read('FROZEN.json').items(): assert digest(P/name)==h
+sources=read('SOURCE_COMPARE.json')
+for row in sources: row['after']=digest(W/row['path']); row['unchanged_after']=row['after']==row['current']; assert row['unchanged_after']
+write('SOURCE_COMPARE_AFTER.json',sources)
+# Freeze only the directly relevant small source files, never the entire repo.
+freeze=['TileOPs/benchmarks/ascend_math_more.py','TileOPs/benchmarks/ascend_baselines.py','TileOPs/workloads/fft.py','TileOPs/workloads/numerics.py','TileOPs/src/tileops/manifest/spec/fft.yaml','ascend_baselines/ops-math/math/stft/op_host/op_api/acl_stft.cpp','ascend_baselines/ops-math/math/stft/op_host/op_api/stft.cpp']
+for rel in freeze:
+ dst=P/'source_snapshot'/rel; dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(W/rel,dst)
+logs=sorted((P/'ASCEND_PROCESS_LOG_PATH').rglob('*.log'))
+host=next(p for p in logs if '/debug/plog/' in str(p));device=next(p for p in logs if '/debug/device-0/' in str(p))
+selected=[(host,[(74396,74398),(74422,74422),(74550,74554),(74920,74920),(75080,75080),(75126,75130),(75301,75316)]),(device,[(157,159),(325,325),(396,397),(594,609)])]
+events=[];index=[]
+for p,ranges in selected:
+ lines=p.read_text(errors='replace').splitlines()
+ index.append({'path':str(p),'sha256':digest(p),'ranges':ranges})
+ for lo,hi in ranges:
+  for number in range(lo,hi+1):events.append({'file':str(p),'line':number,'text':lines[number-1]})
+(P/'native.jsonl').write_text(''.join(json.dumps(e)+'\n' for e in events))
+write('NATIVE_EVIDENCE_INDEX.json',index)
+identity=read('DEVICE_BINARY_IDENTITY.json');identity.update(current_device_log=str(device),current_registration_line=325,current_load_success_lines=[396,397],current_compute_success_line=609,host_registration={'path':str(host),'line':74920},native_loading='aclrtBinaryLoadFromFile of built-in aicpu_kernel.json plus device OpenSo/Load so success; no literal RawLoad event for this AiCPU route')
+write('DEVICE_BINARY_IDENTITY.json',identity)
+now=datetime.datetime.now(datetime.timezone.utc).isoformat()
+row={'baseline':'ops-math','operator':'FFTC2CFwdOp','case_id':'latency-4k-complex64','status':'verified_unregistered','attribution_status':'attribution_pending','reason':'Explicit complex unity window passes unchanged canonical checker; original aclStft uses system CANN libcpu_kernels.so::RunCpuKernel/STFT. Device binary bytes/hash unavailable from host; full original execution ownership remains for parent review.','registered':False,'new_parent_acceptances':0,'api':checker['api'],'checker_path':str(P/'checker.json'),'checker_receipt':str(P/'checker.json'),'guard_path':str(P/'GUARD_RESULT.json'),'guard_receipt':str(P/'GUARD_RESULT.json'),'guard_returncode':guard['returncode'],'child_returncode':child['returncode'],'native_paths':[str(P/'native.jsonl'),str(host),str(device),str(P/'NATIVE_EVIDENCE_INDEX.json')],'fulloutput':{'checked_outputs':1,'total_outputs':1,'elements':4096,'path':str(P/'output_0.pt'),'shape':[4096],'dtype':'complex64','raw_api_shape':[4096,1]},'inputpreserved':{'verified':True,'before':str(P/'input_0_before.pt'),'after':str(P/'input_0_after.pt')},'seed':checker['input_seed'],'tolerance':{'rtol':1e-4,'atol':1e-4,'source':'unchanged FFTWorkload.verification'},'verification':checker['verification'],'timings':{'guard_total_wall_s':guard['elapsed_s'],'checker_wall_s':checker['wall_seconds'],'api_call_and_sync_wall_s':payload[0]['api_call_and_sync_wall_s'],'device_stft_logged_us':624.619,'queue_s':None,'compile_s':None,'note':'Host monotonic durations and device self-reported STFT duration are distinct; no cross-clock subtraction, no performance benchmark.'},'cleanup':{'checker_final_sync_and_candidate_cleanup':'success (checker status and child code)','lock_released':True,'post_status':'idle'},'changed_files':[str(P/'adapter.py'),str(P/'runner.py')],'source_sha256':checker['source_sha256']}
+write('RESULT.json',{'rows':[row],'new_parent_acceptances':0,'npu_attempts':1,'in_progress':False,'finished_at':now})
+(P/'MINIMAL_ADAPTER_DIFF.md').write_text('''# 参数差异\n\n比较基准为当前、哈希匹配旧收据的 `ascend_math_more.py::opsmath_fft`；旧 `fft01/adapter.py` 已缺失，不宣称复用其字节。完整可审查新适配器见 `adapter.py`，完整源码差异见 `adapter.diff`。\n\n```diff\n+ window = torch.ones((4096,), dtype=x.dtype, device="cpu").to(x.device)\n- binding.call([binding.tensor(x.contiguous(), record), None,\n+ binding.call([binding.tensor(x, record), binding.tensor(window, record),\n                binding.tensor(out, record), 4096, 4096, 4096, False, False, True],\n                record, x.device)\n```\n\n新适配器限定原连续 [4096] complex64 输入，原 API 完整输出 [4096,1] 仅 reshape 为 [4096]。沿用 `_MathCall` 原实现；参数、窗口及输出内存均保持到同步/清理完成。runner 的 payload 保存仅为诊断观测，不改 oracle/verifier。\n''')
+delivery={'task':'fft_window_first1','worker':'0ee48cfc23994f96','finished_at':now,'status':'verified_unregistered','attribution_status':'attribution_pending','scope_count':1,'npu_attempts':1,'new_acceptance_count':0,'new_parent_acceptances':0,'result':str(P/'RESULT.json'),'findings':['41 relevant current source/deployment hashes matched historical receipt and remained unchanged after run.','Canonical seed 3181264826; original full checker verified 1/1 output, all 4096 complex64 elements; max absolute error 3.0517578125e-05; original rtol=atol=1e-4.','Non-null same-device contiguous complex64 window has exact 1+0j payload; native host log confirms window pointer and STFT input[1] shape [4096].','Native original aclStft -> STFT AiCPU -> system libcpu_kernels.so::RunCpuKernel succeeded. Custom vendor libmath_aicpu_kernels.so is not attributed as the executing STFT binary.','Full input before/after and output retained; checker final synchronize and cleanup passed; guard=0, child=0; post-run status idle and unlocked.'],'checks':{'cpu_hash_matches':41,'cpu_ast_parse':['adapter.py','runner.py'],'checker':str(P/'checker.json'),'source_freeze':str(P/'FROZEN.json'),'source_after':str(P/'SOURCE_COMPARE_AFTER.json'),'native_index':str(P/'NATIVE_EVIDENCE_INDEX.json'),'guard':str(P/'GUARD_RESULT.json'),'child':str(P/'CHILD_RESULT.json'),'status_before':str(P/'STATUS_BEFORE.json'),'status_after':str(P/'STATUS_AFTER.json')},'remaining_issues':['Parent must decide whether full original API system-AiCPU execution satisfies baseline acceptance ownership. No formal registry or acceptance ledger update performed.','Exact loaded device libcpu_kernels.so path is not host-readable, so loaded binary SHA256 remains unavailable. Native binary load and launch are preserved; no invented vendor ownership or literal RawLoad event.','Other nine FFT cases were not run or accepted; no generalization from this representative.','Correctness-only run is not a latency benchmark or proof of 100 complete parent acceptances/hour.'],'changed_files':[str(p.relative_to(P)) for p in sorted(P.rglob('*')) if p.is_file() and p.name not in ('SCOPE.json','SPAWN.json','TASK.txt')],'shared_source_modified':False,'registry_modified':False,'memory_modified':False,'notification':'Supervisor automatic delivery only.'}
+write('DELIVERY.json',delivery)
+write('HEARTBEAT.json',{'time':now,'phase':'finished_verified_unregistered_attribution_pending','npu_attempts':1,'new_parent_acceptances':0})
+write('EVIDENCE_INDEX.json',[{'path':str(p.relative_to(P)),'sha256':digest(p),'bytes':p.stat().st_size} for p in sorted(P.rglob('*')) if p.is_file() and p.name!='EVIDENCE_INDEX.json'])
+print(json.dumps({'status':row['status'],'attribution_status':row['attribution_status'],'new_parent_acceptances':0,'files':len(read('EVIDENCE_INDEX.json'))}))

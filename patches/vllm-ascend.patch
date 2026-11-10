@@ -1,0 +1,39 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1393308c5..1e053e5ac 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -22,8 +22,15 @@ find_package(Torch REQUIRED)
+ run_python(TORCH_VERSION
+   "import torch; print(torch.__version__)" "Failed to locate torch path")
+ # check torch version is 2.10.0
++option(VLLM_ASCEND_ALLOW_TORCH_VERSION_MISMATCH
++  "Allow a native-kernel build against a locally validated alternative Torch version"
++  "$ENV{VLLM_ASCEND_ALLOW_TORCH_VERSION_MISMATCH}")
+ if(NOT ${TORCH_VERSION} VERSION_EQUAL "2.10.0")
+-  message(FATAL_ERROR "Expected PyTorch version 2.10.0, but found ${TORCH_VERSION}")
++  if(VLLM_ASCEND_ALLOW_TORCH_VERSION_MISMATCH)
++    message(WARNING "Building kernels against ${TORCH_VERSION}; full vLLM compatibility requires separate validation")
++  else()
++    message(FATAL_ERROR "Expected PyTorch version 2.10.0, but found ${TORCH_VERSION}")
++  endif()
+ endif()
+ 
+ set(RUN_MODE "npu" CACHE STRING "cpu/sim/npu")
+diff --git a/setup.py b/setup.py
+index 58536c9cb..a4f154857 100644
+--- a/setup.py
++++ b/setup.py
+@@ -194,6 +194,13 @@ class build_and_install_aclnn(Command):
+         pass
+ 
+     def run(self):
++        if os.environ.get("VLLM_ASCEND_REUSE_BUILT_ACLNN") == "1":
++            vendor_dir = os.path.join(ROOT_DIR, "vllm_ascend", "_cann_ops_custom", "vendors", "custom_transformer")
++            required = ("op_api/lib/libcust_opapi.so", "version.info")
++            if not all(os.path.isfile(os.path.join(vendor_dir, path)) for path in required):
++                raise RuntimeError("Cannot reuse ACLNN: the completed repo-local custom OPP is missing")
++            print("Reusing the already built and installed repo-local ACLNN custom OPP")
++            return
+         try:
+             print("Running bash build_aclnn.sh ...")
+             subprocess.check_call(["bash", "csrc/build_aclnn.sh", ROOT_DIR, envs.SOC_VERSION])

@@ -1,0 +1,59 @@
+"""CPU supervisor for isolated 32-core remeasurement, existing pipeline/guard."""
+import json,os,time,fcntl,sys
+from pathlib import Path
+from baseline_retest32_server1_pipeline import run
+from baseline_cache_guard_binding import capture_guard,bind_guard
+ROOT=Path(__file__).resolve().parents[1]
+C=ROOT/'reports/baseline-retest32-20261030'; H=C/'server1'; H.mkdir(parents=True,exist_ok=True)
+def read(p,default=None):
+    return json.loads(p.read_text()) if p.exists() else default
+def put(p,x):
+    q=p.with_suffix('.tmp'); q.write_text(json.dumps(x,ensure_ascii=False,indent=2)); q.replace(p)
+def append(p,x):
+    with p.open('a') as f: f.write(json.dumps(x,ensure_ascii=False)+'\n');f.flush();os.fsync(f.fileno())
+def rows(p):
+    return [json.loads(l) for l in p.read_text().splitlines()] if p.exists() else []
+lock=(H/'supervisor.lock').open('a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+identity={'pid':os.getpid(),'start_ticks':int(Path('/proc/self/stat').read_text().rsplit(')',1)[1].split()[19]),'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip()}
+while not (H/'STOP').exists():
+    all_tasks=read(C/'server1_ASSIGNMENTS.json')['pairs']
+    all_tasks.sort(key=lambda t: (t['id'] not in ('965b5fb734f0cc3402b3','7e6eab71c63fe204445e','60ea180fa469c2a8a976','5b1ea226ffb42dd8d387'),t['id']!='bf8c60cadae4fc3887d4',t['id']!='efe8b27204e88c09ad19',t['id']!='0006866cba3d455416f0',t['id']!='79996ebfcac5716546c7',t['id']!='b981eb5423c9b36432af',t['id']!='cc0c540727228ca18dd6',t['id']!='e8479aa2be80b2f355e5',t['id']!='255fda038b661003abad',t['id']!='1287b2bf7d6721fea293',t['id']!='b333c3d69641e18401a1',t['id']!='b1d4524caa8f9a87bfae',t['id']!='78923817795661d2b590',t['id'] not in ('246f93d26b8391bddaf2','235ddc5395c16406b07b','f972002c7db9f4c03ebc'),t['id']!='47625ec44cc08cef5792',t['id']!='a84b47a77f821f2af55e',t['id']!='7c736e4bd066a336ffff',t['key'][0]!='tilelang-ascend',t['id'] not in ('a8f02491d524878bd7e7','1b13f732539cead3d76c','d39eeba69330b75b72ab','d02e991de94765207b84'),t['id']!='54ea178d41092467b54e',t['key'][0]!='flash-linear-attention-npu',t['key'][1]!='AddFwdOp',t['expected_seconds']))
+    hist=rows(H/'journal.jsonl')
+    latest={x['id']:x for x in hist}
+    def resolved_path_retry(x):
+        return (x['key'][0]=='DeepGEMM-Ascend' and x.get('revision')=='sgl_ssd_layout_v29' and x.get('error')=="No module named 'tilelang.ascend'") or (x['id']=='efe8b27204e88c09ad19' and x.get('revision')=='interruption_recovery_v28' and 'causal_256.json' in str(x.get('error'))) or (x['id']=='79996ebfcac5716546c7' and x.get('revision')=='conv1d_rollout_v26' and x.get('error') is None) or (x['id']=='cc0c540727228ca18dd6' and x.get('revision')=='arm_cpu_bf16_environment_v23' and x.get('error') is None) or (x['id']=='255fda038b661003abad' and x.get('revision')=='group_cleanup_v22' and 'first failing block' in str(x.get('error'))) or (x['id']=='255fda038b661003abad' and x.get('revision')=='transformer_grouped_v20' and 'first failing block' in str(x.get('error'))) or (x['id']=='e8479aa2be80b2f355e5' and x.get('revision')=='transformer_bmm_rollout_v19' and x.get('error') is None) or (x['id']=='b1d4524caa8f9a87bfae' and x.get('revision')=='transformer_recurrent_v15' and x.get('error') is None) or (x['id']=='b333c3d69641e18401a1' and x.get('revision')=='transformer_recurrent_v15' and 'aclnnRecurrentKda' in str(x.get('error'))) or (x['id']=='78923817795661d2b590' and x.get('revision')=='transformer_pilot_v13' and 'Select the isolated' in str(x.get('error'))) or (x['id']=='f972002c7db9f4c03ebc' and x.get('revision')=='package_path_v2') or (x.get('revision')=='package_path_v2' and 'aclnnCausalConv1d' in str(x.get('error'))) or (x['id']=='54ea178d41092467b54e' and x.get('revision')=='tla_environment_v7') or ('does not define' in str(x.get('error')) and 'aclnnRecurrentKda' in str(x.get('error')) and x.get('revision') in ('native_v1','package_path_v2','registry_delta_v6')) or (x['id']=='0d5b95104307a8774059' and x.get('revision')=='tla_environment_v7') or (x.get('revision')=='native_v1' and x.get('error')=="No module named 'fla_npu'") or (x['id']=='47625ec44cc08cef5792' and x.get('revision')=='gate_package_v4' and 'EZ1013' in str(x.get('error'))) or (x['id']=='7c736e4bd066a336ffff' and x.get('revision')=='gate_package_v4' and x.get('error')=='No registered provider for DeltaNetChunkFwdOp / flash-linear-attention-npu')
+    attempted={x['id'] for x in latest.values() if x['status']=='cached' or not resolved_path_retry(x)}
+    holds={tuple(x['key'][:2]) for x in latest.values() if x['status']!='cached' and not resolved_path_retry(x)}
+    # Only proven remote deployments are released. Others require CPU inspection.
+    enabled=read(H/'ENABLED.json',{'libraries':['flash-linear-attention-npu','sgl-kernel-npu','DeepGEMM-Ascend']})['libraries']
+    todo=[t for t in all_tasks if t['id'] not in attempted and t['key'][0] in enabled and (t['key'][0]!='ops-transformer' or t['id']=='bf8c60cadae4fc3887d4' or t['key'][1] in ('Conv1dFwdOp','BmmFwdOp','GroupedGemmFwdOp','DeltaNetRecurrentFwdOp','GDNFwdOp')) and tuple(t['key'][:2]) not in holds]
+    put(H/'STATE.json',{'at':time.time(),'identity':identity,'phase':'preparing' if todo else 'needs_review','assigned':len(all_tasks),'cached':sum(x['status']=='cached' for x in latest.values()),'pending_review':sum(x['status']!='cached' for x in latest.values()),'unattempted':len(all_tasks)-len(attempted),'enabled_libraries':enabled,'held_operator_scopes':[list(k) for k in holds]})
+    if not todo: break
+    batch=H/'batches'/str(time.time_ns()); jobs=[]
+    chosen=[]; scopes=set()
+    for t in todo:
+        scope=tuple(t['key'][:2])
+        if scope in scopes:continue
+        scopes.add(scope);chosen.append(t)
+        if len(chosen)==4 or t['id'] in ('bf8c60cadae4fc3887d4','efe8b27204e88c09ad19','0006866cba3d455416f0','79996ebfcac5716546c7','b981eb5423c9b36432af','cc0c540727228ca18dd6','78923817795661d2b590','b333c3d69641e18401a1','b1d4524caa8f9a87bfae','1287b2bf7d6721fea293','255fda038b661003abad','e8479aa2be80b2f355e5'):break
+    for t in chosen:
+        out=H/'pairs'/t['id']/str(time.time_ns());out.mkdir(parents=True)
+        put(out/'task.json',t)
+        jobs.append({'id':t['id'],'prepare':{'cpu_only':True,'timeout':120,'argv':['python3',str(ROOT/'tools/baseline_retest32_server1_prepare.py'),str(out)]},'device':{'timeout':max(t['timeout'],2202) if t['id']=='b1d4524caa8f9a87bfae' else t['timeout'],'argv':['bash',str(ROOT/'tools/baseline_retest32_server1_python_v30.sh'),t['key'][0],str(ROOT/'tools/measure_baseline_retest32_server1.py'),'--task',str(out/'task.json'),'--out',str(out)]},'out':str(out),'key':t['key']})
+    put(H/'ACTIVE.json',{'batch':str(batch),'jobs':jobs,'at':time.time(),'identity':identity})
+    run({'owner':'baseline-retest32-20261030/server1','wait':600,'cwd':str(ROOT),'jobs':jobs},batch,lookahead=2,guard_command=['python3',str(ROOT/'tools/baseline_retest32_server1_guard_receipt.py')])
+    for job in jobs:
+        out=Path(job['out']); guardpath=batch/job['id']/'guard.json'; g=read(guardpath,{})
+        if not g:
+            if (batch/job['id']/'device.log').exists():
+                put(H/'STOP',{'reason':'Device launcher failed without receipt; manual inspection required'})
+            continue # Prepared-only jobs were never attempted on device.
+        m=read(out/'measurement.json',{}); status='pending_review'; err=m.get('error')
+        if m.get('status')=='measured_pending_guard' and g.get('performance_valid') is True and g.get('workload_exit_code')==0:
+            m.update(status='cached',performance_valid=True,guard_receipt=str(guardpath))
+            try:
+                m['guard_binding']=bind_guard(m,read(out/'prepare.json')['guard_before'],capture_guard())
+                assert m['identity']['environment']['aicore_count']==32
+                put(out/'measurement.json',m);append(H/'CACHE.jsonl',m);status='cached'
+            except Exception as e: err=str(e)
+        append(H/'journal.jsonl',{'id':job['id'],'key':job['key'],'at':time.time(),'status':status,'measurement':str(out/'measurement.json'),'guard':str(guardpath),'error':err,'batch':str(batch),'revision':'deepgemm_environment_conv3d_v30'})

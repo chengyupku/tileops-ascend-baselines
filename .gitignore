@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+*.tar
+*.tar.gz
+*.zip
+*.pt
+*.pth
+*.so
+*.o
+*.bin
+profiles/
+profiling_data/
+.cache/

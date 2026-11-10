@@ -1,0 +1,48 @@
+"""FlashMLA providers. Importing this package loads only Python's standard library."""
+
+from .adapters import attention, reduction, pool, mean_pooling, bmm, pointwise_max, ssd_chunk_coupling
+
+from .extra_routes import convolution, logical_or, pool_scaled_sum, pointwise_dot, softplus, vector_infinity_norm, two_key_activation, softmax_basis
+
+PROVIDERS = {
+    **{op: two_key_activation for op in ("SigmoidFwdOp", "SiluFwdOp", "TanhFwdOp")},
+    "SoftmaxFwdOp": softmax_basis,
+    "VectorNormFwdOp": vector_infinity_norm,
+    "SoftplusFwdOp": softplus,
+    **{op: pointwise_dot for op in ("AddFwdOp", "SubFwdOp", "MulFwdOp", "NegFwdOp", "AbsFwdOp", "LogicalNotFwdOp", "BitwiseXorFwdOp")},
+    "BitwiseOrFwdOp": logical_or,
+    "BitwiseAndFwdOp": logical_or,
+    "LogicalOrFwdOp": logical_or,
+    "AvgPool2dFwdOp": pool_scaled_sum,
+    "AvgPool3dFwdOp": pool_scaled_sum,
+    "LogicalAndFwdOp": logical_or,
+    "AminFwdOp": reduction,
+    "AllFwdOp": reduction,
+    "MinimumFwdOp": pointwise_max,
+    "Conv1dFwdOp": convolution,
+    "Conv2dFwdOp": convolution,
+    "Conv3dFwdOp": convolution,
+    "GQADenseFwdOp": attention,
+    "GQAVarlenFwdOp": attention,
+    "GQAPagedFwdOp": attention,
+    "GQAPrefillPagedWithKVCacheFwdOp": attention,
+    "DSADecodeWithKVCacheFwdOp": attention,
+    "NSAVarlenFwdOp": attention,
+    "NSACompressedVarlenFwdOp": attention,
+    "MLAVarlenFwdOp": attention,
+    "AmaxFwdOp": reduction,
+    "LogSumExpFwdOp": reduction,
+    "MeanFwdOp": reduction,
+    "MaxPool1dFwdOp": pool,
+    "MaxPool2dFwdOp": pool,
+    "MaxPool3dFwdOp": pool,
+    "AdaptiveMaxPool2dFwdOp": pool,
+    "AvgPool1dFwdOp": pool,
+    "AdaptiveAvgPool2dFwdOp": pool,
+    "MeanPoolingFwdOp": mean_pooling,
+    "BmmFwdOp": bmm,
+    "SSDChunkCouplingFwdOp": ssd_chunk_coupling,
+    "MaximumFwdOp": pointwise_max,
+    "ReluFwdOp": pointwise_max,
+    "AnyFwdOp": reduction,
+}

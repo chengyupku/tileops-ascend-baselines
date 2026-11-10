@@ -1,0 +1,17 @@
+import pathlib,json,fcntl,os,datetime
+D=pathlib.Path(__file__).resolve().parents[1];q=D/'recovery_native5';q.mkdir(exist_ok=True)
+keys=json.loads((D/'threehost_tilelang3_complete_capture/BMM3_EXTENSION.json').read_text())['keys']+[['ops-nn','GroupedGemmFwdOp',c] for c in ['moe-dgrad-float16','moe-fwd-float16']]
+(q/'SCOPE.json').write_text(json.dumps([{'key':k,'baseline':k[0],'operator':k[1],'case_id':k[2]} for k in keys],indent=2))
+(q/'GROUP.json').write_text(json.dumps({'name':q.name,'scope':5,'children':5,'deadline_utc':'2026-10-27T05:31:00+00:00','phase':'ownership_confirmation','enabled':False},indent=2))
+(q/'CHILD_JOBS.json').write_text('{"jobs": []}\n');(q/'READY_QUEUE.json').write_text('{"tasks": []}\n')
+(q/'TASK.txt').write_text('''你是实际任务恢复coordinator，gpt-6-astra medium。首先按AGENTS.md读MEMORY索引和必要任务记忆、codex-workers SKILL；禁止全历史扫描。你自己禁止NPU，允许通过原生manual-quota wrapper派实际执行子worker（明确授权NPU时使用唯一owner和host guard）。报告目录只写本报告根目录；禁止ACCEPTED/providers/其他memory写入。绝对截止2026-10-27T05:31:00Z不重置，持续推进至完成/截止。必须复用BASELINE_WORKER_PROMPT_RULES_20261027.txt。
+职责仅恢复SCOPE.json五项：Grouped FP16 fwd/dgrad 2项，以及tilelang（不是tilelang-ascend）Bmm3。这些不在3个surge scope，04:09时不在ACCEPTED；旧threehost_nn_grouped3_build和threehost_tilelang3_complete_capture native completed。原BF16 Grouped完整成功禁止再跑。先读dispatch_root/OWNERSHIP_REPLY.json；acceptance_root已被询问是否接管这五项。若尚未回复通过其真实SELF_JOB events thread queue确认；你是可持续CPU协调而非默认自动接管。
+在原owner明确释放、原进程及设备任务停止证据确认后才启用五key转移，当前GROUP enabled=false是保护闸。旧终态DELIVERY/RESULT与guard end收据可作离场证据；若不充分通过旧真实线程询问，不猜测。检查所有活跃JOBS和CHILD_JOBS是否重复所有权。确认后写OWNERSHIP_TRANSFER.json，持FLEET_REFILL.lock更新GROUP enabled=true/phase=running；持DISPATCH.lock将本组加入STATE.coordinator_groups并更新PLAN所需调度元信息。SELF_JOB由refill写入；无需伪造parent。
+你使用现有refill_fleet.py和READY_QUEUE发布互斥实际任务，不能自己另造worker框架。每parent最多8，均gpt-6-astra medium，--notify queue。按host兼容和预计分钟将2个Grouped和3个Bmm分成实际有意义的执行子任务，最多5，公共部署缺项只一个owner解决，不重复全包SDK扫描。每子worker私有目录、SCOPE、具体TASK；ready/approved_by_coordinator/allow_npu/previous_devices_quiescent/predecessor_jobs和changed_condition必须真实。写CHILD_JOBS使用CHILD_DISPATCH.lock。不能把5协调/CPU重复审查说成5执行。
+Grouped复用threehost_nn_grouped3_build/DELIVERY.json、DEPLOYMENT.json、prepare_arm.py、launch.py、run_case.py；旧local外部竞争被终止且ARM metadata guard75未启动。新guard默认竞争完成后结果性能无效，不能修改guard或绕锁；若满输出数值通过，不为性能或登记重跑。对原环境/占用变更先确认并记录，三host状态与兼容迁移；NPU动作包括导入/生成metadata前台host npu-guard。CPU依赖在guard外。
+Bmm复用threehost_tilelang3_complete_capture/BMM3_EXTENSION.json、threehost_tilelang_bmm_registration3/registration_parent.py、prepare_run_parent.py，历史源码/工具关联缺口不是允许重跑已完整合格项；先查实际现状，若完整检查已满足直接交验收root，不再执行。原kernel/compiler/pass/schedule/reference/checker/seed/tolerance一概不改。不能靠代表失败跳过从未执行exactkey，无法改变的真正不兼容及时精确报告。
+每2分钟HEARTBEAT，5分钟必须有行动。完整结果直接交acceptance_root真实线程，调度汇总写本组DISPATCH_HANDOFF.json供dispatch_root读，不向顶层主会话queue。自动原生通知照常。先CPU准备+所有权核对，不等无关任务。结束报告具体变更/检查/remaining，禁止空计划结束。
+''')
+with (D/'FLEET_REFILL.lock').open('a') as lock:
+ fcntl.flock(lock,fcntl.LOCK_EX);p=D/'ROOT_CONTROL_QUEUE.json';v=json.loads(p.read_text());assert not any(e['name']==q.name for e in v['tasks']);v['tasks'].append({'name':q.name,'role':'coordinator','directory':str(q),'ready':True,'write':[str(D)],'parent_self_job':str(D/'dispatch_root/SELF_JOB.json'),'scope_pending_ownership_confirmation':5});t=p.with_suffix('.dispatch.tmp');t.write_text(json.dumps(v,ensure_ascii=False,indent=2));os.replace(t,p)
+print('Staged CPU-only recovery coordinator under dispatch_root real native parent; execution disabled until ownership confirmation')

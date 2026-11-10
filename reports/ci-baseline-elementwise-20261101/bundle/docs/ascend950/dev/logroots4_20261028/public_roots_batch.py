@@ -1,0 +1,12 @@
+import json,subprocess
+from pathlib import Path
+p=Path(__file__).resolve().parent
+rel=p.relative_to(p.parents[3])
+rows=[]
+for op in ['LogFwdOp','SqrtFwdOp','RsqrtFwdOp']:
+ label='public-configs-'+op+'-f32-v1'
+ rc=subprocess.run(['python3',str(p/'remote.py'),'--label',label,'--timeout','600','--',str(rel/'search_public_roots.py'),'--op',op]).returncode
+ rows.append({'op':op,'label':label,'rc':rc})
+ (p/'public-roots-batch-status.json').write_text(json.dumps(rows,indent=2))
+ if rc:raise SystemExit(rc)
+subprocess.run(['python3',str(p/'fetch.py'),'search'],check=True)

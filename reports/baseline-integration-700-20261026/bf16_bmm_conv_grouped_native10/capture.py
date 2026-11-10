@@ -1,0 +1,58 @@
+import os,sys,json,hashlib,importlib.util,functools,time,shutil
+from pathlib import Path
+from datetime import datetime,timezone
+P=Path(sys.argv[1]).resolve();CASE_ID=sys.argv[2];TASK=Path(__file__).resolve().parent;W=Path('/root/dyq/workspace')
+def dump(name,data): (P/name).write_text(json.dumps(data,indent=2,default=str)+'\n')
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+(P/'guard_snapshot.json').write_text(Path('/run/lock/ascend-npu/device-0.lock').read_text())
+manifest=json.loads((TASK/'FROZEN.json').read_text());assert all(sha(Path(p))==h for p,h in manifest['sha256'].items()),'frozen source changed'
+row=next(r for r in json.loads((TASK/'CASES.json').read_text()) if r['key'][2]==CASE_ID);OP=row['key'][1]
+sys.path[:0]=[str(W/'TileOPs'),str(W/'TileOPs/src'),str(W),str(TASK)]
+from benchmarks.ascend_all_pairs.ops_transformer import PROVIDERS
+from adapter import load_factory,candidate
+pin=manifest['release']['binding'];factory=load_factory(pin['path'],sha256=pin['sha256'])
+PROVIDERS[OP]=lambda case:candidate(case,native_factory=factory)
+spec=importlib.util.spec_from_file_location('canonical_checker',W/'TileOPs/scripts/ascend_pair_check.py');c=importlib.util.module_from_spec(spec);spec.loader.exec_module(c);c.require_guard()
+import torch,torch_npu
+from benchmarks.api import cases
+from resource_gate import capacity
+case=next(x for x in cases(OP) if x.id==CASE_ID)
+params=dict(case._call.indices)
+if OP=='Conv1dFwdOp':params['bias']=case._call.present('bias')
+assert params==row['manifest_params'],(params,row['manifest_params'])
+host=capacity();free,total=torch.npu.mem_get_info();en=row['envelope']
+admission=dict(host=host,hbm_free=free,hbm_total=total,**en,disk_free=shutil.disk_usage(P).free,stage='before_input_allocation',params=params);dump('RESOURCE_ADMISSION.json',admission)
+assert host['effective_available_host_bytes']>=en['host_required'] and free>=en['device_required'] and admission['disk_free']>=en['disk_required'],'capacity envelope unavailable'
+dump('RUNTIME.json',dict(torch=torch.__version__,torch_npu=torch_npu.__version__,config=torch.__config__.show(),params=params,environment={k:os.environ.get(k) for k in ['ASCEND_CUSTOM_OPP_PATH','ASCEND_CLASSIC_TRANSFORMER_VENDOR','LD_LIBRARY_PATH']}))
+captures={};counts={};timings={}
+representative=CASE_ID in ['square-256-bfloat16','qwen3-30b-ep8-empty-bfloat16','whisper-conv1-bias-bfloat16']
+def save(name,x):
+ if not isinstance(x,torch.Tensor):captures[name]={'value':x};return
+ v=x.detach().cpu().contiguous();raw=v.view(torch.uint8).numpy().tobytes()
+ store=representative and ('output' in name or name.startswith('candidate_0_input'))
+ if store:(P/(name+'.bin')).write_bytes(raw)
+ captures[name]={'sha256':hashlib.sha256(raw).hexdigest(),'shape':list(v.shape),'dtype':str(v.dtype),'original_device':str(x.device),'bytes':len(raw),'stored':store}
+ if v.numel()<=32:captures[name]['values']=v.tolist()
+ dump('CAPTURE.json',captures)
+def observed(label,fn):
+ @functools.wraps(fn)
+ def call(*args,**kw):
+  i=counts.get(label,0);counts[label]=i+1;prefix=f'{label}_{i}'
+  for j,t in enumerate(args):save(f'{prefix}_input{j}',t)
+  dump('PHASE.json',dict(phase=label,started=time.time()))
+  start=time.monotonic();out=fn(*args,**kw);torch.npu.synchronize();timings[prefix]=time.monotonic()-start;dump('TIMINGS.json',timings)
+  save(f'{prefix}_output',out)
+  for j,t in enumerate(args):save(f'{prefix}_post_input{j}',t)
+  return out
+ return call
+original_observe=c.observe_call;observe_count=0
+def capture_observe(torch,run,records):
+ global observe_count
+ observe_count+=1
+ return original_observe(torch,observed('candidate' if observe_count==1 else 'reference',run),records)
+c.observe_call=capture_observe
+sys.argv=[str(W/'TileOPs/scripts/ascend_pair_check.py'),'--op',OP,'--case-id',CASE_ID,'--library','ops-transformer','--output',str(P/'representative.json')]
+rc=c.main()
+loaded=sorted(set(line.split()[-1] for line in Path('/proc/self/maps').read_text().splitlines() if '/' in line))
+dump('EXECUTION.json',{'utc':datetime.now(timezone.utc).isoformat(),'checker_exit_code':rc,'capture_counts':counts,'timings':timings,'frozen_unchanged':all(sha(Path(p))==h for p,h in manifest['sha256'].items()),'loaded_files':loaded,'mapped_host_hashes':{p:sha(Path(p)) for p in loaded if '/bf16gmm_transformer/' in p and Path(p).is_file()}})
+raise SystemExit(rc)

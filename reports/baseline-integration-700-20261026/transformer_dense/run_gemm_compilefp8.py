@@ -1,0 +1,4 @@
+import subprocess,json,pathlib,time,datetime,os
+p=pathlib.Path(__file__).resolve().parent/'gemm';(p/'guard_snapshot.json').write_text(pathlib.Path('/run/lock/ascend-npu/device-0.lock').read_text());e=json.loads((p/'build_env.json').read_text());e['ASCEND_GLOBAL_LOG_LEVEL']='3';t=time.monotonic()
+with (p/'compilefp8.log').open('w') as f:r=subprocess.run([a.replace('9fadc675eeac2d94d4d5d4cbba2c95d4','0db0da5b4b38b65b8b4dd21b626476e5').replace('/package/33','/package/fp8') for a in json.loads((p/'build_command.json').read_text())],cwd=p/'run',env=e,stdout=f,stderr=subprocess.STDOUT)
+(p/'compilefp8.json').write_text(json.dumps({'returncode':r.returncode,'elapsed_s':time.monotonic()-t,'finished_at':datetime.datetime.now(datetime.timezone.utc).isoformat()},indent=2));raise SystemExit(r.returncode)

@@ -1,0 +1,19 @@
+{
+  "native_measurement_backlog": 2193,
+  "native_review_union": 2278,
+  "torch_shape_review": 333,
+  "torch_shape_review_already_measured_in234": 0,
+  "optional_autograd": 7,
+  "all_enumerated_review_union": 2618,
+  "not_total_mandatory_retests": true,
+  "unknown": [
+    "v010 new case x native library eligibility not enumerated",
+    "other timing findings not yet bound to exact current published paths"
+  ],
+  "estimate_dual_host_hours": [
+    36,
+    60
+  ],
+  "historical_native_621_elapsed_hours": 18.3258,
+  "historical_native_single_host_pairs_per_hour": 33.8866
+}

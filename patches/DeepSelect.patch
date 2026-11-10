@@ -1,0 +1,19 @@
+diff --git a/setup.py b/setup.py
+index bdeb8e6..fb97c36 100644
+--- a/setup.py
++++ b/setup.py
+@@ -272,7 +272,13 @@ except Exception:
+     # a valid PEP 440 local version in that case.
+     git_rev = "unknown"
+ 
+-datetime_rev = datetime.now().strftime("%Y%m%d.%H%M%S")
++try:
++    build_epoch = int(os.environ.get("SOURCE_DATE_EPOCH") or subprocess.check_output(
++        ["git", "show", "-s", "--format=%ct"], stderr=subprocess.DEVNULL
++    ).decode().strip())
++except (ValueError, subprocess.CalledProcessError):
++    build_epoch = 0
++datetime_rev = datetime.fromtimestamp(build_epoch).strftime("%Y%m%d.%H%M%S")
+ 
+ if build_target_platform == kk.Platform.CUDA:
+     ext_modules, build_ext = build_on_cuda_platform()

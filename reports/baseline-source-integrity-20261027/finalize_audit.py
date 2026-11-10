@@ -1,0 +1,41 @@
+import csv,hashlib,json
+from pathlib import Path
+from datetime import datetime,timezone
+R=Path(__file__).resolve().parent
+W=R.parents[1]
+def load(n):return json.loads((R/n).read_text())
+def f(id,kind,finding,state,evidence,impact,attribution='Current source inspected; original author not independently established'):
+ return dict(id=id,kind=kind,finding=finding,current_state=state,evidence=evidence,impact=impact,attribution=attribution)
+findings=[
+f('F01','算法组合，当前已验证结果受影响','TileLang truth.py 先调用原生位运算实现 complex 非零转换，再调用固定2x128 reducer逐级合并。属于对接器新增完整算法，不是顶层参数/布局适配。','All/Any/CountNonzero 的 complex64/complex128 共6个pair仍为verified；回执内truth.py/reduce.py哈希与现存文件相同。', ['TileOPs/benchmarks/ascend_all_pairs/tilelang/truth.py:9','TileOPs/benchmarks/ascend_all_pairs/tilelang/truth.py:64','TileOPs/benchmarks/ascend_all_pairs/tilelang/truth.py:78','TileOPs/benchmarks/ascend_all_pairs/tilelang/reduce.py:35','VERIFIED_COMPOSITION_6.json'],'数值通过属实，但不满足当前original-only顶层接口标准；6是已核实下限，不是全部问题pair总数。','worker c3f3396a47d643ec事件196创建reduce.py；truth.py具体创建者本轮未定位。回执确认算法被实际执行。'),
+f('F02','schedule搜索流程修改','_original_jit覆盖整个decorator_list；原chunk_state_fwd有@autotune(configs=get_configs(), warmup=10, rep=10)，适配后只有@tilelang.jit(target="ascend")。','当前classic SSDChunkState fallback仍指向此实现；该op/library的6个pair均excluded。', ['TileOPs/benchmarks/ascend_tilelang_generic.py:12','TileOPs/benchmarks/ascend_tilelang_generic.py:21','ascend_baselines/tilelang/examples/linear_attention/example_mamba_chunk_state.py:53','TileOPs/benchmarks/ops/bench_ascend_classics.py:209'],'取消原搜索并固定默认block/thread/stage，不能宣称schedule搜索未动。'),
+f('F03','kernel内部精度改写','历史attention对原core.py全文把bfloat16替换为目标dtype，连内部probability storage/cast一起变。','all_pairs/tilelang/attention.py当前已经恢复原文且拒绝FP16；两个旧classic helper仍保留重写。GQA已验证2项使用独立固定注册，不应归罪于旧helper。', ['TileOPs/benchmarks/ascend_tilelang_more.py:91','TileOPs/benchmarks/ascend_tilelang_attention_cases.py:34','TileOPs/benchmarks/ascend_all_pairs/tilelang/attention.py:11','ADAPTER_MUTATION_ATTRIBUTION.json'],'历史底层数学精度曾被修改；8个GQA历史保留条目不可仅凭分类视为本轮已重审，也未断言这8个都使用改版。','worker c3f3396a47d643ec events.jsonl第82行completed命令exit0创建带dtype重写的attention.py。'),
+f('F04','适配器新增算法','FLA centered_norm由cumsum、L2、causal_conv组合出LayerNorm/GroupNorm等；SGL由selector/mul_add组合activation/variance；ops-transformer由MoE routing/topk组合activation。','这些实现/注册仍存在。核对FLA6类centered norm共52项均excluded；transformer所列21项excluded/closed；SGL所列28项中24excluded、4Hardsigmoid historical_retained。', ['TileOPs/benchmarks/ascend_all_pairs/fla/normalization.py:6','TileOPs/benchmarks/ascend_all_pairs/sgl/composed.py:5','TileOPs/benchmarks/ascend_all_pairs/ops_transformer/composed_activations.py:5','FLAGGED_ROUTE_CATALOG_STATUS.json','ADDITIONAL_ROUTE_STATUS.json'],'供应商单个kernel没改，不代表算法边界未越过；历史保留不等于原版认证。'),
+f('F05','生成源码的调度/类型常量改写','ops-tensor classic Conv2d把硬编码BLOCK_DIM/N等改值，并把half改成BF16生成源码，再以host循环启动patch/group/block；TLA旧amax helper也改硬编码Tensor/UB形状。','ops-tensor Conv2d31项均excluded；TLA旧helper为legacy路径，未在本轮归因到成功条目。', ['TileOPs/benchmarks/ascend_tensor_conv_cases.py:54','TileOPs/benchmarks/ascend_tla_reduction.py:38'],'供应商Git clean仍可执行改写后的副本；按仅顶层公开API适配标准需要隔离这些路径。'),
+f('F06','当前vendor源码检查','23个源码仓库/副本和28个直接submodule逐blob核对；未发现当前kernel/pass/scheduler主体差异。','9处tracked构建/打包兼容改动分布7个库，另有2个docs/make.bat纯换行差异；SGL还存在一个untracked兼容头。', ['GIT_INVENTORY.json','FULL_TREE_HASH_AUDIT.json','SUBMODULE_HASH_AUDIT.json'],'9处不是9个算法修改；本轮已逐diff检查。此前进度口述10处应更正为9处。'),
+f('F07','当前构建副本检查','ops_nn/source、ops_transformer/source、ops_math/source、fla/native-source与pinned vendor Git逐文件对照。','56965个存在文件无内容差异；transformer副本缺少2个protobuf构建补丁，非kernel/pass改写。', ['BUILD_COPY_HASH_AUDIT.json'],'只覆盖这些当前常用源副本，不能证明所有历史cache、每个二进制均由当前源码重建。'),
+f('F08','历史编译入口补丁','TLA libgen.py历史增加ASCEND_NPU_ARCH并切换bisheng架构参数。','当前vendor libgen.py已还原；旧vendor/build四个二进制仍等于回滚时保留的旧哈希。旧baseline-run wrapper已退出78退休。', ['historical_libgen.py.diff','TLA_RETAINED_BINARY_RECHECK.json','.tools/baselines/tilelang-ascend-python'],'属于低于顶层接口的编译环境变更，不是已证明改过pass算法；不可用源码还原来认证旧二进制。','本地部署兼容补丁，具体创建agent身份未定位；有回滚备份支持。'),
+f('F09','官方补丁，避免误报','TVM buffer.py显式step=1处理和logging.cc符号长度修复由TLA仓库自带patch、install_ascend/build_wheel/setup.py应用。','当前vendor子模块为raw Git；最近本地TLA28使用的独立pristine构建含恰好这2个官方补丁。41715文件核对无其他差异；其4个.so哈希与预检一致。', ['ascend_baselines/tilelang-ascend/3rdparty/patches/tvm_slice_step_fix.patch','ascend_baselines/tilelang-ascend/3rdparty/patches/tvm_backtrace_symbol_name_length.patch','ascend_baselines/tilelang-ascend/install_ascend.sh:189','TLA_PRIVATE_RUNTIME_RECHECK.json','reports/baseline-single-agent-local-20261027/run_tla28_case.py'],'官方构建流程的一部分，不能把它们归为agent擅改compiler算法。预检中的checker哈希已有变化，这不等于运行库被改，本轮不作checker语义审计。','upstream-pinned官方补丁'),
+f('F10','旧动态库保留与保护','本机ops_nn/install3 proto哈希仍为a7e6cc...6ec5bf7f，命中当前graph.py中已知内部注册修改的拒绝名单。','当前ops_nn源副本无差异；MatMulV3 graph入口及部分注册入口有拒绝条件。', ['OPS_NN_PROTO_HASHES.json','TileOPs/benchmarks/ascend_all_pairs/ops_nn/graph.py:71','TileOPs/benchmarks/ascend_all_pairs/ops_nn/__init__.py:24'],'不能把此旧库视为重新由当前原版源码构建；本轮确认哈希和保护条件，未重新反汇编验证历史修改内容或断言所有其他路径均不可触及。','历史代码标注及命中哈希；本轮未定位原修改者。'),
+f('F11','编译配置/安装覆盖负对照','TileLang reducer的AUTO_SCHEDULE=False和SIMD arithmetic FAST_MATH=False与原测试配置一致；DeepSelect dcpreload=false也来自原setup。Triton15个与base RECORD不一致的文件均匹配triton_ascend覆盖包。','4758个有哈希RECORD项完成核对；15项全部有对应发行覆盖，未发现这些已安装文件的额外漂移。', ['TRITON_OVERLAY_EXPLANATION.json','INSTALLED_RECORD_AUDIT.json','INSTALLED_SOURCE_COMPARE.json','ascend_baselines/tilelang/testing/ascend/language/test_tilelang_ascend_reduce.py:128','ascend_baselines/DeepSelect/setup.py:241'],'不能仅凭False或base RECORD变化认定agent改pass；RECORD一致也不单独证明wheel源构建原始性。'),
+f('F12','已禁用或仅诊断的越界代码','tilelang/composed.py已在函数首行抛错；diagnostics.py的TopK loader替换原autotune装饰器但不是正式PROVIDERS。ops-nn多类composition有original-only拒绝条件。','保留代码不必然代表当前成功结果执行了它。', ['TileOPs/benchmarks/ascend_all_pairs/tilelang/composed.py:18','TileOPs/benchmarks/ascend_all_pairs/tilelang/diagnostics.py:73','TileOPs/benchmarks/ascend_all_pairs/ops_nn/__init__.py:10'],'报告区分存在、注册、实际回执和排除状态，不把所有历史代码都算当前污染。')
+]
+(R/'FINDINGS.json').write_text(json.dumps(findings,ensure_ascii=False,indent=2)+'\n')
+with (R/'FINDINGS.csv').open('w',newline='') as stream:
+ writer=csv.DictWriter(stream,fieldnames=list(findings[0]));writer.writeheader()
+ for row in findings:writer.writerow({**row,'evidence':' | '.join(row['evidence'])})
+sourcefiles={}
+for row in findings:
+ for s in row['evidence']:
+  raw=s.rsplit(':',1)[0] if s.rsplit(':',1)[-1].isdigit() else s
+  p=W/raw
+  if not p.is_file():p=R/raw
+  if p.is_file():sourcefiles[str(p)]=hashlib.sha256(p.read_bytes()).hexdigest()
+(R/'EVIDENCE_HASHES.json').write_text(json.dumps(sourcefiles,indent=2)+'\n')
+top=load('FULL_TREE_HASH_AUDIT.json');sub=load('SUBMODULE_HASH_AUDIT.json');copies=load('BUILD_COPY_HASH_AUDIT.json')
+summary={'at':datetime.now(timezone.utc).isoformat(),'task':'本地baseline低于顶层接口的算法/编译pass/schedule搜索只读审计','conclusion':'发现对接器越界：改搜索流程、内部精度、组合算法；不能宣称所有baseline只做了顶层接口适配。当前已审vendor源码未发现kernel/pass/scheduler主体改写。','scope':{'libraries':17,'repo_copies':len(top),'direct_submodules':len(sub),'vendor_tracked_blob_checks':sum(x['tracked_files_hashed'] for x in top)+sum(x['tracked_files_hashed'] for x in sub),'private_tla_checks':41715,'common_build_copy_file_checks':sum(x['checked'] for x in copies),'installed_record_hash_checks':4758,'note':'文件检查含重复副本；比对基准为本地pinned Git对象，不是网络latest。'},'confirmed_verified_boundary_conflicts':6,'conflict_keys':[[x['library'],x['op'],x['case_id']] for x in load('VERIFIED_COMPOSITION_6.json')],'source_build_compat_modified_tracked_files':9,'algorithm_sources_modified_by_this_audit':0,'device_commands':0,'acceptance_or_hit_tables_modified':False,'outputs':['FINDINGS.json','FINDINGS.csv','VERIFIED_COMPOSITION_6.json','EVIDENCE_HASHES.json'],'limitations':['不能给每个历史/ignored缓存二进制的源构建关系背书；不会把未完整复原构建的二进制判为clean。','适配器已批量搜索并追踪具体高风险路径，非对所有case做新的动态测试，也非穷举所有可能的任意Python动态替换。','命中表2936 verified是既有账本分类；本次6项标准冲突需后续独立处理，尚未改写总数。','historical_retained本来就不是本轮重新认证，不能拿它替代源码原始性证据。','未登录远端，本轮只核查本地源码、缓存、安装文件和存于本机的回执。']}
+assert summary['scope']['vendor_tracked_blob_checks']==137362
+assert summary['scope']['common_build_copy_file_checks']==56965
+assert len(summary['conflict_keys'])==len({tuple(k) for k in summary['conflict_keys']})==6
+(R/'SUMMARY.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
+print(json.dumps(summary,ensure_ascii=False,indent=2))

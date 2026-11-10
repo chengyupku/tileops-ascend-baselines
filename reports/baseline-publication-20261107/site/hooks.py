@@ -1,0 +1,113 @@
+"""mkdocs hooks: mirrored-content path rewrites, the Benchmarks nav, and the
+untranslated-page notice.
+
+* Mirrored design docs carry repo-relative paths (`../../tileops/...`) that do
+  not resolve here; `on_page_markdown` rewrites them after include-markdown has
+  pulled the content in.
+* The Benchmarks pages are generated at deploy time and cannot be listed in
+  `mkdocs.yml`; `on_config` expands that one nav entry to whatever the renderer
+  produced.
+* mkdocs-static-i18n serves the default-language page where a locale has no
+  translation; `on_page_markdown` prepends a notice, so a fallback page reads as
+  a translation still to come rather than a broken one.
+"""
+from __future__ import annotations
+
+import os
+import re
+
+# The design pages are mirrored from the TileOPs checkout the workflow makes,
+# and that checkout is this fork (render-benchmarks.yml: `repository:
+# yyttt6/TileOPs`). So the repo-relative paths in them resolve against the
+# fork, not upstream: `.claude/skills/scaffold-op/slot-rules.md` below exists
+# only here, and pointing these at tile-ai/TileOPs served a 404.
+SOURCE_BLOB = "https://github.com/yyttt6/TileOPs/blob/main"
+
+_DESIGN_REPO_PATH = re.compile(r"\.\./\.\./([\w./-]+)")
+
+# A mirrored design doc names three slot rules as same-page anchors, but the ids
+# live in the skill file the rules ship with, which this site does not publish.
+# The sibling doc links the same slots by path, so send these there too.
+_SLOT_RULES = ".claude/skills/scaffold-op/slot-rules.md"
+_DESIGN_SLOT_ANCHOR = re.compile(r"\]\(#(slot-s\d+)\)")
+
+# Keyed by the locale being built, not by the locale of the content shown.
+# A plain block, not an admonition: admonitions are styled as technical asides
+# here, and a translation-status note should not compete with them. The class
+# also tells extra.css to skip the Chinese type metrics on this page, since the
+# body text it wraps is English.
+_FALLBACK_NOTICE = {
+    "zh": '<div class="locale-notice" translate="no">'
+          "<strong>本页暂无中文版。</strong>以下为英文原文。</div>",
+}
+
+
+def _fallback_notice(page):
+    """Notice for a page served from another locale, or "" when translated.
+
+    i18n sets `locale` to the language of the file it picked and
+    `locale_alternate_of` to the language currently being built; they differ
+    exactly on a fallback.
+    """
+    file = page.file
+    building = getattr(file, "locale_alternate_of", None)
+    if building is None or getattr(file, "locale", None) == building:
+        return ""
+    return _FALLBACK_NOTICE.get(building, "")
+
+
+def on_page_markdown(markdown, page, config, files):
+    src = page.file.src_path.replace("\\", "/")
+
+    if src.startswith("design/"):
+        # The design docs link to source files via ../../<repo path>.
+        # Redirect those to GitHub so they resolve from the published site.
+        markdown = _DESIGN_REPO_PATH.sub(rf"{SOURCE_BLOB}/\1", markdown)
+        markdown = _DESIGN_SLOT_ANCHOR.sub(
+            rf"]({SOURCE_BLOB}/{_SLOT_RULES}#\1)", markdown
+        )
+
+    notice = _fallback_notice(page)
+    if notice:
+        # Below the H1, so the page still opens with its own title.
+        lines = markdown.split("\n")
+        after = next((i for i, ln in enumerate(lines) if ln.startswith("# ")), -1) + 1
+        lines.insert(after, f"\n{notice}")
+        markdown = "\n".join(lines)
+
+    return markdown
+
+
+# Benchmarks pages in nav order. A page the renderer did not produce is left
+# out; a page it produced that is not listed here is appended, so a new data
+# page reaches the nav without editing this list.
+_BENCH_ORDER = [
+    "index.md", "reading.md",
+    "elementwise.md", "rope.md", "reduction.md", "normalization.md",
+    "conv-pool.md", "gemm.md", "quantization.md", "attention.md", "moe.md",
+    "sampling.md", "linear-attention.md", "ssm.md", "other.md",
+]
+
+
+# `<name>.zh.md` beside `<name>.md` is one page in two locales, not two pages:
+# i18n picks between them per build. The nav lists the default-language name
+# only, so a translated page must not be matched here — listed, it would appear
+# in the nav a second time, under whatever its H1 says.
+_LOCALE_PAGE = re.compile(r"\.[a-z]{2}(?:[-_][A-Za-z]{2,4})?\.md$")
+
+
+def on_config(config):
+    """Expand the Benchmarks nav entry to the generated pages."""
+    bench_dir = os.path.join(config["docs_dir"], "benchmarks")
+    if not os.path.isdir(bench_dir):
+        return config
+    present = {f for f in os.listdir(bench_dir)
+               if f.endswith(".md") and not _LOCALE_PAGE.search(f)}
+    ordered = [f for f in _BENCH_ORDER if f in present]
+    ordered += sorted(present - set(ordered))
+    entries = [f"benchmarks/{f}" for f in ordered]
+
+    for section in config["nav"]:
+        if isinstance(section, dict) and "Benchmarks" in section:
+            section["Benchmarks"] = entries
+    return config

@@ -1,0 +1,21 @@
+diff --git a/examples/run_examples.sh b/examples/run_examples.sh
+index 3623332..96f67ee 100644
+--- a/examples/run_examples.sh
++++ b/examples/run_examples.sh
+@@ -58,13 +58,13 @@ function compile_operator(){
+     cd $ATVC_HOME_DIR/examples/$TEST_NAME
+     if [ -z "$RUN_MODE" ]; then
+         echo "Executing with npu mode"
+-        bisheng -x asc --npu-arch=dav-2201 $TEST_NAME.cpp -o $TEST_NAME -I ${ATVC_HOME_DIR}/include -I ${CURRENT_DIR}/common -ltiling_api -lplatform -lm -ldl -L${_ASCEND_INSTALL_PATH}/lib64
++        bisheng -x asc --npu-arch=${ASCEND_NPU_ARCH:-dav-2201} $TEST_NAME.cpp -o $TEST_NAME -I ${ATVC_HOME_DIR}/include -I ${CURRENT_DIR}/common -ltiling_api -lplatform -lm -ldl -L${_ASCEND_INSTALL_PATH}/lib64
+     elif [ "$RUN_MODE" = "debug_print" ]; then
+         echo "Executing with debug_print mode"
+-        bisheng -x asc --npu-arch=dav-2201 $TEST_NAME.cpp -o $TEST_NAME -I ${ATVC_HOME_DIR}/include -I ${CURRENT_DIR}/common  -ltiling_api -lplatform -lm -ldl -L${_ASCEND_INSTALL_PATH}/lib64 -DATVC_DEBUG_MODE=1
++        bisheng -x asc --npu-arch=${ASCEND_NPU_ARCH:-dav-2201} $TEST_NAME.cpp -o $TEST_NAME -I ${ATVC_HOME_DIR}/include -I ${CURRENT_DIR}/common  -ltiling_api -lplatform -lm -ldl -L${_ASCEND_INSTALL_PATH}/lib64 -DATVC_DEBUG_MODE=1
+     elif [ "$RUN_MODE" = "profiling" ]; then
+         echo "Executing with profiling mode"
+-        bisheng -x asc --npu-arch=dav-2201 $TEST_NAME.cpp -o $TEST_NAME -I ${ATVC_HOME_DIR}/include -I ${CURRENT_DIR}/common  -ltiling_api -lplatform -lm -ldl -L${_ASCEND_INSTALL_PATH}/lib64 -DATVC_DEBUG_MODE=2
++        bisheng -x asc --npu-arch=${ASCEND_NPU_ARCH:-dav-2201} $TEST_NAME.cpp -o $TEST_NAME -I ${ATVC_HOME_DIR}/include -I ${CURRENT_DIR}/common  -ltiling_api -lplatform -lm -ldl -L${_ASCEND_INSTALL_PATH}/lib64 -DATVC_DEBUG_MODE=2
+     else
+         echo "--npu-mode is an optional parameter and can be left unset. If set, the value must be debug_print or profiling."
+         echo "Execution example: 'bash run_examples.sh $TEST_NAME --run-mode=debug_print'"

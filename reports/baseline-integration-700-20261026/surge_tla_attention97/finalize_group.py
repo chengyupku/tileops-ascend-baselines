@@ -1,0 +1,30 @@
+import pathlib,json,datetime,ast,hashlib,collections,time
+P=pathlib.Path(__file__).resolve().parent;utc=datetime.datetime.now(datetime.timezone.utc).isoformat()
+h=json.loads((P/'GROUP_HEARTBEAT.json').read_text());r=json.loads((P/'RESULT.json').read_text());deadline=datetime.datetime.fromisoformat(json.loads((P/'GROUP.json').read_text())['deadline_utc']).timestamp()
+assert h['active']==0 or time.time()>=deadline,'Do not finalize before remaining worker ends or deadline'
+assert r['numerical_success_claimed']==0,'New claimed success requires actual evidence review'
+scopes={};children=[]
+for w in sorted(P.glob('worker[0-9][0-9]')):
+ scope=json.loads((w/'SCOPE.json').read_text());scopes[w.name]=[tuple(x['key']) for x in scope]
+ d=json.loads((w/'DELIVERY.json').read_text()) if (w/'DELIVERY.json').exists() else {}
+ n=next(x for x in h['workers'] if x['worker']==w.name)
+ children.append({'worker':w.name,'job':n['job'],'native_status':n['status'],'exit_code':n['exit_code'],'identity_alive':n['identity_alive'],'scope_count':len(scope),'delivery':str(w/'DELIVERY.json'),'result':str(w/'RESULT.json'),'delivery_utc':d.get('utc',d.get('at')),'status_counts':d.get('status_counts'),'timings':d.get('timings'),'guard_attempts':d.get('guard_attempts',d.get('guard_requests',d.get('total_guard_submissions'))),'actual_child_starts':d.get('actual_child_starts',d.get('device_child_started'))})
+flat=[k for a in scopes.values() for k in a];assert len(flat)==len(set(flat))==97
+assert set(flat)=={tuple(x['key']) for x in json.loads((P/'SCOPE.json').read_text())}
+assert len(r['rows'])==97 and len({tuple(x['key']) for x in r['rows']})==97
+helpers=['monitor.py','aggregate.py','replace_worker.py','prepare_continuation.py','message_child.py','send_guidance.py','handoff.py','guard_census.py','finalize_group.py','prepare_sla_continuation.py']
+for f in helpers:ast.parse((P/f).read_text())
+parsed=[]
+for f in P.glob('*.json'):json.loads(f.read_text());parsed.append(f.name)
+checks={'utc':utc,'scope_unique':97,'child_union_equals_group':True,'duplicate_owners':[],'coordinator_helpers_ast_valid':helpers,'top_level_json_valid':parsed,'coordinator_device_runs':0,'parent_registry_or_memory_writes':False,'accepted_added':0,'group_in_root_accepted':h['group_scope_now_root_accepted'],'remaining_liveness_evidence':'GROUP_HEARTBEAT.json','threehost_guard_process_census':'ACTIVE_GUARD_CENSUS.json','limitations':['CPU/static checks are not numerical passes.','Unknown timing components remain null.','Original failure evidence is not generalized to unrun siblings.']}
+(P/'CHECKS.json').write_text(json.dumps(checks,ensure_ascii=False,indent=2))
+status='closed_no_verified_success' if h['active']==0 else 'sla_snapshot_continuing_legal_work'
+r.update(utc=utc,status=status,accepted_added=0,coordinator_verified=0,remaining_unaccepted=97,children=children)
+(P/'RESULT.json').write_text(json.dumps(r,ensure_ascii=False,indent=2))
+metrics={k:h.get(k) for k in ['active','alive','CLI completed','fullchecker passed','pending registry','root accepted','rolling_60m_root_accepted_added','process_identity_sample_survival_rate','time_weighted_slot_occupancy','terminal_failure_count','termination_failure_rate','configured_worker_slots','unfilled_slots']}
+d={'utc':utc,'status':status,'scope':97,'verified':0,'accepted_added':0,'remaining_unaccepted':97,'status_counts':r['status_counts'],'children':children,'metrics':metrics,'process_identity_metric_note':'Identity match among sampled running/starting native jobs; terminal failures counted separately.','findings':['All seven exclusive scopes supervised; capacity failure replaced without model downgrade.','Longer authorized queue budget produced actual launches; no full-checker success resulted.','Actual CDLL path metadata repair removed a private evidence-path blocker; original device noncompletion remained.','Original default codegen/API restrictions, device synchronization failures, external interference and deadline-limited unrun keys retained per exact key.','Two orphan CPU dispatch parents were paused and terminated only after their guarded children exited; device/external processes untouched.'],'publication':{'queue':'PUBLISH_QUEUE.json','entries':0,'ready':False,'shared_registry_modified':False},'checks':'CHECKS.json','guard_census':'ACTIVE_GUARD_CENSUS.json','handoff':'DISPATCH_HANDOFF.json','timing_policy':'Only same-host guard timestamps used for queue duration; CPU preparation/full checker/device/observation split unknown where not measured, null in source receipts.','remaining_issues':['No new numerical acceptance; 97 group keys remain unaccepted.','Unrun exact keys and queue-only requests retain no numerical verdict.','Ten legal unexecuted keys resumed after SLA stop correction; active jobs and cleared ownership are recorded in COORDINATOR_HANDOFF.json. Original failures are not replayed unchanged.'],'changed_files':'All coordinator scripts/reports in this private group directory; worker changes and hashes are listed in each worker DELIVERY/FILEHASHES. No shared registry or task memory modified.'}
+(P/'DELIVERY.json').write_text(json.dumps(d,ensure_ascii=False,indent=2))
+(P/'HEARTBEAT.json').write_text(json.dumps({'utc':utc,'phase':status,'active':h['active'],'alive':h['alive'],'fullchecker_passed':0,'accepted_added':0,'last_substantive_output':'Final 97-key RESULT, DELIVERY and CHECKS','absolute_deadline':'2026-10-27T05:31:00Z'},indent=2))
+files=helpers+['RESULT.json','DELIVERY.json','CHECKS.json','HEARTBEAT.json','GROUP_HEARTBEAT.json','GROUP_STATUS.json','PUBLISH_QUEUE.json','DISPATCH_HANDOFF.json','DEADLINE_ACK.json','SLOT_DECISIONS.json','SCHEDULING_CORRECTION.json','DEPLOYMENT_TYPEERROR.json','ACTIVE_GUARD_CENSUS.json','ORPHAN_DRIVER_CONTROL.json','ORPHAN_WORKER03_CONTROL.json','COORDINATOR_HANDOFF.json','SLA_CONTINUATION_RECONCILIATION.json']
+(P/'FILEHASHES.json').write_text(json.dumps({'utc':utc,'sha256':{n:hashlib.sha256((P/n).read_bytes()).hexdigest() for n in files if (P/n).exists()}},indent=2))
+print(json.dumps({'status':status,'scope':97,'verified':0,'accepted_added':0,'metrics':metrics,'checks_passed':True},ensure_ascii=False))

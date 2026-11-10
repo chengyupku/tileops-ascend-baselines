@@ -1,0 +1,42 @@
+diff --git a/build.sh b/build.sh
+index 9ac3a99..1429dca 100755
+--- a/build.sh
++++ b/build.sh
+@@ -422,7 +422,8 @@ build_project() {
+ build_package() {
+     log_info "Building package..."
+ 
+-    local PKG_NAME="cann-${SOC_NAME_LOWER}-ops-tensor_1.0.0_linux-${ARCH}.run"
++    local package_arch="$(uname -m)"
++    local PKG_NAME="cann-${SOC_NAME_LOWER}-ops-tensor_1.0.0_linux-${package_arch}.run"
+     local BUILD_OUT_DIR="${SCRIPT_DIR}/build_out"
+ 
+     mkdir -p "${BUILD_OUT_DIR}"
+@@ -449,13 +450,26 @@ else
+     INSTALL_BASE="/usr/local/Ascend/cann"
+ fi
+ 
++for install_arg in "$@"; do
++    case "$install_arg" in
++        --install-path=*) INSTALL_BASE="${install_arg#*=}" ;;
++        --help|-h) echo "Usage: $0 [--install-path=PATH]"; exit 0 ;;
++        *) echo "Unknown argument: $install_arg" >&2; exit 2 ;;
++    esac
++done
++
++archive_line=$(awk '/^__ARCHIVE_BELOW__$/ {print NR + 1; exit}' "$0")
++install_tmp_dir=$(mktemp -d)
++trap 'rm -rf "$install_tmp_dir"' EXIT
++tail -n +"$archive_line" "$0" | tar -xz -C "$install_tmp_dir"
++
+ TARGET_DIR="${INSTALL_BASE}/ops_tensor"
+ 
+ echo "Installing ops-tensor header-only library..."
+ echo "Target: ${TARGET_DIR}"
+ 
+ mkdir -p "${TARGET_DIR}"
+-cp -r ops_tensor/include "${TARGET_DIR}/"
++cp -r "$install_tmp_dir/ops_tensor/include" "${TARGET_DIR}/"
+ 
+ echo "Installation completed."
+ exit 0

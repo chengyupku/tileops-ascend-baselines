@@ -1,0 +1,16 @@
+from pathlib import Path
+import json,datetime,collections,hashlib,subprocess,sys
+P=Path(__file__).resolve().parent
+subprocess.run([sys.executable,str(P/'summarize.py')],check=True)
+rows=json.loads((P/'RESULT.json').read_text());scope=json.loads((P/'SCOPE.json').read_text());attempts=[]
+for f in sorted((P/'attempts').glob('*/guard.json'),key=lambda f:json.loads(f.read_text())['start']):
+ g=json.loads(f.read_text());r=json.loads((f.parent/'RESULT.json').read_text());attempts.append(dict(key=g['key'],host=g['host'],argv=g['argv'],guard_exit=g['returncode'],receipt=str(f),child_started=bool(list(f.parent.rglob('GUARD_RUNNING.json'))),timings=r['timings']))
+active=[str(f) for f in (P/'attempts').glob('*/command.json') if not (f.parent/'guard.json').exists()]
+assert not active,active
+assert len(rows)==len(scope)==14 and len({tuple(r['key']) for r in rows})==14
+report=dict(at=datetime.datetime.now(datetime.timezone.utc).isoformat(),task_type='actual_integration_and_retest',owner='baseline700-20261026/surge_tla_attention97/worker04',scope_count=14,status='completed_attempts_with_unaccepted_remaining',accepted_added=0,verified_pending_parent=sum(r.get('numerical_success',False) for r in rows),registered=0,status_counts=dict(collections.Counter(r['status'] for r in rows)),guard_attempts=len(attempts),guard_exit_counts=dict(collections.Counter(str(a['guard_exit']) for a in attempts)),workload_starts=sum(a['child_started'] for a in attempts),device_executed_keys=[list(k) for k in sorted({tuple(a['key']) for a in attempts if a['child_started']})],attempts=attempts,real_remaining=[r['key'] for r in rows],checks=['14 exact owned keys preserved; no accepted rerun','Original checker/attention manifest hashes match frozen deployment','No kernel/compiler/pass/reference/seed/tolerance edits','All device commands under original host npu-guard and foreground','Three-host state snapshots before every submission','Per-attempt guard logs and receipts retained; metadata clocks not mixed','No global registry or memory writes; no additional agents'],limitations=['No accepted result without original complete checker','Queue exit75 means not started; 78 visibility loss is infrastructure abort, not a numerical failure','SIGSEGV exact native stack location not established','Pure compiler/device/physical idle durations unmeasured and null','Inputs omitted from later download archives remain in private host run directories'],artifacts=['RESULT.json','PRESERVED_RESULTS.json','CONTRACT.json','EXACT_BINDINGS.json','CHECKER_HASH_CHECK.json','EXPECTED_SEEDS.json','DEPLOYMENT.md','attempts/'])
+(P/'DELIVERY.json').write_text(json.dumps(report,indent=2))
+(P/'HEARTBEAT.json').write_text(json.dumps(dict(utc=report['at'],phase='finished_delivery',current_key=None,last_output=str(P/'DELIVERY.json'),blocker='See per-key remaining limitations',next='Parent review only; no automatic unchanged rerun',accepted_added=0),indent=2))
+files=[f for f in P.iterdir() if f.is_file() and f.name!='FILEHASHES.json']
+(P/'FILEHASHES.json').write_text(json.dumps({f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in files},indent=2))
+print(json.dumps({k:report[k] for k in ['status_counts','guard_attempts','guard_exit_counts','workload_starts','verified_pending_parent','accepted_added']},indent=2))

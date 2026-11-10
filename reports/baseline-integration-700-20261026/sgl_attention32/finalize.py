@@ -1,0 +1,37 @@
+from pathlib import Path
+import json,datetime,hashlib,collections,socket,ast
+R=Path(__file__).resolve().parent;W=R.parents[2]
+now=datetime.datetime.now(datetime.timezone.utc);scope=json.loads((R/'SCOPE.json').read_text());res=json.loads((R/'RESULT.json').read_text())
+by={(r['baseline'],r['operator'],r['case_id']):r for r in res['rows']}
+for x in scope:
+ key=(x['baseline'],x['operator'],x['case_id']);op=x['operator']
+ if key in by:continue
+ module='dsa_adapter' if op=='DSADecodeWithKVCacheFwdOp' else 'attention_adapter';fn='build' if module=='dsa_adapter' else ('mha_paged' if op=='MHADecodePagedWithKVCacheFwdOp' else 'mla_decode')
+ api='sgl_kernel_npu.attention.decode_attention.'+('decode_gqa' if op=='MHADecodePagedWithKVCacheFwdOp' else 'decode_mla')
+ by[key]=dict(baseline=key[0],operator=op,case_id=key[2],status='blocked',reason='Not device-tested; no claim of native API incompatibility. Exact original API adapter and CPU dispatch evidence prepared. Mandatory unchanged checker converts every real output to FP64 for post-comparison IsFinite metrics (numerics.py:375-382); independently localized unpolluted cache BF16 and MLA FP16 attempts fault there. This diagnostic prerequisite must be repaired before additional complete acceptance batches; dtype, heads, sequence lengths and full outputs remain canonical.',api=api,guard_receipt=None,checker_receipt=None,checked_outputs=0,total_outputs=1,registered=False,factory=module+'.'+fn,changed_files=[module+'.py'],timings=dict(queue_seconds=None,device_seconds=None,compile_seconds=None),evidence=['DIAGNOSIS.json','MLA_DIAGNOSIS.json','OTHER_DISPATCH_PREFLIGHT.json','SCOPE.json'],native_route_tested=False)
+for row in by.values():
+ if row.get('attempt')=='attempt05':
+  row.update(status='blocked',reason='Guard76 invalidated this attempt due to external NPU process. Original page16 prefill compiled; checker log also records FP64 post-comparison IsFinite fault. The contaminated attempt is not accepted numerical evidence.',evidence=['VARLEN_DIAGNOSIS.json',row['guard_receipt'],row['checker_receipt']])
+ if row.get('attempt')=='attempt04':row['reason']='Original D512/page128 attention_sinks_prefill_triton compilation fails: cbuf requires4521984 bits, available4194304. Page16 layout repair is prepared but its FP16 run was contaminated (guard76); BF16 not repeated.'
+ row['source_reason']=next(x['reason'] for x in scope if (x['baseline'],x['operator'],x['case_id'])==(row['baseline'],row['operator'],row['case_id']))
+rows=[by[(x['baseline'],x['operator'],x['case_id'])] for x in scope]
+assert len(rows)==32 and len(by)==32
+counts=dict(collections.Counter(r['status'] for r in rows));res=dict(updated_at=now.isoformat(),assigned=32,status_counts=counts,rows=rows)
+(R/'RESULT.json.tmp').write_text(json.dumps(res,indent=2,ensure_ascii=False));(R/'RESULT.json.tmp').replace(R/'RESULT.json')
+files=[p for p in R.glob('*.py')]+[W/'TileOPs/scripts/ascend_pair_check.py',W/'TileOPs/workloads/numerics.py']
+vendor=W/'ascend_baselines/sgl-kernel-npu'
+files += [vendor/'python/sgl_kernel_npu/sgl_kernel_npu'/p for p in ['attention/decode_attention.py','attention/sinks_attention.py','norm/fused_rope_qk_mqa.py','mem_cache/kv_cache_store.py','sparsity_driven_kv_offload/ops.py','lib/libsgl_kernel_npu.so']]
+hashes={str(p.relative_to(W)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
+(R/'SOURCE_HASHES.json').write_text(json.dumps(hashes,indent=2))
+receipts=[json.loads(p.read_text()) for p in (R/'runs').glob('*/GUARD_RESULT.json')]
+started=datetime.datetime.fromisoformat(json.loads((R/'STARTED.json').read_text())['utc'])
+queue=sum(r['timings'].get('queue_seconds') or 0 for r in rows);device=sum(r['timings'].get('device_seconds') or 0 for r in rows)
+formal={'GQAPrefillPagedWithKVCacheFwdOp':'attention.prefill_append','MLAKVCacheWriteFwdOp':'mla_cache.write','GQAVarlenFwdOp':'attention.varlen','MHADecodePagedWithKVCacheFwdOp':'attention.mha_paged','MLADecodeWithKVCacheFwdOp':'attention.mla_decode','DSADecodeWithKVCacheFwdOp':'attention.dsa_decode','PagedKVCacheGatherFwdOp':'gather.build'}
+entry=[dict(key=[r['baseline'],r['operator'],r['case_id']],formal_existing_entry='benchmarks.ascend_all_pairs.sgl.'+formal[r['operator']],private_candidate=r.get('factory'),api=r.get('api'),registered=False,status=r['status']) for r in rows]
+delivery=dict(finished_at=now.isoformat(),host=socket.gethostname(),deployment_host='local',scope=32,status_counts=counts,completed=0,verified_unregistered=0,formal_registrations=0,elapsed_seconds=(now-started).total_seconds(),guard_attempts=len(receipts),guard_returncodes=[r['returncode'] for r in receipts],queue_seconds=queue,device_command_seconds=device,compile_seconds=None,repeated_unchanged_attempts=0,
+ reproducible_recipe={'cpu_dispatch':'PYTHONDONTWRITEBYTECODE=1 .tools/baselines/baseline-run sgl-kernel-npu python '+str(R/'preflight.py'),'cpu_other_dispatch':'PYTHONDONTWRITEBYTECODE=1 .tools/baselines/baseline-run sgl-kernel-npu python '+str(R/'preflight_other.py'),'per_case':'python3 '+str(R/'launch.py')+' OP CASE_ID NEW_UNIQUE_ATTEMPT','guard':'npu-guard run --owner baseline700-20261026/sgl_attention32 --wait 3600 --timeout 300 -- /root/dyq/workspace/.tools/baselines/baseline-run sgl-kernel-npu python '+str(R/'run_case.py')+' sgl-kernel-npu OP CASE_ID NEW_OUTPUT','do_not_repeat':'Repair mandatory diagnostics first; respect live guard status and existing external tasks. A76 receipt never counts.'},
+ entries=entry,source_hashes='SOURCE_HASHES.json',checker='ascend_pair_check.frozen.py',checker_pin='CHECKER_PIN.json',registration_patch=None,registration_reason='No exact key has full unpolluted checker success; no registration authorized by evidence. Final write authorization is private directory only.',shared_files_modified=[],memory_modified=False,
+ review_patch='PARENT_ONLY_DIAGNOSTIC_CPU.patch',patch_applied=False,unresolved=['Parent-owned verifier FP64 post-comparison IsFinite defect blocks complete acceptance; exact launch/exception PC matches in DIAGNOSIS and MLA_DIAGNOSIS.','External UID1003 NPU interference caused two guard76 attempts; both retained and invalidated.','D512/page128 original sink prefill cbuf overflow; page16 physical layout prepared, needs valid checker run.','Original unidex frontend has no symbol in deployed libsgl_kernel_npu.so; existing bridge failure is separately traced to diagnostics, not generalized as vendor kernel failure.','FP8 cache scale and softcap signatures absent in inspected complete APIs; no external mathematical fallback introduced.','Untested exact keys remain explicitly blocked, not native-incompatible or numerically successful.'],artifacts=['RESULT.json','EXECUTION_PLAN.json','PRIVATE_FACTORY_PREFLIGHT.json','OTHER_DISPATCH_PREFLIGHT.json','DIAGNOSIS.json','MLA_DIAGNOSIS.json','VARLEN_DIAGNOSIS.json','GATHER_DEPLOYMENT.json','GATHER_PREVIOUS_DIAGNOSIS.json','runs/'])
+(R/'DELIVERY.json').write_text(json.dumps(delivery,indent=2,ensure_ascii=False))
+(R/'HEARTBEAT.json').write_text(json.dumps(dict(utc=now.isoformat(),phase='delivery_blocked',current_keys=[],last_progress_at=now.isoformat(),blocked_reason='Parent-owned complete-checker FP64 diagnostic defect; no unpolluted full success. See DELIVERY.json.',status_counts=counts),indent=2))
+print(json.dumps({k:delivery[k] for k in ['status_counts','elapsed_seconds','guard_attempts','guard_returncodes','queue_seconds','device_command_seconds']},indent=2))
