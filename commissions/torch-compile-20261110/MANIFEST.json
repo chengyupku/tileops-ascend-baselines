@@ -25,9 +25,19 @@
     "bytes": 2987
   },
   {
+    "path": "commissions/torch-compile-20261110/flush_source/CPU_REBUILD.md",
+    "sha256": "c97d24b38cb10ab160780edec0d3d04f1b1f674aba47d5c60a293df1d14bec47",
+    "bytes": 3255
+  },
+  {
+    "path": "commissions/torch-compile-20261110/flush_source/CPU_REBUILD_RECEIPT.json",
+    "sha256": "a8b387fb46044c9975ebead85c42e6bf3772bf82da1faa3ad6250c2b0b5c3322",
+    "bytes": 2461
+  },
+  {
     "path": "commissions/torch-compile-20261110/flush_source/PROVENANCE_LIMITS.md",
-    "sha256": "9efa9cbf70a9ebf3d6ac913808155080c9c9282d88b851c7ac664083c9da6d3d",
-    "bytes": 1418
+    "sha256": "2f9d2c498055c0b91d5b05a49eb6413f4077eb382c4685ed11be543f630ffd05",
+    "bytes": 1672
   },
   {
     "path": "commissions/torch-compile-20261110/flush_source/device_kernel.asc",

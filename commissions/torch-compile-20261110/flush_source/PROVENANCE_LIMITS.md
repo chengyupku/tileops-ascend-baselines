@@ -8,3 +8,7 @@ The recorded device binary SHA256 is `9aebeb815cc1715c3c9fe4240e98fe0fe5c360902e
 Important correction: successful deployment on a CANN 9.1 runtime does NOT establish that this historical flush device binary was compiled with CANN 9.1. The receipt identifies a separate local compiler path and dav-3510, but does not pin its full release or template tree. Those historical build inputs/commands are still being investigated. Do not claim a verified CANN 9.1 source-build recipe from this receipt. The current installed TileLang template tree is not automatically the historical tree.
 
 This source supplement supplies the requested host ABI bridge and device extraction for inspection; it does not resolve template/compiler compatibility or authorize modifying the device implementation. Keep flush blocked until a reproducible matching build or separately qualified identical-kernel deployment is available. No binary, new device test, or performance acceptance accompanies this supplement.
+
+## Follow-up
+
+See `CPU_REBUILD.md` and `CPU_REBUILD_RECEIPT.json`: a new CPU-only CANN9.2 build now reproduces historical device binary bytes exactly. The original command log remains unavailable; no claim of CANN9.1 source-build compatibility is made.
