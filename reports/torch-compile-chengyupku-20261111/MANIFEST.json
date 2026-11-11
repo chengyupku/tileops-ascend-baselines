@@ -11,6 +11,11 @@
       "sha256": "ff29dc56141809cdb8c9f11ac34d920903599a726c4ea09bf34abc9145432d96"
     },
     {
+      "path": "AUDIT_V2.json",
+      "bytes": 118185,
+      "sha256": "b458b1014401987286b714dadb680765641b2ecb69adc98e88b9a735af7ce7de"
+    },
+    {
       "path": "COMPILED_ARTIFACT_INDEX.json",
       "bytes": 12408,
       "sha256": "339299f1bb4d1607740b195b5e49b7c404dd124e4cb92b67589d34bfb39ea3f2"
@@ -36,6 +41,11 @@
       "sha256": "4478f48afbdbe823f3e7ca03132f985b1b86235214e6d15102e2072c21ad6011"
     },
     {
+      "path": "HEADERS_V2.json",
+      "bytes": 1419279,
+      "sha256": "5092e572a30e3b98159902c6734eb878061ec1be3517f97914635147ac1963c8"
+    },
+    {
       "path": "MEASUREMENTS.csv",
       "bytes": 728,
       "sha256": "5f33503e310b296ca584ec50088e3d50e7f59a4788f01a384003d2f9632a6046"
@@ -47,13 +57,13 @@
     },
     {
       "path": "OPEN_GAPS.json",
-      "bytes": 1154,
-      "sha256": "6678b248db8827381b24d3a74479ceb67b65a3ece99958382e2f1d0f444df3e2"
+      "bytes": 1343,
+      "sha256": "489dd9500126789132c5a49e7e77359baaf3c70e107176c5151bd230ce389312"
     },
     {
       "path": "README.txt",
-      "bytes": 1690,
-      "sha256": "7442bf053aa5b4774fd6978797ba1bbea1ab3ee26583960b4157b468c5360b1f"
+      "bytes": 2399,
+      "sha256": "7f658f3c533a849c8eed4578b67436799e3e711c2a6d2c67ea8f3a6f912f1dbe"
     },
     {
       "path": "RUNTIME_LIBRARY_HASHES.json",
@@ -64,6 +74,11 @@
       "path": "WINDOWS.json",
       "bytes": 168647,
       "sha256": "300797613d7d480fa1be666262e9070dd7e9051d2fb232e7622b18f111f4f729"
+    },
+    {
+      "path": "WINDOWS_V2.json",
+      "bytes": 142703,
+      "sha256": "23a9a9176eeb27f80d0fbe1d65bbc425d51bc6e067b0f64c0fa89bf750e38667"
     },
     {
       "path": "flush_build.sh.txt",

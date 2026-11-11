@@ -5,8 +5,9 @@
   "portable_clean_checkout_runner": "Parameterised draft created; --help/static compilation passed without torch/device imports; clean checkout end-to-end not yet validated",
   "compiled_graph_artifact_index": "40 cache artifacts indexed by size/SHA and matched to measured task names across3cases; historical load-time binding not proven",
   "raw_exchange_channel": "not agreed; raw retained locally",
-  "guard_receipts": "original logs and RMS samples retained; initial Add/Mul successful guard exit inferred from sequential controller advancing to next command",
-  "first_batch_negative_controls": "CPU source-contract preparation retained; per-candidate negative-control evidence requires audit",
+  "guard_receipts": "V2 complete receipts and ownership samples added. Add/RMS measurement samples owned; Mul external npu-smi management queries require reviewer assessment; originalV1 missing observations remain unavailable.",
+  "first_batch_negative_controls": "V2 each eager/compile complete output replaced with zeros; original checker rejected all6; V1 evidence unchanged",
   "task_expansion": "next9 performance cases prepared but waiting first-batch protocol review",
-  "public_sanitization": "Raw index filenames may contain device profiler host identifiers; sanitize before any push/PR"
+  "public_sanitization": "V2 process identities mapped to per-attempt opaque IDs; raw remains private",
+  "header_identity": "V2 all7096 headers under exact include roots hashed; not an actual compiler include-dependency trace"
 }
