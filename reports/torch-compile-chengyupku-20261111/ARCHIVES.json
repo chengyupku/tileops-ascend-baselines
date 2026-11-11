@@ -19,5 +19,6 @@
   ],
   "raw_index_files": 5137,
   "raw_index_bytes": 4320069,
-  "note": "Archives contain private profiler metadata and are not included in git; access needs an agreed private channel."
+  "note": "Archives contain private profiler metadata and are not included in git; access needs an agreed private channel.",
+  "scope": "Historical V1 archives retained; current V2 raw mapping is in ARCHIVES_V2.json and V2_FILE_INDEX.json"
 }

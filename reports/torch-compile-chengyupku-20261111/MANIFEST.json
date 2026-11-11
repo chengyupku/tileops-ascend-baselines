@@ -7,8 +7,13 @@
     },
     {
       "path": "ARCHIVES.json",
-      "bytes": 761,
-      "sha256": "ff29dc56141809cdb8c9f11ac34d920903599a726c4ea09bf34abc9145432d96"
+      "bytes": 877,
+      "sha256": "58e4fa498dc771d50aa6ebeec7e0b7010a5da9d3ef7d234b0453d998f2da03ba"
+    },
+    {
+      "path": "ARCHIVES_V2.json",
+      "bytes": 929,
+      "sha256": "43b49f5e28c878f4f0ac37503930cdd6840a9c111ca631358e6b1d4964dc0a6a"
     },
     {
       "path": "AUDIT_V2.json",
@@ -41,6 +46,11 @@
       "sha256": "4478f48afbdbe823f3e7ca03132f985b1b86235214e6d15102e2072c21ad6011"
     },
     {
+      "path": "GUARD_SOURCE_V2.py.txt",
+      "bytes": 21201,
+      "sha256": "d0a7d472bec94d0012d5cf20182c6dadec71e02ff344c774e2b37e22596e580f"
+    },
+    {
       "path": "HEADERS_V2.json",
       "bytes": 1419279,
       "sha256": "5092e572a30e3b98159902c6734eb878061ec1be3517f97914635147ac1963c8"
@@ -56,19 +66,29 @@
       "sha256": "88643b8e16a2d3ab604a6f514fa3c6818fa19dce9c18cc04ffdb916a078e4425"
     },
     {
+      "path": "MUL_ASSOCIATION_V2.json",
+      "bytes": 4015,
+      "sha256": "3b11257c8268e21e813e10a6e03d493e66cba6ebfaf1d5ae77ff2a07108ebaf7"
+    },
+    {
       "path": "OPEN_GAPS.json",
       "bytes": 1343,
       "sha256": "489dd9500126789132c5a49e7e77359baaf3c70e107176c5151bd230ce389312"
     },
     {
       "path": "README.txt",
-      "bytes": 2399,
-      "sha256": "7f658f3c533a849c8eed4578b67436799e3e711c2a6d2c67ea8f3a6f912f1dbe"
+      "bytes": 2975,
+      "sha256": "2cd77f4d3fa668d367a3f6bdd4afa31e41cbd97f902f37dedc534c73bfa14e68"
     },
     {
       "path": "RUNTIME_LIBRARY_HASHES.json",
       "bytes": 26733,
       "sha256": "5edb55b7787a4b4d015778625d188322504ad1774a8b2525835f5fddbb2511c3"
+    },
+    {
+      "path": "V2_FILE_INDEX.json",
+      "bytes": 1258295,
+      "sha256": "da2caaa8a980da77cf294c850a267770c2ffb4863609cf07def89f9c164d6ede"
     },
     {
       "path": "WINDOWS.json",
