@@ -1,0 +1,67 @@
+{
+  "source_commit": "9428acb65fec3e62f8d9a55fbdcf574b82c6f49d",
+  "device_source_sha256": "205eee37c905de6d1fc7cd0636229a6abcb6cc81a7b802af9e97e0a505058a07",
+  "loader_source_sha256": "b19bfef68607180a18a82eb79f3a6a6d79f2e3dcb665bd12694f8cabc9041bf8",
+  "template_commit": "0a2fb6884004b73362f584e10c35e09d9bed3a6e",
+  "templates": [
+    {
+      "path": "src/tl_templates/ascend/ascend_fp8.h",
+      "sha256": "7072208ead98fc2f87fc1655e1cc423223d2a0cfcb25252766debf6f419fd58b"
+    },
+    {
+      "path": "src/tl_templates/ascend/common.h",
+      "sha256": "8885993999d8207f870fd59c93a755b1bf843f4670391f3f234434cf4e5810cd"
+    },
+    {
+      "path": "src/tl_templates/ascend/dcache_bypass.h",
+      "sha256": "6e565f6f6aa8f2862311bf805a83200f839bc4157f3861835e74175e59dd7a26"
+    },
+    {
+      "path": "src/tl_templates/ascend/debug.h",
+      "sha256": "540f73ef13ddec4041a2eeff4fbb3185dc8a5d018e463a90ec953e76245b4c87"
+    },
+    {
+      "path": "src/tl_templates/ascend/gemm.h",
+      "sha256": "94f50703f26e2eb30bb0d0be7dd852a4ca9f15707e09187f3901cb383593713f"
+    },
+    {
+      "path": "src/tl_templates/ascend/nd2nz_copy.h",
+      "sha256": "21ee03ca6262ca601f3d8fd0fb6acc57f12732ef1c6350fe933b6eb89a3f04f2"
+    },
+    {
+      "path": "src/tl_templates/ascend/numeric_limits.h",
+      "sha256": "ff41d0572545bef8ea67310a5b6761adf8c84fc75cacbf2a6a6bc25b69d42c08"
+    },
+    {
+      "path": "src/tl_templates/ascend/philox_rng.h",
+      "sha256": "515054be2d0000a2cf79678aee77fc4c20347cbf643eeb3b1d2f810d080a82a7"
+    },
+    {
+      "path": "src/tl_templates/ascend/random_kernel_base.h",
+      "sha256": "fabf3b820f5e112ae2cbb280a196e62bb7060d6a0d98adc465f11acf6a0d69b4"
+    },
+    {
+      "path": "src/tl_templates/ascend/reduce.h",
+      "sha256": "9033d1518153db1b57b38a7e10ade19a43d662ca48bc5ecc500f9743c32289c0"
+    },
+    {
+      "path": "src/tl_templates/ascend/simd_inst.h",
+      "sha256": "979f4ff76eee82bf092addcc069b238e3084af890f11660498f00640a00f20a1"
+    }
+  ],
+  "compiler_release": "9.2.0 timestamp20261015_201912253 ARM64",
+  "compiler_sha256": "fb635ef2090ff89f81c7962399b561d617c5a86417260c662d9bc6f84016f3c9",
+  "linker_sha256": "08359264ea1a0edaef2ad93fd1fcf392c9d3a6a85710e7a2fb99f4d0204625d9",
+  "header_profile": "ASC9.2 Oct15 and ACL9.1; individual header hashes still pending",
+  "binary_sha256": "693be2fb78b6c749ec2afee81e1ed3d8c0de58ea3397daaeaeef06588cc2e865",
+  "loader_binary_sha256": "173c96c2a3a0dd3cff6a9025dd7e39711ea1caafa046b64190958ba6900e5a16",
+  "historical_byte_identical": false,
+  "validation": {
+    "full_int32_count": 268435456,
+    "ones_to_zeros": "passed CPU check of full buffer",
+    "marker": "original framework validation passed",
+    "guard_exit": 0
+  },
+  "validation_log_sha256": "817ce4f81a5eff16da14b7e0448f07b03ac76504df89db309348aecc9e34416e",
+  "build_log_sha256": "f0b1de973da20e8238ef55945e0e536ecfe5c61819b6632cdddad3ebae19e7d3"
+}

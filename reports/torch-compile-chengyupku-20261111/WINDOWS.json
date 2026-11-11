@@ -1,0 +1,5948 @@
+{
+  "parser_source": "reports/torch-v010-20261106/tools/kernel_task_profile_full32.py",
+  "parser_sha256": "d745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753",
+  "windows": [
+    {
+      "id": "RMSNormFwdOp-eager-0",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 0,
+      "latency_us": 18.128999999999998,
+      "raw_trace_sha256": "6283b24ff3ec2dd6a340c1264be182f5fe14929cbbd3833d658a5d21c3ee409f",
+      "raw_file_count": 58,
+      "raw_bytes": 49993,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 88,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354511425738605,
+          "end_ns": 3354511425740619,
+          "duration_us": 2.014
+        },
+        {
+          "task_id": 89,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354511425758883,
+          "end_ns": 3354511425760625,
+          "duration_us": 1.742
+        },
+        {
+          "task_id": 90,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354511425779487,
+          "end_ns": 3354511425781453,
+          "duration_us": 1.966
+        },
+        {
+          "task_id": 91,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354511425795896,
+          "end_ns": 3354511425798411,
+          "duration_us": 2.515
+        },
+        {
+          "task_id": 92,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354511425810736,
+          "end_ns": 3354511425812837,
+          "duration_us": 2.101
+        },
+        {
+          "task_id": 93,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354511425827091,
+          "end_ns": 3354511425829719,
+          "duration_us": 2.628
+        },
+        {
+          "task_id": 94,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354511425842928,
+          "end_ns": 3354511425844975,
+          "duration_us": 2.047
+        },
+        {
+          "task_id": 95,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354511425861756,
+          "end_ns": 3354511425863001,
+          "duration_us": 1.245
+        },
+        {
+          "task_id": 96,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354511425871486,
+          "end_ns": 3354511425873357,
+          "duration_us": 1.871
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-1",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 1,
+      "latency_us": 17.923000000000002,
+      "raw_trace_sha256": "2ffb806d72d512492bfa910ab3064bc761375152d80bac35edea028ff493f78f",
+      "raw_file_count": 58,
+      "raw_bytes": 50505,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 100,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354512303923973,
+          "end_ns": 3354512303926277,
+          "duration_us": 2.304
+        },
+        {
+          "task_id": 101,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354512303937411,
+          "end_ns": 3354512303939247,
+          "duration_us": 1.836
+        },
+        {
+          "task_id": 102,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354512303969606,
+          "end_ns": 3354512303971653,
+          "duration_us": 2.047
+        },
+        {
+          "task_id": 103,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354512303978781,
+          "end_ns": 3354512303981404,
+          "duration_us": 2.623
+        },
+        {
+          "task_id": 104,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354512303982500,
+          "end_ns": 3354512303984487,
+          "duration_us": 1.987
+        },
+        {
+          "task_id": 105,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354512303992358,
+          "end_ns": 3354512303994623,
+          "duration_us": 2.265
+        },
+        {
+          "task_id": 106,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354512304001702,
+          "end_ns": 3354512304003675,
+          "duration_us": 1.973
+        },
+        {
+          "task_id": 107,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354512304008871,
+          "end_ns": 3354512304010131,
+          "duration_us": 1.26
+        },
+        {
+          "task_id": 108,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354512304028001,
+          "end_ns": 3354512304029629,
+          "duration_us": 1.628
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-2",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 2,
+      "latency_us": 18.659,
+      "raw_trace_sha256": "e13b0904276c7a99eb2e7fdc7fe9347623e07ca1ec241666167d1aae7f4d10af",
+      "raw_file_count": 58,
+      "raw_bytes": 50249,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 112,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354513182169359,
+          "end_ns": 3354513182171317,
+          "duration_us": 1.958
+        },
+        {
+          "task_id": 113,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354513182181285,
+          "end_ns": 3354513182183029,
+          "duration_us": 1.744
+        },
+        {
+          "task_id": 114,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354513182193352,
+          "end_ns": 3354513182195335,
+          "duration_us": 1.983
+        },
+        {
+          "task_id": 115,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354513182204901,
+          "end_ns": 3354513182208291,
+          "duration_us": 3.39
+        },
+        {
+          "task_id": 116,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354513182229672,
+          "end_ns": 3354513182231857,
+          "duration_us": 2.185
+        },
+        {
+          "task_id": 117,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354513182233349,
+          "end_ns": 3354513182235677,
+          "duration_us": 2.328
+        },
+        {
+          "task_id": 118,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354513182240825,
+          "end_ns": 3354513182242725,
+          "duration_us": 1.9
+        },
+        {
+          "task_id": 119,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354513182247734,
+          "end_ns": 3354513182249157,
+          "duration_us": 1.423
+        },
+        {
+          "task_id": 120,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354513182254311,
+          "end_ns": 3354513182256059,
+          "duration_us": 1.748
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-3",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 3,
+      "latency_us": 18.282,
+      "raw_trace_sha256": "d1862c681d08e9e972ea254913f81c1b8b9bbd0e1f6b537914eefc1a3c26ca30",
+      "raw_file_count": 58,
+      "raw_bytes": 50249,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 124,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514079694916,
+          "end_ns": 3354514079697471,
+          "duration_us": 2.555
+        },
+        {
+          "task_id": 125,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514079704577,
+          "end_ns": 3354514079706271,
+          "duration_us": 1.694
+        },
+        {
+          "task_id": 126,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514079726346,
+          "end_ns": 3354514079728419,
+          "duration_us": 2.073
+        },
+        {
+          "task_id": 127,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514079742458,
+          "end_ns": 3354514079745283,
+          "duration_us": 2.825
+        },
+        {
+          "task_id": 128,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514079758924,
+          "end_ns": 3354514079760929,
+          "duration_us": 2.005
+        },
+        {
+          "task_id": 129,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514079770617,
+          "end_ns": 3354514079772755,
+          "duration_us": 2.138
+        },
+        {
+          "task_id": 130,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514079781895,
+          "end_ns": 3354514079783959,
+          "duration_us": 2.064
+        },
+        {
+          "task_id": 131,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514079790667,
+          "end_ns": 3354514079792091,
+          "duration_us": 1.424
+        },
+        {
+          "task_id": 132,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514079799865,
+          "end_ns": 3354514079801369,
+          "duration_us": 1.504
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-4",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 4,
+      "latency_us": 18.519000000000002,
+      "raw_trace_sha256": "de9609b831fb7db69454ea4e1c8f509f81ea6c1254ea0602408404c18f0e133d",
+      "raw_file_count": 58,
+      "raw_bytes": 50249,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 136,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514958819868,
+          "end_ns": 3354514958822035,
+          "duration_us": 2.167
+        },
+        {
+          "task_id": 137,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514958834382,
+          "end_ns": 3354514958836095,
+          "duration_us": 1.713
+        },
+        {
+          "task_id": 138,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514958846921,
+          "end_ns": 3354514958848815,
+          "duration_us": 1.894
+        },
+        {
+          "task_id": 139,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514958872675,
+          "end_ns": 3354514958875713,
+          "duration_us": 3.038
+        },
+        {
+          "task_id": 140,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514958877382,
+          "end_ns": 3354514958879326,
+          "duration_us": 1.944
+        },
+        {
+          "task_id": 141,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514958889694,
+          "end_ns": 3354514958892249,
+          "duration_us": 2.555
+        },
+        {
+          "task_id": 142,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514958907104,
+          "end_ns": 3354514958909193,
+          "duration_us": 2.089
+        },
+        {
+          "task_id": 143,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514958913502,
+          "end_ns": 3354514958914867,
+          "duration_us": 1.365
+        },
+        {
+          "task_id": 144,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354514958921379,
+          "end_ns": 3354514958923133,
+          "duration_us": 1.754
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-5",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 5,
+      "latency_us": 17.656000000000002,
+      "raw_trace_sha256": "3622ff62f0ddebd126ad7026f1b0a33f7e9673f2e3bbffd8a70fe598cb819d22",
+      "raw_file_count": 58,
+      "raw_bytes": 50761,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 148,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354515824164375,
+          "end_ns": 3354515824166667,
+          "duration_us": 2.292
+        },
+        {
+          "task_id": 149,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354515824176915,
+          "end_ns": 3354515824178737,
+          "duration_us": 1.822
+        },
+        {
+          "task_id": 150,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354515824189090,
+          "end_ns": 3354515824191213,
+          "duration_us": 2.123
+        },
+        {
+          "task_id": 151,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354515824206800,
+          "end_ns": 3354515824209245,
+          "duration_us": 2.445
+        },
+        {
+          "task_id": 152,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354515824218142,
+          "end_ns": 3354515824219959,
+          "duration_us": 1.817
+        },
+        {
+          "task_id": 153,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354515824228610,
+          "end_ns": 3354515824230901,
+          "duration_us": 2.291
+        },
+        {
+          "task_id": 154,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354515824239862,
+          "end_ns": 3354515824241823,
+          "duration_us": 1.961
+        },
+        {
+          "task_id": 155,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354515824247042,
+          "end_ns": 3354515824248174,
+          "duration_us": 1.132
+        },
+        {
+          "task_id": 156,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354515824252580,
+          "end_ns": 3354515824254353,
+          "duration_us": 1.773
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-6",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 6,
+      "latency_us": 17.713,
+      "raw_trace_sha256": "e4a8c24644665be0c8bb512601879ac5d79f5a8c6c759cb513de413adfe91e7a",
+      "raw_file_count": 58,
+      "raw_bytes": 49993,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 160,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354516720338811,
+          "end_ns": 3354516720340943,
+          "duration_us": 2.132
+        },
+        {
+          "task_id": 161,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354516720350300,
+          "end_ns": 3354516720351951,
+          "duration_us": 1.651
+        },
+        {
+          "task_id": 162,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354516720366903,
+          "end_ns": 3354516720368952,
+          "duration_us": 2.049
+        },
+        {
+          "task_id": 163,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354516720376325,
+          "end_ns": 3354516720378615,
+          "duration_us": 2.29
+        },
+        {
+          "task_id": 164,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354516720386054,
+          "end_ns": 3354516720387873,
+          "duration_us": 1.819
+        },
+        {
+          "task_id": 165,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354516720396275,
+          "end_ns": 3354516720398621,
+          "duration_us": 2.346
+        },
+        {
+          "task_id": 166,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354516720404227,
+          "end_ns": 3354516720406309,
+          "duration_us": 2.082
+        },
+        {
+          "task_id": 167,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354516720410487,
+          "end_ns": 3354516720412083,
+          "duration_us": 1.596
+        },
+        {
+          "task_id": 168,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354516720424469,
+          "end_ns": 3354516720426217,
+          "duration_us": 1.748
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-7",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 7,
+      "latency_us": 17.645999999999997,
+      "raw_trace_sha256": "a12f50cb2b1701cfbb87796bfeaf89a0b371e3486521a2251c56744c5d53151c",
+      "raw_file_count": 58,
+      "raw_bytes": 50249,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 172,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354517578709114,
+          "end_ns": 3354517578711177,
+          "duration_us": 2.063
+        },
+        {
+          "task_id": 173,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354517578723833,
+          "end_ns": 3354517578725369,
+          "duration_us": 1.536
+        },
+        {
+          "task_id": 174,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354517578737376,
+          "end_ns": 3354517578739373,
+          "duration_us": 1.997
+        },
+        {
+          "task_id": 175,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354517578749856,
+          "end_ns": 3354517578752139,
+          "duration_us": 2.283
+        },
+        {
+          "task_id": 176,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354517578761173,
+          "end_ns": 3354517578763096,
+          "duration_us": 1.923
+        },
+        {
+          "task_id": 177,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354517578770433,
+          "end_ns": 3354517578773017,
+          "duration_us": 2.584
+        },
+        {
+          "task_id": 178,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354517578780278,
+          "end_ns": 3354517578782547,
+          "duration_us": 2.269
+        },
+        {
+          "task_id": 179,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354517578787115,
+          "end_ns": 3354517578788327,
+          "duration_us": 1.212
+        },
+        {
+          "task_id": 180,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354517578792840,
+          "end_ns": 3354517578794619,
+          "duration_us": 1.779
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-8",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 8,
+      "latency_us": 17.981,
+      "raw_trace_sha256": "711d7963808d88c3da01fbd423d6a0ee1dfd5129b0340a9619e3d5be6ca406a0",
+      "raw_file_count": 58,
+      "raw_bytes": 50761,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 184,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354518443914613,
+          "end_ns": 3354518443916527,
+          "duration_us": 1.914
+        },
+        {
+          "task_id": 185,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354518443925790,
+          "end_ns": 3354518443927521,
+          "duration_us": 1.731
+        },
+        {
+          "task_id": 186,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354518443945325,
+          "end_ns": 3354518443947335,
+          "duration_us": 2.01
+        },
+        {
+          "task_id": 187,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354518443986756,
+          "end_ns": 3354518443989345,
+          "duration_us": 2.589
+        },
+        {
+          "task_id": 188,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354518444001222,
+          "end_ns": 3354518444003237,
+          "duration_us": 2.015
+        },
+        {
+          "task_id": 189,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354518444011783,
+          "end_ns": 3354518444014193,
+          "duration_us": 2.41
+        },
+        {
+          "task_id": 190,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354518444335444,
+          "end_ns": 3354518444337679,
+          "duration_us": 2.235
+        },
+        {
+          "task_id": 191,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354518444343851,
+          "end_ns": 3354518444345107,
+          "duration_us": 1.256
+        },
+        {
+          "task_id": 192,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354518444349200,
+          "end_ns": 3354518444351021,
+          "duration_us": 1.821
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-9",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 9,
+      "latency_us": 17.714000000000002,
+      "raw_trace_sha256": "cd0be692eeef9e9a5c2e14db31e58c79a02a6f2860807c5590bb6ed7a52f2bee",
+      "raw_file_count": 58,
+      "raw_bytes": 50249,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 196,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354519330258448,
+          "end_ns": 3354519330260781,
+          "duration_us": 2.333
+        },
+        {
+          "task_id": 197,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354519330273406,
+          "end_ns": 3354519330275181,
+          "duration_us": 1.775
+        },
+        {
+          "task_id": 198,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354519330299729,
+          "end_ns": 3354519330301695,
+          "duration_us": 1.966
+        },
+        {
+          "task_id": 199,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354519330309132,
+          "end_ns": 3354519330311433,
+          "duration_us": 2.301
+        },
+        {
+          "task_id": 200,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354519330319671,
+          "end_ns": 3354519330321847,
+          "duration_us": 2.176
+        },
+        {
+          "task_id": 201,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354519330329825,
+          "end_ns": 3354519330332021,
+          "duration_us": 2.196
+        },
+        {
+          "task_id": 202,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354519330339590,
+          "end_ns": 3354519330341563,
+          "duration_us": 1.973
+        },
+        {
+          "task_id": 203,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354519330361118,
+          "end_ns": 3354519330362343,
+          "duration_us": 1.225
+        },
+        {
+          "task_id": 204,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354519330365114,
+          "end_ns": 3354519330366883,
+          "duration_us": 1.769
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-10",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 10,
+      "latency_us": 18.006,
+      "raw_trace_sha256": "63e3eac585ab601b009036c69713a3e423f1de947823397ecaaa3c0a53a7b6a8",
+      "raw_file_count": 58,
+      "raw_bytes": 50505,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 208,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354520195188398,
+          "end_ns": 3354520195190307,
+          "duration_us": 1.909
+        },
+        {
+          "task_id": 209,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354520195201779,
+          "end_ns": 3354520195203457,
+          "duration_us": 1.678
+        },
+        {
+          "task_id": 210,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354520195214040,
+          "end_ns": 3354520195216051,
+          "duration_us": 2.011
+        },
+        {
+          "task_id": 211,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354520195225223,
+          "end_ns": 3354520195227567,
+          "duration_us": 2.344
+        },
+        {
+          "task_id": 212,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354520195237187,
+          "end_ns": 3354520195239393,
+          "duration_us": 2.206
+        },
+        {
+          "task_id": 213,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354520195262663,
+          "end_ns": 3354520195265309,
+          "duration_us": 2.646
+        },
+        {
+          "task_id": 214,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354520195268391,
+          "end_ns": 3354520195270296,
+          "duration_us": 1.905
+        },
+        {
+          "task_id": 215,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354520195274685,
+          "end_ns": 3354520195276163,
+          "duration_us": 1.478
+        },
+        {
+          "task_id": 216,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354520195282945,
+          "end_ns": 3354520195284774,
+          "duration_us": 1.829
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-11",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 11,
+      "latency_us": 17.49,
+      "raw_trace_sha256": "3e097935bc9cfc77c0f895f9dc0846a928a9c801c987a4f88c3e8423bbda10f2",
+      "raw_file_count": 58,
+      "raw_bytes": 50761,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 220,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521080467076,
+          "end_ns": 3354521080469135,
+          "duration_us": 2.059
+        },
+        {
+          "task_id": 221,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521080478848,
+          "end_ns": 3354521080480577,
+          "duration_us": 1.729
+        },
+        {
+          "task_id": 222,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521080496288,
+          "end_ns": 3354521080498343,
+          "duration_us": 2.055
+        },
+        {
+          "task_id": 223,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521080521800,
+          "end_ns": 3354521080524323,
+          "duration_us": 2.523
+        },
+        {
+          "task_id": 224,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521080531599,
+          "end_ns": 3354521080533565,
+          "duration_us": 1.966
+        },
+        {
+          "task_id": 225,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521080540280,
+          "end_ns": 3354521080542369,
+          "duration_us": 2.089
+        },
+        {
+          "task_id": 226,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521080550356,
+          "end_ns": 3354521080552537,
+          "duration_us": 2.181
+        },
+        {
+          "task_id": 227,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521080558103,
+          "end_ns": 3354521080559443,
+          "duration_us": 1.34
+        },
+        {
+          "task_id": 228,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521080566769,
+          "end_ns": 3354521080568317,
+          "duration_us": 1.548
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-12",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 12,
+      "latency_us": 18.526999999999997,
+      "raw_trace_sha256": "d1bf622a6f3bc4c72293bde717ad15bf9f81311e1a2d096fba0f9d33d07378a8",
+      "raw_file_count": 58,
+      "raw_bytes": 50505,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 232,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521946310027,
+          "end_ns": 3354521946312703,
+          "duration_us": 2.676
+        },
+        {
+          "task_id": 233,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521946325355,
+          "end_ns": 3354521946327087,
+          "duration_us": 1.732
+        },
+        {
+          "task_id": 234,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521946352204,
+          "end_ns": 3354521946354099,
+          "duration_us": 1.895
+        },
+        {
+          "task_id": 235,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521946361237,
+          "end_ns": 3354521946363709,
+          "duration_us": 2.472
+        },
+        {
+          "task_id": 236,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521946369341,
+          "end_ns": 3354521946371273,
+          "duration_us": 1.932
+        },
+        {
+          "task_id": 237,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521946390637,
+          "end_ns": 3354521946392955,
+          "duration_us": 2.318
+        },
+        {
+          "task_id": 238,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521946394507,
+          "end_ns": 3354521946396409,
+          "duration_us": 1.902
+        },
+        {
+          "task_id": 239,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521946402916,
+          "end_ns": 3354521946404349,
+          "duration_us": 1.433
+        },
+        {
+          "task_id": 240,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354521946408799,
+          "end_ns": 3354521946410966,
+          "duration_us": 2.167
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-13",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 13,
+      "latency_us": 17.892000000000003,
+      "raw_trace_sha256": "98e4b138b4a4ef678a90139a057ca588ae9588d9f47131cfbb86d417ed610a37",
+      "raw_file_count": 58,
+      "raw_bytes": 50249,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 244,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354522842049635,
+          "end_ns": 3354522842052195,
+          "duration_us": 2.56
+        },
+        {
+          "task_id": 245,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354522842071188,
+          "end_ns": 3354522842072925,
+          "duration_us": 1.737
+        },
+        {
+          "task_id": 246,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354522842087706,
+          "end_ns": 3354522842089706,
+          "duration_us": 2.0
+        },
+        {
+          "task_id": 247,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354522842111782,
+          "end_ns": 3354522842114109,
+          "duration_us": 2.327
+        },
+        {
+          "task_id": 248,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354522842119947,
+          "end_ns": 3354522842121921,
+          "duration_us": 1.974
+        },
+        {
+          "task_id": 249,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354522842130961,
+          "end_ns": 3354522842133353,
+          "duration_us": 2.392
+        },
+        {
+          "task_id": 250,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354522842145875,
+          "end_ns": 3354522842147831,
+          "duration_us": 1.956
+        },
+        {
+          "task_id": 251,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354522842150793,
+          "end_ns": 3354522842151934,
+          "duration_us": 1.141
+        },
+        {
+          "task_id": 252,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354522842156234,
+          "end_ns": 3354522842158039,
+          "duration_us": 1.805
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-eager-14",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "eager",
+      "window_index": 14,
+      "latency_us": 17.815,
+      "raw_trace_sha256": "1187c4fe309ab56601587f63fd8456029a6c5cc2a15ee8014a52bc244183afca",
+      "raw_file_count": 58,
+      "raw_bytes": 51017,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 256,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354523697409659,
+          "end_ns": 3354523697411675,
+          "duration_us": 2.016
+        },
+        {
+          "task_id": 257,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_b2717900ea7de2d41ea9c63d23aa269b_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354523697423481,
+          "end_ns": 3354523697425087,
+          "duration_us": 1.606
+        },
+        {
+          "task_id": 258,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Square_5c5e58e043224cccf51a06108010ae13_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354523697435846,
+          "end_ns": 3354523697437789,
+          "duration_us": 1.943
+        },
+        {
+          "task_id": 259,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "ReduceMean_float32_int64_high_precision_5143",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354523697447533,
+          "end_ns": 3354523697450057,
+          "duration_us": 2.524
+        },
+        {
+          "task_id": 260,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354523697458306,
+          "end_ns": 3354523697460351,
+          "duration_us": 2.045
+        },
+        {
+          "task_id": 261,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Rsqrt_5c5e58e043224cccf51a06108010ae13_high_performance_103",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354523697467999,
+          "end_ns": 3354523697470213,
+          "duration_us": 2.214
+        },
+        {
+          "task_id": 262,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354523697484767,
+          "end_ns": 3354523697486809,
+          "duration_us": 2.042
+        },
+        {
+          "task_id": 263,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_8",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354523697493182,
+          "end_ns": 3354523697494767,
+          "duration_us": 1.585
+        },
+        {
+          "task_id": 264,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_9f288b80370c6545ffe8cef142d37f5c_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354523697501577,
+          "end_ns": 3354523697503417,
+          "duration_us": 1.84
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-0",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 0,
+      "latency_us": 3.3249999999999997,
+      "raw_trace_sha256": "43615b78313f200485983af865fd01601c195a24e4fe8410701230491dab97f4",
+      "raw_file_count": 56,
+      "raw_bytes": 42129,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 280,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354524644905589,
+          "end_ns": 3354524644906817,
+          "duration_us": 1.228
+        },
+        {
+          "task_id": 281,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354524645008474,
+          "end_ns": 3354524645010571,
+          "duration_us": 2.097
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-1",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 1,
+      "latency_us": 3.525,
+      "raw_trace_sha256": "e2bccb2bf74222e3841270d95658063b075fc97de025b098d4102e88c3a78b6f",
+      "raw_file_count": 56,
+      "raw_bytes": 41873,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 285,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354525519492970,
+          "end_ns": 3354525519494101,
+          "duration_us": 1.131
+        },
+        {
+          "task_id": 286,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354525519613167,
+          "end_ns": 3354525519615561,
+          "duration_us": 2.394
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-2",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 2,
+      "latency_us": 3.453,
+      "raw_trace_sha256": "7bdc09e50e6d3e680af73cb15277a4dd2377b5233f99111a83aa7e79d334cb33",
+      "raw_file_count": 56,
+      "raw_bytes": 41873,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 290,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354526415932786,
+          "end_ns": 3354526415933907,
+          "duration_us": 1.121
+        },
+        {
+          "task_id": 291,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354526416041519,
+          "end_ns": 3354526416043851,
+          "duration_us": 2.332
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-3",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 3,
+      "latency_us": 3.37,
+      "raw_trace_sha256": "2472bd53c39bd0712fb1cafe87c416067567426ac0267eaaf0e357a6f7f0994e",
+      "raw_file_count": 56,
+      "raw_bytes": 42129,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 295,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354527272407907,
+          "end_ns": 3354527272409021,
+          "duration_us": 1.114
+        },
+        {
+          "task_id": 296,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354527272510029,
+          "end_ns": 3354527272512285,
+          "duration_us": 2.256
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-4",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 4,
+      "latency_us": 3.433,
+      "raw_trace_sha256": "4522eacae9f53544f8f5984e4b02d9543ef3f91ceccde41003cfbbdec44ce4ba",
+      "raw_file_count": 56,
+      "raw_bytes": 42129,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 300,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354528154246623,
+          "end_ns": 3354528154247741,
+          "duration_us": 1.118
+        },
+        {
+          "task_id": 301,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354528154333900,
+          "end_ns": 3354528154336215,
+          "duration_us": 2.315
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-5",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 5,
+      "latency_us": 3.404,
+      "raw_trace_sha256": "2335719a1cdb374cc3d471a223d5ab8914afbee93d0dae808b50745b5434d7d7",
+      "raw_file_count": 56,
+      "raw_bytes": 42129,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 305,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354528999478814,
+          "end_ns": 3354528999479935,
+          "duration_us": 1.121
+        },
+        {
+          "task_id": 306,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354528999588586,
+          "end_ns": 3354528999590869,
+          "duration_us": 2.283
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-6",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 6,
+      "latency_us": 3.5,
+      "raw_trace_sha256": "d305aa8ae6a5a8c84cf99acd5b2ba703deffa278e92217924046d39f90eeb53d",
+      "raw_file_count": 56,
+      "raw_bytes": 42129,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 310,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354529886217902,
+          "end_ns": 3354529886219017,
+          "duration_us": 1.115
+        },
+        {
+          "task_id": 311,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354529886320549,
+          "end_ns": 3354529886322934,
+          "duration_us": 2.385
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-7",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 7,
+      "latency_us": 3.625,
+      "raw_trace_sha256": "7e6680dc2f00dd5b5e3d80c73cfc19518c81d101a85c9a1e451e2b4d5a0d0f15",
+      "raw_file_count": 56,
+      "raw_bytes": 41873,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 315,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354530781573983,
+          "end_ns": 3354530781575359,
+          "duration_us": 1.376
+        },
+        {
+          "task_id": 316,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354530781698730,
+          "end_ns": 3354530781700979,
+          "duration_us": 2.249
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-8",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 8,
+      "latency_us": 3.713,
+      "raw_trace_sha256": "89c62ac81bc0a25f24dd3b7a258644f324163b07b364026d0155aaeb70aa17e5",
+      "raw_file_count": 56,
+      "raw_bytes": 41617,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 320,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354531686964390,
+          "end_ns": 3354531686965656,
+          "duration_us": 1.266
+        },
+        {
+          "task_id": 321,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354531687056205,
+          "end_ns": 3354531687058652,
+          "duration_us": 2.447
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-9",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 9,
+      "latency_us": 3.678,
+      "raw_trace_sha256": "bfa10ecc82b0c85b6e81187f7327d1ef86ea9879fbf99367c1bf5e1f10a07aab",
+      "raw_file_count": 56,
+      "raw_bytes": 42129,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 325,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354532575771520,
+          "end_ns": 3354532575772785,
+          "duration_us": 1.265
+        },
+        {
+          "task_id": 326,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354532575874648,
+          "end_ns": 3354532575877061,
+          "duration_us": 2.413
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-10",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 10,
+      "latency_us": 3.678,
+      "raw_trace_sha256": "1bf9ec106b12ae40cec98ee62631741a761e3302e5fcd3701999844a3b39740a",
+      "raw_file_count": 56,
+      "raw_bytes": 42385,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 330,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354533462387596,
+          "end_ns": 3354533462388879,
+          "duration_us": 1.283
+        },
+        {
+          "task_id": 331,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354533462509190,
+          "end_ns": 3354533462511585,
+          "duration_us": 2.395
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-11",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 11,
+      "latency_us": 3.7079999999999997,
+      "raw_trace_sha256": "356b5c6d3c39f52b5adf3d4eb43a2e5cda151b7860e108b1448892239238b3c9",
+      "raw_file_count": 56,
+      "raw_bytes": 42129,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 335,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354534379087851,
+          "end_ns": 3354534379089115,
+          "duration_us": 1.264
+        },
+        {
+          "task_id": 336,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354534379187145,
+          "end_ns": 3354534379189589,
+          "duration_us": 2.444
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-12",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 12,
+      "latency_us": 3.787,
+      "raw_trace_sha256": "5d13c25be566d0fe771a9a07bf17904ff4d0f24346fe0553cdc4328612b3ec42",
+      "raw_file_count": 56,
+      "raw_bytes": 41617,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 340,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354535254352459,
+          "end_ns": 3354535254353713,
+          "duration_us": 1.254
+        },
+        {
+          "task_id": 341,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354535254449300,
+          "end_ns": 3354535254451833,
+          "duration_us": 2.533
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-13",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 13,
+      "latency_us": 3.9630000000000005,
+      "raw_trace_sha256": "074e6a34b80fdbf5252b36f0794a0510fd82a26a5441665f0b961e7273ce4f5c",
+      "raw_file_count": 56,
+      "raw_bytes": 41873,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 345,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354536030209667,
+          "end_ns": 3354536030211095,
+          "duration_us": 1.428
+        },
+        {
+          "task_id": 346,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354536030306346,
+          "end_ns": 3354536030308881,
+          "duration_us": 2.535
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "RMSNormFwdOp-compile-14",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "variant": "compile",
+      "window_index": 14,
+      "latency_us": 3.77,
+      "raw_trace_sha256": "be3ca67f690b05dbacdf3053326f27b2ce71cf5eb3b2bf2c1f4fed19ce76f570",
+      "raw_file_count": 56,
+      "raw_bytes": 41617,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 350,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mean_pow_39438f36da5e49aab08e60b8e84de322",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354536924599458,
+          "end_ns": 3354536924600723,
+          "duration_us": 1.265
+        },
+        {
+          "task_id": 351,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_mean_mul_pow_rsqrt_96be1cf54a07a8a85b67459738d6280c",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354536924706198,
+          "end_ns": 3354536924708703,
+          "duration_us": 2.505
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-0",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 0,
+      "latency_us": 22.916,
+      "raw_trace_sha256": "7659f77eaac4c7c2bba3fb49abadf8c915c13fe43a4de074cd9727d59727a7d6",
+      "raw_file_count": 58,
+      "raw_bytes": 44003,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 62,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354377796169030,
+          "end_ns": 3354377796175733,
+          "duration_us": 6.703
+        },
+        {
+          "task_id": 63,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354377796194655,
+          "end_ns": 3354377796196487,
+          "duration_us": 1.832
+        },
+        {
+          "task_id": 64,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354377796203391,
+          "end_ns": 3354377796211865,
+          "duration_us": 8.474
+        },
+        {
+          "task_id": 65,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354377796212816,
+          "end_ns": 3354377796218723,
+          "duration_us": 5.907
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-1",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 1,
+      "latency_us": 23.054000000000002,
+      "raw_trace_sha256": "317641b121aec4d97ebf43f6231e5519e2fdd744faa9be2b435d89027d45122e",
+      "raw_file_count": 58,
+      "raw_bytes": 43491,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 69,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354378691576747,
+          "end_ns": 3354378691584023,
+          "duration_us": 7.276
+        },
+        {
+          "task_id": 70,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354378691595259,
+          "end_ns": 3354378691597019,
+          "duration_us": 1.76
+        },
+        {
+          "task_id": 71,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354378691621649,
+          "end_ns": 3354378691629214,
+          "duration_us": 7.565
+        },
+        {
+          "task_id": 72,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354378691629470,
+          "end_ns": 3354378691635923,
+          "duration_us": 6.453
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-2",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 2,
+      "latency_us": 23.161,
+      "raw_trace_sha256": "3c48702df812b0ff40c23a52a92a23449c6abd36de0a163f066d659aaf6888ec",
+      "raw_file_count": 58,
+      "raw_bytes": 44003,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 76,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354379543893501,
+          "end_ns": 3354379543900831,
+          "duration_us": 7.33
+        },
+        {
+          "task_id": 77,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354379543903618,
+          "end_ns": 3354379543905351,
+          "duration_us": 1.733
+        },
+        {
+          "task_id": 78,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354379543932289,
+          "end_ns": 3354379543939363,
+          "duration_us": 7.074
+        },
+        {
+          "task_id": 79,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354379543939619,
+          "end_ns": 3354379543946643,
+          "duration_us": 7.024
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-3",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 3,
+      "latency_us": 23.322,
+      "raw_trace_sha256": "ec2ef587f98205861a4a3974c074da7f889cd37ef4dd4fe95a2d2e8c4aebb186",
+      "raw_file_count": 58,
+      "raw_bytes": 43747,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 83,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354380429150390,
+          "end_ns": 3354380429157987,
+          "duration_us": 7.597
+        },
+        {
+          "task_id": 84,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354380429164270,
+          "end_ns": 3354380429166149,
+          "duration_us": 1.879
+        },
+        {
+          "task_id": 85,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354380429174053,
+          "end_ns": 3354380429181329,
+          "duration_us": 7.276
+        },
+        {
+          "task_id": 86,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354380429182677,
+          "end_ns": 3354380429189247,
+          "duration_us": 6.57
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-4",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 4,
+      "latency_us": 22.894000000000002,
+      "raw_trace_sha256": "e3d54ab6d9e2b1c09105a0f3e3ce7cbc84e91155fe6b0b6b8470682980c9d9d5",
+      "raw_file_count": 58,
+      "raw_bytes": 43491,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 90,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354381304438979,
+          "end_ns": 3354381304445975,
+          "duration_us": 6.996
+        },
+        {
+          "task_id": 91,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354381304453868,
+          "end_ns": 3354381304455561,
+          "duration_us": 1.693
+        },
+        {
+          "task_id": 92,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354381304466424,
+          "end_ns": 3354381304474353,
+          "duration_us": 7.929
+        },
+        {
+          "task_id": 93,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354381304481768,
+          "end_ns": 3354381304488044,
+          "duration_us": 6.276
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-5",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 5,
+      "latency_us": 24.101999999999997,
+      "raw_trace_sha256": "1da6e0a3224dd5d453ce5c11d723dc5e03c8e4996d50a5439d1e1777f5bd5a44",
+      "raw_file_count": 58,
+      "raw_bytes": 44259,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 97,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354382143706878,
+          "end_ns": 3354382143714313,
+          "duration_us": 7.435
+        },
+        {
+          "task_id": 98,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354382143721197,
+          "end_ns": 3354382143722913,
+          "duration_us": 1.716
+        },
+        {
+          "task_id": 99,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354382143730941,
+          "end_ns": 3354382143738949,
+          "duration_us": 8.008
+        },
+        {
+          "task_id": 100,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354382143740024,
+          "end_ns": 3354382143746967,
+          "duration_us": 6.943
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-6",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 6,
+      "latency_us": 23.464,
+      "raw_trace_sha256": "f7e57755b8835864f31b3f063bfc81fa52cc7e24845d3f2823859841f88acc35",
+      "raw_file_count": 58,
+      "raw_bytes": 43491,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 104,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354383032915904,
+          "end_ns": 3354383032922907,
+          "duration_us": 7.003
+        },
+        {
+          "task_id": 105,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354383032930131,
+          "end_ns": 3354383032931927,
+          "duration_us": 1.796
+        },
+        {
+          "task_id": 106,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354383032940449,
+          "end_ns": 3354383032947823,
+          "duration_us": 7.374
+        },
+        {
+          "task_id": 107,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354383032949573,
+          "end_ns": 3354383032956864,
+          "duration_us": 7.291
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-7",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 7,
+      "latency_us": 24.844,
+      "raw_trace_sha256": "ba8d4704eed999b9d52f48fcf4411a7b099db46be3c747c33dc8cb77f0805e9b",
+      "raw_file_count": 58,
+      "raw_bytes": 44003,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 111,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354383887486865,
+          "end_ns": 3354383887494871,
+          "duration_us": 8.006
+        },
+        {
+          "task_id": 112,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354383887501825,
+          "end_ns": 3354383887503519,
+          "duration_us": 1.694
+        },
+        {
+          "task_id": 113,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354383887510329,
+          "end_ns": 3354383887518023,
+          "duration_us": 7.694
+        },
+        {
+          "task_id": 114,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354383887519038,
+          "end_ns": 3354383887526488,
+          "duration_us": 7.45
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-8",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 8,
+      "latency_us": 24.051,
+      "raw_trace_sha256": "0e25ab293c2875e4eb80fa41830d6c83a1fae96a1a3a32c04133dd135c430c63",
+      "raw_file_count": 58,
+      "raw_bytes": 43747,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 118,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354384765258301,
+          "end_ns": 3354384765265739,
+          "duration_us": 7.438
+        },
+        {
+          "task_id": 119,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354384765274719,
+          "end_ns": 3354384765276479,
+          "duration_us": 1.76
+        },
+        {
+          "task_id": 120,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354384765287346,
+          "end_ns": 3354384765296139,
+          "duration_us": 8.793
+        },
+        {
+          "task_id": 121,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354384765296453,
+          "end_ns": 3354384765302513,
+          "duration_us": 6.06
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-9",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 9,
+      "latency_us": 24.957,
+      "raw_trace_sha256": "d822204a7a1d72339a0b6087ef43a5361440785a981611b4e50098e0e76c10bf",
+      "raw_file_count": 58,
+      "raw_bytes": 43747,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 125,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354385654679772,
+          "end_ns": 3354385654688063,
+          "duration_us": 8.291
+        },
+        {
+          "task_id": 126,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354385654697529,
+          "end_ns": 3354385654699409,
+          "duration_us": 1.88
+        },
+        {
+          "task_id": 127,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354385654709524,
+          "end_ns": 3354385654717325,
+          "duration_us": 7.801
+        },
+        {
+          "task_id": 128,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354385654717582,
+          "end_ns": 3354385654724567,
+          "duration_us": 6.985
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-10",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 10,
+      "latency_us": 23.611,
+      "raw_trace_sha256": "d42cf151e2465262a221fc92c70ef0b266779754b61f83e49c761ea79ff3bc8c",
+      "raw_file_count": 58,
+      "raw_bytes": 43235,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 132,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354386530190492,
+          "end_ns": 3354386530198119,
+          "duration_us": 7.627
+        },
+        {
+          "task_id": 133,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354386530208506,
+          "end_ns": 3354386530210091,
+          "duration_us": 1.585
+        },
+        {
+          "task_id": 134,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354386530225805,
+          "end_ns": 3354386530233611,
+          "duration_us": 7.806
+        },
+        {
+          "task_id": 135,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354386530243294,
+          "end_ns": 3354386530249887,
+          "duration_us": 6.593
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-11",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 11,
+      "latency_us": 22.645,
+      "raw_trace_sha256": "7dea81d7ab39104ef822b98079050673a6ae59b690a0c05195966703d0b121bd",
+      "raw_file_count": 58,
+      "raw_bytes": 43747,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 139,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354387405164452,
+          "end_ns": 3354387405171879,
+          "duration_us": 7.427
+        },
+        {
+          "task_id": 140,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354387405177798,
+          "end_ns": 3354387405179495,
+          "duration_us": 1.697
+        },
+        {
+          "task_id": 141,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354387405186803,
+          "end_ns": 3354387405193759,
+          "duration_us": 6.956
+        },
+        {
+          "task_id": 142,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354387405204318,
+          "end_ns": 3354387405210883,
+          "duration_us": 6.565
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-12",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 12,
+      "latency_us": 22.772000000000002,
+      "raw_trace_sha256": "de5cb87a62d975394a6ca5aafc92d62596a139003bdc68c68d1d5b706f790898",
+      "raw_file_count": 58,
+      "raw_bytes": 44259,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 146,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354388273337403,
+          "end_ns": 3354388273344540,
+          "duration_us": 7.137
+        },
+        {
+          "task_id": 147,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354388273364548,
+          "end_ns": 3354388273366259,
+          "duration_us": 1.711
+        },
+        {
+          "task_id": 148,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354388273370169,
+          "end_ns": 3354388273377349,
+          "duration_us": 7.18
+        },
+        {
+          "task_id": 149,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354388273377605,
+          "end_ns": 3354388273384349,
+          "duration_us": 6.744
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-13",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 13,
+      "latency_us": 23.324,
+      "raw_trace_sha256": "b9174a3aa84ea91f1b655c3a97921482d98259f4afeb6da5165e075d83d477ab",
+      "raw_file_count": 58,
+      "raw_bytes": 43491,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 153,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354389188674997,
+          "end_ns": 3354389188681655,
+          "duration_us": 6.658
+        },
+        {
+          "task_id": 154,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354389188691527,
+          "end_ns": 3354389188693103,
+          "duration_us": 1.576
+        },
+        {
+          "task_id": 155,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354389188707437,
+          "end_ns": 3354389188715787,
+          "duration_us": 8.35
+        },
+        {
+          "task_id": 156,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354389188717225,
+          "end_ns": 3354389188723965,
+          "duration_us": 6.74
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-eager-14",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 14,
+      "latency_us": 24.069,
+      "raw_trace_sha256": "73dc4f7745825715bb3b1dfa95ffefd7c47fc03ad337338fe7d9448991744009",
+      "raw_file_count": 58,
+      "raw_bytes": 44515,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 160,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354390054729569,
+          "end_ns": 3354390054737128,
+          "duration_us": 7.559
+        },
+        {
+          "task_id": 161,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354390054744142,
+          "end_ns": 3354390054745915,
+          "duration_us": 1.773
+        },
+        {
+          "task_id": 162,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Mul_ee98c6628030785f610b924ab1557b31_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354390054761850,
+          "end_ns": 3354390054769101,
+          "duration_us": 7.251
+        },
+        {
+          "task_id": 163,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354390054769355,
+          "end_ns": 3354390054776841,
+          "duration_us": 7.486
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-0",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 0,
+      "latency_us": 5.271999999999999,
+      "raw_trace_sha256": "36367252107c08873adb28e3ee4a4e25093f5bb9046e78d2d93237378710e103",
+      "raw_file_count": 56,
+      "raw_bytes": 40309,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 175,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354391064908257,
+          "end_ns": 3354391064913529,
+          "duration_us": 5.272
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-1",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 1,
+      "latency_us": 5.273,
+      "raw_trace_sha256": "cca3b700ed7f9478fe529bf20910a01c08860e0d0f9bfd4fa214e464686b9966",
+      "raw_file_count": 56,
+      "raw_bytes": 40053,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 179,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354391971521740,
+          "end_ns": 3354391971527013,
+          "duration_us": 5.273
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-2",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 2,
+      "latency_us": 5.322,
+      "raw_trace_sha256": "85b0792485157078770218221ac7a1321a2ad109799b5572914af3353a1883b2",
+      "raw_file_count": 56,
+      "raw_bytes": 39541,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 183,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354392867812253,
+          "end_ns": 3354392867817575,
+          "duration_us": 5.322
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-3",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 3,
+      "latency_us": 5.444,
+      "raw_trace_sha256": "27e6f70cd033575a99d6dc92a443d854a58962c085eabb383fbc4799f216ed4b",
+      "raw_file_count": 56,
+      "raw_bytes": 40053,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 187,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354393757745355,
+          "end_ns": 3354393757750799,
+          "duration_us": 5.444
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-4",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 4,
+      "latency_us": 5.590999999999999,
+      "raw_trace_sha256": "aff1bc0bbdca77ec4376659406e336237f9547c08386f08d734edb34289935e8",
+      "raw_file_count": 56,
+      "raw_bytes": 40309,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 191,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354394637962875,
+          "end_ns": 3354394637968466,
+          "duration_us": 5.591
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-5",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 5,
+      "latency_us": 5.425,
+      "raw_trace_sha256": "3e95fa8322de2d67c508c1005af4a4eea7420bdecd5dab8eda28d8e7cf9bf3da",
+      "raw_file_count": 56,
+      "raw_bytes": 40053,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 195,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354395504060898,
+          "end_ns": 3354395504066323,
+          "duration_us": 5.425
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-6",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 6,
+      "latency_us": 5.460999999999999,
+      "raw_trace_sha256": "662659866addd655c2c79d6ac03e6aed157e7edec4307f3d50ea07b1ba9b7ab1",
+      "raw_file_count": 56,
+      "raw_bytes": 40309,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 199,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354396390465694,
+          "end_ns": 3354396390471155,
+          "duration_us": 5.461
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-7",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 7,
+      "latency_us": 5.71,
+      "raw_trace_sha256": "a7aa9b82a52997590e6af5dd4f55a6cee9630a94a9d8166e24d9a103df637f79",
+      "raw_file_count": 56,
+      "raw_bytes": 40309,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 203,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354397265667109,
+          "end_ns": 3354397265672819,
+          "duration_us": 5.71
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-8",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 8,
+      "latency_us": 5.201,
+      "raw_trace_sha256": "d1d7d383aed65d16b0dcc36f0c53a846561d6df141c70bebd744bd36b148290b",
+      "raw_file_count": 56,
+      "raw_bytes": 39797,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 207,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354398185374563,
+          "end_ns": 3354398185379764,
+          "duration_us": 5.201
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-9",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 9,
+      "latency_us": 6.144,
+      "raw_trace_sha256": "710b7b62d88ef97cc62ac84e3230295ee6f4c46af1140e623ca8ce57e5c99c85",
+      "raw_file_count": 56,
+      "raw_bytes": 40053,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 211,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354399048375777,
+          "end_ns": 3354399048381921,
+          "duration_us": 6.144
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-10",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 10,
+      "latency_us": 5.453,
+      "raw_trace_sha256": "38d9ce2d83d5fcd382a31e6b0c939872d711d4ef29fdb7feed5948d998812779",
+      "raw_file_count": 56,
+      "raw_bytes": 40309,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 215,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354399904786119,
+          "end_ns": 3354399904791572,
+          "duration_us": 5.453
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-11",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 11,
+      "latency_us": 5.452,
+      "raw_trace_sha256": "53b7f7c748c1e86b776f17ef89296b20dec60c6a6876428586058fd189ea9488",
+      "raw_file_count": 56,
+      "raw_bytes": 39797,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 219,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354400801994461,
+          "end_ns": 3354400801999913,
+          "duration_us": 5.452
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-12",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 12,
+      "latency_us": 6.202,
+      "raw_trace_sha256": "7926adc8617873f96431d0f4343e595586a5b5f305891c8ce3bbc28feebc6d44",
+      "raw_file_count": 56,
+      "raw_bytes": 40053,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 223,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354401646705569,
+          "end_ns": 3354401646711771,
+          "duration_us": 6.202
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-13",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 13,
+      "latency_us": 5.196,
+      "raw_trace_sha256": "4a025cfc492055281715fd9144cb8be851cf9fc34db386acbf9eb19598ac1c77",
+      "raw_file_count": 56,
+      "raw_bytes": 39797,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 227,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354402522308469,
+          "end_ns": 3354402522313665,
+          "duration_us": 5.196
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "MulFwdOp-compile-14",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 14,
+      "latency_us": 5.45,
+      "raw_trace_sha256": "97ec17df3876999772977a4f05eda1d6adec053cbfc2f74bcc6f948d56348a8e",
+      "raw_file_count": 56,
+      "raw_bytes": 40309,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 231,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_mul_1424bdbed46f0ff0fa273ad716fb699b",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354403408783849,
+          "end_ns": 3354403408789299,
+          "duration_us": 5.45
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-0",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 0,
+      "latency_us": 23.884,
+      "raw_trace_sha256": "291675d439e26adf9a844d0823e395090b45e692bdd95aaa1e1e023db48327c4",
+      "raw_file_count": 58,
+      "raw_bytes": 44175,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 62,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354262304579649,
+          "end_ns": 3354262304586063,
+          "duration_us": 6.414
+        },
+        {
+          "task_id": 63,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354262304600253,
+          "end_ns": 3354262304602075,
+          "duration_us": 1.822
+        },
+        {
+          "task_id": 64,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354262304607214,
+          "end_ns": 3354262304616527,
+          "duration_us": 9.313
+        },
+        {
+          "task_id": 65,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354262304616794,
+          "end_ns": 3354262304623129,
+          "duration_us": 6.335
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-1",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 1,
+      "latency_us": 22.575000000000003,
+      "raw_trace_sha256": "2acb37d6c6c4d8f2bbb500f262b4817bfcea8e9c7e9b0e2fa105e27af8714721",
+      "raw_file_count": 58,
+      "raw_bytes": 43407,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 69,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354263210391805,
+          "end_ns": 3354263210398365,
+          "duration_us": 6.56
+        },
+        {
+          "task_id": 70,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354263210406495,
+          "end_ns": 3354263210408251,
+          "duration_us": 1.756
+        },
+        {
+          "task_id": 71,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354263210420170,
+          "end_ns": 3354263210427999,
+          "duration_us": 7.829
+        },
+        {
+          "task_id": 72,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354263210438243,
+          "end_ns": 3354263210444673,
+          "duration_us": 6.43
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-2",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 2,
+      "latency_us": 23.364,
+      "raw_trace_sha256": "94b5613ffa111bd5e38eea0ffd51c351f016593eb403e4c1e0044bf66a1ddda9",
+      "raw_file_count": 58,
+      "raw_bytes": 43663,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 76,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354264065441717,
+          "end_ns": 3354264065449001,
+          "duration_us": 7.284
+        },
+        {
+          "task_id": 77,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354264065455214,
+          "end_ns": 3354264065456779,
+          "duration_us": 1.565
+        },
+        {
+          "task_id": 78,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354264065465156,
+          "end_ns": 3354264065472545,
+          "duration_us": 7.389
+        },
+        {
+          "task_id": 79,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354264065474237,
+          "end_ns": 3354264065481363,
+          "duration_us": 7.126
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-3",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 3,
+      "latency_us": 25.073999999999998,
+      "raw_trace_sha256": "35d45e5bdaa44594c2b4457c452f5d3c0759529ed71d189c173202c2e61d37e8",
+      "raw_file_count": 58,
+      "raw_bytes": 43663,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 83,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354264963027325,
+          "end_ns": 3354264963035863,
+          "duration_us": 8.538
+        },
+        {
+          "task_id": 84,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354264963042939,
+          "end_ns": 3354264963044709,
+          "duration_us": 1.77
+        },
+        {
+          "task_id": 85,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354264963055288,
+          "end_ns": 3354264963063053,
+          "duration_us": 7.765
+        },
+        {
+          "task_id": 86,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354264963064814,
+          "end_ns": 3354264963071815,
+          "duration_us": 7.001
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-4",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 4,
+      "latency_us": 23.255000000000003,
+      "raw_trace_sha256": "14bfcf2aca66abba91ff61ecd83eb6e915c56622662a3fb16258f3368bb8aa0e",
+      "raw_file_count": 58,
+      "raw_bytes": 43407,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 90,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354265818413031,
+          "end_ns": 3354265818420403,
+          "duration_us": 7.372
+        },
+        {
+          "task_id": 91,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354265818421509,
+          "end_ns": 3354265818423301,
+          "duration_us": 1.792
+        },
+        {
+          "task_id": 92,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354265818432431,
+          "end_ns": 3354265818440153,
+          "duration_us": 7.722
+        },
+        {
+          "task_id": 93,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354265818441366,
+          "end_ns": 3354265818447735,
+          "duration_us": 6.369
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-5",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 5,
+      "latency_us": 23.146,
+      "raw_trace_sha256": "5575c9b6bb14583c8c4f089b431a91d3edcd87f1daa37b998bb95f8bf454f820",
+      "raw_file_count": 58,
+      "raw_bytes": 43919,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 97,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354266665995124,
+          "end_ns": 3354266666002189,
+          "duration_us": 7.065
+        },
+        {
+          "task_id": 98,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354266666012875,
+          "end_ns": 3354266666014447,
+          "duration_us": 1.572
+        },
+        {
+          "task_id": 99,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354266666027559,
+          "end_ns": 3354266666035287,
+          "duration_us": 7.728
+        },
+        {
+          "task_id": 100,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354266666038330,
+          "end_ns": 3354266666045111,
+          "duration_us": 6.781
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-6",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 6,
+      "latency_us": 23.048,
+      "raw_trace_sha256": "7b23ca93203a8f3ee6523a75cc7c37b73ba949452456846dd4f2d65f56b69671",
+      "raw_file_count": 58,
+      "raw_bytes": 43663,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 104,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354267544719228,
+          "end_ns": 3354267544726343,
+          "duration_us": 7.115
+        },
+        {
+          "task_id": 105,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354267544743055,
+          "end_ns": 3354267544744861,
+          "duration_us": 1.806
+        },
+        {
+          "task_id": 106,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354267544747525,
+          "end_ns": 3354267544754451,
+          "duration_us": 6.926
+        },
+        {
+          "task_id": 107,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354267544755822,
+          "end_ns": 3354267544763023,
+          "duration_us": 7.201
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-7",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 7,
+      "latency_us": 24.434,
+      "raw_trace_sha256": "1b37ca0e1b00f292f1a1429f7cbac3abbeb0c9ae68a533dc220c5645b0073cd1",
+      "raw_file_count": 58,
+      "raw_bytes": 43663,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 111,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354268400024781,
+          "end_ns": 3354268400032311,
+          "duration_us": 7.53
+        },
+        {
+          "task_id": 112,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354268400039795,
+          "end_ns": 3354268400041487,
+          "duration_us": 1.692
+        },
+        {
+          "task_id": 113,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354268400053504,
+          "end_ns": 3354268400061157,
+          "duration_us": 7.653
+        },
+        {
+          "task_id": 114,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354268400076840,
+          "end_ns": 3354268400084399,
+          "duration_us": 7.559
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-8",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 8,
+      "latency_us": 23.518,
+      "raw_trace_sha256": "213753c4b37fcdf8bbed7ed2c66c9ab4550a40f12e3e919ebbe9460fca62106b",
+      "raw_file_count": 58,
+      "raw_bytes": 43663,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 118,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354269275127816,
+          "end_ns": 3354269275134407,
+          "duration_us": 6.591
+        },
+        {
+          "task_id": 119,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354269275145075,
+          "end_ns": 3354269275146827,
+          "duration_us": 1.752
+        },
+        {
+          "task_id": 120,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354269275156831,
+          "end_ns": 3354269275165973,
+          "duration_us": 9.142
+        },
+        {
+          "task_id": 121,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354269275166238,
+          "end_ns": 3354269275172271,
+          "duration_us": 6.033
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-9",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 9,
+      "latency_us": 23.706000000000003,
+      "raw_trace_sha256": "25ad9591f3ef3077578214a704f7a6e0ab3e1bbd62f580ff9e5cd9c1be6cefde",
+      "raw_file_count": 58,
+      "raw_bytes": 43663,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 125,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354270141465789,
+          "end_ns": 3354270141473093,
+          "duration_us": 7.304
+        },
+        {
+          "task_id": 126,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354270141480466,
+          "end_ns": 3354270141482289,
+          "duration_us": 1.823
+        },
+        {
+          "task_id": 127,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354270141500981,
+          "end_ns": 3354270141508571,
+          "duration_us": 7.59
+        },
+        {
+          "task_id": 128,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354270141510606,
+          "end_ns": 3354270141517595,
+          "duration_us": 6.989
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-10",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 10,
+      "latency_us": 23.107,
+      "raw_trace_sha256": "97d11e6a62b155c9c9156084a43fe4a0ce756cfa6d3ddc75d6a0b70ef7ae7e89",
+      "raw_file_count": 58,
+      "raw_bytes": 43663,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 132,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354271006862979,
+          "end_ns": 3354271006870571,
+          "duration_us": 7.592
+        },
+        {
+          "task_id": 133,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354271006878217,
+          "end_ns": 3354271006879805,
+          "duration_us": 1.588
+        },
+        {
+          "task_id": 134,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354271006889844,
+          "end_ns": 3354271006897519,
+          "duration_us": 7.675
+        },
+        {
+          "task_id": 135,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354271006909465,
+          "end_ns": 3354271006915717,
+          "duration_us": 6.252
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-11",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 11,
+      "latency_us": 22.531,
+      "raw_trace_sha256": "61bd67efd979d354cafb45170be2f5620e0ebcf1b4cdc5179b9815b3ca847a6b",
+      "raw_file_count": 58,
+      "raw_bytes": 43663,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 139,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354271903254427,
+          "end_ns": 3354271903261355,
+          "duration_us": 6.928
+        },
+        {
+          "task_id": 140,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354271903270796,
+          "end_ns": 3354271903272577,
+          "duration_us": 1.781
+        },
+        {
+          "task_id": 141,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354271903284705,
+          "end_ns": 3354271903291828,
+          "duration_us": 7.123
+        },
+        {
+          "task_id": 142,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354271903296904,
+          "end_ns": 3354271903303603,
+          "duration_us": 6.699
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-12",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 12,
+      "latency_us": 23.527,
+      "raw_trace_sha256": "341d979252764b6b19835fac9687a0d343c531fb5ff51085b37334daf42da06d",
+      "raw_file_count": 58,
+      "raw_bytes": 43919,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 146,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354272769890157,
+          "end_ns": 3354272769897553,
+          "duration_us": 7.396
+        },
+        {
+          "task_id": 147,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354272769898657,
+          "end_ns": 3354272769900473,
+          "duration_us": 1.816
+        },
+        {
+          "task_id": 148,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354272769909953,
+          "end_ns": 3354272769917315,
+          "duration_us": 7.362
+        },
+        {
+          "task_id": 149,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354272769917582,
+          "end_ns": 3354272769924535,
+          "duration_us": 6.953
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-13",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 13,
+      "latency_us": 24.672,
+      "raw_trace_sha256": "3df574c652a3ca68cd2ba30c644d13ee328fc76153ee231b4dbff2bf67dfcbe7",
+      "raw_file_count": 58,
+      "raw_bytes": 43663,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 153,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354273665296986,
+          "end_ns": 3354273665304449,
+          "duration_us": 7.463
+        },
+        {
+          "task_id": 154,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354273665314572,
+          "end_ns": 3354273665316143,
+          "duration_us": 1.571
+        },
+        {
+          "task_id": 155,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354273665327815,
+          "end_ns": 3354273665336647,
+          "duration_us": 8.832
+        },
+        {
+          "task_id": 156,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354273665339497,
+          "end_ns": 3354273665346303,
+          "duration_us": 6.806
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-eager-14",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "eager",
+      "window_index": 14,
+      "latency_us": 23.044999999999998,
+      "raw_trace_sha256": "e63ac0bd242f4cb1a71c0f60c194ddef67e56d2588aceaa0beb7e53acfaba429",
+      "raw_file_count": 58,
+      "raw_bytes": 44175,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 160,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354274543664780,
+          "end_ns": 3354274543672401,
+          "duration_us": 7.621
+        },
+        {
+          "task_id": 161,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_1fb1c1a33856de01862630399320fff3_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354274543679414,
+          "end_ns": 3354274543681379,
+          "duration_us": 1.965
+        },
+        {
+          "task_id": 162,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Add_FLOAT32_high_performance_3",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354274543697549,
+          "end_ns": 3354274543704287,
+          "duration_us": 6.738
+        },
+        {
+          "task_id": 163,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "Cast_15ccf3aee15572ed7572778d4afbef60_high_performance_0",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354274543718568,
+          "end_ns": 3354274543725289,
+          "duration_us": 6.721
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-0",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 0,
+      "latency_us": 5.2940000000000005,
+      "raw_trace_sha256": "2ecb067ee6d044923f7fd3cfbe7d7a7d281b5121ffac3efff00054f99bc74774",
+      "raw_file_count": 56,
+      "raw_bytes": 40223,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 175,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354275631557367,
+          "end_ns": 3354275631562661,
+          "duration_us": 5.294
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-1",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 1,
+      "latency_us": 5.492999999999999,
+      "raw_trace_sha256": "ace18037a53eecaea4cd702925805f7bb9a2f3acbe191e11e120ed378b74bfea",
+      "raw_file_count": 56,
+      "raw_bytes": 40479,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 179,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354276499677988,
+          "end_ns": 3354276499683481,
+          "duration_us": 5.493
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-2",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 2,
+      "latency_us": 5.759,
+      "raw_trace_sha256": "90214e86e413cc98b2011d17c8402bb228f4653b405306869c8debc06d98588f",
+      "raw_file_count": 56,
+      "raw_bytes": 39967,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 183,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354277416990090,
+          "end_ns": 3354277416995849,
+          "duration_us": 5.759
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-3",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 3,
+      "latency_us": 5.589,
+      "raw_trace_sha256": "5ed616521eafec8f1334834188694fd31f6ed7c15938e807156356c3912eb896",
+      "raw_file_count": 56,
+      "raw_bytes": 39967,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 187,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354278277062232,
+          "end_ns": 3354278277067821,
+          "duration_us": 5.589
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-4",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 4,
+      "latency_us": 5.752,
+      "raw_trace_sha256": "7dcce66bd3ce386b60dbd2dfaf85433839c4f3c0d85a39de91b4ca484fa914b6",
+      "raw_file_count": 56,
+      "raw_bytes": 40223,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 191,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354279162226549,
+          "end_ns": 3354279162232301,
+          "duration_us": 5.752
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-5",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 5,
+      "latency_us": 5.721,
+      "raw_trace_sha256": "d2207e29fd039871c0a84d8d2cad4ae94918ed8b111b105b90a32ede4cc50442",
+      "raw_file_count": 56,
+      "raw_bytes": 40223,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 195,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354280047704026,
+          "end_ns": 3354280047709747,
+          "duration_us": 5.721
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-6",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 6,
+      "latency_us": 5.358,
+      "raw_trace_sha256": "ad57e9145f22d9bc26c289ed8599f5e4fc95d55bdfc2bab99965fc467cfb8082",
+      "raw_file_count": 56,
+      "raw_bytes": 39967,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 199,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354280944264230,
+          "end_ns": 3354280944269588,
+          "duration_us": 5.358
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-7",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 7,
+      "latency_us": 5.361999999999999,
+      "raw_trace_sha256": "b30e991cf504845b2984268f79d1264ffec512824f02ac2cda34ef4a2c7e5358",
+      "raw_file_count": 56,
+      "raw_bytes": 39711,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 203,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354281829200239,
+          "end_ns": 3354281829205601,
+          "duration_us": 5.362
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-8",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 8,
+      "latency_us": 5.2,
+      "raw_trace_sha256": "a6b55f45e0ba1d93f3a2aca32fa2a5cb1532829bb65be0533c69bee20762cabc",
+      "raw_file_count": 56,
+      "raw_bytes": 39711,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 207,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354282727701178,
+          "end_ns": 3354282727706378,
+          "duration_us": 5.2
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-9",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 9,
+      "latency_us": 5.8500000000000005,
+      "raw_trace_sha256": "275735173790b9f15a74bb18f89bb8b2a739d86cd18554a898e43aca0af9f5b8",
+      "raw_file_count": 56,
+      "raw_bytes": 39711,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 211,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354283599217995,
+          "end_ns": 3354283599223845,
+          "duration_us": 5.85
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-10",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 10,
+      "latency_us": 5.699,
+      "raw_trace_sha256": "0c55b2ca9e17d34389d9fb966ed1e466c870315f4906d5ada9abbbb90dfc0539",
+      "raw_file_count": 56,
+      "raw_bytes": 39967,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 215,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354284460027340,
+          "end_ns": 3354284460033039,
+          "duration_us": 5.699
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-11",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 11,
+      "latency_us": 5.384,
+      "raw_trace_sha256": "485a28d9bcae3d8b373173a5f234c26c5584511888dab7f0d4b6e4a5159f5ff9",
+      "raw_file_count": 56,
+      "raw_bytes": 40223,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 219,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354285344923730,
+          "end_ns": 3354285344929114,
+          "duration_us": 5.384
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-12",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 12,
+      "latency_us": 5.719,
+      "raw_trace_sha256": "1e052ae6f4f2f9a60bfabd5b78b1099edf83760ea87863bc404ffca1e8af4ed5",
+      "raw_file_count": 56,
+      "raw_bytes": 40223,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 223,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354286222170672,
+          "end_ns": 3354286222176391,
+          "duration_us": 5.719
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-13",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 13,
+      "latency_us": 5.457,
+      "raw_trace_sha256": "7c492aa7d74af8b17bd21f6dfd01112e19baca3c77483c657b13ccb87549c412",
+      "raw_file_count": 56,
+      "raw_bytes": 39967,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 227,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354287120331016,
+          "end_ns": 3354287120336473,
+          "duration_us": 5.457
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    },
+    {
+      "id": "AddFwdOp-compile-14",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "variant": "compile",
+      "window_index": 14,
+      "latency_us": 5.728,
+      "raw_trace_sha256": "25ae0c3e44ffa68179161e4cf60afb61cece2ed46bbd3dd6d5a088747bdd1f5e",
+      "raw_file_count": 56,
+      "raw_bytes": 40223,
+      "parser_revision": "v3-task-coverage-full32-20261103",
+      "tasks": [
+        {
+          "task_id": 231,
+          "context_id": 0,
+          "stream_ids": [
+            61
+          ],
+          "name": "autofused_to_copy_add_3acfc4a87f55bc73019a99fe6b83b444",
+          "core_roles": [
+            "AIV"
+          ],
+          "start_ns": 3354287998494213,
+          "end_ns": 3354287998499941,
+          "duration_us": 5.728
+        }
+      ],
+      "aicpu_task_count": 0.0,
+      "coverage_complete": true,
+      "retrieval": "private archive mapping retained; exchange channel not agreed"
+    }
+  ],
+  "independent_replay": "90/90 downloaded windows matched SHA, task lists, each latency and arithmetic means",
+  "replay_script_sha256": "d39e2d65e33edc6c53dc282f560f87c62269bdfaedefd199b969f70c26ed002f"
+}

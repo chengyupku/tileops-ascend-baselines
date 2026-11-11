@@ -1,0 +1,7 @@
+op,case,variant,windows,mean_us,stdev_us,min_us,max_us,all_outputs_checked,acceptance
+RMSNormFwdOp,llama-8b-decode-bfloat16,eager,15,17.9968,0.35832092558806206,17.49,18.659,1,pending
+RMSNormFwdOp,llama-8b-decode-bfloat16,compile,15,3.595466666666667,0.18217333451832032,3.3249999999999997,3.9630000000000005,1,pending
+MulFwdOp,linear-bias-float16,eager,15,23.54573333333333,0.7194736634380389,22.645,24.957,1,pending
+MulFwdOp,linear-bias-float16,compile,15,5.5064,0.3039755159313235,5.196,6.202,1,pending
+AddFwdOp,linear-bias-float16,eager,15,23.525733333333335,0.7303926993324175,22.531,25.073999999999998,1,pending
+AddFwdOp,linear-bias-float16,compile,15,5.557666666666667,0.2046790751628604,5.2,5.8500000000000005,1,pending

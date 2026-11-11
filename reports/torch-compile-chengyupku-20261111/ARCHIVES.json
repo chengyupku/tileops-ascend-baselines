@@ -1,0 +1,23 @@
+{
+  "delivery_status": "local only; exchange channel not agreed; no new storage purchased",
+  "archives": [
+    {
+      "name": "raw-pair01.tar.gz",
+      "bytes": 917291,
+      "sha256": "26c7813f4ce3bf3f22e37de08a5474c8e370391e18d69d0881786fb0d4ca1647"
+    },
+    {
+      "name": "raw-rms-a3.tar.gz",
+      "bytes": 490322,
+      "sha256": "098959d350d0ed817abe1c94c66abedd75274f50423af5a0c290165aa203ee3d"
+    },
+    {
+      "name": "next-admission01.tar.gz",
+      "bytes": 18343,
+      "sha256": "ce20a691958d6a8249d45584e237e65334d8abfbe9295dab0ce0dc3fcdc09c2b"
+    }
+  ],
+  "raw_index_files": 5137,
+  "raw_index_bytes": 4320069,
+  "note": "Archives contain private profiler metadata and are not included in git; access needs an agreed private channel."
+}

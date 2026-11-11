@@ -1,0 +1,79 @@
+{
+  "files": [
+    {
+      "path": "ADMISSION_ATTEMPTS.json",
+      "bytes": 2422,
+      "sha256": "3b7662d0b0a0db4491e6349bb25f84019a22051a3486380228b836a676b743a7"
+    },
+    {
+      "path": "ARCHIVES.json",
+      "bytes": 761,
+      "sha256": "ff29dc56141809cdb8c9f11ac34d920903599a726c4ea09bf34abc9145432d96"
+    },
+    {
+      "path": "COMPILED_ARTIFACT_INDEX.json",
+      "bytes": 12408,
+      "sha256": "339299f1bb4d1607740b195b5e49b7c404dd124e4cb92b67589d34bfb39ea3f2"
+    },
+    {
+      "path": "COVERAGE.json",
+      "bytes": 31421,
+      "sha256": "3a7d0d3477ea4c9b839e176305b856b30aa71b88a990fc853d423ad19ecbe02a"
+    },
+    {
+      "path": "ENVIRONMENT.json",
+      "bytes": 1371,
+      "sha256": "497818af4e928bc4bc60046e7308ed847287f7c16f674302b4add7ce96196c42"
+    },
+    {
+      "path": "FLUSH.json",
+      "bytes": 2904,
+      "sha256": "116a639f7e3e0efd9c442ffd71aa64a69b4bc8accb24697d891e1cdfe534ee16"
+    },
+    {
+      "path": "GUARD.json",
+      "bytes": 7928,
+      "sha256": "4478f48afbdbe823f3e7ca03132f985b1b86235214e6d15102e2072c21ad6011"
+    },
+    {
+      "path": "MEASUREMENTS.csv",
+      "bytes": 728,
+      "sha256": "5f33503e310b296ca584ec50088e3d50e7f59a4788f01a384003d2f9632a6046"
+    },
+    {
+      "path": "MEASUREMENTS.json",
+      "bytes": 4585,
+      "sha256": "88643b8e16a2d3ab604a6f514fa3c6818fa19dce9c18cc04ffdb916a078e4425"
+    },
+    {
+      "path": "OPEN_GAPS.json",
+      "bytes": 1154,
+      "sha256": "6678b248db8827381b24d3a74479ceb67b65a3ece99958382e2f1d0f444df3e2"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 1690,
+      "sha256": "7442bf053aa5b4774fd6978797ba1bbea1ab3ee26583960b4157b468c5360b1f"
+    },
+    {
+      "path": "RUNTIME_LIBRARY_HASHES.json",
+      "bytes": 26733,
+      "sha256": "5edb55b7787a4b4d015778625d188322504ad1774a8b2525835f5fddbb2511c3"
+    },
+    {
+      "path": "WINDOWS.json",
+      "bytes": 168647,
+      "sha256": "300797613d7d480fa1be666262e9070dd7e9051d2fb232e7622b18f111f4f729"
+    },
+    {
+      "path": "flush_build.sh.txt",
+      "bytes": 1005,
+      "sha256": "5e9b9b862a189f05393ddb9ee2d14131ea244b02035bd6af5d0366c2705fe1f5"
+    },
+    {
+      "path": "runner.py",
+      "bytes": 6651,
+      "sha256": "02116c58d998fda1e3519796d5e8589aa28c24311f357f611bba36dab7bb8269"
+    }
+  ]
+}

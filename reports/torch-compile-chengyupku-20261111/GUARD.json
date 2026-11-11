@@ -1,0 +1,316 @@
+{
+  "measurement_attempts": [
+    {
+      "op": "AddFwdOp",
+      "attempt": "case0-a1",
+      "guard_exit": 0,
+      "evidence": "batch01 advanced to next guard; no full sampled observation receipt retained"
+    },
+    {
+      "op": "MulFwdOp",
+      "attempt": "case1-a2",
+      "guard_exit": 0,
+      "evidence": "batch02 advanced to next guard; no full sampled observation receipt retained"
+    },
+    {
+      "op": "RMSNormFwdOp",
+      "attempt": "case2-a3",
+      "guard_exit": 0,
+      "evidence": "standalone command exit0 and samples"
+    }
+  ],
+  "rms_samples": [
+    {
+      "time": "2026-11-11T02:35:31.068402+00:00",
+      "state": "idle",
+      "errors": [],
+      "reasons": [
+        "no driver processes or Ascend FD candidates in this sample"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:35:32.644755+00:00",
+      "state": "idle",
+      "errors": [],
+      "reasons": [
+        "no driver processes or Ascend FD candidates in this sample"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:35:34.223314+00:00",
+      "state": "idle",
+      "errors": [],
+      "reasons": [
+        "no driver processes or Ascend FD candidates in this sample"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:35:36.835085+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:35:39.436741+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:35:42.041491+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:35:44.633989+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:35:47.230268+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:35:49.826696+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:35:52.464801+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:35:55.094169+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:35:57.716410+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:36:00.356168+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:36:02.969556+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:36:05.593818+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:36:08.241273+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:36:10.862742+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:36:13.460447+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    },
+    {
+      "time": "2026-11-11T02:36:16.058331+00:00",
+      "state": "busy",
+      "errors": [],
+      "reasons": [
+        "driver reports NPU processes",
+        "other processes hold Ascend device FDs (possibly initializing)"
+      ],
+      "health": {
+        "rc": 0,
+        "value": 0
+      },
+      "pid_query_rc": 0,
+      "unreadable_pid_count": 0
+    }
+  ],
+  "excluded_measurement_attempts": [
+    {
+      "attempt": "case1-a1",
+      "guard_exit": 78
+    },
+    {
+      "attempt": "case2-a2",
+      "guard_exit": 78,
+      "note": "result existed but guard failed before complete exit; excluded"
+    }
+  ],
+  "exclusion_reason": "visibility lost; later admission samples show unreadable proc FD entries with healthy device queries, not proof of cause for every older attempt",
+  "load_contention_limit": "Guard completed for retained attempts; no retained complete compiler process trace during every timing window. Cannot assert zero compiler/external load from missing telemetry."
+}

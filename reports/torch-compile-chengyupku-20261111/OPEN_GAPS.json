@@ -1,0 +1,12 @@
+{
+  "publisher_protocol_review": "pending",
+  "environment_equivalence": "not established; alternate local profile",
+  "wheel_source_hashes": "original torch/torch_npu wheel artifacts unavailable; copied installation provenance only",
+  "portable_clean_checkout_runner": "Parameterised draft created; --help/static compilation passed without torch/device imports; clean checkout end-to-end not yet validated",
+  "compiled_graph_artifact_index": "40 cache artifacts indexed by size/SHA and matched to measured task names across3cases; historical load-time binding not proven",
+  "raw_exchange_channel": "not agreed; raw retained locally",
+  "guard_receipts": "original logs and RMS samples retained; initial Add/Mul successful guard exit inferred from sequential controller advancing to next command",
+  "first_batch_negative_controls": "CPU source-contract preparation retained; per-candidate negative-control evidence requires audit",
+  "task_expansion": "next9 performance cases prepared but waiting first-batch protocol review",
+  "public_sanitization": "Raw index filenames may contain device profiler host identifiers; sanitize before any push/PR"
+}
