@@ -1,15 +1,20 @@
 {
-  "publisher_protocol_review": "First batch protocol and next240 raw replay checked; final acceptance/merge still pending",
+  "publisher_protocol_review": "92unique cases/2760 windows independently replayed across separately labeled protocols;final acceptance/merge pending",
   "environment_equivalence": "not established; alternate local profile",
   "wheel_source_hashes": "original torch/torch_npu wheel artifacts unavailable; copied installation provenance only",
   "portable_clean_checkout_runner": "clean-runner03 guard0; two pilot windows independently replayed by publisher; identified existing environment, not new wheel install or formal15-window result",
   "compiled_graph_artifact_index": "40 cache artifacts indexed by size/SHA and matched to measured task names across3cases; historical load-time binding not proven",
-  "raw_exchange_channel": "Resolved: authenticated private Hub Release; publisher downloaded and independently replayed selected90 + next240 windows",
+  "raw_exchange_channel": "Private Hub Release:complete batch raw,guard,tracebacks and SHA indexes delivered",
   "guard_receipts": "V2 complete receipts and ownership samples added. Add/RMS measurement samples owned; Mul external npu-smi management queries require reviewer assessment; originalV1 missing observations remain unavailable.",
   "first_batch_negative_controls": "V2 each eager/compile complete output replaced with zeros; original checker rejected all6; V1 evidence unchanged",
-  "task_expansion": "Third batch12 new ordinary op cases running; exclude quant/INT8/FP8 and existing high-speedup attribution tasks",
+  "task_expansion": "Batches3-9 evidence delivered;remaining inventory not fully covered;representative cases are not fullshape completion",
   "public_sanitization": "V2 process identities mapped to per-attempt opaque IDs; raw remains private",
   "header_identity": "V2 all7096 headers under exact include roots hashed; not an actual compiler include-dependency trace",
   "next_batch_guard": "Add BF16 two external manager-only identities remain unknown and cannot be classed observation-complete qualified baseline; other associations remain sampled identity evidence",
-  "failed_cases": "All compile FLOAT->BOOL backend dtype validation failure; Softmax checker-admission failure; neither has valid compile performance"
+  "failed_cases": "See DRIVER_V1_SUMMARY attempt_failures;SSDRecurrent old numerical failure was state-confounded and has separate reset-v2 success;Mamba2 still fails with fresh inputs;SSDChunkState zero-output admission remains failed",
+  "input_mutation": "CPU92case audit detects only SSDRecurrent input5;does not prove NPU-path immutability",
+  "diagnostic_provenance": "OldSSM diagnostics returned before actual_sources;gap preserved.V3 early-source patch prepared but not deployed/measured",
+  "driver_v1": "FD scanning disabled,cooperative reservation plus driver queries;not originalfull-FD qualification",
+  "reset_v2": "Fixed runner separately validated by2window pilot+30formal windows;CPU output snapshot hashes checked by publisher,independent tensor recheck not claimed",
+  "cpu_mutation_provenance": "92case CPU single-call audit lacks execution-time loaded reference file SHA;publisher verified records/script,not reran references. Gap retained,not retroactively filled."
 }

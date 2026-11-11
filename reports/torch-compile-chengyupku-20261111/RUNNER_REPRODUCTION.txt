@@ -13,3 +13,11 @@ Scope: new frozen source checkout and fresh compiler caches using the already id
 
 Actual validation: clean-runner03; AddFwdOp linear-bias-float16; eager and compile one window each; guard0; both full outputs checked; zero-output controls rejected; two windows independently replayed in CLEAN_RUNNER_REPLAY03.json. Not counted among formal 15-window measurements.
 Previous attempts retained: clean-runner01 missing claim input; clean-runner02 guard78 on unreadable process at shutdown, therefore invalid despite completed inner measurement.
+
+Later independently labeled driver-v1 execution
+
+runner_driver_v1.py and runner_ssd_reset_v2.py preserve exact executed source. The SSD runner restores mutable input5 using the frozen benchmarks.baselines.private_inputs and passes reset to the frozen core._time_reference; each variant requires1cold+3warmup+15window resets. It saves independent CPU output/state snapshots. Do not use the original runner on SSDRecurrent.
+
+Both take --root WORK --claim CLAIM_JSON --index CASE_INDEX --output NEW_RESULT_DIR --windows {1,15}. WORK/frozen must reference the fixed source/tools checkout. WORK/flush-rebuild/build01 contains flush.aibin/flush.so with the recorded SHA. They expect the shared /run/lock/ascend-npu/device-0.lock to be held by the approved guard. Supply the previously reviewed guard/observation wrapper and environment; do not infer a device is free from the lock check alone. Driver-v1 requires explicit fd_scan_performed=false labeling. Guard exit0 and raw replay remain mandatory. These exact-source runners were tested in the recorded alternate environment, not validated as arbitrary-host installers.
+
+The public parameterized runner.py is historical full-FD pilot code. Do not silently substitute it for the driver-v1 or reset-v2 recorded versions. Freeze and record any deployment adaptations as a new version. V3 early-source-receipt changes remain unmeasured and are not substituted here.

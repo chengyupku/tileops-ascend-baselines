@@ -31,6 +31,11 @@
       "sha256": "3a7d0d3477ea4c9b839e176305b856b30aa71b88a990fc853d423ad19ecbe02a"
     },
     {
+      "path": "DRIVER_V1_SUMMARY.json",
+      "bytes": 88799,
+      "sha256": "3478fbc8675fbe7b1374e6368c36d556802d2feccce4db02e1a9314ff1cc8ad9"
+    },
+    {
       "path": "ENVIRONMENT.json",
       "bytes": 1371,
       "sha256": "497818af4e928bc4bc60046e7308ed847287f7c16f674302b4add7ce96196c42"
@@ -54,6 +59,11 @@
       "path": "HEADERS_V2.json",
       "bytes": 1419279,
       "sha256": "5092e572a30e3b98159902c6734eb878061ec1be3517f97914635147ac1963c8"
+    },
+    {
+      "path": "INPUT_MUTATION_AUDIT.json",
+      "bytes": 935,
+      "sha256": "8a1ea3eb44aa7223da6478a270e52c1e121091fcb635a6d26dbd3247d208e6e3"
     },
     {
       "path": "MEASUREMENTS.csv",
@@ -82,18 +92,18 @@
     },
     {
       "path": "OPEN_GAPS.json",
-      "bytes": 1930,
-      "sha256": "fe144f41c700753afd0525db64d2371c319e0b042b1b08272c0b12ffba6e4607"
+      "bytes": 2761,
+      "sha256": "cf021689413c57f05aa61d2eb4515b86383f47919bc535c3a7d0a92c60071c2c"
     },
     {
       "path": "README.txt",
-      "bytes": 1840,
-      "sha256": "3d2bab2cd3246887263bdff8e2b05a09ea80472d140bd98da20a3a8f973a87a3"
+      "bytes": 2636,
+      "sha256": "f5cde68b82f67981cd6afd962d8736bff1c38da8e823c164b490f94b04bbf79c"
     },
     {
       "path": "RUNNER_REPRODUCTION.txt",
-      "bytes": 2464,
-      "sha256": "0ed13e726a4c976bb5a334fbad53cd91521a159c12346a63f3ca02ad172663ce"
+      "bytes": 3874,
+      "sha256": "b4d615477b9019d44b4f065ef9b2f7a8ef09c5ce49fe64e1fa7997ddd5e8db95"
     },
     {
       "path": "RUNTIME_LIBRARY_HASHES.json",
@@ -129,6 +139,16 @@
       "path": "runner.py",
       "bytes": 8465,
       "sha256": "bacb9b9d94b3fdef7b9b2b81abc68388baca9a6168db0e168761afa7a83d7758"
+    },
+    {
+      "path": "runner_driver_v1.py",
+      "bytes": 8509,
+      "sha256": "b16d6c2778b67b5c8e98e2d818bee03c73b69a4317d1da4781f2e86e1fcd2e8a"
+    },
+    {
+      "path": "runner_ssd_reset_v2.py",
+      "bytes": 9367,
+      "sha256": "827c36e729858fec8b13d93c48e7ba9b4088a46cf245d5d61bd84187f15322c1"
     }
   ]
 }

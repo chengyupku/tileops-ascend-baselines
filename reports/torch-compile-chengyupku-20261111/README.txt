@@ -1,3 +1,8 @@
+Current delivery: 92 unique representative cases / 2760 formal-length windows independently replayed by publisher. Original observation protocol 34/1020 and reservation-driver-v1 58/1740 remain separate; reset-v2 SSDRecurrent is separately versioned. Pilot windows excluded. Not final acceptance, full-shape coverage or merge approval.
+
+DRIVER_V1_SUMMARY.json lists all58 driver-v1 candidates and preserves failed attempts. INPUT_MUTATION_AUDIT.json bounds the CPU mutation review. OPEN_GAPS.json controls current limitations. runner_driver_v1.py and runner_ssd_reset_v2.py are exact executed sources (SHA in MANIFEST); the latter is scoped to SSDRecurrent. See RUNNER_REPRODUCTION.txt for deployment prerequisites.
+
+Historical first/next batch description (counts below are historical subsets):
 Torch.compile baseline candidate evidence — not accepted leaderboard data
 
 Selected first-batch V2: 3 cases / 90 paired eager+compile windows. Subsequent batch: 8 measured candidates / 240 windows, plus Softmax checker-admission failure. Publisher independently replayed these windows and reviewed source/checker/guard evidence. Final acceptance and merge remain pending; all measurements retain alternate-environment status.
