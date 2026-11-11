@@ -1,0 +1,2890 @@
+{
+  "scope": "Attempt and CPU preflight status; old failures retained even when a later attempt succeeds. CPU self-reference checks are not device correctness.",
+  "batches": [
+    {
+      "record": "audit-measure01/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "AddFwdOp",
+          "case": "linear-bias-float16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "MulFwdOp",
+          "case": "linear-bias-float16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "RMSNormFwdOp",
+          "case": "llama-8b-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case2-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "v2-private-evidence01.tar.gz",
+          "member": "audit-measure01/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch10-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "GQADenseFwdOp",
+          "case": "prefill-rope-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "GQADenseWithLSEFwdOp",
+          "case": "llama-8b-short-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "GQADenseBwdOp",
+          "case": "llama-70b-short-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "GQAVarlenFwdOp",
+          "case": "gpt-oss-sink-mixed-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "TopKSelectFwdOp",
+          "case": "ds-v32-topk-decode-b1",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case4-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch10-private-delivery01.tar.gz",
+          "member": "batch10-complete-evidence01.tar.gz::batch10-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch11-cpu-preflight01/progress.json",
+      "state": {
+        "state": "finished",
+        "next": "Review CPU receipts before starting device queue"
+      },
+      "results": [
+        {
+          "op": "GQAPagedFwdOp",
+          "case": "gpt-oss-sink-mixed-bfloat16-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "MHAPagedFwdOp",
+          "case": "serving-kv512-float16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "MLADenseDecodeFwdOp",
+          "case": "mla-tp-b1-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "MLAPagedFwdOp",
+          "case": "ds-v3-ragged-bfloat16-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "PagedKVCacheGatherFwdOp",
+          "case": "mla-small-float16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "PagedKVCacheWriteFwdOp",
+          "case": "odd-tokens-and-page-float16-float16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "MHCPreFwdOp",
+          "case": "hidden-1280",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "MHCPostFwdOp",
+          "case": "hidden-1280",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch11-plan-diagnostic01.tar.gz",
+          "member": "batch11-cpu-preflight01/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch11-driver-v1/progress.json",
+      "state": {
+        "state": "finished",
+        "separate_diagnostic_guard_exit": 0
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "GQAPagedFwdOp",
+          "case": "gpt-oss-sink-mixed-bfloat16-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "MHAPagedFwdOp",
+          "case": "serving-kv512-float16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "MLADenseDecodeFwdOp",
+          "case": "mla-tp-b1-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "MLAPagedFwdOp",
+          "case": "ds-v3-ragged-bfloat16-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "PagedKVCacheGatherFwdOp",
+          "case": "mla-small-float16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case4-a1"
+        },
+        {
+          "index": 5,
+          "op": "PagedKVCacheWriteFwdOp",
+          "case": "odd-tokens-and-page-float16-float16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case5-a1"
+        },
+        {
+          "index": 6,
+          "op": "MHCPreFwdOp",
+          "case": "hidden-1280",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case6-a1"
+        },
+        {
+          "index": 7,
+          "op": "MHCPostFwdOp",
+          "case": "hidden-1280",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case7-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch11-complete-delivery01.tar.gz",
+          "member": "batch11-complete-evidence01.tar.gz::batch11-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch12-cpu-preflight01/progress.json",
+      "state": {
+        "state": "finished",
+        "next": "Review CPU receipts before starting device queue"
+      },
+      "results": [
+        {
+          "op": "FusedTopKFwdOp",
+          "case": "ds-v3-grouped-t1-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "MoEPermuteAlignFwdOp",
+          "case": "qwen3-235b-t1",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "MoEPostPermuteFwdOp",
+          "case": "decode-t32-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "MoEExpertMLPFwdOp",
+          "case": "gpt-oss-20b-prefill-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "SharedExpertMLPFwdOp",
+          "case": "glm45-t32-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "IndexedExpertMLPFwdOp",
+          "case": "qwen3-235b-t32-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "FFTC2CFwdOp",
+          "case": "latency-4k-complex64",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "SamplingFromProbsFwdOp",
+          "case": "llama-8b-b1",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch12-plan01.tar.gz",
+          "member": "batch12-cpu-preflight01/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch12-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "FusedTopKFwdOp",
+          "case": "ds-v3-grouped-t1-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "MoEPermuteAlignFwdOp",
+          "case": "qwen3-235b-t1",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "MoEPostPermuteFwdOp",
+          "case": "decode-t32-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "MoEExpertMLPFwdOp",
+          "case": "gpt-oss-20b-prefill-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "SharedExpertMLPFwdOp",
+          "case": "glm45-t32-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case4-a1"
+        },
+        {
+          "index": 5,
+          "op": "IndexedExpertMLPFwdOp",
+          "case": "qwen3-235b-t32-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case5-a1"
+        },
+        {
+          "index": 6,
+          "op": "FFTC2CFwdOp",
+          "case": "latency-4k-complex64",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case6-a1"
+        },
+        {
+          "index": 7,
+          "op": "SamplingFromProbsFwdOp",
+          "case": "llama-8b-b1",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case7-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch12-gqa-formal-complete-delivery01.tar.gz",
+          "member": "batch12-complete-evidence01.tar.gz::batch12-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch13-cpu-preflight01/progress.json",
+      "state": {
+        "state": "finished",
+        "next": "Review CPU receipts before starting device queue"
+      },
+      "results": [
+        {
+          "op": "DeltaNetChunkFwdOp",
+          "case": "deltanet-1.3b-train-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "DeltaNetChunkBwdOp",
+          "case": "deltanet-1.3b-train-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 1
+          },
+          "cpu_mutation": {
+            "exit_code": 1,
+            "timeout": null,
+            "mutation_observed": null
+          }
+        },
+        {
+          "op": "DeltaNetFwdOp",
+          "case": "decode-narrow-b17-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 1
+          },
+          "cpu_mutation": {
+            "exit_code": 1,
+            "timeout": null,
+            "mutation_observed": null
+          }
+        },
+        {
+          "op": "DeltaNetRecurrentFwdOp",
+          "case": "serving-b1-h8-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "GLAChunkFwdOp",
+          "case": "train-2k-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 1
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "GLAChunkBwdOp",
+          "case": "train-2k-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 1
+          },
+          "cpu_mutation": {
+            "exit_code": 1,
+            "timeout": null,
+            "mutation_observed": null
+          }
+        },
+        {
+          "op": "GLAFwdOp",
+          "case": "decode-b1-d64-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 1
+          },
+          "cpu_mutation": {
+            "exit_code": 1,
+            "timeout": null,
+            "mutation_observed": null
+          }
+        },
+        {
+          "op": "GLARecurrentFwdOp",
+          "case": "serving-b1-h8-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch13-plan-preflight01.tar.gz",
+          "member": "batch13-cpu-preflight01/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch13-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "DeltaNetChunkFwdOp",
+          "case": "deltanet-1.3b-train-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "DeltaNetRecurrentFwdOp",
+          "case": "serving-b1-h8-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "GLARecurrentFwdOp",
+          "case": "serving-b1-h8-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case2-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch13-complete-batch14-first4-plan01.tar.gz",
+          "member": "batch13-complete-evidence01.tar.gz::batch13-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch14-contract-v3-preflight01/progress.json",
+      "state": {
+        "state": "finished",
+        "next": "Review CPU receipts before starting device queue"
+      },
+      "results": [
+        {
+          "op": "MLAVarlenFwdOp",
+          "case": "kimi-k2-4x8k-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "NSACompressedVarlenFwdOp",
+          "case": "prefill-ragged-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "NSATopKVarlenFwdOp",
+          "case": "prefill-4x1k-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        }
+      ],
+      "raw_links": []
+    },
+    {
+      "record": "batch14-cpu-preflight01/progress.json",
+      "state": {
+        "state": "finished",
+        "next": "Review CPU receipts before starting device queue"
+      },
+      "results": [
+        {
+          "op": "DSADenseFwdOp",
+          "case": "ds-v32-kv4k-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "DSAPagedFwdOp",
+          "case": "ds-v32-tp2-1k",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "MLADenseBwdOp",
+          "case": "ds-v2-lite-3k-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "MLAKVCacheWriteFwdOp",
+          "case": "odd-tokens-neox-fp8-float16-float8_e4m3fn-float16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "MLAVarlenFwdOp",
+          "case": "kimi-k2-4x8k-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "MLAVarlenBwdOp",
+          "case": "kimi-k2-4x8k-bfloat16",
+          "cpu_prepare": {
+            "timeout": true
+          },
+          "cpu_mutation": {
+            "exit_code": null,
+            "timeout": true,
+            "mutation_observed": null
+          }
+        },
+        {
+          "op": "NSACompressedVarlenFwdOp",
+          "case": "prefill-ragged-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "NSATopKVarlenFwdOp",
+          "case": "prefill-4x1k-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch14-progress-contract-v3-plan01.tar.gz",
+          "member": "batch14-cpu-preflight01/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch14-first4-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "DSADenseFwdOp",
+          "case": "ds-v32-kv4k-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "DSAPagedFwdOp",
+          "case": "ds-v32-tp2-1k",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "MLADenseBwdOp",
+          "case": "ds-v2-lite-3k-bfloat16",
+          "attempt": 1,
+          "guard_exit": 124,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "MLAKVCacheWriteFwdOp",
+          "case": "odd-tokens-neox-fp8-float16-float8_e4m3fn-float16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case3-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch14-first4-delivery-remaining-plan01.tar.gz",
+          "member": "batch14-first4-complete01.tar.gz::batch14-first4-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch14-remaining3-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "MLAVarlenFwdOp",
+          "case": "kimi-k2-4x8k-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "NSACompressedVarlenFwdOp",
+          "case": "prefill-ragged-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "NSATopKVarlenFwdOp",
+          "case": "prefill-4x1k-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case2-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch14-remaining3-delivery01.tar.gz",
+          "member": "batch14-remaining3-complete01.tar.gz::batch14-remaining3-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch15-cpu-preflight01/progress.json",
+      "state": {
+        "state": "finished",
+        "next": "Review CPU receipts before starting device queue"
+      },
+      "results": [
+        {
+          "op": "GDNFwdOp",
+          "case": "decode-beta-l2norm-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "KDAFwdOp",
+          "case": "kl48-tp8-cont256-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "NSAVarlenFwdOp",
+          "case": "prefill-ragged-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "ChainSpeculativeSamplingFwdOp",
+          "case": "llama-8b-b16-n4",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "EngramGateConvBwdOp",
+          "case": "train-s32-float16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "FusedMoEExpertsFwdOp",
+          "case": "gpt-oss-20b-prefill-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "FusedMoEFwdOp",
+          "case": "qwen3-30b-decode-b1-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        },
+        {
+          "op": "FusedMoESharedExpertFwdOp",
+          "case": "qwen3-235b-t512-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 1
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        }
+      ],
+      "raw_links": []
+    },
+    {
+      "record": "batch15-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "GDNFwdOp",
+          "case": "decode-beta-l2norm-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "KDAFwdOp",
+          "case": "kl48-tp8-cont256-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "NSAVarlenFwdOp",
+          "case": "prefill-ragged-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "ChainSpeculativeSamplingFwdOp",
+          "case": "llama-8b-b16-n4",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "EngramGateConvBwdOp",
+          "case": "train-s32-float16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case4-a1"
+        },
+        {
+          "index": 5,
+          "op": "FusedMoEExpertsFwdOp",
+          "case": "gpt-oss-20b-prefill-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case5-a1"
+        },
+        {
+          "index": 6,
+          "op": "FusedMoEFwdOp",
+          "case": "qwen3-30b-decode-b1-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case6-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch15-failures-nsa-diagnostic-plan01.tar.gz",
+          "member": "batch15-complete-evidence01.tar.gz::batch15-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch16-cpu-preflight01/progress.json",
+      "state": {
+        "state": "finished",
+        "next": "Review CPU receipts before starting device queue"
+      },
+      "results": [
+        {
+          "op": "MoEGroupedGEMMFwdOp",
+          "case": "qwen3-30b-ep8-decode-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        }
+      ],
+      "raw_links": []
+    },
+    {
+      "record": "batch3-performance01/progress.json",
+      "state": {
+        "state": "device_observation_blocked",
+        "index": 8
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "AbsFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "CeilFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "ClampScalarFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "ClampTensorFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "CosFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case4-a1"
+        },
+        {
+          "index": 5,
+          "op": "DivFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case5-a1"
+        },
+        {
+          "index": 6,
+          "op": "ELUFwdOp",
+          "case": "mlp-hidden-bfloat16",
+          "attempt": 1,
+          "guard_exit": 78,
+          "output": "case6-a1"
+        },
+        {
+          "index": 6,
+          "op": "ELUFwdOp",
+          "case": "mlp-hidden-bfloat16",
+          "attempt": 2,
+          "guard_exit": 0,
+          "output": "case6-a2"
+        },
+        {
+          "index": 7,
+          "op": "ErfFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case7-a1"
+        },
+        {
+          "index": 8,
+          "op": "ExpFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 75,
+          "output": "case8-a1"
+        },
+        {
+          "index": 8,
+          "op": "ExpFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 2,
+          "guard_exit": 75,
+          "output": "case8-a2"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch3-private-evidence01.tar.gz",
+          "member": "batch3-partial.tar.gz::batch3-performance01/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch3-remaining01/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 8,
+          "op": "ExpFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case8-a1"
+        },
+        {
+          "index": 9,
+          "op": "Expm1FwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case9-a1"
+        },
+        {
+          "index": 10,
+          "op": "FloorFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 75,
+          "output": "case10-a1"
+        },
+        {
+          "index": 10,
+          "op": "FloorFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 2,
+          "guard_exit": 0,
+          "output": "case10-a2"
+        },
+        {
+          "index": 11,
+          "op": "GELUFwdOp",
+          "case": "llama-8b-ffn-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case11-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch3-private-evidence01.tar.gz",
+          "member": "batch3-remaining01.tar.gz::batch3-remaining01/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch4-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 11,
+          "op": "MinimumFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case11-a1"
+        },
+        {
+          "index": 12,
+          "op": "MishFwdOp",
+          "case": "yolo-p3-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case12-a1"
+        },
+        {
+          "index": 13,
+          "op": "NanToNumFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case13-a1"
+        },
+        {
+          "index": 14,
+          "op": "NegFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case14-a1"
+        },
+        {
+          "index": 15,
+          "op": "PReLUFwdOp",
+          "case": "cnn-feat-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case15-a1"
+        },
+        {
+          "index": 16,
+          "op": "PowFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case16-a1"
+        },
+        {
+          "index": 17,
+          "op": "ReLUFwdOp",
+          "case": "hidden-state-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case17-a1"
+        },
+        {
+          "index": 18,
+          "op": "ReciprocalFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case18-a1"
+        },
+        {
+          "index": 19,
+          "op": "RemainderFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case19-a1"
+        },
+        {
+          "index": 20,
+          "op": "RoundFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case20-a1"
+        },
+        {
+          "index": 21,
+          "op": "RsqrtFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case21-a1"
+        },
+        {
+          "index": 22,
+          "op": "SELUFwdOp",
+          "case": "snn-fc-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case22-a1"
+        },
+        {
+          "index": 23,
+          "op": "SiLUFwdOp",
+          "case": "llama-8b-ffn-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case23-a1"
+        },
+        {
+          "index": 24,
+          "op": "SigmoidFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case24-a1"
+        },
+        {
+          "index": 25,
+          "op": "SignFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case25-a1"
+        },
+        {
+          "index": 26,
+          "op": "SinFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case26-a1"
+        },
+        {
+          "index": 27,
+          "op": "SoftplusFwdOp",
+          "case": "mlp-hidden-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case27-a1"
+        },
+        {
+          "index": 28,
+          "op": "SqrtFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case28-a1"
+        },
+        {
+          "index": 29,
+          "op": "SubFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case29-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "driver-v1-complete-evidence01.tar.gz",
+          "member": "batch4-driver-complete01.tar.gz::batch4-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch4-performance01/progress.json",
+      "state": {
+        "state": "partial_snapshot"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "HardsigmoidFwdOp",
+          "case": "mbv3-se-gate-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "HardswishFwdOp",
+          "case": "mbv3-stage2-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "HardtanhFwdOp",
+          "case": "bounded-conv-feat-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "LeakyReLUFwdOp",
+          "case": "gan-feat-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "LerpScalarFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case4-a1"
+        },
+        {
+          "index": 5,
+          "op": "LerpTensorFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case5-a1"
+        },
+        {
+          "index": 6,
+          "op": "Log1pFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case6-a1"
+        },
+        {
+          "index": 7,
+          "op": "LogFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case7-a1"
+        },
+        {
+          "index": 8,
+          "op": "MaskedFillScalarFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case8-a1"
+        },
+        {
+          "index": 9,
+          "op": "MaskedFillTensorFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case9-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch4-first10-evidence01.tar.gz",
+          "member": "batch4-first10.tar.gz::batch4-performance01/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch5-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "TanhFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "TruncFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "WhereFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "FloorDivideFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "SiLUAndMulFwdOp",
+          "case": "llama-8b-ffn-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case4-a1"
+        },
+        {
+          "index": 5,
+          "op": "AdaLayerNormFwdOp",
+          "case": "dit-xl-2-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case5-a1"
+        },
+        {
+          "index": 6,
+          "op": "AdaptiveAvgPool2dFwdOp",
+          "case": "nondiv-7x7-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case6-a1"
+        },
+        {
+          "index": 7,
+          "op": "AvgPool1dFwdOp",
+          "case": "ceil-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case7-a1"
+        },
+        {
+          "index": 8,
+          "op": "AvgPool2dFwdOp",
+          "case": "ceil-divisor-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case8-a1"
+        },
+        {
+          "index": 9,
+          "op": "AvgPool3dFwdOp",
+          "case": "divisor-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case9-a1"
+        },
+        {
+          "index": 10,
+          "op": "MaxPool1dIndicesFwdOp",
+          "case": "ecg-cnn-dilated-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case10-a1"
+        },
+        {
+          "index": 11,
+          "op": "MaxPool2dIndicesFwdOp",
+          "case": "alexnet-ceil-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case11-a1"
+        },
+        {
+          "index": 12,
+          "op": "MaxPool3dFwdOp",
+          "case": "medicalnet-stem-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case12-a1"
+        },
+        {
+          "index": 13,
+          "op": "MaxPool3dIndicesFwdOp",
+          "case": "medicalnet-stem-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case13-a1"
+        },
+        {
+          "index": 14,
+          "op": "MeanPoolingFwdOp",
+          "case": "uniform-8k-bfloat16-float32",
+          "attempt": 1,
+          "guard_exit": 124,
+          "output": "case14-a1"
+        },
+        {
+          "index": 15,
+          "op": "AmaxFwdOp",
+          "case": "hidden-state-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case15-a1"
+        },
+        {
+          "index": 16,
+          "op": "AminFwdOp",
+          "case": "hidden-state-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case16-a1"
+        },
+        {
+          "index": 17,
+          "op": "ArgmaxFwdOp",
+          "case": "hidden-state-bfloat16",
+          "attempt": 1,
+          "guard_exit": 75,
+          "output": "case17-a1"
+        },
+        {
+          "index": 17,
+          "op": "ArgmaxFwdOp",
+          "case": "hidden-state-bfloat16",
+          "attempt": 2,
+          "guard_exit": 0,
+          "output": "case17-a2"
+        },
+        {
+          "index": 18,
+          "op": "ArgminFwdOp",
+          "case": "hidden-state-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case18-a1"
+        },
+        {
+          "index": 19,
+          "op": "MeanFwdOp",
+          "case": "hidden-state-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case19-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch5-private-delivery01.tar.gz",
+          "member": "batch5-complete-evidence01.tar.gz::batch5-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch6-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "BitwiseAndFwdOp",
+          "case": "cnn-feat-broadcast-bool",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "BitwiseNotFwdOp",
+          "case": "16M-int32",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "BitwiseOrFwdOp",
+          "case": "cnn-feat-broadcast-bool",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "BitwiseXorFwdOp",
+          "case": "cnn-feat-broadcast-bool",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "EqFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case4-a1"
+        },
+        {
+          "index": 5,
+          "op": "GeFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case5-a1"
+        },
+        {
+          "index": 6,
+          "op": "GtFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case6-a1"
+        },
+        {
+          "index": 7,
+          "op": "LeFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case7-a1"
+        },
+        {
+          "index": 8,
+          "op": "LtFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case8-a1"
+        },
+        {
+          "index": 9,
+          "op": "NeFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case9-a1"
+        },
+        {
+          "index": 10,
+          "op": "IsfiniteFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case10-a1"
+        },
+        {
+          "index": 11,
+          "op": "IsinfFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case11-a1"
+        },
+        {
+          "index": 12,
+          "op": "IsnanFwdOp",
+          "case": "16M-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case12-a1"
+        },
+        {
+          "index": 13,
+          "op": "LogicalNotFwdOp",
+          "case": "16M-bool",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case13-a1"
+        },
+        {
+          "index": 14,
+          "op": "LogicalOrFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case14-a1"
+        },
+        {
+          "index": 15,
+          "op": "CountNonzeroFwdOp",
+          "case": "sparsity-hidden-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case15-a1"
+        },
+        {
+          "index": 16,
+          "op": "LogSumExpFwdOp",
+          "case": "attn-weights-32k-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case16-a1"
+        },
+        {
+          "index": 17,
+          "op": "StdFwdOp",
+          "case": "hidden-state-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case17-a1"
+        },
+        {
+          "index": 18,
+          "op": "VarFwdOp",
+          "case": "hidden-state-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case18-a1"
+        },
+        {
+          "index": 19,
+          "op": "VarMeanFwdOp",
+          "case": "hidden-state-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case19-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch6-private-delivery01.tar.gz",
+          "member": "batch6-complete-evidence01.tar.gz::batch6-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch7-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "BatchNormFwdOp",
+          "case": "resnet-stage1-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "BatchNormBwdOp",
+          "case": "resnet-stage1-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "FusedAddLayerNormFwdOp",
+          "case": "llama-8b-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "FusedAddRMSNormFwdOp",
+          "case": "llama-8b-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "Conv1dFwdOp",
+          "case": "encodec-deep-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case4-a1"
+        },
+        {
+          "index": 5,
+          "op": "Conv2dFwdOp",
+          "case": "stride2-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case5-a1"
+        },
+        {
+          "index": 6,
+          "op": "Conv3dFwdOp",
+          "case": "unet-encoder-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case6-a1"
+        },
+        {
+          "index": 7,
+          "op": "BMMFwdOp",
+          "case": "square-128-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case7-a1"
+        },
+        {
+          "index": 8,
+          "op": "GEMMFwdOp",
+          "case": "square-1k-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case8-a1"
+        },
+        {
+          "index": 9,
+          "op": "SinusoidalFwdOp",
+          "case": "transformer-2k-4k-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case9-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch7-private-delivery01.tar.gz",
+          "member": "batch7-complete-evidence01.tar.gz::batch7-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch8-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "CausalConv1dFwdOp",
+          "case": "mamba2-2.7b-pf4k-nost-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "HadamardTransformFwdOp",
+          "case": "llama-8b-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "YaRNFwdOp",
+          "case": "1d-8k-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "MergeAttentionStatesFwdOp",
+          "case": "qwen3-235b-dcp-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "TopKMaskFwdOp",
+          "case": "llama-8b-b1-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case4-a1"
+        },
+        {
+          "index": 5,
+          "op": "TopPMaskFwdOp",
+          "case": "llama-8b-b1-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case5-a1"
+        },
+        {
+          "index": 6,
+          "op": "TopKTopPMaskFwdOp",
+          "case": "llama-8b-b1-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case6-a1"
+        },
+        {
+          "index": 7,
+          "op": "MinPMaskFwdOp",
+          "case": "llama-8b-b1-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case7-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch8-private-delivery01.tar.gz",
+          "member": "batch8-complete-evidence01.tar.gz::batch8-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "batch9-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "SSDChunkScanFwdOp",
+          "case": "mamba2-780m-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "SSDChunkStateFwdOp",
+          "case": "mamba2-780m-bfloat16-float32",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "SSDRecurrentFwdOp",
+          "case": "mamba2-1p3b-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "SelectiveScanFwdOp",
+          "case": "mamba-2.8b-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "Mamba2FwdOp",
+          "case": "mamba2-2p7b-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case4-a1"
+        },
+        {
+          "index": 5,
+          "op": "GroupedGEMMFwdOp",
+          "case": "qwen3-30b-ep8-empty-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case5-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "batch9-private-delivery01.tar.gz",
+          "member": "batch9-complete-evidence01.tar.gz::batch9-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "cpu-mutation-audit01/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "op": "AbsFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "AdaLayerNormFwdOp",
+          "case": "dit-xl-2-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "AdaLayerNormZeroFwdOp",
+          "case": "dit-xl-2-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "AdaptiveAvgPool2dFwdOp",
+          "case": "nondiv-7x7-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "AdaptiveMaxPool2dFwdOp",
+          "case": "nondiv-7x7-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "AdaptiveMaxPool2dIndicesFwdOp",
+          "case": "nondiv-7x7-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "AddFwdOp",
+          "case": "linear-bias-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "AddFwdOp",
+          "case": "linear-bias-float16",
+          "status": "checked"
+        },
+        {
+          "op": "AlibiFwdOp",
+          "case": "mpt-7b-2k-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "AmaxFwdOp",
+          "case": "hidden-state-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "AminFwdOp",
+          "case": "hidden-state-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "ArgmaxFwdOp",
+          "case": "hidden-state-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "ArgminFwdOp",
+          "case": "hidden-state-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "AvgPool1dFwdOp",
+          "case": "ceil-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "AvgPool2dFwdOp",
+          "case": "ceil-divisor-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "AvgPool3dFwdOp",
+          "case": "divisor-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "BMMFwdOp",
+          "case": "square-128-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "BatchNormBwdOp",
+          "case": "resnet-stage1-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "BitwiseAndFwdOp",
+          "case": "cnn-feat-broadcast-bool",
+          "status": "checked"
+        },
+        {
+          "op": "BitwiseNotFwdOp",
+          "case": "16M-int32",
+          "status": "checked"
+        },
+        {
+          "op": "BitwiseOrFwdOp",
+          "case": "cnn-feat-broadcast-bool",
+          "status": "checked"
+        },
+        {
+          "op": "BitwiseXorFwdOp",
+          "case": "cnn-feat-broadcast-bool",
+          "status": "checked"
+        },
+        {
+          "op": "CeilFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "ClampScalarFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "ClampTensorFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "Conv1dFwdOp",
+          "case": "encodec-deep-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "Conv2dFwdOp",
+          "case": "stride2-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "Conv3dFwdOp",
+          "case": "unet-encoder-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "CosFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "CountNonzeroFwdOp",
+          "case": "sparsity-hidden-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "DivFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "ELUFwdOp",
+          "case": "mlp-hidden-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "ErfFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "ExpFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "Expm1FwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "FloorDivideFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "FloorFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "FusedAddLayerNormFwdOp",
+          "case": "llama-8b-decode-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "FusedAddRMSNormFwdOp",
+          "case": "llama-8b-decode-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "GELUFwdOp",
+          "case": "llama-8b-ffn-decode-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "GEMMFwdOp",
+          "case": "square-1k-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "HadamardTransformFwdOp",
+          "case": "llama-8b-decode-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "HardsigmoidFwdOp",
+          "case": "mbv3-se-gate-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "HardswishFwdOp",
+          "case": "mbv3-stage2-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "HardtanhFwdOp",
+          "case": "bounded-conv-feat-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "IsfiniteFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "IsinfFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "LayerNormFwdOp",
+          "case": "llama-70b-decode-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "LeakyReLUFwdOp",
+          "case": "gan-feat-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "LerpScalarFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "LerpTensorFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "Log1pFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "LogFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "LogSumExpFwdOp",
+          "case": "attn-weights-32k-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "LogicalOrFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "MaskedFillScalarFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "MaskedFillTensorFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "MaxPool3dFwdOp",
+          "case": "medicalnet-stem-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "MaximumFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "MeanFwdOp",
+          "case": "hidden-state-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "MeanPoolingFwdOp",
+          "case": "uniform-8k-bfloat16-float32",
+          "status": "checked"
+        },
+        {
+          "op": "MinimumFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "MishFwdOp",
+          "case": "yolo-p3-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "MulFwdOp",
+          "case": "linear-bias-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "MulFwdOp",
+          "case": "linear-bias-float16",
+          "status": "checked"
+        },
+        {
+          "op": "NanToNumFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "NegFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "PReLUFwdOp",
+          "case": "cnn-feat-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "PowFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "RMSNormFwdOp",
+          "case": "llama-70b-decode-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "RMSNormFwdOp",
+          "case": "llama-8b-decode-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "ReLUFwdOp",
+          "case": "hidden-state-decode-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "ReciprocalFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "RemainderFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "RsqrtFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "SELUFwdOp",
+          "case": "snn-fc-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "SSDChunkScanFwdOp",
+          "case": "mamba2-780m-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "SSDRecurrentFwdOp",
+          "case": "mamba2-1p3b-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "SelectiveScanFwdOp",
+          "case": "mamba-2.8b-decode-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "SiLUAndMulFwdOp",
+          "case": "llama-8b-ffn-decode-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "SiLUFwdOp",
+          "case": "llama-8b-ffn-decode-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "SigmoidFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "SignFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "SinFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "SoftplusFwdOp",
+          "case": "mlp-hidden-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "SqrtFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "StdFwdOp",
+          "case": "hidden-state-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "SubFwdOp",
+          "case": "cnn-feat-broadcast-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "TanhFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "TruncFwdOp",
+          "case": "16M-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "VarFwdOp",
+          "case": "hidden-state-bfloat16",
+          "status": "checked"
+        },
+        {
+          "op": "YaRNFwdOp",
+          "case": "1d-8k-bfloat16",
+          "status": "checked"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "cpu-mutation-audit01.tar.gz",
+          "member": "cpu-mutation-audit01/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "gqa-formal02-audit-input/progress.json",
+      "state": null,
+      "results": [
+        {
+          "guard_exit": 0,
+          "output": "../gqa-bwd-formal02"
+        }
+      ],
+      "raw_links": []
+    },
+    {
+      "record": "mla-retry01-audit-input/progress.json",
+      "state": null,
+      "results": [
+        {
+          "guard_exit": 0,
+          "output": "../mla-dense-bwd-retry01"
+        }
+      ],
+      "raw_links": []
+    },
+    {
+      "record": "mla-varlen-bwd-cpu-retry01/progress.json",
+      "state": {
+        "state": "finished",
+        "next": "Review CPU receipts before starting device queue"
+      },
+      "results": [
+        {
+          "op": "MLAVarlenBwdOp",
+          "case": "kimi-k2-4x8k-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "mla-varlen-cpu-final-admission01.tar.gz",
+          "member": "mla-varlen-bwd-cpu-retry01/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "mla-varlen-bwd-device01-driver-v1/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "MLAVarlenBwdOp",
+          "case": "kimi-k2-4x8k-bfloat16",
+          "attempt": 1,
+          "guard_exit": 124,
+          "output": "case0-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "mla-varlen-timeout-next-proposal01.tar.gz",
+          "member": "mla-varlen-device01-timeout.tar.gz::mla-varlen-bwd-device01-driver-v1/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "moe-shared-nullable01-cpu/progress.json",
+      "state": {
+        "state": "finished",
+        "next": "Review CPU receipts before starting device queue"
+      },
+      "results": [
+        {
+          "op": "FusedMoESharedExpertFwdOp",
+          "case": "qwen3-235b-t512-bfloat16",
+          "cpu_prepare": {
+            "exit_code": 0
+          },
+          "cpu_mutation": {
+            "exit_code": 0,
+            "timeout": null,
+            "mutation_observed": false
+          }
+        }
+      ],
+      "raw_links": []
+    },
+    {
+      "record": "next-admission01/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "AddFwdOp",
+          "case": "linear-bias-bfloat16",
+          "attempt": 1,
+          "guard_exit": 78,
+          "output": "case0-a1"
+        },
+        {
+          "index": 0,
+          "op": "AddFwdOp",
+          "case": "linear-bias-bfloat16",
+          "attempt": 2,
+          "guard_exit": 0,
+          "output": "case0-a2"
+        },
+        {
+          "index": 1,
+          "op": "MulFwdOp",
+          "case": "linear-bias-bfloat16",
+          "attempt": 1,
+          "guard_exit": 78,
+          "output": "case1-a1"
+        },
+        {
+          "index": 1,
+          "op": "MulFwdOp",
+          "case": "linear-bias-bfloat16",
+          "attempt": 2,
+          "guard_exit": 0,
+          "output": "case1-a2"
+        },
+        {
+          "index": 2,
+          "op": "RMSNormFwdOp",
+          "case": "llama-70b-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "AdaLayerNormZeroFwdOp",
+          "case": "dit-xl-2-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "AdaptiveMaxPool2dFwdOp",
+          "case": "nondiv-7x7-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case4-a1"
+        },
+        {
+          "index": 5,
+          "op": "AdaptiveMaxPool2dIndicesFwdOp",
+          "case": "nondiv-7x7-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case5-a1"
+        },
+        {
+          "index": 6,
+          "op": "AlibiFwdOp",
+          "case": "mpt-7b-2k-bfloat16",
+          "attempt": 1,
+          "guard_exit": 78,
+          "output": "case6-a1"
+        },
+        {
+          "index": 6,
+          "op": "AlibiFwdOp",
+          "case": "mpt-7b-2k-bfloat16",
+          "attempt": 2,
+          "guard_exit": 0,
+          "output": "case6-a2"
+        },
+        {
+          "index": 7,
+          "op": "AllFwdOp",
+          "case": "mask-validation-4k-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case7-a1"
+        },
+        {
+          "index": 8,
+          "op": "LayerNormFwdOp",
+          "case": "llama-70b-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case8-a1"
+        },
+        {
+          "index": 9,
+          "op": "SoftmaxFwdOp",
+          "case": "lm-head-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case9-a1"
+        }
+      ],
+      "raw_links": []
+    },
+    {
+      "record": "next-performance01/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 0,
+          "op": "AddFwdOp",
+          "case": "linear-bias-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case0-a1"
+        },
+        {
+          "index": 1,
+          "op": "MulFwdOp",
+          "case": "linear-bias-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case1-a1"
+        },
+        {
+          "index": 2,
+          "op": "RMSNormFwdOp",
+          "case": "llama-70b-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case2-a1"
+        },
+        {
+          "index": 3,
+          "op": "AdaLayerNormZeroFwdOp",
+          "case": "dit-xl-2-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case3-a1"
+        },
+        {
+          "index": 4,
+          "op": "AdaptiveMaxPool2dFwdOp",
+          "case": "nondiv-7x7-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case4-a1"
+        },
+        {
+          "index": 5,
+          "op": "AdaptiveMaxPool2dIndicesFwdOp",
+          "case": "nondiv-7x7-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case5-a1"
+        },
+        {
+          "index": 6,
+          "op": "AlibiFwdOp",
+          "case": "mpt-7b-2k-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case6-a1"
+        },
+        {
+          "index": 8,
+          "op": "LayerNormFwdOp",
+          "case": "llama-70b-decode-bfloat16",
+          "attempt": 1,
+          "guard_exit": 0,
+          "output": "case8-a1"
+        },
+        {
+          "index": 9,
+          "op": "SoftmaxFwdOp",
+          "case": "lm-head-bfloat16",
+          "attempt": 1,
+          "guard_exit": 1,
+          "output": "case9-a1"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "next8-private-evidence01.tar.gz",
+          "member": "next-performance01.tar.gz::next-performance01/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "nsa-nullable-queue01/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "guard_exit": 1,
+          "job": "nsa-state-transfer01",
+          "windows_per_variant": 1
+        },
+        {
+          "guard_exit": 1,
+          "job": "moe-shared-nullable01",
+          "windows_per_variant": 15
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "nsa-nullable-complete-delivery01.tar.gz",
+          "member": "nsa-nullable-complete01.tar.gz::nsa-nullable-queue01/progress.json"
+        }
+      ]
+    },
+    {
+      "record": "ssm-diagnostic01/progress.json",
+      "state": {
+        "state": "finished"
+      },
+      "results": [
+        {
+          "index": 1,
+          "guard_exit": 0,
+          "output": "case1"
+        },
+        {
+          "index": 2,
+          "guard_exit": 1,
+          "output": "case2"
+        },
+        {
+          "index": 4,
+          "guard_exit": 1,
+          "output": "case4"
+        }
+      ],
+      "raw_links": [
+        {
+          "asset": "ssm-correctness-followup02.tar.gz",
+          "member": "ssm-output-diagnostic01.tar.gz::ssm-diagnostic01/progress.json"
+        }
+      ]
+    }
+  ]
+}

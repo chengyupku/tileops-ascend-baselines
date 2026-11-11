@@ -1,0 +1,286 @@
+{
+  "access": "Private agent-hub release; reviewers require repository access",
+  "assets": [
+    {
+      "name": "batch10-plan-provenance01.tar.gz",
+      "bytes": 8759,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch10-plan-provenance01.tar.gz",
+      "sha256": "52d9c0d4f879076e617d5e287d5ced1fb71437ebde725d245d69ef1910af80a3"
+    },
+    {
+      "name": "batch10-private-delivery01.tar.gz",
+      "bytes": 2434825,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch10-private-delivery01.tar.gz",
+      "sha256": "52336c9d637869bc906ead43ee4bdd2180e862ef3ddbff9f0c249d868ea1c9f9"
+    },
+    {
+      "name": "batch11-complete-delivery01.tar.gz",
+      "bytes": 2073737,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch11-complete-delivery01.tar.gz",
+      "sha256": "d5f73dd5750d5c774a2480efef7ad6096fde30f48ba75d944f3c09defe251ce1"
+    },
+    {
+      "name": "batch11-first6-delivery01.tar.gz",
+      "bytes": 674240,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch11-first6-delivery01.tar.gz",
+      "sha256": "cd08eb68110c5ac5f4241f95091493c0b1031169a5092afa267e1b97358d9360"
+    },
+    {
+      "name": "batch11-plan-diagnostic01.tar.gz",
+      "bytes": 7299,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch11-plan-diagnostic01.tar.gz",
+      "sha256": "650c512bd6ffa978809fab3f3f2cc6bba54210985dd33c1fed51432b17685bc8"
+    },
+    {
+      "name": "batch12-gqa-formal-complete-delivery01.tar.gz",
+      "bytes": 3064399,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch12-gqa-formal-complete-delivery01.tar.gz",
+      "sha256": "5ef0f1911aabe4d6524ea58d4c7fd7844a2686f6f674cb9d39651592d43a7a3d"
+    },
+    {
+      "name": "batch12-plan01.tar.gz",
+      "bytes": 4331,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch12-plan01.tar.gz",
+      "sha256": "8b03c4bd5f3da402c45eb26fd858a905ed05822fb81e5d9116d9bdac432b758c"
+    },
+    {
+      "name": "batch13-complete-batch14-first4-plan01.tar.gz",
+      "bytes": 2524160,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch13-complete-batch14-first4-plan01.tar.gz",
+      "sha256": "800cf61df6e77f2db4cb3a3d517c0367cc2054818949098c94c9b3ab0c6b9f0e"
+    },
+    {
+      "name": "batch13-plan-preflight01.tar.gz",
+      "bytes": 8407,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch13-plan-preflight01.tar.gz",
+      "sha256": "7abc81b7141394cbfbd1f16a2564c427b77d41c2995a78003810f20fd467a7ec"
+    },
+    {
+      "name": "batch14-first4-delivery-remaining-plan01.tar.gz",
+      "bytes": 1260705,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch14-first4-delivery-remaining-plan01.tar.gz",
+      "sha256": "3fd328a1de17c6ee87240570e9962088864ffcc8f81be9eacab5194ff001a560"
+    },
+    {
+      "name": "batch14-progress-contract-v3-plan01.tar.gz",
+      "bytes": 904441,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch14-progress-contract-v3-plan01.tar.gz",
+      "sha256": "7a75862ab9605e13c3a4c22c3005496c6c09b04ef1836b0c7c9ef64ebf792954"
+    },
+    {
+      "name": "batch14-remaining3-delivery01.tar.gz",
+      "bytes": 146526,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch14-remaining3-delivery01.tar.gz",
+      "sha256": "6dd5632326400e6329d87d19aef52601a82ce7b071a356f5e5a9965054c06a7f"
+    },
+    {
+      "name": "batch15-failures-nsa-diagnostic-plan01.tar.gz",
+      "bytes": 137241,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch15-failures-nsa-diagnostic-plan01.tar.gz",
+      "sha256": "3ab64a43a941ab7bfc45efef3be085eb69fea768ce5053bd4f3239c7f2567d53"
+    },
+    {
+      "name": "batch16-nullable-moe-plan01.tar.gz",
+      "bytes": 5047,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch16-nullable-moe-plan01.tar.gz",
+      "sha256": "1b3921d3a9eaff97a0ef205ab563f017af2e6f25f991199e3ade5a2ec65cf946"
+    },
+    {
+      "name": "batch3-private-evidence01.tar.gz",
+      "bytes": 6496220,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch3-private-evidence01.tar.gz",
+      "sha256": "6265b3ddc7930bae8f04cb950abbd0d3c27f3b38831d13f2b758ab3ba12add27"
+    },
+    {
+      "name": "BATCH3_COMPLETE_AUDIT01.json",
+      "bytes": 8707,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/BATCH3_COMPLETE_AUDIT01.json",
+      "sha256": "36fe0cee09ed5fb9aad752c0f6924c490229764e5fb97fc9ca88cbad70a09fee"
+    },
+    {
+      "name": "batch4-first10-evidence01.tar.gz",
+      "bytes": 5028492,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch4-first10-evidence01.tar.gz",
+      "sha256": "74864bcb44251b82dc4d3d38647ad8c4af2f9614271b101c95f9b7be59daf5ad"
+    },
+    {
+      "name": "batch5-private-delivery01.tar.gz",
+      "bytes": 8756320,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch5-private-delivery01.tar.gz",
+      "sha256": "18f6543646d3b42dc491f38a0a7180c05775bf664635ca04b23b39674d20b69c"
+    },
+    {
+      "name": "batch6-private-delivery01.tar.gz",
+      "bytes": 5537824,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch6-private-delivery01.tar.gz",
+      "sha256": "897afbd5f4efefaaa507dd70adc19cf0bcea260281f73da15835b857d844371f"
+    },
+    {
+      "name": "batch7-plan-dedup01.tar.gz",
+      "bytes": 31233,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch7-plan-dedup01.tar.gz",
+      "sha256": "61c0317f486f5222737986f233cc15b21f3dafaf18c5a6c6c67298e4f174271a"
+    },
+    {
+      "name": "batch7-private-delivery01.tar.gz",
+      "bytes": 4283381,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch7-private-delivery01.tar.gz",
+      "sha256": "58a3e48a6f8e11e3002087057ce840e9389df5cb2b6fd7fd9bb94a5f62b1027f"
+    },
+    {
+      "name": "batch8-private-delivery01.tar.gz",
+      "bytes": 1625522,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch8-private-delivery01.tar.gz",
+      "sha256": "cbc7493e6dff8df2703da9bba8bf0be86b76f7afcd1472b1864c20c20b3f7209"
+    },
+    {
+      "name": "batch9-private-delivery01.tar.gz",
+      "bytes": 1594118,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/batch9-private-delivery01.tar.gz",
+      "sha256": "ec06a745f38ce29d4a0a32dae5b8208381930af189b6598b74b5cd3201fe21f9"
+    },
+    {
+      "name": "bool-compiler-fingerprint01.tar.gz",
+      "bytes": 6153,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/bool-compiler-fingerprint01.tar.gz",
+      "sha256": "8e9bcc0ee075467fd3fdde0647f257eb88e1325ba6130743060286ad9dbd461a"
+    },
+    {
+      "name": "contract-output-coverage-correction01.tar.gz",
+      "bytes": 6290,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/contract-output-coverage-correction01.tar.gz",
+      "sha256": "2ef1d2514bf28119db53f3218ac159784c6619dbe316215657520f4e68b69ab2"
+    },
+    {
+      "name": "cpu-mutation-audit01.tar.gz",
+      "bytes": 11884,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/cpu-mutation-audit01.tar.gz",
+      "sha256": "f581190ed79f649ae387562b06f68160071ce1f20504079b2e58ca66a382d425"
+    },
+    {
+      "name": "driver-v1-complete-evidence01.tar.gz",
+      "bytes": 9014118,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/driver-v1-complete-evidence01.tar.gz",
+      "sha256": "6674ba6b0e044ea0379611b6977fa1d1c28e883ceb4b6257a9cf535702e5d64f"
+    },
+    {
+      "name": "driver-v1-protocol-evidence01.tar.gz",
+      "bytes": 74038,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/driver-v1-protocol-evidence01.tar.gz",
+      "sha256": "0ec1c2aa887cf235a7bb52ea779d93d9b3a3291f8e9e5dafe3040f35b0992548"
+    },
+    {
+      "name": "gqa-formal02-plan-batch12-first4.tar.gz",
+      "bytes": 1286118,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/gqa-formal02-plan-batch12-first4.tar.gz",
+      "sha256": "5700ece0adcbda71812f938a74d9a592df844eecbd5bf0a6eb4a5e6813716b8a"
+    },
+    {
+      "name": "guard-board-followup01.tar.gz",
+      "bytes": 1110279,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/guard-board-followup01.tar.gz",
+      "sha256": "8060993a80b80dff3528de9ec86ee0b5f462d71fc0505faff4041241fbe2021d"
+    },
+    {
+      "name": "helper-source-review01.tar.gz",
+      "bytes": 24293,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/helper-source-review01.tar.gz"
+    },
+    {
+      "name": "mean-retry-private-delivery01.tar.gz",
+      "bytes": 1664461,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/mean-retry-private-delivery01.tar.gz",
+      "sha256": "7b845517bc01415162be1580a76c6951af361857a62c1c34754db1109fbf9ca8"
+    },
+    {
+      "name": "mla-prepared-payload02-complete-delivery.tar.gz",
+      "bytes": 46206,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/mla-prepared-payload02-complete-delivery.tar.gz",
+      "sha256": "91d1ed4cf7f5dacb05cb0af2e84d0a94d25aff6c7ffe75dc409e1632929b33cf"
+    },
+    {
+      "name": "mla-prepared-payload02-runner-plan.tar.gz",
+      "bytes": 5576,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/mla-prepared-payload02-runner-plan.tar.gz",
+      "sha256": "aff6d79e302e06870a3f16e44e90d7cd3deb2f473a7f46936316b8c899d0aae4"
+    },
+    {
+      "name": "mla-retry-complete-batch15-plan01.tar.gz",
+      "bytes": 7441053,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/mla-retry-complete-batch15-plan01.tar.gz",
+      "sha256": "19bc008fb79987d799e9fa55cf5195ac097e5b569011d69787c687b6d7a0ea97"
+    },
+    {
+      "name": "mla-varlen-cpu-final-admission01.tar.gz",
+      "bytes": 3689,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/mla-varlen-cpu-final-admission01.tar.gz",
+      "sha256": "7fcc9e9905c0ac0d381625526a6901a1b971067e0bd36cbe223b29081daa3e43"
+    },
+    {
+      "name": "mla-varlen-cpu-prepare-receipts01.tar.gz",
+      "bytes": 4450,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/mla-varlen-cpu-prepare-receipts01.tar.gz",
+      "sha256": "267c633264e425695371bbc2cb0bfa3700fbc25e980eca49fd33faa709cd5984"
+    },
+    {
+      "name": "mla-varlen-timeout-next-proposal01.tar.gz",
+      "bytes": 228335,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/mla-varlen-timeout-next-proposal01.tar.gz",
+      "sha256": "24afdb0008028904eecd57d106c11c9e5b2a9f953498021dca54eb113b4d8938"
+    },
+    {
+      "name": "next8-private-evidence01.tar.gz",
+      "bytes": 4191009,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/next8-private-evidence01.tar.gz",
+      "sha256": "0ddf2e2950fbbc0d096d113603e33416b73ee4f1e52db8ac244c626af31a4b96"
+    },
+    {
+      "name": "nsa-nullable-complete-delivery01.tar.gz",
+      "bytes": 56832,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/nsa-nullable-complete-delivery01.tar.gz",
+      "sha256": "79aaeddb550a8ce6c7f5441cc103a7ac8f7b61cabfb72e5109a3cf2e37d23730"
+    },
+    {
+      "name": "nsa-nullable-execution-plan01.tar.gz",
+      "bytes": 27954,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/nsa-nullable-execution-plan01.tar.gz",
+      "sha256": "035c91a93f4e019f973f35511427d4b6b1ca41d2a84897d1f5e0e683a40a4297"
+    },
+    {
+      "name": "reset-provenance-followup01.tar.gz",
+      "bytes": 4865,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/reset-provenance-followup01.tar.gz",
+      "sha256": "4f4e640150e33cd8ce8d685981bf21a6b515e8a5247d5e4e71c0f5a775b246be"
+    },
+    {
+      "name": "ssd-reset-v2-delivery01.tar.gz",
+      "bytes": 8494570,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/ssd-reset-v2-delivery01.tar.gz",
+      "sha256": "c39f6d1824b5e8ec0f1d44d9e0fce50377ca00172bb055894bd9a7032b7c115c"
+    },
+    {
+      "name": "SSH_PREAUTH_REPRO01.private.json",
+      "bytes": 28753,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/SSH_PREAUTH_REPRO01.private.json",
+      "sha256": "f96beefa7dbd13526f25d8852320a7ad90267926003c2194015686a4d200a5a5"
+    },
+    {
+      "name": "SSH_PREAUTH_ROOT_CAUSE01.json",
+      "bytes": 922,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/SSH_PREAUTH_ROOT_CAUSE01.json",
+      "sha256": "c024687fb5a08a506963a0831455cef31c736431b9321745e8e9377227aa0510"
+    },
+    {
+      "name": "ssm-correctness-followup02.tar.gz",
+      "bytes": 130801,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/ssm-correctness-followup02.tar.gz",
+      "sha256": "b24ca5b4cffe4579755239813f47f357ef9a72a9da69962e81645a4ad7821a02"
+    },
+    {
+      "name": "v2-private-evidence01.tar.gz",
+      "bytes": 2425761,
+      "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/v2-private-evidence01.tar.gz",
+      "sha256": "d2ea7f084bb3a76668ae4b41d3a6bb179a3970661e62eabc5babea0cd02ee1a7"
+    }
+  ]
+}

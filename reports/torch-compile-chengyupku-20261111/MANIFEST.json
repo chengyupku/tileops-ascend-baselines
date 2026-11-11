@@ -16,9 +16,19 @@
       "sha256": "43b49f5e28c878f4f0ac37503930cdd6840a9c111ca631358e6b1d4964dc0a6a"
     },
     {
+      "path": "ATTEMPT_INDEX_CURRENT.json",
+      "bytes": 160909,
+      "sha256": "ed7d523a717eb954589f76cf3d94fca86326e7b0f881ff4440816c6853464acf"
+    },
+    {
       "path": "AUDIT_V2.json",
       "bytes": 118185,
       "sha256": "b458b1014401987286b714dadb680765641b2ecb69adc98e88b9a735af7ce7de"
+    },
+    {
+      "path": "BATCH_OUTCOMES_CURRENT.json",
+      "bytes": 72325,
+      "sha256": "e6a1923b747afa1d04df222d0d8f121de59cf5efe1a670ffb1c150523bb915ee"
     },
     {
       "path": "COMPILED_ARTIFACT_INDEX.json",
@@ -92,18 +102,23 @@
     },
     {
       "path": "OPEN_GAPS.json",
-      "bytes": 2761,
-      "sha256": "cf021689413c57f05aa61d2eb4515b86383f47919bc535c3a7d0a92c60071c2c"
+      "bytes": 5355,
+      "sha256": "9c97e04cac4d431bb3e2045070d1fe3faaeac40f7611f3354f13b3000bc4f1fc"
+    },
+    {
+      "path": "PRIVATE_RAW_INDEX_CURRENT.json",
+      "bytes": 14695,
+      "sha256": "531e12d88640e052241791cfd3f4c5a683f46638e2cff8f1363b4b106b3fcd30"
     },
     {
       "path": "README.txt",
-      "bytes": 2636,
-      "sha256": "f5cde68b82f67981cd6afd962d8736bff1c38da8e823c164b490f94b04bbf79c"
+      "bytes": 1716,
+      "sha256": "0444608292dfff66e54219bcf6a1ef0a3ac2ca3550b71f6afafb1bf708f58bbf"
     },
     {
       "path": "RUNNER_REPRODUCTION.txt",
-      "bytes": 3874,
-      "sha256": "b4d615477b9019d44b4f065ef9b2f7a8ef09c5ce49fe64e1fa7997ddd5e8db95"
+      "bytes": 5221,
+      "sha256": "83821f369997aaae22f2087b6e93d2891650d487f6923c272a9aabd748a766b4"
     },
     {
       "path": "RUNTIME_LIBRARY_HASHES.json",
@@ -114,6 +129,11 @@
       "path": "SOFTMAX_CHECKER_DIAGNOSTIC.json",
       "bytes": 984,
       "sha256": "68dbd3d07f3d023b7ef65789e7445adb5b1d54b5407c36cc5a7761ff9e4142b4"
+    },
+    {
+      "path": "SUMMARY_CURRENT.json",
+      "bytes": 1406,
+      "sha256": "da91e2a64886bccaedd29ce3a6278cb766fa11f31fe366187aa1fa63516d6a3c"
     },
     {
       "path": "V2_FILE_INDEX.json",
@@ -141,9 +161,34 @@
       "sha256": "bacb9b9d94b3fdef7b9b2b81abc68388baca9a6168db0e168761afa7a83d7758"
     },
     {
+      "path": "runner_driver_early_source_v2.py",
+      "bytes": 9625,
+      "sha256": "96f85c58ba0e0b0c8d9fd227a728f50d8f321607671fd7a43e7dde4bd4485560"
+    },
+    {
       "path": "runner_driver_v1.py",
       "bytes": 8509,
       "sha256": "b16d6c2778b67b5c8e98e2d818bee03c73b69a4317d1da4781f2e86e1fcd2e8a"
+    },
+    {
+      "path": "runner_gqa_trace_autograd_formal_v2.py",
+      "bytes": 10144,
+      "sha256": "ed611e7c61b624214ca4400bb12dccd4095da467f0b834db18962e4dbb32b483"
+    },
+    {
+      "path": "runner_mla_prepared_payload_v2.py",
+      "bytes": 11722,
+      "sha256": "bc3bf5723bbd30acc4f1d0cd768e128a967a01986b64dd365f04b609edeb9c07"
+    },
+    {
+      "path": "runner_nsa_state_transfer_v1.py",
+      "bytes": 10234,
+      "sha256": "f048cf426836efd141e1f10dbf081bfd67131bdb9a3ace0d2c10e98ad4cc2dab"
+    },
+    {
+      "path": "runner_nullable_moe_v1.py",
+      "bytes": 11063,
+      "sha256": "716a5fad0de681abbadcecda2c1aa1636366c3bf4476c907b9dd587ec4199ffa"
     },
     {
       "path": "runner_ssd_reset_v2.py",

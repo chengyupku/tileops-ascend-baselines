@@ -1,0 +1,50 @@
+{
+  "as_of_publisher_comment": "https://github.com/yyttt6/agent-hub/issues/3#issuecomment-6804970702",
+  "physical_replayed": {
+    "cases": 108,
+    "formal_length_windows": 3240
+  },
+  "full_output_candidates": {
+    "cases": 107,
+    "formal_length_windows": 3210
+  },
+  "excluded_partial_output": {
+    "op": "DeltaNetChunkFwdOp",
+    "case": "deltanet-1.3b-train-bfloat16",
+    "windows": 30,
+    "checked": [
+      "o"
+    ],
+    "missing": [
+      "h",
+      "Aw",
+      "Au",
+      "w",
+      "u"
+    ],
+    "reason": "Partial(1); raw reference1/1 does not cover6 contract outputs"
+  },
+  "protocols": {
+    "original_FD": {
+      "cases": 34,
+      "windows": 1020
+    },
+    "reservation_driver_v1_including_independent_GQA": {
+      "cases": 74,
+      "windows": 2220
+    }
+  },
+  "independent_GQA_config": {
+    "op": "GQADenseBwdOp",
+    "trace_autograd_ops": true,
+    "cases": 1,
+    "windows": 30,
+    "window_wrappers_without_driver_sample": 20,
+    "original_default_failure_preserved": true
+  },
+  "final_acceptance": false,
+  "merged": false,
+  "scope": "Representative frozen cases, NOT all shapes and NOT every planned operator successful",
+  "pilot_windows": "Excluded from these formal-length counts",
+  "latest_MLAVarlenBwd": "Original600s timeout before compile marker; separate pinned-payload pilot passes eager then fails data-dependent q_len Python range. Zero new windows."
+}

@@ -1,5 +1,5 @@
 {
-  "publisher_protocol_review": "92unique cases/2760 windows independently replayed across separately labeled protocols;final acceptance/merge pending",
+  "publisher_protocol_review": "108cases/3240 physical replay;107/3210 candidates after partial-output exclusion;all pending final acceptance",
   "environment_equivalence": "not established; alternate local profile",
   "wheel_source_hashes": "original torch/torch_npu wheel artifacts unavailable; copied installation provenance only",
   "portable_clean_checkout_runner": "clean-runner03 guard0; two pilot windows independently replayed by publisher; identified existing environment, not new wheel install or formal15-window result",
@@ -7,14 +7,72 @@
   "raw_exchange_channel": "Private Hub Release:complete batch raw,guard,tracebacks and SHA indexes delivered",
   "guard_receipts": "V2 complete receipts and ownership samples added. Add/RMS measurement samples owned; Mul external npu-smi management queries require reviewer assessment; originalV1 missing observations remain unavailable.",
   "first_batch_negative_controls": "V2 each eager/compile complete output replaced with zeros; original checker rejected all6; V1 evidence unchanged",
-  "task_expansion": "Batches3-9 evidence delivered;remaining inventory not fully covered;representative cases are not fullshape completion",
+  "task_expansion": "Ordinary planned contracts progressed through batch16 and scoped diagnostics; plans are not successful/full-shape coverage; low-precision specialist scope excluded",
   "public_sanitization": "V2 process identities mapped to per-attempt opaque IDs; raw remains private",
   "header_identity": "V2 all7096 headers under exact include roots hashed; not an actual compiler include-dependency trace",
   "next_batch_guard": "Add BF16 two external manager-only identities remain unknown and cannot be classed observation-complete qualified baseline; other associations remain sampled identity evidence",
   "failed_cases": "See DRIVER_V1_SUMMARY attempt_failures;SSDRecurrent old numerical failure was state-confounded and has separate reset-v2 success;Mamba2 still fails with fresh inputs;SSDChunkState zero-output admission remains failed",
   "input_mutation": "CPU92case audit detects only SSDRecurrent input5;does not prove NPU-path immutability",
-  "diagnostic_provenance": "OldSSM diagnostics returned before actual_sources;gap preserved.V3 early-source patch prepared but not deployed/measured",
+  "diagnostic_provenance": "Early-source driver deployed frombatch10; historical SSM gaps remain. NSA g_slc transfer eager passed then compile failed. NullableMoE eager tuple/None+3controls passed then compile failed.",
   "driver_v1": "FD scanning disabled,cooperative reservation plus driver queries;not originalfull-FD qualification",
   "reset_v2": "Fixed runner separately validated by2window pilot+30formal windows;CPU output snapshot hashes checked by publisher,independent tensor recheck not claimed",
-  "cpu_mutation_provenance": "92case CPU single-call audit lacks execution-time loaded reference file SHA;publisher verified records/script,not reran references. Gap retained,not retroactively filled."
+  "cpu_mutation_provenance": "92case CPU single-call audit lacks execution-time loaded reference file SHA;publisher verified records/script,not reran references. Gap retained,not retroactively filled.",
+  "output_coverage": {
+    "op": "DeltaNetChunkFwdOp",
+    "case": "deltanet-1.3b-train-bfloat16",
+    "windows": 30,
+    "checked": [
+      "o"
+    ],
+    "missing": [
+      "h",
+      "Aw",
+      "Au",
+      "w",
+      "u"
+    ],
+    "reason": "Partial(1); raw reference1/1 does not cover6 contract outputs"
+  },
+  "independent_GQA": {
+    "op": "GQADenseBwdOp",
+    "trace_autograd_ops": true,
+    "cases": 1,
+    "windows": 30,
+    "window_wrappers_without_driver_sample": 20,
+    "original_default_failure_preserved": true
+  },
+  "latest_MLAVarlenBwd": "Original600s timeout before compile marker; separate pinned-payload pilot passes eager then fails data-dependent q_len Python range. Zero new windows.",
+  "frozen_contract_blockers": [
+    "DeltaNetChunkBwd/GLAChunkBwd input factories require TileOPs forward saved buffers",
+    "DeltaNetFwd/GLAFwd frozen oracle depends on FLA",
+    "GLAChunkFwd Partial(2) lacks full output coverage"
+  ],
+  "failure_groups": [
+    "tensor-content-dependent Python range/branch or symbolic _assert_scalar conversions",
+    "AscendC UINT8/BOOL Output dtype mismatch",
+    "autograd context tracing restriction",
+    "FP8 IndexPut eager runtime unsupported"
+  ],
+  "current_device_work": "No active measurement; compiler/reference fixes need specific verified evidence, no blind repeat",
+  "public_delivery": "Local review preparation only; no new push or merge authorized yet",
+  "raw_index_coverage": {
+    "admission_records": 185,
+    "linked_records": 172,
+    "unlinked_records": [
+      "next-admission01/case0-a2/admission.json",
+      "next-admission01/case1-a2/admission.json",
+      "next-admission01/case2-a1/admission.json",
+      "next-admission01/case3-a1/admission.json",
+      "next-admission01/case4-a1/admission.json",
+      "next-admission01/case5-a1/admission.json",
+      "next-admission01/case6-a2/admission.json",
+      "next-admission01/case8-a1/admission.json",
+      "next-admission01/case9-a1/admission.json",
+      "raw-archive/measure-localflush-case0-a1/admission.json",
+      "raw-archive/measure-localflush-case1-a2/admission.json",
+      "raw-archive/measure-localflush-case2-a3/admission.json",
+      "raw-local/measure-localflush-case0-a1/admission.json"
+    ],
+    "limitation": "These local records have no exact archive-member match in the current index. Historical admission-only and duplicate raw records remain visible; this index is not a claim of complete delivery or additional accepted cases."
+  }
 }
