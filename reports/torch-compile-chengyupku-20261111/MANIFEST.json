@@ -71,19 +71,39 @@
       "sha256": "3b11257c8268e21e813e10a6e03d493e66cba6ebfaf1d5ae77ff2a07108ebaf7"
     },
     {
+      "path": "NEXT_BATCH_SUMMARY.json",
+      "bytes": 19558,
+      "sha256": "b73730bd8e2d4c1af17ad0c5aab5d43d9920b5f6d7c49d7556021d8518f46d78"
+    },
+    {
+      "path": "NEXT_MANAGER_ASSOCIATION.json",
+      "bytes": 5186,
+      "sha256": "9c8dae53b0ba0ee46b17dbc16b789844a8bdd67688bced6790f17bcb0beebd4b"
+    },
+    {
       "path": "OPEN_GAPS.json",
-      "bytes": 1343,
-      "sha256": "489dd9500126789132c5a49e7e77359baaf3c70e107176c5151bd230ce389312"
+      "bytes": 1930,
+      "sha256": "fe144f41c700753afd0525db64d2371c319e0b042b1b08272c0b12ffba6e4607"
     },
     {
       "path": "README.txt",
-      "bytes": 2975,
-      "sha256": "2cd77f4d3fa668d367a3f6bdd4afa31e41cbd97f902f37dedc534c73bfa14e68"
+      "bytes": 1840,
+      "sha256": "3d2bab2cd3246887263bdff8e2b05a09ea80472d140bd98da20a3a8f973a87a3"
+    },
+    {
+      "path": "RUNNER_REPRODUCTION.txt",
+      "bytes": 2464,
+      "sha256": "0ed13e726a4c976bb5a334fbad53cd91521a159c12346a63f3ca02ad172663ce"
     },
     {
       "path": "RUNTIME_LIBRARY_HASHES.json",
       "bytes": 26733,
       "sha256": "5edb55b7787a4b4d015778625d188322504ad1774a8b2525835f5fddbb2511c3"
+    },
+    {
+      "path": "SOFTMAX_CHECKER_DIAGNOSTIC.json",
+      "bytes": 984,
+      "sha256": "68dbd3d07f3d023b7ef65789e7445adb5b1d54b5407c36cc5a7761ff9e4142b4"
     },
     {
       "path": "V2_FILE_INDEX.json",
@@ -107,8 +127,8 @@
     },
     {
       "path": "runner.py",
-      "bytes": 6651,
-      "sha256": "02116c58d998fda1e3519796d5e8589aa28c24311f357f611bba36dab7bb8269"
+      "bytes": 8465,
+      "sha256": "bacb9b9d94b3fdef7b9b2b81abc68388baca9a6168db0e168761afa7a83d7758"
     }
   ]
 }

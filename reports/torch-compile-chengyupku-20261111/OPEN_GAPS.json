@@ -1,13 +1,15 @@
 {
-  "publisher_protocol_review": "pending",
+  "publisher_protocol_review": "First batch protocol and next240 raw replay checked; final acceptance/merge still pending",
   "environment_equivalence": "not established; alternate local profile",
   "wheel_source_hashes": "original torch/torch_npu wheel artifacts unavailable; copied installation provenance only",
-  "portable_clean_checkout_runner": "Parameterised draft created; --help/static compilation passed without torch/device imports; clean checkout end-to-end not yet validated",
+  "portable_clean_checkout_runner": "clean-runner03 guard0; two pilot windows independently replayed by publisher; identified existing environment, not new wheel install or formal15-window result",
   "compiled_graph_artifact_index": "40 cache artifacts indexed by size/SHA and matched to measured task names across3cases; historical load-time binding not proven",
-  "raw_exchange_channel": "not agreed; raw retained locally",
+  "raw_exchange_channel": "Resolved: authenticated private Hub Release; publisher downloaded and independently replayed selected90 + next240 windows",
   "guard_receipts": "V2 complete receipts and ownership samples added. Add/RMS measurement samples owned; Mul external npu-smi management queries require reviewer assessment; originalV1 missing observations remain unavailable.",
   "first_batch_negative_controls": "V2 each eager/compile complete output replaced with zeros; original checker rejected all6; V1 evidence unchanged",
-  "task_expansion": "next9 performance cases prepared but waiting first-batch protocol review",
+  "task_expansion": "Third batch12 new ordinary op cases running; exclude quant/INT8/FP8 and existing high-speedup attribution tasks",
   "public_sanitization": "V2 process identities mapped to per-attempt opaque IDs; raw remains private",
-  "header_identity": "V2 all7096 headers under exact include roots hashed; not an actual compiler include-dependency trace"
+  "header_identity": "V2 all7096 headers under exact include roots hashed; not an actual compiler include-dependency trace",
+  "next_batch_guard": "Add BF16 two external manager-only identities remain unknown and cannot be classed observation-complete qualified baseline; other associations remain sampled identity evidence",
+  "failed_cases": "All compile FLOAT->BOOL backend dtype validation failure; Softmax checker-admission failure; neither has valid compile performance"
 }

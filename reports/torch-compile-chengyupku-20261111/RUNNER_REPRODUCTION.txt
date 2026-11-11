@@ -1,0 +1,15 @@
+Reusable audited runner: clean source and cache pilot
+
+Scope: new frozen source checkout and fresh compiler caches using the already identified isolated environment. This is not a reconstruction of original wheels, not historical-stack equivalence, and not a formal 15-window performance result.
+
+1. Check out baseline repository commit 7a3647d83754f155a0cc179379558c893958a1cc into CHECKOUT. Verify source identities before use.
+2. Choose a fresh WORK directory. Set WORK/frozen to CHECKOUT/reports/torch-v010-20261106. Supply CLAIM.planned.json (first batch), runner_audited_portable.py and the observation wrapper separately.
+3. Activate the recorded isolated Python3.12/Torch2.13/torch_npu2.13rc1 CANN9.1 environment. Retain the documented backend, compiler and library configuration. Set fresh TMPDIR, TORCHINDUCTOR_CACHE_DIR, ASCEND_CACHE_PATH and TILELANG_CACHE_DIR under WORK. Do not reuse old generated kernels.
+4. Provide the separately qualified flush binary+loader through FLUSH_DIR; expected flush.aibin SHA256 is 693be2fb78b6c749ec2afee81e1ed3d8c0de58ea3397daaeaeef06588cc2e865. Its build uses CANN9.2 20261015 ARM64 and is not byte-identical to the historical publisher build.
+5. Set GUARD_AUDIT_DIR to a new directory. Invoke the original host guard through the observation wrapper (which preserves decisions):
+   python GUARD_WRAPPER run --owner agent-hub/clean-source-validation --wait 30 --timeout 600 -- python RUNNER --root WORK --claim CLAIM --index 0 --output WORK/result --windows 1 --guard-lock HOST_LOCK --flush-dir FLUSH_DIR --flush-sha256 EXPECTED_SHA --flush-build-label BUILD_ID
+   Replace uppercase placeholders with deployment paths and identifiers. Never bypass the host lock, original guard, or negative control.
+6. Require guard receipt exit0 in addition to result status. Check complete timed outputs, rejected negative controls, unchanged graph counters, source file/body hashes, full 1GiB flush validation, and original full32 parser replay of retained raw profiles.
+
+Actual validation: clean-runner03; AddFwdOp linear-bias-float16; eager and compile one window each; guard0; both full outputs checked; zero-output controls rejected; two windows independently replayed in CLEAN_RUNNER_REPLAY03.json. Not counted among formal 15-window measurements.
+Previous attempts retained: clean-runner01 missing claim input; clean-runner02 guard78 on unreadable process at shutdown, therefore invalid despite completed inner measurement.

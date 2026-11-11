@@ -1,0 +1,35 @@
+{
+  "op": "SoftmaxFwdOp",
+  "case": "lm-head-bfloat16",
+  "shape": [
+    4,
+    102400
+  ],
+  "dtype": "torch.bfloat16",
+  "expected_max_abs": 0.0006256103515625,
+  "expected_min": 6.007030606269836e-08,
+  "row_sums": [
+    0.9999591708183289,
+    0.9999644160270691,
+    1.0000038146972656,
+    1.0000559091567993
+  ],
+  "verification_repr": "Exact(rtol=0.016, atol=0.016, controls=(), normalized=None, kind='exact')",
+  "zero_accepted": true,
+  "checked_outputs": 1,
+  "tolerance": {
+    "rtol": 0.016,
+    "atol": 0.016
+  },
+  "verification_kind": "exact",
+  "sources": {
+    "reference": {
+      "file_sha256": "1e9bc66a4ddf3035d7710bba28628a91aaf9ee5283b88746dd9bb911ee1167ec",
+      "body_sha256": "42f0627b33bd3efabf89565d7622088ee97c499174f3b6c5c81a9aabea172557"
+    },
+    "checker": {
+      "file_sha256": "5ef5d5495ec8ffd783d72c58e5e9d95c17506e17865e768bcc0e50a02c72c493",
+      "body_sha256": "eff52e4ff4cee0c6da1e77b59127fbcbbe82757df8cea0e43e005b16d8734b1f"
+    }
+  }
+}

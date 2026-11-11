@@ -1,0 +1,196 @@
+[
+  {
+    "case_index": 0,
+    "process_label": "case0-external1",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [],
+    "nearest_sample_inventory_gap_ms": null,
+    "classification": "unknown"
+  },
+  {
+    "case_index": 0,
+    "process_label": "case0-external2",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [],
+    "nearest_sample_inventory_gap_ms": null,
+    "classification": "unknown"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external3",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 31.5468,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external4",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 29.44282,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external5",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 50.02129,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external6",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 58.15144,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external7",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 81.44369,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external8",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 64.43282,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external9",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 77.56247,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external10",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 55.09993,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external11",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 45.89164,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external12",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 27.32236,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external13",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 36.95504,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external14",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 5.3181,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external15",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 106.93195,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 4,
+    "process_label": "case4-external16",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 105.31872,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 6,
+    "process_label": "case6-external17",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 309.52724,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  },
+  {
+    "case_index": 8,
+    "process_label": "case8-external18",
+    "sample_count": 1,
+    "match_basis": "pid + start_ticks",
+    "names": [
+      "npu-smi"
+    ],
+    "nearest_sample_inventory_gap_ms": 320.03629,
+    "classification": "associated_process_name_not_absolute_no_contention"
+  }
+]

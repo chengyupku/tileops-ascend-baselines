@@ -1,0 +1,530 @@
+{
+  "environment": "alternate; not historical same stack",
+  "selected_cases": 9,
+  "measured_candidates": 8,
+  "failed_admission": 1,
+  "raw_windows_replayed": 240,
+  "rows": [
+    {
+      "op": "AddFwdOp",
+      "case": "linear-bias-bfloat16",
+      "status": "measured_pending_guard_and_environment_acceptance",
+      "contract_sha256": "1ebdde35a3b767d90ad2b6c5b93cab029f5b8e00a493181cbc14daca33a2cff6",
+      "admission_status": "pending publisher final acceptance",
+      "observation_status": "unknown external manager-only identities; not qualified as observation-complete baseline",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 23.767466666666667
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 5.497
+        }
+      },
+      "timed_checks": {
+        "eager": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        },
+        "compile": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        }
+      },
+      "negative_controls": {
+        "eager": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        },
+        "compile": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        }
+      },
+      "sources": {
+        "reference": {
+          "frozen_relative_path": "source/workloads/elementwise.py",
+          "file_sha256": "cc31a1b67cb666c5747ecf8c97a76c91bc582042478534a555e6c2dfaef42557",
+          "body_sha256": "f0c880195eebfbd588e096273f2015fc78c860faefea7091ab37de828d573c0c"
+        },
+        "checker": {
+          "frozen_relative_path": "source/workloads/numerics.py",
+          "file_sha256": "5ef5d5495ec8ffd783d72c58e5e9d95c17506e17865e768bcc0e50a02c72c493",
+          "body_sha256": "eff52e4ff4cee0c6da1e77b59127fbcbbe82757df8cea0e43e005b16d8734b1f"
+        },
+        "measure_core": {
+          "frozen_relative_path": "tools/measure_baselines.py",
+          "file_sha256": "39e9973489069562543aed004f7381adbe6418be7313c3d9ce3cff53caa9127a",
+          "body_sha256": "ecbbc084e6f06c06ee304d093d4d267aeec90cfb378f9ee443a8317429f7d734"
+        },
+        "parser": {
+          "frozen_relative_path": "tools/kernel_task_profile_full32.py",
+          "file_sha256": "d745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753",
+          "body_sha256": "de196ceacf15cb15df22a2adca14dda2f89c4f438e6c931a4fc4f0dd7ff400f6"
+        }
+      }
+    },
+    {
+      "op": "MulFwdOp",
+      "case": "linear-bias-bfloat16",
+      "status": "measured_pending_guard_and_environment_acceptance",
+      "contract_sha256": "3dac7a3ad57060c66a25f4385f8b3ddfc1a4d0972133fe86f35c9851065bd005",
+      "admission_status": "pending publisher final acceptance",
+      "observation_status": "sampling limitations retained; not absolute no contention",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 23.6588
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 5.528066666666666
+        }
+      },
+      "timed_checks": {
+        "eager": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        },
+        "compile": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        }
+      },
+      "negative_controls": {
+        "eager": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        },
+        "compile": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        }
+      },
+      "sources": {
+        "reference": {
+          "frozen_relative_path": "source/workloads/elementwise.py",
+          "file_sha256": "cc31a1b67cb666c5747ecf8c97a76c91bc582042478534a555e6c2dfaef42557",
+          "body_sha256": "f0c880195eebfbd588e096273f2015fc78c860faefea7091ab37de828d573c0c"
+        },
+        "checker": {
+          "frozen_relative_path": "source/workloads/numerics.py",
+          "file_sha256": "5ef5d5495ec8ffd783d72c58e5e9d95c17506e17865e768bcc0e50a02c72c493",
+          "body_sha256": "eff52e4ff4cee0c6da1e77b59127fbcbbe82757df8cea0e43e005b16d8734b1f"
+        },
+        "measure_core": {
+          "frozen_relative_path": "tools/measure_baselines.py",
+          "file_sha256": "39e9973489069562543aed004f7381adbe6418be7313c3d9ce3cff53caa9127a",
+          "body_sha256": "ecbbc084e6f06c06ee304d093d4d267aeec90cfb378f9ee443a8317429f7d734"
+        },
+        "parser": {
+          "frozen_relative_path": "tools/kernel_task_profile_full32.py",
+          "file_sha256": "d745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753",
+          "body_sha256": "de196ceacf15cb15df22a2adca14dda2f89c4f438e6c931a4fc4f0dd7ff400f6"
+        }
+      }
+    },
+    {
+      "op": "RMSNormFwdOp",
+      "case": "llama-70b-decode-bfloat16",
+      "status": "measured_pending_guard_and_environment_acceptance",
+      "contract_sha256": "5c90631efc4773e9930e26eef4b0b8ff49496003a76f12c58493bf492c8e9534",
+      "admission_status": "pending publisher final acceptance",
+      "observation_status": "sampling limitations retained; not absolute no contention",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 18.375066666666665
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 3.9008000000000003
+        }
+      },
+      "timed_checks": {
+        "eager": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        },
+        "compile": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        }
+      },
+      "negative_controls": {
+        "eager": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        },
+        "compile": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        }
+      },
+      "sources": {
+        "reference": {
+          "frozen_relative_path": "source/workloads/norm.py",
+          "file_sha256": "57e3daa0d76e69df1a274a5ce56b8b18309105e9dbbef5af48fa14c944e5d408",
+          "body_sha256": "32efb9baab31e75fc0e39c94eb413743ffec4b26b90fa501608e67a4beef55f9"
+        },
+        "checker": {
+          "frozen_relative_path": "source/workloads/numerics.py",
+          "file_sha256": "5ef5d5495ec8ffd783d72c58e5e9d95c17506e17865e768bcc0e50a02c72c493",
+          "body_sha256": "eff52e4ff4cee0c6da1e77b59127fbcbbe82757df8cea0e43e005b16d8734b1f"
+        },
+        "measure_core": {
+          "frozen_relative_path": "tools/measure_baselines.py",
+          "file_sha256": "39e9973489069562543aed004f7381adbe6418be7313c3d9ce3cff53caa9127a",
+          "body_sha256": "ecbbc084e6f06c06ee304d093d4d267aeec90cfb378f9ee443a8317429f7d734"
+        },
+        "parser": {
+          "frozen_relative_path": "tools/kernel_task_profile_full32.py",
+          "file_sha256": "d745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753",
+          "body_sha256": "de196ceacf15cb15df22a2adca14dda2f89c4f438e6c931a4fc4f0dd7ff400f6"
+        }
+      }
+    },
+    {
+      "op": "AdaLayerNormZeroFwdOp",
+      "case": "dit-xl-2-bfloat16",
+      "status": "measured_pending_guard_and_environment_acceptance",
+      "contract_sha256": "de0767f48636224105e924af7f6033eb5ae332814235e8cc7fac16bc9c387c69",
+      "admission_status": "pending publisher final acceptance",
+      "observation_status": "sampling limitations retained; not absolute no contention",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 44.636
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 14.389333333333333
+        }
+      },
+      "timed_checks": {
+        "eager": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0078125,
+          "unchecked_reason": null
+        },
+        "compile": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0078125,
+          "unchecked_reason": null
+        }
+      },
+      "negative_controls": {
+        "eager": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        },
+        "compile": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        }
+      },
+      "sources": {
+        "reference": {
+          "frozen_relative_path": "source/workloads/norm.py",
+          "file_sha256": "57e3daa0d76e69df1a274a5ce56b8b18309105e9dbbef5af48fa14c944e5d408",
+          "body_sha256": "32efb9baab31e75fc0e39c94eb413743ffec4b26b90fa501608e67a4beef55f9"
+        },
+        "checker": {
+          "frozen_relative_path": "source/workloads/numerics.py",
+          "file_sha256": "5ef5d5495ec8ffd783d72c58e5e9d95c17506e17865e768bcc0e50a02c72c493",
+          "body_sha256": "eff52e4ff4cee0c6da1e77b59127fbcbbe82757df8cea0e43e005b16d8734b1f"
+        },
+        "measure_core": {
+          "frozen_relative_path": "tools/measure_baselines.py",
+          "file_sha256": "39e9973489069562543aed004f7381adbe6418be7313c3d9ce3cff53caa9127a",
+          "body_sha256": "ecbbc084e6f06c06ee304d093d4d267aeec90cfb378f9ee443a8317429f7d734"
+        },
+        "parser": {
+          "frozen_relative_path": "tools/kernel_task_profile_full32.py",
+          "file_sha256": "d745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753",
+          "body_sha256": "de196ceacf15cb15df22a2adca14dda2f89c4f438e6c931a4fc4f0dd7ff400f6"
+        }
+      }
+    },
+    {
+      "op": "AdaptiveMaxPool2dFwdOp",
+      "case": "nondiv-7x7-bfloat16",
+      "status": "measured_pending_guard_and_environment_acceptance",
+      "contract_sha256": "ecd6427ab7df98d0622beb5e6c5df41f269d0a61c86b53c0d61117f9d9910bd8",
+      "admission_status": "pending publisher final acceptance",
+      "observation_status": "sampling limitations retained; not absolute no contention",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 21.7602
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 21.7626
+        }
+      },
+      "timed_checks": {
+        "eager": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        },
+        "compile": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        }
+      },
+      "negative_controls": {
+        "eager": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        },
+        "compile": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        }
+      },
+      "sources": {
+        "reference": {
+          "frozen_relative_path": "source/workloads/pool.py",
+          "file_sha256": "09cb072ef74a789e7cd2337d138e4c3c32d8c50e678da308d3860d6ae1e7aa71",
+          "body_sha256": "1d05230a5a1663faa621912be1dd0019a27007cc0201d074b99c3bd243592d58"
+        },
+        "checker": {
+          "frozen_relative_path": "source/workloads/numerics.py",
+          "file_sha256": "5ef5d5495ec8ffd783d72c58e5e9d95c17506e17865e768bcc0e50a02c72c493",
+          "body_sha256": "eff52e4ff4cee0c6da1e77b59127fbcbbe82757df8cea0e43e005b16d8734b1f"
+        },
+        "measure_core": {
+          "frozen_relative_path": "tools/measure_baselines.py",
+          "file_sha256": "39e9973489069562543aed004f7381adbe6418be7313c3d9ce3cff53caa9127a",
+          "body_sha256": "ecbbc084e6f06c06ee304d093d4d267aeec90cfb378f9ee443a8317429f7d734"
+        },
+        "parser": {
+          "frozen_relative_path": "tools/kernel_task_profile_full32.py",
+          "file_sha256": "d745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753",
+          "body_sha256": "de196ceacf15cb15df22a2adca14dda2f89c4f438e6c931a4fc4f0dd7ff400f6"
+        }
+      }
+    },
+    {
+      "op": "AdaptiveMaxPool2dIndicesFwdOp",
+      "case": "nondiv-7x7-bfloat16",
+      "status": "measured_pending_guard_and_environment_acceptance",
+      "contract_sha256": "80a6b7915d97617bfaddfbee4062004b195305cfcdf1eb74192c4d999cb6d618",
+      "admission_status": "pending publisher final acceptance",
+      "observation_status": "sampling limitations retained; not absolute no contention",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 21.8382
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 21.846733333333333
+        }
+      },
+      "timed_checks": {
+        "eager": {
+          "checked_outputs": 2,
+          "total_outputs": 2,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        },
+        "compile": {
+          "checked_outputs": 2,
+          "total_outputs": 2,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        }
+      },
+      "negative_controls": {
+        "eager": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        },
+        "compile": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        }
+      },
+      "sources": {
+        "reference": {
+          "frozen_relative_path": "source/workloads/pool.py",
+          "file_sha256": "09cb072ef74a789e7cd2337d138e4c3c32d8c50e678da308d3860d6ae1e7aa71",
+          "body_sha256": "1d05230a5a1663faa621912be1dd0019a27007cc0201d074b99c3bd243592d58"
+        },
+        "checker": {
+          "frozen_relative_path": "source/workloads/numerics.py",
+          "file_sha256": "5ef5d5495ec8ffd783d72c58e5e9d95c17506e17865e768bcc0e50a02c72c493",
+          "body_sha256": "eff52e4ff4cee0c6da1e77b59127fbcbbe82757df8cea0e43e005b16d8734b1f"
+        },
+        "measure_core": {
+          "frozen_relative_path": "tools/measure_baselines.py",
+          "file_sha256": "39e9973489069562543aed004f7381adbe6418be7313c3d9ce3cff53caa9127a",
+          "body_sha256": "ecbbc084e6f06c06ee304d093d4d267aeec90cfb378f9ee443a8317429f7d734"
+        },
+        "parser": {
+          "frozen_relative_path": "tools/kernel_task_profile_full32.py",
+          "file_sha256": "d745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753",
+          "body_sha256": "de196ceacf15cb15df22a2adca14dda2f89c4f438e6c931a4fc4f0dd7ff400f6"
+        }
+      }
+    },
+    {
+      "op": "AlibiFwdOp",
+      "case": "mpt-7b-2k-bfloat16",
+      "status": "measured_pending_guard_and_environment_acceptance",
+      "contract_sha256": "2c2747edbba8b02fad5bd5a4e0bfd3e68fa16d7ba97fc6f9d20169e8ea6a424b",
+      "admission_status": "pending publisher final acceptance",
+      "observation_status": "sampling limitations retained; not absolute no contention",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 445.89466666666664
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 1001.7393999999999
+        }
+      },
+      "timed_checks": {
+        "eager": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        },
+        "compile": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        }
+      },
+      "negative_controls": {
+        "eager": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        },
+        "compile": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        }
+      },
+      "sources": {
+        "reference": {
+          "frozen_relative_path": "source/workloads/elementwise.py",
+          "file_sha256": "cc31a1b67cb666c5747ecf8c97a76c91bc582042478534a555e6c2dfaef42557",
+          "body_sha256": "f0c880195eebfbd588e096273f2015fc78c860faefea7091ab37de828d573c0c"
+        },
+        "checker": {
+          "frozen_relative_path": "source/workloads/numerics.py",
+          "file_sha256": "5ef5d5495ec8ffd783d72c58e5e9d95c17506e17865e768bcc0e50a02c72c493",
+          "body_sha256": "eff52e4ff4cee0c6da1e77b59127fbcbbe82757df8cea0e43e005b16d8734b1f"
+        },
+        "measure_core": {
+          "frozen_relative_path": "tools/measure_baselines.py",
+          "file_sha256": "39e9973489069562543aed004f7381adbe6418be7313c3d9ce3cff53caa9127a",
+          "body_sha256": "ecbbc084e6f06c06ee304d093d4d267aeec90cfb378f9ee443a8317429f7d734"
+        },
+        "parser": {
+          "frozen_relative_path": "tools/kernel_task_profile_full32.py",
+          "file_sha256": "d745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753",
+          "body_sha256": "de196ceacf15cb15df22a2adca14dda2f89c4f438e6c931a4fc4f0dd7ff400f6"
+        }
+      }
+    },
+    {
+      "op": "LayerNormFwdOp",
+      "case": "llama-70b-decode-bfloat16",
+      "status": "measured_pending_guard_and_environment_acceptance",
+      "contract_sha256": "e3bd46ab9ceea78dbacf17274127d3e220efac3b5ef7ce0d60f991519b9626cf",
+      "admission_status": "pending publisher final acceptance",
+      "observation_status": "sampling limitations retained; not absolute no contention",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 10.128066666666667
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 10.804666666666666
+        }
+      },
+      "timed_checks": {
+        "eager": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        },
+        "compile": {
+          "checked_outputs": 1,
+          "total_outputs": 1,
+          "max_abs_err": 0.0,
+          "unchecked_reason": null
+        }
+      },
+      "negative_controls": {
+        "eager": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        },
+        "compile": {
+          "complete_output_zeroed": true,
+          "rejected": true
+        }
+      },
+      "sources": {
+        "reference": {
+          "frozen_relative_path": "source/workloads/norm.py",
+          "file_sha256": "57e3daa0d76e69df1a274a5ce56b8b18309105e9dbbef5af48fa14c944e5d408",
+          "body_sha256": "32efb9baab31e75fc0e39c94eb413743ffec4b26b90fa501608e67a4beef55f9"
+        },
+        "checker": {
+          "frozen_relative_path": "source/workloads/numerics.py",
+          "file_sha256": "5ef5d5495ec8ffd783d72c58e5e9d95c17506e17865e768bcc0e50a02c72c493",
+          "body_sha256": "eff52e4ff4cee0c6da1e77b59127fbcbbe82757df8cea0e43e005b16d8734b1f"
+        },
+        "measure_core": {
+          "frozen_relative_path": "tools/measure_baselines.py",
+          "file_sha256": "39e9973489069562543aed004f7381adbe6418be7313c3d9ce3cff53caa9127a",
+          "body_sha256": "ecbbc084e6f06c06ee304d093d4d267aeec90cfb378f9ee443a8317429f7d734"
+        },
+        "parser": {
+          "frozen_relative_path": "tools/kernel_task_profile_full32.py",
+          "file_sha256": "d745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753",
+          "body_sha256": "de196ceacf15cb15df22a2adca14dda2f89c4f438e6c931a4fc4f0dd7ff400f6"
+        }
+      }
+    },
+    {
+      "op": "SoftmaxFwdOp",
+      "case": "lm-head-bfloat16",
+      "status": "failed",
+      "contract_sha256": "b78de0cd2b2fbc2ef5cbd20c0fa9a930b7e7ca35a982116bc4bf14dfe9b32281",
+      "admission_status": "pending publisher final acceptance",
+      "observation_status": "sampling limitations retained; not absolute no contention",
+      "failure": "Frozen checker accepts complete zero output; no performance measurement"
+    }
+  ]
+}
