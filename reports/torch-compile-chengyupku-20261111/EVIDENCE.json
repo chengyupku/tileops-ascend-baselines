@@ -1,0 +1,12 @@
+{
+  "archive_url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/torch-compile-pr1-report-snapshot-15ed528.tar.gz",
+  "access": "Requires access to the private yyttt6/agent-hub repository; not needed to run pipeline code",
+  "sha256": "aa61b8c95284dc31eb3f751b48047447f2e0b9db1b3bef66aeb91dbbc31fdfb5",
+  "bytes": 625076,
+  "source_commit": "15ed528fc98001c6081fbc5b32594f73fff5cc75",
+  "report_files": 50,
+  "member_hash_manifest": "FILES.json",
+  "report_directory": "report/",
+  "contains": "All original report files, including historical runner sources, measurement detail, failures, audit records, and underlying raw-asset indexes",
+  "pipeline_evidence": "https://github.com/yyttt6/agent-hub/issues/3#issuecomment-6819992737"
+}

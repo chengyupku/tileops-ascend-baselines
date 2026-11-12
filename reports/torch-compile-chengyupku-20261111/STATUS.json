@@ -40,5 +40,5 @@
   },
   "final_acceptance": false,
   "coverage": "Representative unique contracts, not full shape/op coverage; alternate environment and driver-only observation limitations remain",
-  "queue_snapshot": "15/32 formal diagnostic04 completed at status check, only first10 independently reviewed; not live status"
+  "snapshot_scope": "Historical reviewed report snapshot, not live progress. Later work is tracked in agent-hub issue #3."
 }
