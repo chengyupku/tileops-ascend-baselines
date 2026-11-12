@@ -71,6 +71,11 @@
       "sha256": "5092e572a30e3b98159902c6734eb878061ec1be3517f97914635147ac1963c8"
     },
     {
+      "path": "INDEX_SUPPLEMENT_REVIEWED.json",
+      "bytes": 17705,
+      "sha256": "6f68d79aa3b22d84b6bb6e26de9fe2e89f54f2d4ce8e2c7bda61ea5363737871"
+    },
+    {
       "path": "INPUT_MUTATION_AUDIT.json",
       "bytes": 935,
       "sha256": "8a1ea3eb44aa7223da6478a270e52c1e121091fcb635a6d26dbd3247d208e6e3"
@@ -102,8 +107,8 @@
     },
     {
       "path": "OPEN_GAPS.json",
-      "bytes": 5355,
-      "sha256": "9c97e04cac4d431bb3e2045070d1fe3faaeac40f7611f3354f13b3000bc4f1fc"
+      "bytes": 5719,
+      "sha256": "549259d1665a8897aae8818c59c4cdccac6d554939f81af5b5d4637adc581b55"
     },
     {
       "path": "PRIVATE_RAW_INDEX_CURRENT.json",
@@ -112,13 +117,13 @@
     },
     {
       "path": "README.txt",
-      "bytes": 1716,
-      "sha256": "0444608292dfff66e54219bcf6a1ef0a3ac2ca3550b71f6afafb1bf708f58bbf"
+      "bytes": 2071,
+      "sha256": "b0dc6d9d477cb40cc27d301a2655fd837f0b95ef26606e4bfba65727dcc48b74"
     },
     {
       "path": "RUNNER_REPRODUCTION.txt",
-      "bytes": 5221,
-      "sha256": "83821f369997aaae22f2087b6e93d2891650d487f6923c272a9aabd748a766b4"
+      "bytes": 5497,
+      "sha256": "9171e75fa2fd303a4f5195a491d84a8a36d676dc408b33203d939d40e9a48d2d"
     },
     {
       "path": "RUNTIME_LIBRARY_HASHES.json",

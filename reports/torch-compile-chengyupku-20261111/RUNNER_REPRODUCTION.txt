@@ -28,3 +28,5 @@ runner_driver_early_source_v2.py is the actual general runner used frombatch10. 
 Invocation template (requires documented frozen checkout, existing validated environment and guard tooling in WORK_ROOT):
 python "$WORK_ROOT/guard_audit_driver_v1.py" run --owner OWNER --wait 600 --timeout 600 -- python runner_driver_early_source_v2.py --root "$WORK_ROOT" --claim "$CLAIM_PATH" --index CASE_INDEX --windows 15 --output "$NEW_OUTPUT_PATH"
 Use1 window for the reviewed NSA/pinned-payload pilot. The pinned-payload runner additionally requires --cpu-proof "$PROOF_PATH" --cpu-payload "$PAYLOAD_PATH"; it validates fixed SHA values. Do not substitute these attempts for historical original runs. MLA Dense backward retry used a separately labeled1800s guard limit and may reuse compilation cache. No blind reproduction on occupied devices.
+
+Exact tool file names, SHA256 and private archive members: INDEX_SUPPLEMENT_REVIEWED.json/reproduction_tools and reproduction_mapping. Preserve the distinction between historical full-FD and reservation-driver-v1. Source snapshots do not replace execution identity receipts.

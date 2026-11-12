@@ -1,0 +1,436 @@
+{
+  "responds_to": "6805267505",
+  "public_commit_unchanged": "4fd2a5d",
+  "helper_asset": {
+    "name": "helper-source-review01.tar.gz",
+    "bytes": 24293,
+    "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/helper-source-review01.tar.gz",
+    "sha256": "ccab6c23a7c98a1402aacd06b44983f0cd57675406f20fe6f066d8275818d9e4"
+  },
+  "historical_unlinked_records": [
+    {
+      "record": "next-admission01/case0-a2/admission.json",
+      "op": "AddFwdOp",
+      "case": "linear-bias-bfloat16",
+      "contract_sha256": "1ebdde35a3b767d90ad2b6c5b93cab029f5b8e00a493181cbc14daca33a2cff6",
+      "phase": "finished",
+      "status": "passed",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 0,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/next-admission01/case0-a2/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "12380ec2bf9a39b0c8907d5b6eb7e01eb1c0fd89cb36bf5d348e0fe54d52ff0f"
+    },
+    {
+      "record": "next-admission01/case1-a2/admission.json",
+      "op": "MulFwdOp",
+      "case": "linear-bias-bfloat16",
+      "contract_sha256": "3dac7a3ad57060c66a25f4385f8b3ddfc1a4d0972133fe86f35c9851065bd005",
+      "phase": "finished",
+      "status": "passed",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 0,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/next-admission01/case1-a2/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "9d02a996f84f283f567af546746ff3bd7b0689ae8e05745664261009f34ca40a"
+    },
+    {
+      "record": "next-admission01/case2-a1/admission.json",
+      "op": "RMSNormFwdOp",
+      "case": "llama-70b-decode-bfloat16",
+      "contract_sha256": "5c90631efc4773e9930e26eef4b0b8ff49496003a76f12c58493bf492c8e9534",
+      "phase": "finished",
+      "status": "passed",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 0,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/next-admission01/case2-a1/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "6e919acdde681097a96aacbe2bfcbc0cf2b5300100d80e023cf0c525a5c7c753"
+    },
+    {
+      "record": "next-admission01/case3-a1/admission.json",
+      "op": "AdaLayerNormZeroFwdOp",
+      "case": "dit-xl-2-bfloat16",
+      "contract_sha256": "de0767f48636224105e924af7f6033eb5ae332814235e8cc7fac16bc9c387c69",
+      "phase": "finished",
+      "status": "passed",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 0,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/next-admission01/case3-a1/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "869e2a2d7047eeb1c5879bee515ea7302789e6b479dc01fe00d85f9b15218b80"
+    },
+    {
+      "record": "next-admission01/case4-a1/admission.json",
+      "op": "AdaptiveMaxPool2dFwdOp",
+      "case": "nondiv-7x7-bfloat16",
+      "contract_sha256": "ecd6427ab7df98d0622beb5e6c5df41f269d0a61c86b53c0d61117f9d9910bd8",
+      "phase": "finished",
+      "status": "passed",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 0,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/next-admission01/case4-a1/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "48888836ffdedd8098ebdfe8004507d1643b38dae91f35572edb47b726f2003c"
+    },
+    {
+      "record": "next-admission01/case5-a1/admission.json",
+      "op": "AdaptiveMaxPool2dIndicesFwdOp",
+      "case": "nondiv-7x7-bfloat16",
+      "contract_sha256": "80a6b7915d97617bfaddfbee4062004b195305cfcdf1eb74192c4d999cb6d618",
+      "phase": "finished",
+      "status": "passed",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 0,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/next-admission01/case5-a1/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "e3e46d4c2086020e38159364fa8b67555ebcd3e24b66f6af2074e31dad388d58"
+    },
+    {
+      "record": "next-admission01/case6-a2/admission.json",
+      "op": "AlibiFwdOp",
+      "case": "mpt-7b-2k-bfloat16",
+      "contract_sha256": "2c2747edbba8b02fad5bd5a4e0bfd3e68fa16d7ba97fc6f9d20169e8ea6a424b",
+      "phase": "finished",
+      "status": "passed",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 0,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/next-admission01/case6-a2/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "095cda3319505130e962e9d74ba4634d46b3566bda22941c075b08ff3b85b490"
+    },
+    {
+      "record": "next-admission01/case8-a1/admission.json",
+      "op": "LayerNormFwdOp",
+      "case": "llama-70b-decode-bfloat16",
+      "contract_sha256": "e3bd46ab9ceea78dbacf17274127d3e220efac3b5ef7ce0d60f991519b9626cf",
+      "phase": "finished",
+      "status": "passed",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 0,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/next-admission01/case8-a1/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "8967eb07ff66492af9b666cab4ef72ee0d6356849d812cb973733219baec86b1"
+    },
+    {
+      "record": "next-admission01/case9-a1/admission.json",
+      "op": "SoftmaxFwdOp",
+      "case": "lm-head-bfloat16",
+      "contract_sha256": "b78de0cd2b2fbc2ef5cbd20c0fa9a930b7e7ca35a982116bc4bf14dfe9b32281",
+      "phase": "finished",
+      "status": "passed",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 0,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/next-admission01/case9-a1/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "777b9e1dc24643dcf9b157cc6f05f1f3d40d8dc0bc64e0130ba5b6e650c81db7"
+    },
+    {
+      "record": "raw-archive/measure-localflush-case0-a1/admission.json",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "contract_sha256": "3962c183bfecd7f32727380ff0cc3f2c0dd831f2d3aecd53d1e5bf3299da868d",
+      "phase": "finished",
+      "status": "measured_pending_guard_and_environment_acceptance",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 30,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/raw-archive/measure-localflush-case0-a1/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "758d059f74c1b79011e7b02b868657fdd5b5986060b9da73554bfbafa8979349"
+    },
+    {
+      "record": "raw-archive/measure-localflush-case1-a2/admission.json",
+      "op": "MulFwdOp",
+      "case": "linear-bias-float16",
+      "contract_sha256": "43d6c4558e598850a7ff14b6d4dc30d147024d85c04058c72af4c4f71e9e587e",
+      "phase": "finished",
+      "status": "measured_pending_guard_and_environment_acceptance",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 30,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/raw-archive/measure-localflush-case1-a2/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "9b209b0e122f43a6fea03b5aeabdf46945c743b45f94722b4c721645ce554c01"
+    },
+    {
+      "record": "raw-archive/measure-localflush-case2-a3/admission.json",
+      "op": "RMSNormFwdOp",
+      "case": "llama-8b-decode-bfloat16",
+      "contract_sha256": "b906f44d0ba5c9ad6f88549c5a4a1d9e9452c72a4f1309fcdbef0d0709f9a8ee",
+      "phase": "finished",
+      "status": "measured_pending_guard_and_environment_acceptance",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 30,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/raw-archive/measure-localflush-case2-a3/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "05add2e5c6185302ea1e57b7b879be6136d6fbd6d444e0150c5f87eea636f0b2"
+    },
+    {
+      "record": "raw-local/measure-localflush-case0-a1/admission.json",
+      "op": "AddFwdOp",
+      "case": "linear-bias-float16",
+      "contract_sha256": "3962c183bfecd7f32727380ff0cc3f2c0dd831f2d3aecd53d1e5bf3299da868d",
+      "phase": "finished",
+      "status": "measured_pending_guard_and_environment_acceptance",
+      "runner_revision": null,
+      "runner_sha256": null,
+      "observation_protocol": null,
+      "fd_scan_performed": null,
+      "retained_windows": 30,
+      "coverage_gaps": [],
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "historical/raw-local/measure-localflush-case0-a1/admission.json",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_not_independently_reviewed"
+        }
+      ],
+      "error_type": null,
+      "limits": "Attempt-level evidence; pilot/retry duplicates are not additive unique cases.",
+      "content_sha256": "758d059f74c1b79011e7b02b868657fdd5b5986060b9da73554bfbafa8979349"
+    }
+  ],
+  "reproduction_tools": [
+    {
+      "file": "runner_audited_portable.py",
+      "sha256": "eae45ccd47a30492d44a8153889ae453ccbb3f2673e313d35f702972295d8dd2",
+      "raw_links": [
+        {
+          "asset": "next8-private-evidence01.tar.gz",
+          "member": "runner_audited_portable.py",
+          "match": "exact_file_bytes_sha256"
+        }
+      ]
+    },
+    {
+      "file": "guard_observe.py",
+      "sha256": "a48335539c23267f8756a0659d5c411068217a3bccca234ff11f0db4ff76bfc3",
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "tools/guard_observe.py",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_source_snapshot"
+        }
+      ]
+    },
+    {
+      "file": "guard_audit_v2.py",
+      "sha256": "f2af471f68de0c4fa05eba0390dde56b230ee9334fa529107e23719839fc4bf4",
+      "raw_links": [
+        {
+          "asset": "guard-board-followup01.tar.gz",
+          "member": "guard_audit_v2.py",
+          "match": "exact_file_bytes_sha256"
+        },
+        {
+          "asset": "next8-private-evidence01.tar.gz",
+          "member": "guard_audit_v2.py",
+          "match": "exact_file_bytes_sha256"
+        },
+        {
+          "asset": "v2-private-evidence01.tar.gz",
+          "member": "guard_audit_v2.py",
+          "match": "exact_file_bytes_sha256"
+        }
+      ]
+    },
+    {
+      "file": "site_guard_original.py",
+      "sha256": "d0a7d472bec94d0012d5cf20182c6dadec71e02ff344c774e2b37e22596e580f",
+      "raw_links": [
+        {
+          "asset": "historical-index-tools-supplement01.tar.gz",
+          "member": "tools/site_guard_original.py",
+          "match": "exact_file_bytes_sha256",
+          "status": "newly_delivered_source_snapshot"
+        }
+      ]
+    },
+    {
+      "file": "guard_audit_driver_v1.py",
+      "sha256": "8d021796cef6f9923bcce0095fa4935ea745ba03c6b68a073aef775d336f8503",
+      "raw_links": [
+        {
+          "asset": "driver-v1-protocol-evidence01.tar.gz",
+          "member": "guard_audit_driver_v1.py",
+          "match": "exact_file_bytes_sha256"
+        }
+      ]
+    },
+    {
+      "file": "npu_guard_reservation_driver_v1.py",
+      "sha256": "1eabaffc33f4591fc8b9397798ce3233fdd9e1c3a39d6d6b3a1340458ef542a8",
+      "raw_links": [
+        {
+          "asset": "driver-v1-complete-evidence01.tar.gz",
+          "member": "npu_guard_reservation_driver_v1.py",
+          "match": "exact_file_bytes_sha256"
+        },
+        {
+          "asset": "driver-v1-protocol-evidence01.tar.gz",
+          "member": "npu_guard_reservation_driver_v1.py",
+          "match": "exact_file_bytes_sha256"
+        }
+      ]
+    }
+  ],
+  "limits": "Index supplement only. Exact byte matches, not new experiments or final acceptance. Public push approval scope unchanged.",
+  "new_asset": {
+    "name": "historical-index-tools-supplement01.tar.gz",
+    "bytes": 30784,
+    "sha256": "f6f2c39635b901836dad1be9b7910eb20f3a351a5534f40efb50466c74c9352a",
+    "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/historical-index-tools-supplement01.tar.gz"
+  },
+  "historical_scan_result": "No byte-identical match for13 records in47 previously indexed assets, including nested archives. Local records now supplied separately; no claim of complete guard/profiler bundle or new successful cases.",
+  "reproduction_mapping": {
+    "portable_runner": "runner_audited_portable.py",
+    "historical_full_FD_observer": "guard_audit_v2.py imports deployed site guard; site_guard_original.py is supplied snapshot. Verify identity receipt before deployment. guard_observe.py is older simple observer, not substituted for v2.",
+    "driver_only": "guard_audit_driver_v1.py imports npu_guard_reservation_driver_v1.py; fd_scan_performed=false",
+    "deployment_limit": "Exact source preserves historical host-specific paths inside private archives; deployment elsewhere requires explicit path adaptation and new hash/receipt. Not an arbitrary-host installer. Set GUARD_AUDIT_DIR to a fresh directory; retain original lock and driver mapping. Source presence alone does not establish execution identity."
+  }
+}

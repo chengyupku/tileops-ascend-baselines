@@ -54,7 +54,7 @@
     "FP8 IndexPut eager runtime unsupported"
   ],
   "current_device_work": "No active measurement; compiler/reference fixes need specific verified evidence, no blind repeat",
-  "public_delivery": "Local review preparation only; no new push or merge authorized yet",
+  "public_delivery": "User authorized torch.compile repository commit/push/PR/issue operations; draft update, not final acceptance or merge.",
   "raw_index_coverage": {
     "admission_records": 185,
     "linked_records": 172,
@@ -73,6 +73,8 @@
       "raw-archive/measure-localflush-case2-a3/admission.json",
       "raw-local/measure-localflush-case0-a1/admission.json"
     ],
-    "limitation": "These local records have no exact archive-member match in the current index. Historical admission-only and duplicate raw records remain visible; this index is not a claim of complete delivery or additional accepted cases."
+    "limitation": "These local records have no exact archive-member match in the current index. Historical admission-only and duplicate raw records remain visible; this index is not a claim of complete delivery or additional accepted cases.",
+    "current_status": "13 historical admission files subsequently delivered and independently byte/field verified; see INDEX_SUPPLEMENT_REVIEWED.json. Historical guard/profiler completeness and runtime identity gaps remain.",
+    "review": "https://github.com/yyttt6/agent-hub/issues/3#issuecomment-6805407465"
   }
 }

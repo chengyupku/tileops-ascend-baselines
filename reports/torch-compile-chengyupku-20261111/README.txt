@@ -9,3 +9,5 @@ SUMMARY_CURRENT.json and OPEN_GAPS.json are authoritative for current conclusion
 A successful reference1/1 check does not imply the entire operator contract is covered. DeltaNetChunkFwd lacks5 intermediates and is excluded. Nullable MoEShared None is a valid structural output, not blanket permission for1/2 numeric coverage; its scoped eager validation passed but compile failed.
 
 Latest MLAVarlenBwd prepared-payload attempt verified pinned payload/proof and passed eager, then failed Python range specialization. It produced zero timing windows. Prior timeouts remain separate. Payload contents were not independently replayed by the publisher.
+
+Reviewed supplement: INDEX_SUPPLEMENT_REVIEWED.json supersedes the historical13-file delivery gap in the original index. Those admission files and6 tool source mappings were independently verified by the publisher (comment6805407465); historical guard/profiler and execution-identity limitations remain. No additional measured cases or final acceptance.
