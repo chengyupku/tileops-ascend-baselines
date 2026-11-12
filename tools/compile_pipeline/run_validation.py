@@ -14,6 +14,15 @@ import time
 import traceback
 
 
+def measure_and_release(item, measure):
+    """Drop per-case device inputs and callable even if measurement fails."""
+    try:
+        return measure(item)
+    finally:
+        item.pop("args", None)
+        item.pop("compiled", None)
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--root", type=Path, required=True)
@@ -167,7 +176,9 @@ def main():
 
         def observed(*args, **kwargs):
             backend.check()
-            return original_window(*args, **kwargs)
+            result = original_window(*args, **kwargs)
+            backend.check()
+            return result
 
         core._time_one_isolated_repeat = observed
 
@@ -196,13 +207,7 @@ def main():
                     )
             event("consume_end", case=i)
 
-        prepare(0)
-        finish(0)
-        for i, item in enumerate(items):
-            if i + 1 < len(items):
-                prepare(i + 1)
-                if a.mode == "serial":
-                    finish(i + 1)
+        def measure(i, item):
             directory = a.output / ("case" + str(i))
             directory.mkdir()
             row = item["row"]
@@ -281,6 +286,15 @@ def main():
             report["cases"].append(
                 {"op": row["op"], "case": row["case_id"], "path": str(directory)}
             )
+
+        prepare(0)
+        finish(0)
+        for i, item in enumerate(items):
+            if i + 1 < len(items):
+                prepare(i + 1)
+                if a.mode == "serial":
+                    finish(i + 1)
+            measure_and_release(item, lambda current: measure(i, current))
             if i + 1 < len(items) and a.mode == "pipeline":
                 finish(i + 1)
         report["status"] = "passed_pending_independent_guard_and_raw_audit"
@@ -290,14 +304,21 @@ def main():
         )
         raise
     finally:
-        if backend:
-            report["backend"] = backend.report()
-            backend.close()
-        report["end_mono_ns"] = time.monotonic_ns()
-        report["elapsed_seconds"] = (
-            report["end_mono_ns"] - report["start_mono_ns"]
-        ) / 1e9
-        (a.output / "result.json").write_text(json.dumps(report, indent=2))
+        try:
+            if backend:
+                backend.close()
+                backend.check()
+        except Exception as error:
+            report.update(status="failed", cleanup_error=repr(error))
+            raise
+        finally:
+            if backend:
+                report["backend"] = backend.report()
+            report["end_mono_ns"] = time.monotonic_ns()
+            report["elapsed_seconds"] = (
+                report["end_mono_ns"] - report["start_mono_ns"]
+            ) / 1e9
+            (a.output / "result.json").write_text(json.dumps(report, indent=2))
 
 
 if __name__ == "__main__":

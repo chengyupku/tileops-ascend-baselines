@@ -65,3 +65,22 @@ existing protocol pending broader validation/review.
 
 Private raw archive SHA256:
 `27ad49df82c4cebf549b51e2df900c3ee1cdd6deb7861af33fd43df4f464e5eb`.
+
+
+## Case lifetime and observation failures
+
+Completed cases release their device input and compiled-callable references after
+measurement, including failure paths. Per-case measurement outputs and closures
+are scoped to that case. The NPU allocator may retain reserved cache memory;
+reference release is not a claim that reserved memory immediately drops.
+
+Worker process/FD observation permission errors, malformed process data and
+unexpected monitor-thread failures invalidate the experiment and are recorded in
+`worker_observation_errors`. Normal ENOENT/ESRCH process-exit and FD-close races
+are counted separately. Checks run before and after each timing window and after
+worker shutdown, so a late failure cannot produce a successful final report.
+
+Ten CPU tests cover the artifact path, repeated case reference release, exception
+cleanup, permission failures, process-exit races and monitor-thread failure.
+The device pilot above predates these lifecycle/observation fixes; it is not a
+fresh device validation of the latest revision.
