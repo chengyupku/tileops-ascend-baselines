@@ -82,5 +82,26 @@ worker shutdown, so a late failure cannot produce a successful final report.
 
 Ten CPU tests cover the artifact path, repeated case reference release, exception
 cleanup, permission failures, process-exit races and monitor-thread failure.
-The device pilot above predates these lifecycle/observation fixes; it is not a
-fresh device validation of the latest revision.
+The first device pilot above predates these fixes; the follow-up below tests
+revision `9077f1f` including persisted graph-counter snapshots.
+
+
+## Follow-up device regression (9077f1f)
+
+The same three-case serial/pipeline/serial controls and two-case smoke completed
+with four guard-zero exits. All 274 raw windows were independently replayed,
+actual sources matched revision 9077f1f byte for byte, output/negative checks
+passed, and persisted graph counters were unchanged. Worker observation errors
+were empty and incomplete was false in all arms. No concurrent evidence
+compression was performed on the measurement host.
+
+Serial A / pipeline / serial B elapsed seconds: 196.092 / 145.823 / 196.721.
+Observed wall-time saving: 25.75%; actual lookahead overlap: 54.157 seconds.
+Device-mean offsets ranged from -1.34% to +2.90%. Mean compiled shifted +2.90%
+against a 1.16% serial-control spread. This confirms the repaired implementation
+runs successfully, but still does not establish timing equivalence. Keep the
+pipeline opt-in; do not substitute these experiment records for formal results.
+
+Follow-up evidence asset `cross-case-pipeline-delivery02.tar.gz` in the existing
+private agent-hub Release has SHA256
+`905a25c85661fa8bc238155a4495c25aab5f00adef588fff85bf5c790afd1fb7`.
