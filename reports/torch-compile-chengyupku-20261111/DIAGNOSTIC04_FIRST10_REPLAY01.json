@@ -1,0 +1,146 @@
+{
+  "parser_sha256": "d745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753",
+  "rows": [
+    {
+      "op": "MishFwdOp",
+      "case": "yolo-p4-bfloat16",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 59.2642
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 57.236133333333335
+        }
+      }
+    },
+    {
+      "op": "MishFwdOp",
+      "case": "yolo-p4-float16",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 59.236333333333334
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 57.16746666666667
+        }
+      }
+    },
+    {
+      "op": "NanToNumFwdOp",
+      "case": "16M-float16",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 17.511599999999998
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 17.4174
+        }
+      }
+    },
+    {
+      "op": "NanToNumFwdOp",
+      "case": "16M-float32",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 24.747933333333332
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 24.09326666666667
+        }
+      }
+    },
+    {
+      "op": "PReLUFwdOp",
+      "case": "cnn-feat-deep-bfloat16",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 32.285666666666664
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 30.464933333333335
+        }
+      }
+    },
+    {
+      "op": "PReLUFwdOp",
+      "case": "cnn-feat-deep-float16",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 32.467666666666666
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 30.43006666666667
+        }
+      }
+    },
+    {
+      "op": "SELUFwdOp",
+      "case": "snn-fc-float16",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 42.75266666666667
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 38.9918
+        }
+      }
+    },
+    {
+      "op": "SELUFwdOp",
+      "case": "snn-fc-wide-bfloat16",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 76.74286666666667
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 73.29673333333334
+        }
+      }
+    },
+    {
+      "op": "SignFwdOp",
+      "case": "16M-float16",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 14.557066666666667
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 17.473
+        }
+      }
+    },
+    {
+      "op": "SignFwdOp",
+      "case": "16M-float32",
+      "variants": {
+        "eager": {
+          "windows": 15,
+          "mean_us": 23.7806
+        },
+        "compile": {
+          "windows": 15,
+          "mean_us": 23.68893333333333
+        }
+      }
+    }
+  ],
+  "scope": "raw SHA/task/latency replay only; guard and environment acceptance are separate"
+}

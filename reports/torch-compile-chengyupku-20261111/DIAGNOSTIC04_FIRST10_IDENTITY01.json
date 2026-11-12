@@ -1,0 +1,137 @@
+{
+  "rows": [
+    {
+      "op": "MishFwdOp",
+      "case": "yolo-p4-bfloat16",
+      "contract_sha256": "e8e366d03dfb384c159a6051e661dad4699dd977a5b80bae3b8e17392ad22405",
+      "guard_sha256": "1c0e16cb3725a4cebf663b5d2f0339070939a562d4cd2c59158b42f8d465548d",
+      "wrapper_sha256": "7aaeae122f8880c20dcbdd66ed13aade71d1ae105102b9aa5a7deb155b467375",
+      "effective_protocol": "reservation-driver-v1-diagnostic04",
+      "static_runner_label": "reservation-driver-v1",
+      "probe_log_pairs": 20,
+      "probe_timeout_files": [],
+      "stack_files": [],
+      "all_samples_protocol_match": true
+    },
+    {
+      "op": "MishFwdOp",
+      "case": "yolo-p4-float16",
+      "contract_sha256": "d521ec22385d629be467e400311d43e9ce2bab059433dafd696960254e2d7bc6",
+      "guard_sha256": "1c0e16cb3725a4cebf663b5d2f0339070939a562d4cd2c59158b42f8d465548d",
+      "wrapper_sha256": "7aaeae122f8880c20dcbdd66ed13aade71d1ae105102b9aa5a7deb155b467375",
+      "effective_protocol": "reservation-driver-v1-diagnostic04",
+      "static_runner_label": "reservation-driver-v1",
+      "probe_log_pairs": 31,
+      "probe_timeout_files": [],
+      "stack_files": [],
+      "all_samples_protocol_match": true
+    },
+    {
+      "op": "NanToNumFwdOp",
+      "case": "16M-float16",
+      "contract_sha256": "282c510f444d407bf36e4412eb2f02b76aeef5963c7adbfed0dc0557248323fd",
+      "guard_sha256": "1c0e16cb3725a4cebf663b5d2f0339070939a562d4cd2c59158b42f8d465548d",
+      "wrapper_sha256": "7aaeae122f8880c20dcbdd66ed13aade71d1ae105102b9aa5a7deb155b467375",
+      "effective_protocol": "reservation-driver-v1-diagnostic04",
+      "static_runner_label": "reservation-driver-v1",
+      "probe_log_pairs": 19,
+      "probe_timeout_files": [],
+      "stack_files": [],
+      "all_samples_protocol_match": true
+    },
+    {
+      "op": "NanToNumFwdOp",
+      "case": "16M-float32",
+      "contract_sha256": "1e364dc26ef0c6914fedfc8c0cb946b407aaf5a189f72664debf3d7d00886908",
+      "guard_sha256": "1c0e16cb3725a4cebf663b5d2f0339070939a562d4cd2c59158b42f8d465548d",
+      "wrapper_sha256": "7aaeae122f8880c20dcbdd66ed13aade71d1ae105102b9aa5a7deb155b467375",
+      "effective_protocol": "reservation-driver-v1-diagnostic04",
+      "static_runner_label": "reservation-driver-v1",
+      "probe_log_pairs": 18,
+      "probe_timeout_files": [],
+      "stack_files": [
+        "3446880549272790-2544300-completed.stderr"
+      ],
+      "all_samples_protocol_match": true
+    },
+    {
+      "op": "PReLUFwdOp",
+      "case": "cnn-feat-deep-bfloat16",
+      "contract_sha256": "03a2e15ece955eb5521bca4e6e4c7d09a409f5eae9b7c8da8db433e36743331e",
+      "guard_sha256": "1c0e16cb3725a4cebf663b5d2f0339070939a562d4cd2c59158b42f8d465548d",
+      "wrapper_sha256": "7aaeae122f8880c20dcbdd66ed13aade71d1ae105102b9aa5a7deb155b467375",
+      "effective_protocol": "reservation-driver-v1-diagnostic04",
+      "static_runner_label": "reservation-driver-v1",
+      "probe_log_pairs": 31,
+      "probe_timeout_files": [],
+      "stack_files": [],
+      "all_samples_protocol_match": true
+    },
+    {
+      "op": "PReLUFwdOp",
+      "case": "cnn-feat-deep-float16",
+      "contract_sha256": "84759b82b537237dc5ecb4d896a6e70cb0fd6081d45cd79c73520cd83e39a07c",
+      "guard_sha256": "1c0e16cb3725a4cebf663b5d2f0339070939a562d4cd2c59158b42f8d465548d",
+      "wrapper_sha256": "7aaeae122f8880c20dcbdd66ed13aade71d1ae105102b9aa5a7deb155b467375",
+      "effective_protocol": "reservation-driver-v1-diagnostic04",
+      "static_runner_label": "reservation-driver-v1",
+      "probe_log_pairs": 30,
+      "probe_timeout_files": [],
+      "stack_files": [],
+      "all_samples_protocol_match": true
+    },
+    {
+      "op": "SELUFwdOp",
+      "case": "snn-fc-float16",
+      "contract_sha256": "76505dfd72f2c2afe85dc3ad7dde738eeb21784a91006f91f277c2f0d235ed7a",
+      "guard_sha256": "1c0e16cb3725a4cebf663b5d2f0339070939a562d4cd2c59158b42f8d465548d",
+      "wrapper_sha256": "7aaeae122f8880c20dcbdd66ed13aade71d1ae105102b9aa5a7deb155b467375",
+      "effective_protocol": "reservation-driver-v1-diagnostic04",
+      "static_runner_label": "reservation-driver-v1",
+      "probe_log_pairs": 19,
+      "probe_timeout_files": [],
+      "stack_files": [],
+      "all_samples_protocol_match": true
+    },
+    {
+      "op": "SELUFwdOp",
+      "case": "snn-fc-wide-bfloat16",
+      "contract_sha256": "00f7f5c07c1912c006e662abc7637103d3e6768b3d1967eddbc4f25033ebf936",
+      "guard_sha256": "1c0e16cb3725a4cebf663b5d2f0339070939a562d4cd2c59158b42f8d465548d",
+      "wrapper_sha256": "7aaeae122f8880c20dcbdd66ed13aade71d1ae105102b9aa5a7deb155b467375",
+      "effective_protocol": "reservation-driver-v1-diagnostic04",
+      "static_runner_label": "reservation-driver-v1",
+      "probe_log_pairs": 24,
+      "probe_timeout_files": [],
+      "stack_files": [],
+      "all_samples_protocol_match": true
+    },
+    {
+      "op": "SignFwdOp",
+      "case": "16M-float16",
+      "contract_sha256": "a89bedb9a116d734fc1c3baa6eea99c2d561acf84fa5a33582f45c24882eba18",
+      "guard_sha256": "1c0e16cb3725a4cebf663b5d2f0339070939a562d4cd2c59158b42f8d465548d",
+      "wrapper_sha256": "7aaeae122f8880c20dcbdd66ed13aade71d1ae105102b9aa5a7deb155b467375",
+      "effective_protocol": "reservation-driver-v1-diagnostic04",
+      "static_runner_label": "reservation-driver-v1",
+      "probe_log_pairs": 31,
+      "probe_timeout_files": [],
+      "stack_files": [],
+      "all_samples_protocol_match": true
+    },
+    {
+      "op": "SignFwdOp",
+      "case": "16M-float32",
+      "contract_sha256": "2ae615aa61e9c1cd798b2d33d877347f624dc915dfd3ff3642fdd0fe06ca4588",
+      "guard_sha256": "1c0e16cb3725a4cebf663b5d2f0339070939a562d4cd2c59158b42f8d465548d",
+      "wrapper_sha256": "7aaeae122f8880c20dcbdd66ed13aade71d1ae105102b9aa5a7deb155b467375",
+      "effective_protocol": "reservation-driver-v1-diagnostic04",
+      "static_runner_label": "reservation-driver-v1",
+      "probe_log_pairs": 32,
+      "probe_timeout_files": [],
+      "stack_files": [],
+      "all_samples_protocol_match": true
+    }
+  ],
+  "limits": "Identity/contract/log-presence audit only; raw replay and full-output/negative/guard interval checks remain separate; final acceptance pending"
+}

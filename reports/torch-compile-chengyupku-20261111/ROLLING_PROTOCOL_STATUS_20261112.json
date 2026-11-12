@@ -1,0 +1,44 @@
+{
+  "as_of_utc": "2026-11-12T04:36:27.496574+00:00",
+  "publisher_review": "https://github.com/yyttt6/agent-hub/issues/3#issuecomment-6814610797",
+  "physical_replayed": {
+    "cases": 164,
+    "windows": 4920
+  },
+  "full_output_candidates": {
+    "cases": 163,
+    "windows": 4890
+  },
+  "physical_protocol_counts": {
+    "original_full_FD": {
+      "cases": 34,
+      "windows": 1020
+    },
+    "reservation_driver_v1": {
+      "cases": 120,
+      "windows": 3600
+    },
+    "reservation_driver_v1_diagnostic04": {
+      "cases": 10,
+      "windows": 300
+    }
+  },
+  "excluded_partial_output": "DeltaNetChunkFwd1case/30windows remains outside full-output candidates",
+  "diagnostic04": {
+    "formal_case_count": 10,
+    "pilot_windows_excluded": 2,
+    "guard_sha256": "1c0e16cb3725a4cebf663b5d2f0339070939a562d4cd2c59158b42f8d465548d",
+    "wrapper_sha256": "7aaeae122f8880c20dcbdd66ed13aade71d1ae105102b9aa5a7deb155b467375",
+    "runner_static_label": "reservation-driver-v1 is historical; actual identity/samples/manifest establish diagnostic04",
+    "limits": "Same10s timeout and stop semantics; diagnostic04 logs stages and captures subprocess stdout/stderr. Any75/76/78 stops queue without retry. Root cause of historical10s timeouts remains unresolved."
+  },
+  "slow_probe_evidence": {
+    "stage": "ctypes.CDLL library_load",
+    "seconds": 3.10069774,
+    "outcome": "probe completed normally",
+    "inference_limit": "Evidence for one slow load, not proof of historical timeout cause"
+  },
+  "final_acceptance": false,
+  "coverage": "Representative unique contracts, not full shape/op coverage; alternate environment and driver-only observation limitations remain",
+  "queue_snapshot": "15/32 formal diagnostic04 completed at status check, only first10 independently reviewed; not live status"
+}

@@ -56,6 +56,26 @@
       "sha256": "3a7d0d3477ea4c9b839e176305b856b30aa71b88a990fc853d423ad19ecbe02a"
     },
     {
+      "path": "DIAGNOSTIC04_FIRST10_IDENTITY01.json",
+      "bytes": 6188,
+      "sha256": "df5551410cfff21d13be06e36582401d89664f7849e59135c1886901317be4b0"
+    },
+    {
+      "path": "DIAGNOSTIC04_FIRST10_REPLAY01.json",
+      "bytes": 3048,
+      "sha256": "2890ef78ae4a4a99489e6befc6bd8602825456f4eefb847704e47dbea18bb37d"
+    },
+    {
+      "path": "DIAGNOSTIC04_FIRST10_SUMMARY01.json",
+      "bytes": 555,
+      "sha256": "3d192e03b333f27b5f7cbda6a5deca3380f7186db76d36e0287a480633b424d8"
+    },
+    {
+      "path": "DIAGNOSTIC04_RAW_INDEX.json",
+      "bytes": 485,
+      "sha256": "51336fa1d322af6af012dcd9eabd1b8f0c89983d01ced7c1f9684c4e15ae8bd1"
+    },
+    {
       "path": "DRIVER_V1_SUMMARY.json",
       "bytes": 88799,
       "sha256": "3478fbc8675fbe7b1374e6368c36d556802d2feccce4db02e1a9314ff1cc8ad9"
@@ -132,8 +152,13 @@
     },
     {
       "path": "README.txt",
-      "bytes": 2372,
-      "sha256": "0901c40dfcdc8d755e6f1e16f85af32b106d2148117e2d1c57a2f61b7c90c8df"
+      "bytes": 2743,
+      "sha256": "fd7e57ae96ac4ccfcf627a98020d9621841fa5c3ee9ce8aa95f7bb3667dd568d"
+    },
+    {
+      "path": "ROLLING_PROTOCOL_STATUS_20261112.json",
+      "bytes": 1812,
+      "sha256": "d44afe7a52d7cda777f80be4604f7359b6bf6d526d084915a247bea064128d1d"
     },
     {
       "path": "ROLLING_STATUS_20261112.json",

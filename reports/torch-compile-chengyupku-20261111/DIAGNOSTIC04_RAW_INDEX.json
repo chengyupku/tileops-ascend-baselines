@@ -1,0 +1,9 @@
+{
+  "asset": "diagnostic04-first10-delivery01.tar.gz",
+  "bytes": 5107980,
+  "sha256": "eb7b79897162bc9c2da659f23ace4bbcef03a07c140a8766e3edcd5ddd2e7e11",
+  "url": "https://github.com/yyttt6/agent-hub/releases/download/evidence-torch-compile-v2-20261111/diagnostic04-first10-delivery01.tar.gz",
+  "access": "Private repository access required",
+  "nested_raw": "diagnostic04-first10-evidence01.tar",
+  "review": "https://github.com/yyttt6/agent-hub/issues/3#issuecomment-6814610797"
+}

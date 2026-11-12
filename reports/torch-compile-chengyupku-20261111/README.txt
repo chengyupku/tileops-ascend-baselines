@@ -13,3 +13,5 @@ Latest MLAVarlenBwd prepared-payload attempt verified pinned payload/proof and p
 Reviewed supplement: INDEX_SUPPLEMENT_REVIEWED.json supersedes the historical13-file delivery gap in the original index. Those admission files and6 tool source mappings were independently verified by the publisher (comment6805407465); historical guard/profiler and execution-identity limitations remain. No additional measured cases or final acceptance.
 
 Snapshot clarification: SUMMARY_CURRENT and OPEN_GAPS preserve pre-batch17 historical counts. ROLLING_STATUS_20261112.json records later progress with an explicit timestamp and separates publisher-independent replay from locally pending review. Queue descriptions are snapshots, not live job status.
+
+Later independently reviewed protocol snapshot: ROLLING_PROTOCOL_STATUS_20261112.json separates original full-FD, driver-v1 and diagnostic04. Actual guard/wrapper identity and protocol manifests establish diagnostic04 despite the unchanged measurement runner static label. Pilot windows are excluded; final acceptance remains pending. Earlier snapshots stay historical.
