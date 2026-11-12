@@ -46,5 +46,6 @@
   "merged": false,
   "scope": "Representative frozen cases, NOT all shapes and NOT every planned operator successful",
   "pilot_windows": "Excluded from these formal-length counts",
-  "latest_MLAVarlenBwd": "Original600s timeout before compile marker; separate pinned-payload pilot passes eager then fails data-dependent q_len Python range. Zero new windows."
+  "latest_MLAVarlenBwd": "Original600s timeout before compile marker; separate pinned-payload pilot passes eager then fails data-dependent q_len Python range. Zero new windows.",
+  "snapshot_scope": "Historical completed batches through MLAVarlenBwd prepared-payload02, before batch17; counts and current_device_work refer only to that snapshot. See ROLLING_STATUS_20261112.json for later progress."
 }

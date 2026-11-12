@@ -76,5 +76,6 @@
     "limitation": "These local records have no exact archive-member match in the current index. Historical admission-only and duplicate raw records remain visible; this index is not a claim of complete delivery or additional accepted cases.",
     "current_status": "13 historical admission files subsequently delivered and independently byte/field verified; see INDEX_SUPPLEMENT_REVIEWED.json. Historical guard/profiler completeness and runtime identity gaps remain.",
     "review": "https://github.com/yyttt6/agent-hub/issues/3#issuecomment-6805407465"
-  }
+  },
+  "snapshot_scope": "Historical completed batches through MLAVarlenBwd prepared-payload02, before batch17; counts and current_device_work refer only to that snapshot. See ROLLING_STATUS_20261112.json for later progress."
 }

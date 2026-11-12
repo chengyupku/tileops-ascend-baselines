@@ -1,0 +1,28 @@
+{
+  "as_of_utc": "2026-11-12T03:09:53.556971+00:00",
+  "publisher_review_comment": "6813091501",
+  "publisher_independently_replayed": {
+    "physical_cases": 124,
+    "windows": 3720,
+    "full_output_candidates": 123,
+    "candidate_windows": 3690
+  },
+  "new_local_pending_review": {
+    "batch": "17 indices16-23",
+    "cases": 8,
+    "windows": 240,
+    "raw_replay": "passed",
+    "full_output_and_explicit_negative_controls": "passed"
+  },
+  "batch17_local_completed": {
+    "unique_cases": 24,
+    "windows": 720,
+    "guard_failed_attempts_excluded": 3,
+    "final_case_failures": 0,
+    "start_utc": "2026-11-12T02:34:06.703546+00:00",
+    "end_utc": "2026-11-12T03:07:48.811522+00:00"
+  },
+  "queue_snapshot": "Batch18 CPU preflight running, device handoff waits all12 proofs; batch19 waits18 completion. Not live status.",
+  "final_acceptance": false,
+  "limits": "Representative contracts only; reservation-driver-v1 noFD sampling and alternate environment limitations retained. CPU negative controls not executed; device eager/compile controls required."
+}
