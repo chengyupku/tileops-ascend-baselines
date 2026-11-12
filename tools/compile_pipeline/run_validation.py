@@ -259,6 +259,12 @@ def main():
                 after = {
                     str(k): dict(v) for k, v in torch._dynamo.utils.counters.items()
                 }
+                record.setdefault("graph_counters", {})[variant] = {
+                    "before": before,
+                    "after": after,
+                    "unchanged": before == after,
+                }
+                (directory / "admission.json").write_text(json.dumps(record, indent=2))
                 assert before == after, (
                     "unexpected graph compilation during measurement"
                 )
