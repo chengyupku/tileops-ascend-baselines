@@ -40,6 +40,22 @@ class Delivery(unittest.TestCase):
             self.assertNotEqual(rc, 0)
             self.assertEqual(json.loads((output/'watchdog-receipt.json').read_text())['remaining_live'], [])
 
+    def test_reconstructed_core_imports_without_site_packages(self):
+        from prepare_sources import prepare
+        with tempfile.TemporaryDirectory() as td:
+            frozen = Path(td)/'frozen'
+            self.assertEqual(prepare(P.parents[1], frozen), 592)
+            code = (
+                "import sys; sys.path.insert(0, sys.argv[1]); "
+                "from tools import kernel_task_profile_full32 as parser; "
+                "sys.modules['tools.kernel_task_profile'] = parser; "
+                "from tools import measure_baselines; "
+                "assert 'torch' not in sys.modules; "
+                "assert 'torch_npu' not in sys.modules"
+            )
+            subprocess.run([sys.executable, '-S', '-c', code, str(frozen)],
+                           check=True, timeout=10)
+
     def test_wrong_patch_source_rejected(self):
         with tempfile.TemporaryDirectory() as td:
             source, output = Path(td)/'original', Path(td)/'candidate'

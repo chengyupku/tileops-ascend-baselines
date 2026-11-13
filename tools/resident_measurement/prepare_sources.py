@@ -6,7 +6,8 @@ from pathlib import Path
 import shutil
 
 P = Path(__file__).resolve().parent
-TOOLS = {'measure_baselines.py': '39e9973489069562543aed004f7381adbe6418be7313c3d9ce3cff53caa9127a',
+TOOLS = {'baseline_protocol.py': '4921791a16097d80c404396ac17a0c266bab708b8df3e69040c84df5b7b56c48',
+         'measure_baselines.py': '39e9973489069562543aed004f7381adbe6418be7313c3d9ce3cff53caa9127a',
          'kernel_task_profile_full32.py': 'd745454235f8f5c0676f70b75b81e0dd757ccceb63ffdf5f8deb923cb8f3d753'}
 
 def prepare(checkout, destination):

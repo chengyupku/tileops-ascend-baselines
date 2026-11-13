@@ -11,7 +11,7 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tools/resident_measure
 python3 tools/resident_measurement/prepare_sources.py --checkout "$PWD" --destination "$RUN_ROOT/frozen"
 ```
 
-Use a new absolute `RUN_ROOT`. Source preparation verifies 589 frozen files plus the pinned measurement core and full32 parser from files already tracked in this repository. It does not import torch or touch the device. Tests check reviewed hashes, entry points without site packages, fail-stop queue behavior and real CPU child launch/timeout/reaping.
+Use a new absolute `RUN_ROOT`. Source preparation verifies 589 frozen files plus the pinned measurement core, baseline protocol helper and full32 parser from files already tracked in this repository. It does not import torch or touch the device. Tests check reviewed hashes, entry points without site packages, fail-stop queue behavior and real CPU child launch/timeout/reaping.
 
 ## Isolated backend preparation
 
