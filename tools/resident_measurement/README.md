@@ -32,7 +32,11 @@ The patch materializer rejects any original backend except SHA256 `a1779017efc75
 
 ## Measurement command and prerequisites
 
-Use the reconstruction recipe in `commissions/torch-compile-20261110/flush_source/CPU_REBUILD.md` to build and verify recipient flush assets in `$RUN_ROOT/flush-rebuild/build01`. Keep the CANN 9.2 flush compiler profile separate from the CANN 9.1 runtime profile. The measured runtime used Python 3.12.15, torch 2.13.0+cpu, torch_npu 2.13.0.rc1, AscendC, 32 AIC / 64 AIV. Source the site-provided compatible runtime activation script before the command below; no credentials or activation paths are embedded here.
+The command below requires **already audited matching ARM64 runtime assets** in `$RUN_ROOT/flush-rebuild/build01`: `flush.aibin` with SHA256 `693be2fb78b6c749ec2afee81e1ed3d8c0de58ea3397daaeaeef06588cc2e865` and its audited compatible host loader `flush.so`. Obtain their associated source/compiler/build and host-loader provenance receipts through the private evidence channel before attempting reproduction. A matching aibin hash alone does not validate an arbitrary loader. The source checkout does not supply these binaries or a complete standalone recipe proven to reproduce them.
+
+**The historical `commissions/torch-compile-20261110/flush_source/CPU_REBUILD.md` recipe targets `9aebeb…`, not the required `693be2…`. It cannot be used as a direct substitute for this runner's assets.** Do not relax the frozen SHA assertion to make a new build run. If matching audited assets and provenance are unavailable, the measurement command is not ready to execute; CPU tests and source reconstruction remain available.
+
+Keep the CANN 9.2 ARM64 flush compiler profile separate from the CANN 9.1 runtime profile. The measured runtime used Python 3.12.15, torch 2.13.0+cpu, torch_npu 2.13.0.rc1, AscendC, 32 AIC / 64 AIV. Source the site-provided compatible runtime activation script before the command below; no credentials or activation paths are embedded here.
 
 The host reservation `/run/lock/ascend-npu/device-0.lock` and the sampler's device mapping must match the reviewed host setup. Do not run on another device mapping without review. A held lock alone does not prove exclusive device use: the resident driver sampler also validates ownership/health throughout measurement.
 
