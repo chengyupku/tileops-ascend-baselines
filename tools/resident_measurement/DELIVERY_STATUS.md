@@ -20,7 +20,11 @@ The index is a consolidation of existing admissions and the cited independent re
 
 Current archive-backed partition: 475 newly measured/audited contracts, 70 with archived attempts but no complete measurement in this index, 357 conservatively outside the current specialist scope, and 1,365 with no device attempt found in the indexed archives. These sum to 2,267. The 70 include diagnostic/admission/guard failures and must not all be called compile failures. No indexed attempt does not imply that a case is runnable or has never been tested elsewhere.
 
-There are 67 inventory rows with historical compile **name matches**, recorded separately. Their exact contract/source/environment alignment is not yet established, so they are not counted as verified prior coverage. Missing-implementation classification also requires further source checks; absence of an admission is not evidence of no implementation. These are outstanding delivery checks, not a request for blind NPU reruns.
+CPU reconciliation now resolves the 67 historical name-matched contracts into 83 records: 41 quant records have exactly matching frozen parameters, 29 are one-window pilots, seven are compile failures, and six are historical 15-window formal/raw-verified records. Records overlap on contract identity, so these numbers must not be added as unique coverage. Seven other historical records fall outside this frozen inventory. Source/environment equivalence remains unverified; none is silently promoted to same-protocol coverage.
+
+All 2,267 contracts (206 op names) have corresponding name declarations in frozen benchmark factory modules. This static check does not execute constructors, allocate inputs, or prove a usable runtime reference. It finds no basis for marking any inventory row “no implementation”; that status remains unproven rather than fabricated. Runtime callable checks, where needed, remain separate from this metadata reconciliation.
+
+Reproduce with `python3 tools/resident_measurement/reconcile_inventory.py --checkout . --output /path/to/new-inventory.json`. The per-contract result is private release asset `inventory-reconciliation02.tar.gz`, 126,408 bytes, SHA256 `db743a2df4ab902472ab164f7140fddc810d5d12dde7a1e4df894bd3d978ed4d`. It supplements the first index without rewriting its historical summary. It records source filenames, line numbers, source hashes, prior record classifications and explicit unverified boundaries. No torch import or NPU operation is performed.
 
 ## Acceptance limits
 
